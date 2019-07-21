@@ -1,2 +1,2 @@
-# project1
-insert body text here
+# Learning Platform #
+Learn the basics of computer science and programming!
