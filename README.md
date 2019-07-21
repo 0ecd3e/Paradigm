@@ -1,2 +1,2 @@
-# Learning Platform #
+# WARNING: DO NOT PUT ANY PERSONAL DETAILS IN ANYTHING YOU UPLOAD TO GITHUB. IT CANNOT BE DELETED ONCE IT IS UPLOADED. #
 Learn the basics of computer science and programming!
