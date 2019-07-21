@@ -1,6 +1,6 @@
-Markdown Cheatsheet (as of 11 Feb. 2019)
-By tchapi (https://github.com/tchapi/markdown-cheatsheet)
+Markdown Reference (as of 11 Feb. 2019)
 ===================
+By tchapi (https://github.com/tchapi/markdown-cheatsheet)
 
 - - - - 
 
@@ -71,9 +71,13 @@ Content Cell  | Content Cell
 Content Cell  | Content Cell
 ```
 
+- - - -
+
 `code()`
 
     Markup :  `code()`
+    
+- - - -
 
 ```javascript
     var specificLanguage_code = 
@@ -94,6 +98,8 @@ Content Cell  | Content Cell
 
     Markup : ```javascript
              ```
+
+- - - -
 
 * Bullet list
     * Nested bullet
@@ -194,6 +200,10 @@ Hotkey list:
 
 Emoji:
 
-:exclamation: Use emoji icons to enhance text. :+1:  Look up emoji codes at [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/)
+Use emoji icons to enhance text.
+
+:exclamation: :+1:
+
+Look up emoji codes at [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/)
 
     Markup : Code appears between colons :EMOJICODE:
