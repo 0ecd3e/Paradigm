@@ -4,6 +4,8 @@ Originally from tchapi with additions from MinhasKamal
 
 (https://github.com/tchapi/markdown-cheatsheet, https://gist.github.com/MinhasKamal/7fdebb7c424d23149140)
 
+More at https://guides.github.com/features/mastering-markdown/
+
 - - - - 
 
 Comments:
