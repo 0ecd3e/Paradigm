@@ -1,8 +1,16 @@
 Markdown Reference (as of 11 Feb. 2019)
 ===================
-By tchapi (https://github.com/tchapi/markdown-cheatsheet)
+By tchapi (https://github.com/tchapi/markdown-cheatsheet) with additions from MinhasKamal (https://gist.github.com/MinhasKamal/7fdebb7c424d23149140)
 
 - - - - 
+
+Comments:
+
+[/]:# (insert comment text inside the brackets)
+
+```
+[/]:# (insert comment text inside the brackets)
+```
 
 # Heading 1 #
 
@@ -49,15 +57,23 @@ ___Strong emphasized text___
 
     Markup :  ___Strong emphasized text___ or ***Strong emphasized text***
 
-[Named Link](http://www.google.fr/ "Named link title") and http://www.google.fr/ or <http://example.com/>
+[Named Link](http://www.google.fr/ "Named link title")
 
-    Markup :  [Named Link](http://www.google.fr/ "Named link title") and http://www.google.fr/ or <http://example.com/>
+    Markup :  [Named Link](http://www.google.fr/ "Named link title")
+    
+http://www.google.fr/
+
+    Markup: http://www.google.fr/
+    
+<http://example.com/>
+
+    Markup: <http://example.com/>
 
 [heading-1](#heading-1 "Goto heading-1")
     
     Markup: [heading-1](#heading-1 "Goto heading-1")
 
-Table, like this one :
+Tables:
 
 First Header  | Second Header
 ------------- | -------------
@@ -69,13 +85,33 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
+```
+
+Table Header-1 | Table Header-2 | Table Header-3
+:--- | :---: | ---:
+Table Data-1 | Table Data-2 | Table Data-3
+TD-4 | Td-5 | TD-6
+Table Data-7 | Table Data-8 | Table Data-9
+
+```
+Place directly above the corresponding column of the table:
+:--- for align left
+:---: for align center
+---: for align right
+
+e.g.
+Table Header-1 | Table Header-2 | Table Header-3
+:--- | :---: | ---:
+Table Data-1 | Table Data-2 | Table Data-3
+TD-4 | Td-5 | TD-6
+Table Data-7 | Table Data-8 | Table Data-9
 ```
 
 - - - -
 
-`code()`
+Inline code `code()`
 
-    Markup :  `code()`
+    Markup :  Inline code `code()`
     
 - - - -
 
@@ -96,7 +132,12 @@ Content Cell  | Content Cell
     }
 ```
 
-    Markup : ```javascript
+    Markup : Encase block code with
+             ```
+             ```
+             
+             Encase language-specific code (e.g. Javascript) with
+             ```javascript
              ```
 
 - - - -
@@ -111,6 +152,12 @@ Content Cell  | Content Cell
               * Nested bullet
                   * Sub-nested bullet etc
           * Bullet list item 2
+          - item-2
+            - sub-item-3
+            - sub-item-4
+          + item-3
+            + sub-item-5
+            + sub-item-6
 ~~~
 
 1. A numbered list
@@ -143,6 +190,9 @@ _Horizontal line :_
 - - - -
 
     Markup :  - - - -
+              ---
+              ***
+              ___
 
 _Image with alt :_
 
@@ -171,7 +221,7 @@ Foldable text:
 <p> Some HTML code here </p>
 ```
 
-Hotkey:
+Keyboard:
 
 <kbd>⌘F</kbd>
 
