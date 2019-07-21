@@ -200,8 +200,6 @@ Hotkey list:
 
 Emoji:
 
-Use emoji icons to enhance text.
-
 :exclamation: :+1:
 
 Look up emoji codes at [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/)
