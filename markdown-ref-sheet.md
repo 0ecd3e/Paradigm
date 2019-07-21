@@ -1,6 +1,8 @@
 Markdown Reference (as of 11 Feb. 2019)
 ===================
-By tchapi (https://github.com/tchapi/markdown-cheatsheet) with additions from MinhasKamal (https://gist.github.com/MinhasKamal/7fdebb7c424d23149140)
+Originally from tchapi with additions from MinhasKamal 
+
+(https://github.com/tchapi/markdown-cheatsheet, https://gist.github.com/MinhasKamal/7fdebb7c424d23149140)
 
 - - - - 
 
@@ -11,6 +13,10 @@ Comments:
 ```
 [/]:# (insert comment text inside the brackets)
 ```
+
+Escape character:
+
+To type \#, \*, or \!, use `\#, \*, or \!`.
 
 # Heading 1 #
 
@@ -115,6 +121,8 @@ Inline code `code()`
     
 - - - -
 
+Block code:
+
 ```javascript
     var specificLanguage_code = 
     {
@@ -132,12 +140,24 @@ Inline code `code()`
     }
 ```
 
+Language-specific code:
+
+``` C
+for(int i=0; i<10; i++){
+    printf("Hallow World! \n");
+}
+```
+
     Markup : Encase block code with
              ```
              ```
              
-             Encase language-specific code (e.g. Javascript) with
+             Encase language-specific code (e.g. Javascript or C) with
              ```javascript
+             ```
+             
+             or
+             ```C
              ```
 
 - - - -
@@ -221,15 +241,14 @@ Foldable text:
 <p> Some HTML code here </p>
 ```
 
-Keyboard:
+Keyboard keys:
 
-<kbd>⌘F</kbd>
-
+<kbd>⌘F</kbd>    
 <kbd>⇧⌘F</kbd>
 
     Markup : <kbd>⌘F</kbd>
 
-Hotkey list:
+Key list:
 
 | Key | Symbol |
 | --- | --- |
