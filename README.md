@@ -4,6 +4,8 @@
 
 Google Java Style Guide: https://google.github.io/styleguide/javaguide.html
 
+More Google style guides: https://github.com/google/styleguide
+
 #### Open source Android apps written in Java: ####
 
 NewPipe, a lightweight streaming front-end for YouTube: https://github.com/TeamNewPipe/NewPipe
