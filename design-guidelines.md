@@ -4,6 +4,7 @@
 
 **Attempt to keep comments within one line. Otherwise, use a diagram if needed.**
 
+Adapted from UBCx HtC
 ---
 
 ### Function Design: ###
