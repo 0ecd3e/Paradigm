@@ -8,6 +8,8 @@ More Google style guides: https://github.com/google/styleguide
 
 Google Material Design: https://github.com/material-components/material-components-android
 
+Google Android Developers: https://developer.android.com/design
+
 #### Open source Android apps written in Java: ####
 
 NewPipe, a lightweight streaming front-end for YouTube: https://github.com/TeamNewPipe/NewPipe
