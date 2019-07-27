@@ -1,4 +1,4 @@
-# WARNING: DO NOT PUT ANY PERSONAL DETAILS IN ANYTHING YOU UPLOAD TO GITHUB. IT CANNOT BE DELETED ONCE IT IS UPLOADED. #
+# Paradigm - Code from one student to another #
 
 #### Useful links: ####
 
