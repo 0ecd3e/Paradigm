@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,4 +67,23 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void toCheckpoint(View view) {
+        Navigation.findNavController(view).navigate(R.id.nav_checkpoint);
+    }
+
+    public void toExplore(View view) {
+        Navigation.findNavController(view).navigate(R.id.nav_explore);
+    }
+
+    public void toNews(View view) {
+        Navigation.findNavController(view).navigate(R.id.nav_news);
+    }
+
+    public void toLesson(View view) {
+        Navigation.findNavController(view).navigate(R.id.lessonFragment);
+    }
+
+
+
 }
