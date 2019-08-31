@@ -58,6 +58,7 @@
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
+
     <fragment
         android:id="@+id/lessonFragment"
         android:name="com.paradigm.paradigm.ui.lesson.LessonFragment"
@@ -67,9 +68,11 @@
             android:id="@+id/action_lessonFragment_to_lessonContentFragment"
             app:destination="@id/lessonContentFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/lessonContentFragment"
-        android:name="com.paradigm.paradigm.ui.lesson.LessonContentFragment"
+        android:name="com.paradigm.paradigm.ui.lessonContent.LessonContentFragment"
         android:label="lesson_content_fragment"
         tools:layout="@layout/lesson_content_fragment" />
+
 </navigation>

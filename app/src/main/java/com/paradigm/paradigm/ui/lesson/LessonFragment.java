@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.paradigm.paradigm.R;
+import com.paradigm.paradigm.ui.lessonContent.LessonContentFragment;
 
 public class LessonFragment extends Fragment {
 
@@ -37,8 +40,17 @@ public class LessonFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
-    public void toContent(View view) {
-        Navigation.findNavController(view).navigate(R.id.lessonContentFragment);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Button button = (Button) view.findViewById(R.id.toContent);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Navigation.findNavController(view).navigate(R.id.lessonContentFragment);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.action_lessonFragment_to_lessonContentFragment);
+
+            }
+        });
     }
 
 }

@@ -84,6 +84,4 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.lessonFragment);
     }
 
-
-
 }

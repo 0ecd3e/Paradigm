@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.ui.lesson;
+package com.paradigm.paradigm.ui.lessonContent;
 
 import androidx.lifecycle.ViewModel;
 
