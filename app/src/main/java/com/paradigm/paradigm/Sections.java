@@ -1,4 +1,5 @@
-package com.example.myapplication;
+package com.paradigm.paradigm;
+
 import java.util.Vector;
 
 public class Sections {

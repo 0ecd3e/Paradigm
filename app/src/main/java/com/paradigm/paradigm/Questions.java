@@ -1,22 +1,21 @@
-package com.example.myapplication;
+package com.paradigm.paradigm;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Vector;
 
 public class Questions {
-    private boolean correct_flag=false;
-    private String question="";
-    private String answer="";
+    private boolean isCorrect = false;
+    private String question = "";
+    private String answer = "";
 
     Questions(){}   //Default Constructor
 
-    Questions(String s1, String s2){    //Constructor
-        question=s1;
-        answer=s2;
+    Questions(String q, String a) {    //Constructor
+        question = q;
+        answer = a;
     }
 
     public String getQuestion(){
@@ -27,55 +26,57 @@ public class Questions {
         return answer;
     }   //Returns the answer
 
-    public boolean getFlag(){
-        return correct_flag;
+    public boolean getStatus() {
+        return isCorrect;
     }   //Shows if the question has been answered correctly
 
-    public void setQuestion(String s){
-        question=s;
+    public void setQuestion(String q){
+        question = q;
     }   //Sets the question
 
-    public void setAnswer(String s){
-        answer=s;
+    public void setAnswer(String a){
+        answer = a;
     }   //Sets the answer
 
-    public boolean isCorrect(String s){
-        return answer==s;
+    public boolean isCorrect(String correctAnswer){
+        return answer.equals(correctAnswer);
     }   //Checks user entered answer with actual answer
 
     public void changeFlag(){
-        if(!correct_flag) {
-            correct_flag = true;
-        }else{
-            correct_flag=false;
-        }
+//        if(!isCorrect) {
+//            isCorrect = true;
+//        }else{
+//            isCorrect = false;
+//        }
+        isCorrect = isCorrect;
     }   //Changes the flag to true or false.
 
-    public void print(){    //Prints the question and answer.
-        System.out.print(getQuestion()+"\r\n");
-        System.out.print(getAnswer()+"\r\n");
+    public void printOutput() {    //Prints the question and answer.
+//        System.out.print(getQuestion()+"\r\n");
+//        System.out.print(getAnswer()+"\r\n");
+        System.out.println(getQuestion());
+        System.out.println(getAnswer());
     }
 
-    public void load(String s){     //Loads Question from file.
-        File f=new File(s+".txt");
-        StringBuilder fileQuestions=new StringBuilder();
+    public void load(String fileName) {     //Loads Question from file.
+        File f = new File(fileName + ".txt");
+        StringBuilder fileQuestions = new StringBuilder();
         try{
             //Opens and reads from file.
-            BufferedReader br=new BufferedReader((new FileReader(f.getAbsolutePath())));
+            BufferedReader br = new BufferedReader((new FileReader(f.getAbsolutePath())));
             String line;
-            while((line=br.readLine())!=null){
-                fileQuestions.append(line+"\n");
+            while ((line=br.readLine()) != null) {
+                fileQuestions.append(line + "\n");
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.print("File not found.\n");
+            System.out.println("File not found.");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.print("Couldn't read from file.\n");
+            System.out.println("Couldn't read from file.");
         }
 
-        String questLine=fileQuestions.toString();
+        String questLine = fileQuestions.toString();
         String[] temp = new String[10];
         for(int i=0; i<10; i++) {
             temp[i] = "";
