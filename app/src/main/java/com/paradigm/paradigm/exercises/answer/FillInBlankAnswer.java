@@ -9,6 +9,7 @@ public class FillInBlankAnswer extends Answer {
     public FillInBlankAnswer(String answer) {
         super(answer);
         answerList = new ArrayList<>();
+        answerList.add(answer);
     }
 
     public void addAlternativeAnswer(String answer) {
