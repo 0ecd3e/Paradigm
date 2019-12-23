@@ -1,4 +1,6 @@
-package com.paradigm.paradigm;
+package com.paradigm.paradigm.text;
+
+import com.paradigm.paradigm.exercises.Questions;
 
 import java.util.Vector;
 

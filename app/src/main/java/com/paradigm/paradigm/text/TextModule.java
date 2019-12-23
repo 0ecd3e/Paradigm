@@ -1,19 +1,10 @@
-package com.paradigm.paradigm;
-import android.os.Environment;
-import android.view.Display;
-
-import android.content.Context;
+package com.paradigm.paradigm.text;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.*;
-import java.util.*;
 
 public class TextModule {
     private String text="";
