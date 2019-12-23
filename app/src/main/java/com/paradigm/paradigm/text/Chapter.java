@@ -1,6 +1,4 @@
-package com.paradigm.paradigm;
-
-import com.paradigm.paradigm.Sections;
+package com.paradigm.paradigm.text;
 
 import java.util.Vector;
 

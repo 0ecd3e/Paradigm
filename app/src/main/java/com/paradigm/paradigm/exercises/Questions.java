@@ -1,4 +1,4 @@
-package com.paradigm.paradigm;
+package com.paradigm.paradigm.exercises;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +13,7 @@ public class Questions {
 
     Questions(){}   //Default Constructor
 
-    Questions(String q, String a) {    //Constructor
+    public Questions(String q, String a) {    //Constructor
         question = q;
         answer = a;
     }
