@@ -46,9 +46,9 @@ public class Sections {
     }
 
     public void read(final String textName, final Vector<String> questionNames){
-        t.read(textName);
+        t.read(name+"\\"+textName);
         for(int i=0; i<questionNames.size(); i++){
-            questionsList.get(i).load(questionNames.get(i));
+            questionsList.get(i).load(name+"\\"+questionNames.get(i));
         }
     }
 
