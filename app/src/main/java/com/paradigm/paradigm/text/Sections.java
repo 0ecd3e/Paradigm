@@ -1,17 +1,20 @@
 package com.paradigm.paradigm.text;
 
 import com.paradigm.paradigm.exercises.Questions;
+import com.paradigm.paradigm.exercises.question.Question;
 
 import java.util.Vector;
 
 public class Sections {
+    private String name;
     private int numQuestions=0;
     private TextModule t;
     private Vector<Questions> questionsList=new Vector<>();
 
     public Sections(){}     //Default constructor
 
-    public Sections(TextModule tm, Vector<Questions> v){    //Constructor
+    public Sections(final String nm, TextModule tm, Vector<Questions> v){    //Constructor
+        name=nm;
         t=tm;
         questionsList=v;
     }
@@ -25,10 +28,11 @@ public class Sections {
                 count++;
             }
         }
-        if(count==numQuestions) {   //Section is complete if all questions are finished
-            return true;
-        }
-        return false;
+//        if(count==numQuestions) {   //Section is complete if all questions are finished
+//            return true;
+//        }
+//        return false;
+        return count==numQuestions;
     }
 
     public void push(Questions q){  //Adds element at end of vector
@@ -39,6 +43,13 @@ public class Sections {
     public void pop(){  //Removes last element from vector
         questionsList.removeElementAt(questionsList.size()-1);
         numQuestions=questionsList.size();  //Updates size
+    }
+
+    public void read(final String textName, final Vector<String> questionNames){
+        t.read(textName);
+        for(int i=0; i<questionNames.size(); i++){
+            questionsList.get(i).load(questionNames.get(i));
+        }
     }
 
     public TextModule getModule() {

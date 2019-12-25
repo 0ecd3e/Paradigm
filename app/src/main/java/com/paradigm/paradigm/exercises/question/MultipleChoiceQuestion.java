@@ -7,3 +7,4 @@ public class MultipleChoiceQuestion extends Question {
         super(question, answer);
     }
 }
+
