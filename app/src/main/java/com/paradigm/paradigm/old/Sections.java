@@ -1,6 +1,4 @@
-package com.paradigm.paradigm.text;
-
-import com.paradigm.paradigm.exercises.Questions;
+package com.paradigm.paradigm.old;
 
 import java.util.Vector;
 
@@ -16,19 +14,20 @@ public class Sections {
         questionsList=v;
     }
 
-    public boolean isComplete(){     //Shows whether the Section has been completed.
-        int count=0;
-        for(int i=0; i<questionsList.size(); i++){
-            //Traverses list and checks bool value.
-            if(questionsList.get(i).getFlag()){
-                //Increment if question has been flagged as finished
-                count++;
-            }
-        }
-        if(count==numQuestions) {   //Section is complete if all questions are finished
-            return true;
-        }
-        return false;
+    public static void main(String[] args) {     //Test function
+        Sections s = new Sections();
+        System.out.print(s.getSize() + "\r\n");
+        Questions q = new Questions("Is this it?", "No it isn't.");
+        s.push(q);
+        System.out.print(s.getSize() + "\r\n");
+        Questions q2 = new Questions("What are those", "I dunno");
+        s.push(q2);
+        System.out.print(s.getSize() + "\r\n");
+        Questions p = s.get(0);
+        p.printOutput();
+        s.pop();
+        System.out.print(s.getSize() + "\r\n");
+        System.out.print(s.isComplete());
     }
 
     public void push(Questions q){  //Adds element at end of vector
@@ -61,19 +60,16 @@ public class Sections {
         questionsList.setElementAt(q,index);
     }
 
-    public static void main(String args[]){     //Test function
-        Sections s=new Sections();
-        System.out.print(s.getSize()+"\r\n");
-        Questions q=new Questions("Is this it?", "No it isn't.");
-        s.push(q);
-        System.out.print(s.getSize()+"\r\n");
-        Questions q2=new Questions("What are those", "I dunno");
-        s.push(q2);
-        System.out.print(s.getSize()+"\r\n");
-        Questions p=s.get(0);
-        p.printOutput();
-        s.pop();
-        System.out.print(s.getSize()+"\r\n");
-        System.out.print(s.isComplete());
+    public boolean isComplete() {     //Shows whether the Section has been completed.
+        int count = 0;
+        for (int i = 0; i < questionsList.size(); i++) {
+            //Traverses list and checks bool value.
+            if (questionsList.get(i).getFlag()) {
+                //Increment if question has been flagged as finished
+                count++;
+            }
+        }
+        //Section is complete if all questions are finished
+        return count == numQuestions;
     }
 }

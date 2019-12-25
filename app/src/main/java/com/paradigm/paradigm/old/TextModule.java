@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.text;
+package com.paradigm.paradigm.old;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,7 +42,7 @@ public class TextModule {
         return fileText.toString();
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args) {
         TextModule t=new TextModule("For loops are very important and stuff");
         System.out.print(t.getText()+"\n");
         t.read("test");

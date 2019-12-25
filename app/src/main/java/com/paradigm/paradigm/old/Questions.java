@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.exercises;
+package com.paradigm.paradigm.old;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -96,7 +96,7 @@ public class Questions {
 
     }
 
-    public static void main(String args[]){     //Test function
+    public static void main(String[] args) {     //Test function
 //        Questions q=new Questions();
 //        q.setQuestion("Is this Patrick?\r\n");
 //        System.out.print(q.getQuestion());
