@@ -5,11 +5,11 @@ import com.paradigm.paradigm.exercises.question.Question;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Module extends Content {
+public class ContentModule extends Content {
     private Set<Lesson> lessons;
     private Set<Question> questions;
 
-    public Module(String name) {
+    public ContentModule(String name) {
         super(name);
         lessons = new HashSet<>();
         questions = new HashSet<>();

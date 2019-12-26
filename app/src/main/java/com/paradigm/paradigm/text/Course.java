@@ -1,13 +1,11 @@
 package com.paradigm.paradigm.text;
 
-import com.fasterxml.jackson.databind.Module;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class Course extends Content {
 
-    private Set<Module> modules;
+    private Set<ContentModule> modules;
 
     public Course(String name) {
         super(name);
@@ -23,7 +21,7 @@ public class Course extends Content {
         return name;
     }
 
-    public Set<Module> getModules() {
+    public Set<ContentModule> getModules() {
         return modules;
     }
 

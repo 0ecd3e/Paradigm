@@ -24,4 +24,18 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.paradigm.paradigm", appContext.getPackageName());
     }
+
+//    @Test
+//    public void test() throws FileNotFoundException {
+//        Course test = new Course("testName");
+//
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        InputStream inputStream = InstrumentationRegistry.getInstrumentation().getContext().openFileInput("/src/main/assets/course1.json");
+//        try {
+//            test = objectMapper.readValue(inputStream, Course.class);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 }
