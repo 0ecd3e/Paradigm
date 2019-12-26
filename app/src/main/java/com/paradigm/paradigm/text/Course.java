@@ -7,25 +7,30 @@ public class Course extends Content {
 
     private Set<ContentModule> modules;
 
+    public Course() {
+        super();
+    }
+
     public Course(String name) {
         super(name);
         modules = new HashSet<>();
     }
 
     @Override
-    public String getFileName() {
+    public String storedName() {
         return null;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Set<ContentModule> getModules() {
         return modules;
     }
 
-    public boolean isCompleted() {
-        return isComplete;
+    public void addModule(ContentModule module) {
+        modules.add(module);
     }
+
+    public void removeModule(ContentModule module) {
+        modules.remove(module);
+    }
+
 }

@@ -6,6 +6,10 @@ import java.util.List;
 public class FillInBlankAnswer extends Answer {
     private List<String> answerList;
 
+    public FillInBlankAnswer() {
+        super();
+    }
+
     public FillInBlankAnswer(String answer) {
         super(answer);
         answerList = new ArrayList<>();

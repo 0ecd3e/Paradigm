@@ -1,12 +1,19 @@
 package com.paradigm.paradigm;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paradigm.paradigm.text.Course;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,17 +32,18 @@ public class ExampleInstrumentedTest {
         assertEquals("com.paradigm.paradigm", appContext.getPackageName());
     }
 
-//    @Test
-//    public void test() throws FileNotFoundException {
-//        Course test = new Course("testName");
-//
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        InputStream inputStream = InstrumentationRegistry.getInstrumentation().getContext().openFileInput("/src/main/assets/course1.json");
-//        try {
-//            test = objectMapper.readValue(inputStream, Course.class);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+    @Test
+    public void testLoad() {
+        Course java = new Course("test");
+        AssetManager assetManager = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getAssets();
+
+        InputStream inputStream = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            inputStream = assetManager.open("src/test.json");
+            java = objectMapper.readValue(inputStream, Course.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,13 +1,29 @@
 package com.paradigm.paradigm.exercises.question;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.paradigm.paradigm.exercises.answer.Answer;
 
-public abstract class Question {
+import java.io.Serializable;
+
+
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = MultipleChoiceQuestion.class),
+        @JsonSubTypes.Type(value = FillInBlankQuestion.class),
+})
+public abstract class Question implements Serializable {
     protected String question;
     protected Answer answer;
     protected boolean answeredCorrectly;
 
-    protected Question(String question, Answer answer) {
+    public Question() {
+        super();
+    }
+
+    public Question(String question, Answer answer) {
         this.question = question;
         this.answer = answer;
         answeredCorrectly = false;

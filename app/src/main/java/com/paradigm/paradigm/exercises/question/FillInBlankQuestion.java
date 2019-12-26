@@ -6,6 +6,10 @@ import com.paradigm.paradigm.exercises.answer.FillInBlankAnswer;
 import java.util.List;
 
 public class FillInBlankQuestion extends Question {
+    public FillInBlankQuestion() {
+        super();
+    }
+
     public FillInBlankQuestion(String question, Answer answer) {
         super(question, answer);
     }
