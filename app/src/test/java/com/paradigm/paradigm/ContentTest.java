@@ -84,7 +84,7 @@ public class ContentTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            test = objectMapper.readValue(new File("test.json"), Course.class);
+            test = objectMapper.readValue(new File("courses/java/test.json"), Course.class);
         } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonProcessingException e) {

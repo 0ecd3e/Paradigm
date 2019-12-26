@@ -1,6 +1,7 @@
 package com.paradigm.paradigm.text;
 
 public class Lesson extends Content {
+    public String lessonContent;
 
     public Lesson() {
         super();
@@ -13,5 +14,13 @@ public class Lesson extends Content {
     @Override
     public String storedName() {
         return null;
+    }
+
+    public String getLessonContent() {
+        return lessonContent;
+    }
+
+    public void setLessonContent(String content) {
+        this.lessonContent = content;
     }
 }

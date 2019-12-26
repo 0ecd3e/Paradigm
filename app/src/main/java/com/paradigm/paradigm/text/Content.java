@@ -15,6 +15,7 @@ import java.io.Serializable;
 })
 public abstract class Content implements Serializable {
     protected String name;
+    protected String description;
     protected boolean isComplete;
 
     public Content() {
@@ -34,6 +35,14 @@ public abstract class Content implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String text) {
+        this.description = description;
     }
 
     public boolean isComplete() {

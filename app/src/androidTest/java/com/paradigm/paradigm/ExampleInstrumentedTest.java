@@ -40,7 +40,7 @@ public class ExampleInstrumentedTest {
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            inputStream = assetManager.open("src/test.json");
+            inputStream = assetManager.open("courses/java/test.json");
             java = objectMapper.readValue(inputStream, Course.class);
         } catch (IOException e) {
             e.printStackTrace();
