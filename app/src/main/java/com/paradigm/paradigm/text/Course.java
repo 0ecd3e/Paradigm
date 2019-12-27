@@ -18,7 +18,7 @@ public class Course extends Content {
 
     @Override
     public String storedName() {
-        return null;
+        return "courses/java/module1/lesson1/lesson1.txt";
     }
 
     public Set<ContentModule> getModules() {

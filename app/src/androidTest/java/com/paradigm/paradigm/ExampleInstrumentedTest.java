@@ -7,6 +7,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paradigm.paradigm.text.ContentLoader;
 import com.paradigm.paradigm.text.Course;
 
 import org.junit.Test;
@@ -45,5 +46,11 @@ public class ExampleInstrumentedTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        java.setDescription("test");
+
+        ContentLoader contentLoader = new ContentLoader();
+        contentLoader.loadContent(java, assetManager);
+
     }
 }

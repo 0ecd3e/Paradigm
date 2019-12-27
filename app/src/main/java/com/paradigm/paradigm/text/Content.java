@@ -42,7 +42,7 @@ public abstract class Content implements Serializable {
     }
 
     public void setDescription(String text) {
-        this.description = description;
+        this.description = text;
     }
 
     public boolean isComplete() {

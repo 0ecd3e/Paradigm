@@ -1,7 +1,5 @@
 package com.paradigm.paradigm;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.exercises.answer.Answer;
 import com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer;
@@ -71,7 +69,7 @@ public class ContentTest {
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            objectMapper.writeValue(new File("src/test.json"), java);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/test.json"), java);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -85,10 +83,6 @@ public class ContentTest {
 
         try {
             test = objectMapper.readValue(new File("courses/java/test.json"), Course.class);
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
