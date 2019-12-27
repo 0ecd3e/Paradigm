@@ -46,6 +46,7 @@ public class ExampleInstrumentedTest {
         try {
             inputStream = assetManager.open("courses/java/courseJava.json");
             java = objectMapper.readValue(inputStream, Course.class);
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -56,8 +57,10 @@ public class ExampleInstrumentedTest {
         contentLoader.loadDescription(java, assetManager);
 
         for (ContentModule module : java.getModules()) {
+            contentLoader.loadDescription(module, assetManager);
             Set<Lesson> lessons = module.getLessons();
             for (Lesson lesson : lessons) {
+                contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
             }
         }

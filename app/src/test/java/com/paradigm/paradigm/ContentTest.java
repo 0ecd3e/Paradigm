@@ -25,12 +25,12 @@ public class ContentTest {
         Lesson l1 = new Lesson("lesson1");
         Lesson l2 = new Lesson("lesson2");
         Lesson l3 = new Lesson("lesson3");
-        Lesson l4 = new Lesson("lesson4");
-        Lesson l5 = new Lesson("lesson5");
-        Lesson l6 = new Lesson("lesson6");
-        Lesson l7 = new Lesson("lesson7");
-        Lesson l8 = new Lesson("lesson8");
-        Lesson l9 = new Lesson("lesson9");
+        Lesson l4 = new Lesson("lesson1");
+        Lesson l5 = new Lesson("lesson2");
+        Lesson l6 = new Lesson("lesson3");
+        Lesson l7 = new Lesson("lesson1");
+        Lesson l8 = new Lesson("lesson2");
+        Lesson l9 = new Lesson("lesson3");
 
         mod1.addLesson(l1);
         mod1.addLesson(l2);
@@ -51,10 +51,10 @@ public class ContentTest {
 
         Question q1 = new MultipleChoiceQuestion("q1", a1);
         Question q2 = new MultipleChoiceQuestion("q2", a2);
-        Question q3 = new MultipleChoiceQuestion("q3", a3);
-        Question q4 = new MultipleChoiceQuestion("q4", a4);
-        Question q5 = new MultipleChoiceQuestion("q5", a5);
-        Question q6 = new MultipleChoiceQuestion("q6", a6);
+        Question q3 = new MultipleChoiceQuestion("q1", a3);
+        Question q4 = new MultipleChoiceQuestion("q2", a4);
+        Question q5 = new MultipleChoiceQuestion("q1", a5);
+        Question q6 = new MultipleChoiceQuestion("q2", a6);
 
         mod1.addQuestion(q1);
         mod1.addQuestion(q2);

@@ -14,6 +14,8 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = Lesson.class),
 })
 public abstract class Content implements Serializable {
+    public static final String DESC_FILE = "description.txt";
+    public static final String DIR_ROOT = "courses/";
     protected String name;
     protected String description;
     protected boolean isComplete;

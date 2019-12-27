@@ -22,7 +22,7 @@ public class ContentModule extends Content {
 
     @Override
     public String descriptionPath() {
-        return null;
+        return DIR_ROOT + parentCourse + "/" + name + "/" + DESC_FILE;
     }
 
     public void clearParentCourse() {

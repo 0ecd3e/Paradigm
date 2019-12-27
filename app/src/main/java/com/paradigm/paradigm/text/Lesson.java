@@ -39,7 +39,7 @@ public class Lesson extends Content {
 
     @Override
     public String descriptionPath() {
-        return null;
+        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + DESC_FILE;
     }
 
     public String getLessonContent() {
@@ -51,6 +51,6 @@ public class Lesson extends Content {
     }
 
     public String lessonContentPath() {
-        return "courses/" + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
+        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
     }
 }

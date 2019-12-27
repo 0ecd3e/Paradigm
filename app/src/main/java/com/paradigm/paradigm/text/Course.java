@@ -18,7 +18,7 @@ public class Course extends Content {
 
     @Override
     public String descriptionPath() {
-        return "courses/" + name + "/description.txt";
+        return DIR_ROOT + name + "/" + DESC_FILE;
     }
 
     public Set<ContentModule> getModules() {
