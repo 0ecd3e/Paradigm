@@ -16,6 +16,7 @@ import java.io.Serializable;
 public abstract class Content implements Serializable {
     public static final String DESC_FILE = "description.txt";
     public static final String DIR_ROOT = "courses/";
+    public static final String Q_FILE = "questions.json";
     protected String name;
     protected String description;
     protected boolean isComplete;

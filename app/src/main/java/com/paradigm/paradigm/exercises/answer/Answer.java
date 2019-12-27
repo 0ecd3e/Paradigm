@@ -13,21 +13,21 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = FillInBlankAnswer.class),
 })
 public abstract class Answer implements Serializable {
-    protected String theAnswer;
+    protected String bestAnswer;
 
     public Answer() {
         super();
     }
 
     public Answer(String answer) {
-        theAnswer = answer;
+        bestAnswer = answer;
     }
 
     public String getAnswer() {
-        return theAnswer;
+        return bestAnswer;
     }
 
     public void setAnswer(String answer) {
-        theAnswer = answer;
+        bestAnswer = answer;
     }
 }

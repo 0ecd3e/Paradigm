@@ -1,0 +1,93 @@
+{
+  "type": "com.paradigm.paradigm.text.ContentModule",
+  "name": "module2",
+  "description": null,
+  "lessons": [],
+  "questions": [
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "question": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "byvdfs xfte",
+          "stvafddfring",
+          "aradfvray"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "question": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "question": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "fvfsoo",
+          "bsfdar"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "question": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "question": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "pubadfdaflic",
+          "privafdvdfvate",
+          "vovadfvsdfid"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "question": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    }
+  ],
+  "parentCourse": null,
+  "complete": false
+}

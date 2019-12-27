@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FillInBlankAnswer extends Answer {
-    private List<String> answerList;
+    private List<String> acceptedAnswers;
 
     public FillInBlankAnswer() {
         super();
@@ -12,19 +12,19 @@ public class FillInBlankAnswer extends Answer {
 
     public FillInBlankAnswer(String answer) {
         super(answer);
-        answerList = new ArrayList<>();
-        answerList.add(answer);
+        acceptedAnswers = new ArrayList<>();
+        acceptedAnswers.add(answer);
     }
 
     public void addAlternativeAnswer(String answer) {
-        answerList.add(answer);
+        acceptedAnswers.add(answer);
     }
 
     public void removeAlternativeAnswer(String answer) {
-        answerList.remove(answer);
+        acceptedAnswers.remove(answer);
     }
 
-    public List<String> getAnswerList() {
-        return answerList;
+    public List<String> getAcceptedAnswers() {
+        return acceptedAnswers;
     }
 }

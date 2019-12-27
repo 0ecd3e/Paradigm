@@ -58,6 +58,7 @@ public class ExampleInstrumentedTest {
 
         for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
+            contentLoader.loadQuestions(module, assetManager);
             Set<Lesson> lessons = module.getLessons();
             for (Lesson lesson : lessons) {
                 contentLoader.loadDescription(lesson, assetManager);

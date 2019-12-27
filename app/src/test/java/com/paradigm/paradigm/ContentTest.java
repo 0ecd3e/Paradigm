@@ -2,7 +2,9 @@ package com.paradigm.paradigm;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.exercises.answer.Answer;
+import com.paradigm.paradigm.exercises.answer.FillInBlankAnswer;
 import com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer;
+import com.paradigm.paradigm.exercises.question.FillInBlankQuestion;
 import com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion;
 import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.text.ContentModule;
@@ -43,18 +45,29 @@ public class ContentTest {
         mod3.addLesson(l9);
 
         Answer a1 = new MultipleChoiceAnswer("A");
-        Answer a2 = new MultipleChoiceAnswer("B");
+        FillInBlankAnswer a2 = new FillInBlankAnswer("B");
         Answer a3 = new MultipleChoiceAnswer("C");
-        Answer a4 = new MultipleChoiceAnswer("D");
+        FillInBlankAnswer a4 = new FillInBlankAnswer("D");
         Answer a5 = new MultipleChoiceAnswer("E");
-        Answer a6 = new MultipleChoiceAnswer("F");
+        FillInBlankAnswer a6 = new FillInBlankAnswer("F");
+
+        a2.addAlternativeAnswer("public");
+        a2.addAlternativeAnswer("private");
+        a2.addAlternativeAnswer("void");
+
+        a4.addAlternativeAnswer("byte");
+        a4.addAlternativeAnswer("string");
+        a4.addAlternativeAnswer("array");
+
+        a6.addAlternativeAnswer("foo");
+        a6.addAlternativeAnswer("bar");
 
         Question q1 = new MultipleChoiceQuestion("q1", a1);
-        Question q2 = new MultipleChoiceQuestion("q2", a2);
+        Question q2 = new FillInBlankQuestion("q2", a2);
         Question q3 = new MultipleChoiceQuestion("q1", a3);
-        Question q4 = new MultipleChoiceQuestion("q2", a4);
+        Question q4 = new FillInBlankQuestion("q2", a4);
         Question q5 = new MultipleChoiceQuestion("q1", a5);
-        Question q6 = new MultipleChoiceQuestion("q2", a6);
+        Question q6 = new FillInBlankQuestion("q2", a6);
 
         mod1.addQuestion(q1);
         mod1.addQuestion(q2);
@@ -71,6 +84,50 @@ public class ContentTest {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), java);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void createQuestionJson() {
+        ContentModule testMod = new ContentModule("module2");
+
+        Answer a1 = new MultipleChoiceAnswer("Z");
+        FillInBlankAnswer a2 = new FillInBlankAnswer("X");
+        Answer a3 = new MultipleChoiceAnswer("Z");
+        FillInBlankAnswer a4 = new FillInBlankAnswer("X");
+        Answer a5 = new MultipleChoiceAnswer("Z");
+        FillInBlankAnswer a6 = new FillInBlankAnswer("X");
+
+        a2.addAlternativeAnswer("pubadfdaflic");
+        a2.addAlternativeAnswer("privafdvdfvate");
+        a2.addAlternativeAnswer("vovadfvsdfid");
+
+        a4.addAlternativeAnswer("byvdfs xfte");
+        a4.addAlternativeAnswer("stvafddfring");
+        a4.addAlternativeAnswer("aradfvray");
+
+        a6.addAlternativeAnswer("fvfsoo");
+        a6.addAlternativeAnswer("bsfdar");
+
+        Question q1 = new MultipleChoiceQuestion("q1", a1);
+        Question q2 = new FillInBlankQuestion("q2", a2);
+        Question q3 = new MultipleChoiceQuestion("q1", a3);
+        Question q4 = new FillInBlankQuestion("q2", a4);
+        Question q5 = new MultipleChoiceQuestion("q1", a5);
+        Question q6 = new FillInBlankQuestion("q2", a6);
+
+        testMod.addQuestion(q1);
+        testMod.addQuestion(q2);
+        testMod.addQuestion(q3);
+        testMod.addQuestion(q4);
+        testMod.addQuestion(q5);
+        testMod.addQuestion(q6);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/questions.json"), testMod);
         } catch (IOException e) {
             e.printStackTrace();
         }

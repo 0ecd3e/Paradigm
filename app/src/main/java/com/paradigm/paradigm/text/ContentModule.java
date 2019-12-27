@@ -25,6 +25,10 @@ public class ContentModule extends Content {
         return DIR_ROOT + parentCourse + "/" + name + "/" + DESC_FILE;
     }
 
+    public String questionsPath() {
+        return DIR_ROOT + parentCourse + "/" + name + "/" + Q_FILE;
+    }
+
     public void clearParentCourse() {
         parentCourse = null;
     }
@@ -63,6 +67,10 @@ public class ContentModule extends Content {
 
     public void removeQuestion(Question question) {
         questions.remove(question);
+    }
+
+    public void replaceQuestions(Set<Question> questions) {
+        this.questions = questions;
     }
 
     public void setParents() {

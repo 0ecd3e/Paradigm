@@ -16,7 +16,7 @@ public class FillInBlankQuestion extends Question {
 
     @Override
     public void checkAnswer(String input, Answer answer) {
-        List<String> answerList = ((FillInBlankAnswer) answer).getAnswerList();
+        List<String> answerList = ((FillInBlankAnswer) answer).getAcceptedAnswers();
         boolean answerMatched = false;
         for (String possibleAnswer : answerList) {
             if (input.equals(possibleAnswer)) {
