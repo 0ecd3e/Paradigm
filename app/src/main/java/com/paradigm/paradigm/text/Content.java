@@ -27,7 +27,7 @@ public abstract class Content implements Serializable {
         isComplete = false;
     }
 
-    public abstract String storedName();
+    public abstract String descriptionPath();
 
     public String getName() {
         return name;

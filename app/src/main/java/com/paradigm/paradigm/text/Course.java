@@ -17,8 +17,8 @@ public class Course extends Content {
     }
 
     @Override
-    public String storedName() {
-        return "courses/java/module1/lesson1/lesson1.txt";
+    public String descriptionPath() {
+        return "courses/" + name + "/description.txt";
     }
 
     public Set<ContentModule> getModules() {
@@ -27,10 +27,18 @@ public class Course extends Content {
 
     public void addModule(ContentModule module) {
         modules.add(module);
+        module.setParentCourse(name);
     }
 
     public void removeModule(ContentModule module) {
         modules.remove(module);
+        module.clearParentCourse();
+    }
+
+    public void setParents() {
+        for (ContentModule module : modules) {
+            module.setParents();
+        }
     }
 
 }

@@ -8,13 +8,16 @@ import androidx.test.runner.AndroidJUnit4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.text.ContentLoader;
+import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
+import com.paradigm.paradigm.text.Lesson;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
@@ -41,7 +44,7 @@ public class ExampleInstrumentedTest {
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            inputStream = assetManager.open("courses/java/test.json");
+            inputStream = assetManager.open("courses/java/courseJava.json");
             java = objectMapper.readValue(inputStream, Course.class);
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,7 +53,14 @@ public class ExampleInstrumentedTest {
         java.setDescription("test");
 
         ContentLoader contentLoader = new ContentLoader();
-        contentLoader.loadContent(java, assetManager);
+        contentLoader.loadDescription(java, assetManager);
+
+        for (ContentModule module : java.getModules()) {
+            Set<Lesson> lessons = module.getLessons();
+            for (Lesson lesson : lessons) {
+                contentLoader.loadLessonContent(lesson, assetManager);
+            }
+        }
 
     }
 }

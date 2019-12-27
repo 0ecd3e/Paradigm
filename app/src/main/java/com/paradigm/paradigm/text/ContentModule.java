@@ -8,6 +8,7 @@ import java.util.Set;
 public class ContentModule extends Content {
     private Set<Lesson> lessons;
     private Set<Question> questions;
+    private String parentCourse;
 
     public ContentModule() {
         super();
@@ -20,8 +21,20 @@ public class ContentModule extends Content {
     }
 
     @Override
-    public String storedName() {
+    public String descriptionPath() {
         return null;
+    }
+
+    public void clearParentCourse() {
+        parentCourse = null;
+    }
+
+    public String getParentCourse() {
+        return parentCourse;
+    }
+
+    public void setParentCourse(String course) {
+        this.parentCourse = course;
     }
 
     public Set<Lesson> getLessons() {
@@ -34,10 +47,14 @@ public class ContentModule extends Content {
 
     public void addLesson(Lesson lesson) {
         lessons.add(lesson);
+        lesson.setParentContentModule(name);
+        lesson.setParentCourse(parentCourse);
     }
 
     public void removeLesson(Lesson lesson) {
         lessons.remove(lesson);
+        lesson.clearParentContentModule();
+        lesson.clearParentCourse();
     }
 
     public void addQuestion(Question question) {
@@ -46,5 +63,17 @@ public class ContentModule extends Content {
 
     public void removeQuestion(Question question) {
         questions.remove(question);
+    }
+
+    public void setParents() {
+        for (Lesson lesson : lessons) {
+            lesson.setParentContentModule(name);
+            lesson.setParentCourse(parentCourse);
+        }
+
+        for (Question question : questions) {
+            question.setParentContentModule(name);
+            question.setParentCourse(parentCourse);
+        }
     }
 }

@@ -18,6 +18,8 @@ public abstract class Question implements Serializable {
     protected String question;
     protected Answer answer;
     protected boolean answeredCorrectly;
+    protected String parentContentModule;
+    protected String parentCourse;
 
     public Question() {
         super();
@@ -27,6 +29,30 @@ public abstract class Question implements Serializable {
         this.question = question;
         this.answer = answer;
         answeredCorrectly = false;
+    }
+
+    public String getParentContentModule() {
+        return parentContentModule;
+    }
+
+    public void setParentContentModule(String contentModule) {
+        this.parentContentModule = contentModule;
+    }
+
+    public void clearParentContentModule() {
+        this.parentContentModule = null;
+    }
+
+    public void clearParentCourse() {
+        parentCourse = null;
+    }
+
+    public String getParentCourse() {
+        return parentCourse;
+    }
+
+    public void setParentCourse(String course) {
+        this.parentCourse = course;
     }
 
     public String getQuestion() {

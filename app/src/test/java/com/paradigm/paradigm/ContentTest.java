@@ -66,10 +66,11 @@ public class ContentTest {
         java.addModule(mod1);
         java.addModule(mod2);
         java.addModule(mod3);
+        java.setParents();
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/test.json"), java);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), java);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,7 +83,7 @@ public class ContentTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            test = objectMapper.readValue(new File("courses/java/test.json"), Course.class);
+            test = objectMapper.readValue(new File("src/courseJava.json"), Course.class);
         } catch (IOException e) {
             e.printStackTrace();
         }

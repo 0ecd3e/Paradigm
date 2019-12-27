@@ -8,9 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ContentLoader {
-    public void loadContent(Content content, AssetManager assetManager) {
-        String contentPath = content.storedName();
-        String textContent;
+    public String loadFromAssets(String contentPath, AssetManager assetManager) {
+        String textContent = "";
 
         try {
             InputStream inputStream = assetManager.open(contentPath);
@@ -24,9 +23,21 @@ public class ContentLoader {
             }
 
             textContent = stringBuilder.toString();
-            content.setDescription(textContent);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return textContent;
+    }
+
+    public void loadDescription(Content content, AssetManager assetManager) {
+        String descriptionPath = content.descriptionPath();
+        String desc = loadFromAssets(descriptionPath, assetManager);
+        content.setDescription(desc);
+    }
+
+    public void loadLessonContent(Lesson lesson, AssetManager assetManager) {
+        String contentPath = lesson.lessonContentPath();
+        String content = loadFromAssets(contentPath, assetManager);
+        lesson.setLessonContent(content);
     }
 }
