@@ -3,6 +3,7 @@ package com.paradigm.paradigm.exercises.question;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.paradigm.paradigm.exercises.answer.Answer;
+import com.paradigm.paradigm.profile.UserProgress;
 
 import java.io.Serializable;
 
@@ -15,9 +16,10 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = FillInBlankQuestion.class),
 })
 public abstract class Question implements Serializable {
-    protected String question;
+    protected String questionText;
+    protected String questionName;
     protected Answer answer;
-    protected boolean answeredCorrectly;
+    //    protected boolean answeredCorrectly;
     protected String parentContentModule;
     protected String parentCourse;
 
@@ -25,10 +27,11 @@ public abstract class Question implements Serializable {
         super();
     }
 
-    public Question(String question, Answer answer) {
-        this.question = question;
+    public Question(String questionName, String questionText, Answer answer) {
+        this.questionName = questionName;
+        this.questionText = questionText;
         this.answer = answer;
-        answeredCorrectly = false;
+//        answeredCorrectly = false;
     }
 
     public String getParentContentModule() {
@@ -55,12 +58,20 @@ public abstract class Question implements Serializable {
         this.parentCourse = course;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getQuestionText() {
+        return questionText;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
+
+    public String getQuestionName() {
+        return questionName;
+    }
+
+    public void setQuestionName(String name) {
+        this.questionName = name;
     }
 
     public Answer getAnswer() {
@@ -71,19 +82,21 @@ public abstract class Question implements Serializable {
         this.answer = answer;
     }
 
-    public boolean isAnsweredCorrectly() {
-        return answeredCorrectly;
-    }
+//    public boolean isAnsweredCorrectly() {
+//        return answeredCorrectly;
+//    }
 
-    public void setAnsweredCorrectly(boolean status) {
-        answeredCorrectly = status;
-    }
+//    public void setAnsweredCorrectly(boolean status) {
+//        answeredCorrectly = status;
+//    }
 
-    public void checkAnswer(String input, Answer answer) {
+    public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
         if (input.equals(answer.getAnswer())) {
-            setAnsweredCorrectly(true);
+//            setAnsweredCorrectly(true);
+            userProgress.markQuestionCorrect(this);
         } else {
-            setAnsweredCorrectly(false);
+//            setAnsweredCorrectly(false);
+            userProgress.markQuestionIncorrect(this);
         }
     }
 }

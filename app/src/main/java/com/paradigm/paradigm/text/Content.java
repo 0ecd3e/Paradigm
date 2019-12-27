@@ -19,7 +19,7 @@ public abstract class Content implements Serializable {
     public static final String Q_FILE = "questions.json";
     protected String name;
     protected String description;
-    protected boolean isComplete;
+//    protected boolean isComplete;
 
     public Content() {
         super();
@@ -27,7 +27,7 @@ public abstract class Content implements Serializable {
 
     public Content(String name) {
         this.name = name;
-        isComplete = false;
+//        isComplete = false;
     }
 
     public abstract String descriptionPath();
@@ -47,12 +47,12 @@ public abstract class Content implements Serializable {
     public void setDescription(String text) {
         this.description = text;
     }
-
-    public boolean isComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(boolean status) {
-        this.isComplete = status;
-    }
+//
+//    public boolean isComplete() {
+//        return isComplete;
+//    }
+//
+//    public void setComplete(boolean status) {
+//        this.isComplete = status;
+//    }
 }

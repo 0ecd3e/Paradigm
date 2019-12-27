@@ -2,6 +2,9 @@ package com.paradigm.paradigm;
 
 import com.paradigm.paradigm.exercises.answer.FillInBlankAnswer;
 import com.paradigm.paradigm.exercises.question.FillInBlankQuestion;
+import com.paradigm.paradigm.profile.UserProgress;
+import com.paradigm.paradigm.text.ContentModule;
+import com.paradigm.paradigm.text.Course;
 
 import org.junit.Test;
 
@@ -14,19 +17,28 @@ public class FIBTest {
         FillInBlankAnswer answer = new FillInBlankAnswer("public");
         answer.addAlternativeAnswer("protected");
         answer.addAlternativeAnswer("private");
-        String question = "What are the visibility keywords?";
-        FillInBlankQuestion fibq = new FillInBlankQuestion(question, answer);
+        String questionText = "What are the visibility keywords?";
+        FillInBlankQuestion fibq = new FillInBlankQuestion("q1", questionText, answer);
 
-        assertFalse(fibq.isAnsweredCorrectly());
-        fibq.checkAnswer("Z", answer);
-        assertFalse(fibq.isAnsweredCorrectly());
-        fibq.checkAnswer("private", answer);
-        assertTrue(fibq.isAnsweredCorrectly());
-        fibq.checkAnswer("Z", answer);
-        assertFalse(fibq.isAnsweredCorrectly());
-        fibq.checkAnswer("protected", answer);
-        assertTrue(fibq.isAnsweredCorrectly());
-        fibq.checkAnswer("public", answer);
-        assertTrue(fibq.isAnsweredCorrectly());
+        ContentModule module = new ContentModule("module1");
+        module.addQuestion(fibq);
+        Course course = new Course("java");
+        course.addModule(module);
+        course.setParents();
+
+        UserProgress userProgress = new UserProgress();
+        userProgress.addCourse(course);
+
+        assertFalse(userProgress.isAnsweredCorrectly(fibq));
+        fibq.checkAnswer("Z", answer, userProgress);
+        assertFalse(userProgress.isAnsweredCorrectly(fibq));
+        fibq.checkAnswer("private", answer, userProgress);
+        assertTrue(userProgress.isAnsweredCorrectly(fibq));
+        fibq.checkAnswer("Z", answer, userProgress);
+        assertFalse(userProgress.isAnsweredCorrectly(fibq));
+        fibq.checkAnswer("protected", answer, userProgress);
+        assertTrue(userProgress.isAnsweredCorrectly(fibq));
+        fibq.checkAnswer("public", answer, userProgress);
+        assertTrue(userProgress.isAnsweredCorrectly(fibq));
     }
 }

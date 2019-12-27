@@ -7,6 +7,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.text.ContentLoader;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
@@ -66,5 +67,7 @@ public class ExampleInstrumentedTest {
             }
         }
 
+        UserProgress userProgress = new UserProgress();
+        userProgress.addCourse(java);
     }
 }

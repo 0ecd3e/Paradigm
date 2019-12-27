@@ -6,7 +6,8 @@
   "questions": [
     {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-      "question": "q2",
+      "questionText": "hfajlrhfn",
+      "questionName": "q2",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
         "acceptedAnswers": [
@@ -23,7 +24,8 @@
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-      "question": "q1",
+      "questionText": "f0y3w48uhrs",
+      "questionName": "q1",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"
@@ -34,7 +36,8 @@
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-      "question": "q2",
+      "questionText": "uhfwhulgi45",
+      "questionName": "q2",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
         "acceptedAnswers": [
@@ -50,7 +53,8 @@
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-      "question": "q1",
+      "questionText": "testq1",
+      "questionName": "q1",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"
@@ -61,7 +65,8 @@
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-      "question": "q2",
+      "questionText": "testq2",
+      "questionName": "q2",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
         "acceptedAnswers": [
@@ -78,7 +83,8 @@
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-      "question": "q1",
+      "questionText": "sdlkjjf;",
+      "questionName": "q1",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"

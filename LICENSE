@@ -44,7 +44,7 @@ Some parts of this app are licensed under the Apache 2.0 license found below:
       editorial revisions, annotations, elaborations, or other modifications
       represent, as a whole, an original work of authorship. For the purposes
       of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by question) to the interfaces of,
+      separable from, or merely link (or bind by questionText) to the interfaces of,
       the Work and Derivative Works thereof.
 
       "Contribution" shall mean any work of authorship, including
@@ -184,11 +184,11 @@ Some parts of this app are licensed under the Apache 2.0 license found below:
       replaced with your own identifying information. (Don't include
       the brackets!)  The text should be enclosed in the appropriate
       comment syntax for the file format. We also recommend that a
-      file or class question and description of purpose be included on the
+      file or class questionText and description of purpose be included on the
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [question of copyright owner]
+   Copyright [yyyy] [questionText of copyright owner]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

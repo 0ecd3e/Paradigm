@@ -39,7 +39,8 @@
       "questions": [
         {
           "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "question": "q1",
+          "questionText": "hfiu34h",
+          "questionName": "q1",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "C"
@@ -50,7 +51,8 @@
         },
         {
           "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "question": "q2",
+          "questionText": "fjlw3j4ht4",
+          "questionName": "q2",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
             "acceptedAnswers": [
@@ -105,7 +107,8 @@
       "questions": [
         {
           "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "question": "q1",
+          "questionText": "fjaljt34",
+          "questionName": "q1",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "E"
@@ -116,7 +119,8 @@
         },
         {
           "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "question": "q2",
+          "questionText": "flw34tnw4",
+          "questionName": "q2",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
             "acceptedAnswers": [
@@ -170,7 +174,8 @@
       "questions": [
         {
           "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "question": "q1",
+          "questionText": "fhiwj34",
+          "questionName": "q1",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "A"
@@ -181,7 +186,8 @@
         },
         {
           "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "question": "q2",
+          "questionText": "hfalsjht3",
+          "questionName": "q2",
           "answer": {
             "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
             "acceptedAnswers": [

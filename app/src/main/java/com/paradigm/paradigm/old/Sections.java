@@ -65,7 +65,7 @@ public class Sections {
         for (int i = 0; i < questionsList.size(); i++) {
             //Traverses list and checks bool value.
             if (questionsList.get(i).getFlag()) {
-                //Increment if question has been flagged as finished
+                //Increment if questionText has been flagged as finished
                 count++;
             }
         }

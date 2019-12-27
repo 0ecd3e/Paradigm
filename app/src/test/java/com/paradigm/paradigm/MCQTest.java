@@ -2,6 +2,9 @@ package com.paradigm.paradigm;
 
 import com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer;
 import com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion;
+import com.paradigm.paradigm.profile.UserProgress;
+import com.paradigm.paradigm.text.ContentModule;
+import com.paradigm.paradigm.text.Course;
 
 import org.junit.Test;
 
@@ -12,13 +15,21 @@ public class MCQTest {
     @Test
     public void testQuestion() {
         MultipleChoiceAnswer answer = new MultipleChoiceAnswer("B");
-        String question = "What is the second letter of the alphabet?";
-        MultipleChoiceQuestion mcq = new MultipleChoiceQuestion(question, answer);
+        String questionText = "What is the second letter of the alphabet?";
+        MultipleChoiceQuestion mcq = new MultipleChoiceQuestion("q1", questionText, answer);
 
-        assertFalse(mcq.isAnsweredCorrectly());
-        mcq.checkAnswer("Z", answer);
-        assertFalse(mcq.isAnsweredCorrectly());
-        mcq.checkAnswer("B", answer);
-        assertTrue(mcq.isAnsweredCorrectly());
+        ContentModule module = new ContentModule("module1");
+        module.addQuestion(mcq);
+        Course course = new Course("java");
+        course.addModule(module);
+
+        UserProgress userProgress = new UserProgress();
+        userProgress.addCourse(course);
+
+        assertFalse(userProgress.isAnsweredCorrectly(mcq));
+        mcq.checkAnswer("Z", answer, userProgress);
+        assertFalse(userProgress.isAnsweredCorrectly(mcq));
+        mcq.checkAnswer("B", answer, userProgress);
+        assertTrue(userProgress.isAnsweredCorrectly(mcq));
     }
 }

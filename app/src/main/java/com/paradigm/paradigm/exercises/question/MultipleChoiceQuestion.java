@@ -7,7 +7,7 @@ public class MultipleChoiceQuestion extends Question {
         super();
     }
 
-    public MultipleChoiceQuestion(String question, Answer answer) {
-        super(question, answer);
+    public MultipleChoiceQuestion(String questionName, String questionText, Answer answer) {
+        super(questionName, questionText, answer);
     }
 }

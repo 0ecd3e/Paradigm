@@ -62,12 +62,12 @@ public class ContentTest {
         a6.addAlternativeAnswer("foo");
         a6.addAlternativeAnswer("bar");
 
-        Question q1 = new MultipleChoiceQuestion("q1", a1);
-        Question q2 = new FillInBlankQuestion("q2", a2);
-        Question q3 = new MultipleChoiceQuestion("q1", a3);
-        Question q4 = new FillInBlankQuestion("q2", a4);
-        Question q5 = new MultipleChoiceQuestion("q1", a5);
-        Question q6 = new FillInBlankQuestion("q2", a6);
+        Question q1 = new MultipleChoiceQuestion("q1", "fhiwj34", a1);
+        Question q2 = new FillInBlankQuestion("q2", "hfalsjht3", a2);
+        Question q3 = new MultipleChoiceQuestion("q1", "hfiu34h", a3);
+        Question q4 = new FillInBlankQuestion("q2", "fjlw3j4ht4", a4);
+        Question q5 = new MultipleChoiceQuestion("q1", "fjaljt34", a5);
+        Question q6 = new FillInBlankQuestion("q2", "flw34tnw4", a6);
 
         mod1.addQuestion(q1);
         mod1.addQuestion(q2);
@@ -111,12 +111,12 @@ public class ContentTest {
         a6.addAlternativeAnswer("fvfsoo");
         a6.addAlternativeAnswer("bsfdar");
 
-        Question q1 = new MultipleChoiceQuestion("q1", a1);
-        Question q2 = new FillInBlankQuestion("q2", a2);
-        Question q3 = new MultipleChoiceQuestion("q1", a3);
-        Question q4 = new FillInBlankQuestion("q2", a4);
-        Question q5 = new MultipleChoiceQuestion("q1", a5);
-        Question q6 = new FillInBlankQuestion("q2", a6);
+        Question q1 = new MultipleChoiceQuestion("q1", "testq1", a1);
+        Question q2 = new FillInBlankQuestion("q2", "testq2", a2);
+        Question q3 = new MultipleChoiceQuestion("q1", "sdlkjjf;", a3);
+        Question q4 = new FillInBlankQuestion("q2", "hfajlrhfn", a4);
+        Question q5 = new MultipleChoiceQuestion("q1", "f0y3w48uhrs", a5);
+        Question q6 = new FillInBlankQuestion("q2", "uhfwhulgi45", a6);
 
         testMod.addQuestion(q1);
         testMod.addQuestion(q2);
