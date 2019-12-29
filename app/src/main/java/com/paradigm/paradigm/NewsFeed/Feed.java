@@ -1,9 +1,6 @@
 package com.paradigm.paradigm.NewsFeed;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
-
+/*
 public class Feed {
 
     private Vector<Article> list=new Vector<>();
@@ -72,3 +69,5 @@ public class Feed {
         f.printList();
     }
 }
+
+ */

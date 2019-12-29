@@ -16,21 +16,21 @@ public class Sections {
         questionsList=v;
     }
 
-    public boolean isComplete(){     //Shows whether the Section has been completed.
-        int count=0;
-        for(int i=0; i<questionsList.size(); i++){
-            //Traverses list and checks bool value.
-            if(questionsList.get(i).getFlag()){
-                //Increment if question has been flagged as finished
-                count++;
-            }
-        }
-//        if(count==numQuestions) {   //Section is complete if all questions are finished
-//            return true;
+//    public boolean isComplete(){     //Shows whether the Section has been completed.
+//        int count=0;
+//        for(int i=0; i<questionsList.size(); i++){
+//            //Traverses list and checks bool value.
+//            if(questionsList.get(i).getFlag()){
+//                //Increment if question has been flagged as finished
+//                count++;
+//            }
 //        }
-//        return false;
-        return count==numQuestions;
-    }
+////        if(count==numQuestions) {   //Section is complete if all questions are finished
+////            return true;
+////        }
+////        return false;
+//        return count==numQuestions;
+//    }
 
     public void push(Questions q){  //Adds element at end of vector
         questionsList.add(q);
