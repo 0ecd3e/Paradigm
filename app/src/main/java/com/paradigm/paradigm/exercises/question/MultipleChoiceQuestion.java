@@ -11,3 +11,4 @@ public class MultipleChoiceQuestion extends Question {
         super(questionName, questionText, answer);
     }
 }
+
