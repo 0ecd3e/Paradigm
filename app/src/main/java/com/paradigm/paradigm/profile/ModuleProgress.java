@@ -3,8 +3,8 @@ package com.paradigm.paradigm.profile;
 import java.util.Map;
 
 class ModuleProgress extends ProgressEntry {
-    private Map<LessonProgress, LessonProgress> lessons;
-    private Map<QuestionProgress, QuestionProgress> questions;
+    private Map<String, LessonProgress> lessons;
+    private Map<String, QuestionProgress> questions;
 
     public ModuleProgress() {
         super();
@@ -26,5 +26,22 @@ class ModuleProgress extends ProgressEntry {
 
         setComplete();
         return isComplete;
+    }
+
+    public void setLessonProgress(String lessonName, boolean isComplete) {
+        LessonProgress lessonProgress = new LessonProgress();
+        lessonProgress.isComplete = isComplete;
+        lessons.put(lessonName, lessonProgress);
+    }
+
+    public void setQuestionProgress(String questionName, boolean isComplete) {
+        QuestionProgress questionProgress = new QuestionProgress();
+        questionProgress.isComplete = isComplete;
+        questions.put(questionName, questionProgress);
+    }
+
+    public boolean getQuestionProgress(String questionName) {
+        QuestionProgress questionProgress = questions.get(questionName);
+        return questionProgress.isComplete();
     }
 }
