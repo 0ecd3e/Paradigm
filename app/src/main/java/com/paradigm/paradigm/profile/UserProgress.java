@@ -1,6 +1,8 @@
 package com.paradigm.paradigm.profile;
 
 import com.paradigm.paradigm.exercises.question.Question;
+import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
+import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;

@@ -1,8 +1,8 @@
-package com.paradigm.paradigm.profile;
+package com.paradigm.paradigm.profile.progressEntries;
 
 import java.util.Map;
 
-class ModuleProgress extends ProgressEntry {
+public class ModuleProgress extends ProgressEntry {
     private Map<String, LessonProgress> lessons;
     private Map<String, QuestionProgress> questions;
 
