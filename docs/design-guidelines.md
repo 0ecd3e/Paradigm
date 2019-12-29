@@ -13,7 +13,7 @@ Figure out what the function takes as an input, what it does, and what it will o
 
 Leave a comment describing the function and what it does.
 
-Name the function. Pick a name that is useful and self-explanatory.
+Name the function. Pick a questionText that is useful and self-explanatory.
 
 Define function body.
 

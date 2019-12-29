@@ -1,17 +1,17 @@
-package com.paradigm.paradigm.text;
 
-import com.paradigm.paradigm.exercises.Questions;
-
+package com.paradigm.paradigm.old;
 import java.util.Vector;
 
 public class Sections {
+    private String name;
     private int numQuestions=0;
     private TextModule t;
     private Vector<Questions> questionsList=new Vector<>();
 
     public Sections(){}     //Default constructor
 
-    public Sections(TextModule tm, Vector<Questions> v){    //Constructor
+    public Sections(final String nm, TextModule tm, Vector<Questions> v){    //Constructor
+        name=nm;
         t=tm;
         questionsList=v;
     }
@@ -25,10 +25,11 @@ public class Sections {
                 count++;
             }
         }
-        if(count==numQuestions) {   //Section is complete if all questions are finished
-            return true;
-        }
-        return false;
+//        if(count==numQuestions) {   //Section is complete if all questions are finished
+//            return true;
+//        }
+//        return false;
+        return count==numQuestions;
     }
 
     public void push(Questions q){  //Adds element at end of vector
@@ -39,6 +40,13 @@ public class Sections {
     public void pop(){  //Removes last element from vector
         questionsList.removeElementAt(questionsList.size()-1);
         numQuestions=questionsList.size();  //Updates size
+    }
+
+    public void read(final String textName, final Vector<String> questionNames){
+        t.read(name+"\\"+textName);
+        for(int i=0; i<questionNames.size(); i++){
+            questionsList.get(i).load(name+"\\"+questionNames.get(i));
+        }
     }
 
     public TextModule getModule() {
@@ -61,19 +69,16 @@ public class Sections {
         questionsList.setElementAt(q,index);
     }
 
-    public static void main(String args[]){     //Test function
-        Sections s=new Sections();
-        System.out.print(s.getSize()+"\r\n");
-        Questions q=new Questions("Is this it?", "No it isn't.");
-        s.push(q);
-        System.out.print(s.getSize()+"\r\n");
-        Questions q2=new Questions("What are those", "I dunno");
-        s.push(q2);
-        System.out.print(s.getSize()+"\r\n");
-        Questions p=s.get(0);
-        p.printOutput();
-        s.pop();
-        System.out.print(s.getSize()+"\r\n");
-        System.out.print(s.isComplete());
+    public boolean isComplete() {     //Shows whether the Section has been completed.
+        int count = 0;
+        for (int i = 0; i < questionsList.size(); i++) {
+            //Traverses list and checks bool value.
+            if (questionsList.get(i).getFlag()) {
+                //Increment if questionText has been flagged as finished
+                count++;
+            }
+        }
+        //Section is complete if all questions are finished
+        return count == numQuestions;
     }
 }
