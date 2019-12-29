@@ -50,17 +50,17 @@ public class Chapter {
         numSections=arr.size();
     }
 
-    public static void main(String[] args) {     //Test function
-        Chapter c=new Chapter();
-        System.out.print(c.getSize()+"\r\n");
-        Sections s1=new Sections();
-        c.pushSection(s1);
-        System.out.print(c.getSize()+"\r\n");
-        Sections s2=new Sections();
-        c.pushSection(s2);
-        System.out.print(c.getSize()+"\r\n");
-        System.out.print(c.getProgress()+"\r\n");
-        System.out.print(c.isComplete()+"\r\n");
-        System.out.print(c.get(0));
-    }
+//    public static void main(String[] args) {     //Test function
+//        Chapter c=new Chapter();
+//        System.out.print(c.getSize()+"\r\n");
+//        Sections s1=new Sections();
+//        c.pushSection(s1);
+//        System.out.print(c.getSize()+"\r\n");
+//        Sections s2=new Sections();
+//        c.pushSection(s2);
+//        System.out.print(c.getSize()+"\r\n");
+//        System.out.print(c.getProgress()+"\r\n");
+//        System.out.print(c.isComplete()+"\r\n");
+//        System.out.print(c.get(0));
+//    }
 }
