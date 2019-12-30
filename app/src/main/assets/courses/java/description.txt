@@ -1,0 +1,1 @@
+This is the Java Basics course. In this course, you will cover around 2h of content that will get you up and running with Java.
