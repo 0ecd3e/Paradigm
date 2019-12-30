@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Feed {
 
-    private Vector<Article> list=new Vector<>();
+    private ArrayList<Article> list = new ArrayList<>();
 
     private static String getTitle(final String line){
         //Formats article title from RSS.
@@ -36,27 +36,32 @@ public class Feed {
     }
 
     public void printList(){
-        for (int i=0; i<list.size(); i++){
-            list.elementAt(i).print();
+//        for (int i=0; i<list.size(); i++){
+//            list.elementAt(i).print();
+//        }
+        for (Article article : list) {
+            article.print();
         }
     }
 
+    //TODO: likely a problem with the loop, not getting the next article properly
     public void setFeed(final String address){
         //Establishes connection to RSS and retrieves article info.
         try {
             URL newsUrl = new URL(address);
             BufferedReader in = new BufferedReader(new InputStreamReader(newsUrl.openStream()));
-            StringBuilder source= new StringBuilder();
+            StringBuilder source = new StringBuilder();
             String line;
-            Article temp=new Article();
-            while ((line=in.readLine())!=null){
-                if(line.contains("<title>")) {
+            Article temp = new Article();
+
+            while ((line = in.readLine()) != null) {
+                if (line.contains("<title>")) {
                     temp.setTitle(getTitle(line));
                 }
-                if(line.contains("<pubDate>")){
+                if (line.contains("<pubDate>")) {
                     temp.setTime(getTimeStamp(line));
                 }
-                if(line.contains("<link>")){
+                if (line.contains("<link>")) {
                     temp.setUrl(getLink(line));
                 }
                 list.add(temp);
@@ -65,12 +70,5 @@ public class Feed {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args){
-        String url="https://www.cbc.ca/cmlink/rss-canada";
-        Feed f=new Feed();
-        f.setFeed(url);
-        f.printList();
     }
 }

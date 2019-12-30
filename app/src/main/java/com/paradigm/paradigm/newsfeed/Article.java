@@ -5,34 +5,33 @@ public class Article {
     private String time;
     private String url;
 
-
-    public void setTitle(final String name){
-        title=name;
+    public final String getTitle() {
+        return title;
     }
 
-    public void setTime(final String timeStamp){
-        time=timeStamp;
+    public void setTitle(final String name) {
+        title = name;
     }
 
-    public void setUrl(final String link){
-        url=link;
+    public final String getTime() {
+        return time;
     }
 
-    public final String getTitle(){ return  title; }
+    public void setTime(final String timeStamp) {
+        time = timeStamp;
+    }
 
-    public final String getTime(){ return time;}
+    public final String getUrl() {
+        return url;
+    }
 
-    public final String getUrl(){ return url; }
+    public void setUrl(final String link) {
+        url = link;
+    }
 
-    public void print(){
+    public void print() {
         System.out.print(title);
         System.out.print(time);
-        System.out.print(url+"\n");
+        System.out.print(url + "\n");
     }
-
-    public static void main(String[] args){
-
-    }
-
-
 }
