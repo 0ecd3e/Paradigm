@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.exercises;
+package com.paradigm.paradigm.old;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,21 +18,30 @@ public class Questions {
         answer = a;
     }
 
-    public String getQuestion(){
-        return question;
-    }   //Returns the question
+    public static void main(String[] args) {     //Test function
+//        Questions q=new Questions();
+//        q.setQuestionText("Is this Patrick?\r\n");
+//        System.out.print(q.getQuestionText());
+//        q.setAnswer("No, this is the Krusty Krabs\r\n");
+//        System.out.print(q.getAnswer());
+//        System.out.print(q.isCorrect("Hello")+"\n");
+        Questions p = new Questions("Hello there", "General Kenobi");
+        p.load("questions");
+        System.out.print(p.getQuestion().replace('-', ' ') + "\n");
+        System.out.print(p.getAnswer() + "\n");
+    }
 
     public String getAnswer(){
         return answer;
     }   //Returns the answer
 
-    public boolean getFlag() {
-        return isCorrect;
-    }   //Shows if the question has been answered correctly
+    public String getQuestion() {
+        return question;
+    }   //Returns the questionText
 
     public void setQuestion(String q){
         question = q;
-    }   //Sets the question
+    }   //Sets the questionText
 
     public void setAnswer(String a){
         answer = a;
@@ -51,12 +60,9 @@ public class Questions {
         isCorrect = isCorrect;
     }   //Changes the flag to true or false.
 
-    public void printOutput() {    //Prints the question and answer.
-//        System.out.print(getQuestion()+"\r\n");
-//        System.out.print(getAnswer()+"\r\n");
-        System.out.println(getQuestion());
-        System.out.println(getAnswer());
-    }
+    public boolean getFlag() {
+        return isCorrect;
+    }   //Shows if the questionText has been answered correctly
 
     public void load(String fileName) {     //Loads Question from file.
         File f = new File(fileName + ".txt");
@@ -96,17 +102,11 @@ public class Questions {
 
     }
 
-    public static void main(String args[]){     //Test function
-//        Questions q=new Questions();
-//        q.setQuestion("Is this Patrick?\r\n");
-//        System.out.print(q.getQuestion());
-//        q.setAnswer("No, this is the Krusty Krabs\r\n");
-//        System.out.print(q.getAnswer());
-//        System.out.print(q.isCorrect("Hello")+"\n");
-        Questions p=new Questions("Hello there", "General Kenobi");
-        p.load("questions");
-        System.out.print(p.getQuestion().replace('-', ' ')+"\n");
-        System.out.print(p.getAnswer()+"\n");
+    public void printOutput() {    //Prints the questionText and answer.
+//        System.out.print(getQuestionText()+"\r\n");
+//        System.out.print(getAnswer()+"\r\n");
+        System.out.println(getQuestion());
+        System.out.println(getAnswer());
     }
 }
 

@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.text;
+package com.paradigm.paradigm.old;
 
 import java.util.Vector;
 
@@ -50,7 +50,7 @@ public class Chapter {
         numSections=arr.size();
     }
 
-    public static void main(String args[]){     //Test function
+    public static void main(String[] args) {     //Test function
         Chapter c=new Chapter();
         System.out.print(c.getSize()+"\r\n");
         Sections s1=new Sections();

@@ -1,0 +1,99 @@
+{
+  "type": "com.paradigm.paradigm.text.ContentModule",
+  "name": "module2",
+  "description": null,
+  "lessons": [],
+  "questions": [
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "questionText": "hfajlrhfn",
+      "questionName": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "byvdfs xfte",
+          "stvafddfring",
+          "aradfvray"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "questionText": "f0y3w48uhrs",
+      "questionName": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "questionText": "uhfwhulgi45",
+      "questionName": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "fvfsoo",
+          "bsfdar"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "questionText": "testq1",
+      "questionName": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "questionText": "testq2",
+      "questionName": "q2",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "pubadfdaflic",
+          "privafdvdfvate",
+          "vovadfvsdfid"
+        ],
+        "answer": "X"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "questionText": "sdlkjjf;",
+      "questionName": "q1",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "answeredCorrectly": false,
+      "parentContentModule": null,
+      "parentCourse": null
+    }
+  ],
+  "parentCourse": null,
+  "complete": false
+}
