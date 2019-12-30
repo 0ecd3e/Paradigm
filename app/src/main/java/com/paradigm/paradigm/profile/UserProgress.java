@@ -66,29 +66,31 @@ public class UserProgress {
 
     public void addCourse(Course course) {
         String courseName = course.getName();
-        CourseProgress courseProgress = new CourseProgress();
-        courses.put(courseName, courseProgress);
+        CourseProgress courseProgress = new CourseProgress(courseName);
 
         for (ContentModule module : course.getModules()) {
             String moduleName = module.getName();
-            ModuleProgress moduleProgress = new ModuleProgress();
+            String moduleElementName = courseName + ", " + moduleName;
+            ModuleProgress moduleProgress = new ModuleProgress(moduleElementName);
 
             for (Lesson lesson : module.getLessons()) {
                 String lessonName = lesson.getName();
-//                String lessonElement = courseName + moduleName + lessonName;
+                String lessonElementName = moduleElementName + ", " + lessonName;
 //                courseElements.put(lessonElement, lesson.isComplete());
-                moduleProgress.setLessonProgress(lessonName, false);
+                moduleProgress.setLessonProgress(lessonElementName, false);
             }
 
             for (Question question : module.getQuestions()) {
                 String questionName = question.getQuestionName();
-//                String questionElement = courseName + moduleName + questionName;
+                String questionElementName = moduleElementName + ", " + questionName;
 //                courseElements.put(questionElement, question.isAnsweredCorrectly());
-                moduleProgress.setQuestionProgress(questionName, false);
+                moduleProgress.setQuestionProgress(questionElementName, false);
             }
 
-            courseProgress.addModuleProgress(moduleName, moduleProgress);
+            courseProgress.setModuleProgress(moduleName, moduleProgress);
         }
+
+        courses.put(courseName, courseProgress);
     }
 
     public void markQuestionCorrect(Question question) {

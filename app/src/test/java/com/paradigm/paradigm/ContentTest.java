@@ -113,10 +113,10 @@ public class ContentTest {
 
         Question q1 = new MultipleChoiceQuestion("q1", "testq1", a1);
         Question q2 = new FillInBlankQuestion("q2", "testq2", a2);
-        Question q3 = new MultipleChoiceQuestion("q1", "sdlkjjf;", a3);
-        Question q4 = new FillInBlankQuestion("q2", "hfajlrhfn", a4);
-        Question q5 = new MultipleChoiceQuestion("q1", "f0y3w48uhrs", a5);
-        Question q6 = new FillInBlankQuestion("q2", "uhfwhulgi45", a6);
+        Question q3 = new MultipleChoiceQuestion("q3", "sdlkjjf;", a3);
+        Question q4 = new FillInBlankQuestion("q4", "hfajlrhfn", a4);
+        Question q5 = new MultipleChoiceQuestion("q5", "f0y3w48uhrs", a5);
+        Question q6 = new FillInBlankQuestion("q6", "uhfwhulgi45", a6);
 
         testMod.addQuestion(q1);
         testMod.addQuestion(q2);

@@ -1,7 +1,5 @@
 package com.paradigm.paradigm.profile.progressEntries;
 
-import java.util.Objects;
-
 public abstract class ProgressEntry {
     protected String componentName;
     protected boolean isComplete;
@@ -33,18 +31,5 @@ public abstract class ProgressEntry {
 
     public boolean isComplete() {
         return isComplete;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProgressEntry that = (ProgressEntry) o;
-        return Objects.equals(componentName, that.componentName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(componentName);
     }
 }

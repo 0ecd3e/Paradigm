@@ -52,8 +52,6 @@ public class ExampleInstrumentedTest {
             e.printStackTrace();
         }
 
-        java.setDescription("test");
-
         ContentLoader contentLoader = new ContentLoader();
         contentLoader.loadDescription(java, assetManager);
 
