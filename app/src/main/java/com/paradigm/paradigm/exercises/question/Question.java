@@ -1,7 +1,9 @@
 package com.paradigm.paradigm.exercises.question;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.paradigm.paradigm.exercises.answer.Answer;
 import com.paradigm.paradigm.profile.UserProgress;
 
@@ -15,6 +17,7 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = MultipleChoiceQuestion.class),
         @JsonSubTypes.Type(value = FillInBlankQuestion.class),
 })
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public abstract class Question implements Serializable {
     protected String questionText;
     protected String questionName;

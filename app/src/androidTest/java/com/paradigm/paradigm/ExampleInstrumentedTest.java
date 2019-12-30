@@ -7,8 +7,9 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.profile.UserProgress;
-import com.paradigm.paradigm.text.ContentLoader;
+import com.paradigm.paradigm.text.io.ContentLoader;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
@@ -18,7 +19,7 @@ import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Set;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -58,7 +59,7 @@ public class ExampleInstrumentedTest {
         for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
             contentLoader.loadQuestions(module, assetManager);
-            Set<Lesson> lessons = module.getLessons();
+            ArrayList<Lesson> lessons = (ArrayList<Lesson>) module.getLessons();
             for (Lesson lesson : lessons) {
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
@@ -67,5 +68,15 @@ public class ExampleInstrumentedTest {
 
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
+
+        ArrayList<ContentModule> contents = (ArrayList<ContentModule>) java.getModules();
+
+        ContentModule theModule = contents.get(5);
+
+        ArrayList<Question> questions = (ArrayList<Question>) theModule.getQuestions();
+
+        Question question = questions.get(5);
+
+        userProgress.markQuestionCorrect(question);
     }
 }

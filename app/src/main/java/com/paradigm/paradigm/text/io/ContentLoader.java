@@ -1,8 +1,11 @@
-package com.paradigm.paradigm.text;
+package com.paradigm.paradigm.text.io;
 
 import android.content.res.AssetManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paradigm.paradigm.text.Content;
+import com.paradigm.paradigm.text.ContentModule;
+import com.paradigm.paradigm.text.Lesson;
 
 import java.io.BufferedReader;
 import java.io.IOException;

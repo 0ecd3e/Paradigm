@@ -1,8 +1,16 @@
 package com.paradigm.paradigm.text;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Lesson extends Content {
+    @JsonProperty("lessonContent")
     private String lessonContent;
+    @JsonProperty("parentContentModule")
     private String parentContentModule;
+    @JsonProperty("parentCourse")
     private String parentCourse;
 
     public Lesson() {

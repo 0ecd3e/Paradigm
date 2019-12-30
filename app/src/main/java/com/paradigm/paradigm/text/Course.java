@@ -1,11 +1,21 @@
 package com.paradigm.paradigm.text;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.paradigm.paradigm.text.io.CourseSerializer;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
+@JsonSerialize(using = CourseSerializer.class)
 public class Course extends Content {
 
-    private Set<ContentModule> modules;
+    @JsonProperty("modules")
+    private Map<String, ContentModule> modules;
 
     public Course() {
         super();
@@ -13,7 +23,7 @@ public class Course extends Content {
 
     public Course(String name) {
         super(name);
-        modules = new HashSet<>();
+        modules = new HashMap<>();
     }
 
     @Override
@@ -21,22 +31,26 @@ public class Course extends Content {
         return DIR_ROOT + name + "/" + DESC_FILE;
     }
 
-    public Set<ContentModule> getModules() {
+    public Map<String, ContentModule> getModules() {
         return modules;
     }
 
+    public Collection<ContentModule> getModuleList() {
+        return modules.values();
+    }
+
     public void addModule(ContentModule module) {
-        modules.add(module);
+        modules.put(module.getName(), module);
         module.setParentCourse(name);
     }
 
     public void removeModule(ContentModule module) {
-        modules.remove(module);
+        modules.remove(module.getName());
         module.clearParentCourse();
     }
 
     public void setParents() {
-        for (ContentModule module : modules) {
+        for (ContentModule module : modules.values()) {
             module.setParents();
         }
     }
