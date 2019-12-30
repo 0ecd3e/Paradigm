@@ -13,4 +13,11 @@
     <string name="menu_explore">Explore</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_settings">Settings</string>
+
+    <string name="News_Feed">News Feed</string>
+    <string name="Dark_Mode">Dark Mode</string>
+    <string name="Visual_Settings">Visual Settings</string>
+    <string name="Reset_Settings">Reset Settings</string>
+    <string name="Erase_Data">Erase Data</string>
+    <string name="Progress">Progress</string>
 </resources>

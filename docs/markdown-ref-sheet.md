@@ -132,7 +132,7 @@ Block code:
             "lookedUpPlatform": 1,
             "query": "Kasabian+Test+Transmission",
             "lookedUpItem": {
-                "questionText": "Test Transmission",
+                "name": "Test Transmission",
                 "artist": "Kasabian",
                 "album": "Kasabian",
                 "picture": null,
