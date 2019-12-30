@@ -1,4 +1,4 @@
-package com.paradigm.paradigm.NewsFeed;
+package com.paradigm.paradigm.newsfeed;
 
 /*
 public class Feed {

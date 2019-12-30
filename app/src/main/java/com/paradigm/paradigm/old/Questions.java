@@ -18,18 +18,18 @@ public class Questions {
         answer = a;
     }
 
-    public static void main(String[] args) {     //Test function
-//        Questions q=new Questions();
-//        q.setQuestionText("Is this Patrick?\r\n");
-//        System.out.print(q.getQuestionText());
-//        q.setAnswer("No, this is the Krusty Krabs\r\n");
-//        System.out.print(q.getAnswer());
-//        System.out.print(q.isCorrect("Hello")+"\n");
-        Questions p = new Questions("Hello there", "General Kenobi");
-        p.load("questions");
-        System.out.print(p.getQuestion().replace('-', ' ') + "\n");
-        System.out.print(p.getAnswer() + "\n");
-    }
+//    public static void main(String[] args) {     //Test function
+////        Questions q=new Questions();
+////        q.setQuestionText("Is this Patrick?\r\n");
+////        System.out.print(q.getQuestionText());
+////        q.setAnswer("No, this is the Krusty Krabs\r\n");
+////        System.out.print(q.getAnswer());
+////        System.out.print(q.isCorrect("Hello")+"\n");
+//        Questions p = new Questions("Hello there", "General Kenobi");
+//        p.load("questions");
+//        System.out.print(p.getQuestion().replace('-', ' ') + "\n");
+//        System.out.print(p.getAnswer() + "\n");
+//    }
 
     public String getAnswer(){
         return answer;

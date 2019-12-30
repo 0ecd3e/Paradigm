@@ -42,10 +42,10 @@ public class TextModule {
         return fileText.toString();
     }
 
-    public static void main(String[] args) {
-        TextModule t=new TextModule("For loops are very important and stuff");
-        System.out.print(t.getText()+"\n");
-        t.read("test");
-        System.out.print(t.getText()+"\n");
-    }
+//    public static void main(String[] args) {
+//        TextModule t=new TextModule("For loops are very important and stuff");
+//        System.out.print(t.getText()+"\n");
+//        t.read("test");
+//        System.out.print(t.getText()+"\n");
+//    }
 }

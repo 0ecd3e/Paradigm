@@ -4,4 +4,8 @@ class QuestionProgress extends ProgressEntry {
     public QuestionProgress() {
         super();
     }
+
+    public QuestionProgress(String componentName) {
+        super(componentName, false);
+    }
 }

@@ -1,7 +1,6 @@
 package com.paradigm.paradigm.profile.progressEntries;
 
-import com.paradigm.paradigm.text.ContentModule;
-
+import java.util.HashMap;
 import java.util.Map;
 
 public class CourseProgress extends ProgressEntry {
@@ -13,26 +12,28 @@ public class CourseProgress extends ProgressEntry {
 
     public CourseProgress(String name) {
         super(name, false);
+        modules = new HashMap<>();
     }
 
     @Override
     public boolean isComplete() {
+        boolean notComplete = false;
         for (ModuleProgress moduleProgress : modules.values()) {
             if (!moduleProgress.isComplete()) {
                 clearProgress();
+                notComplete = true;
+                break;
             }
         }
 
-        setComplete();
+        if (!notComplete) {
+            setComplete();
+        }
+
         return isComplete;
     }
 
-    public void addModule(ContentModule contentModule) {
-        ModuleProgress moduleProgress = new ModuleProgress();
-        modules.put(contentModule.getName(), moduleProgress);
-    }
-
-    public void addModuleProgress(String moduleName, ModuleProgress moduleProgress) {
+    public void setModuleProgress(String moduleName, ModuleProgress moduleProgress) {
         modules.put(moduleName, moduleProgress);
     }
 

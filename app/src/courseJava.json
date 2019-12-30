@@ -14,8 +14,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module2",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -23,8 +22,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module2",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -32,8 +30,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module2",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         }
       ],
       "questions": [
@@ -45,7 +42,6 @@
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "C"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module2",
           "parentCourse": "java"
         },
@@ -63,13 +59,11 @@
             ],
             "answer": "D"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module2",
           "parentCourse": "java"
         }
       ],
-      "parentCourse": "java",
-      "complete": false
+      "parentCourse": "java"
     },
     {
       "type": "com.paradigm.paradigm.text.ContentModule",
@@ -82,8 +76,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module3",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -91,8 +84,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module3",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -100,8 +92,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module3",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         }
       ],
       "questions": [
@@ -113,7 +104,6 @@
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "E"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module3",
           "parentCourse": "java"
         },
@@ -130,13 +120,11 @@
             ],
             "answer": "F"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module3",
           "parentCourse": "java"
         }
       ],
-      "parentCourse": "java",
-      "complete": false
+      "parentCourse": "java"
     },
     {
       "type": "com.paradigm.paradigm.text.ContentModule",
@@ -149,8 +137,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module1",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -158,8 +145,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module1",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         },
         {
           "type": "com.paradigm.paradigm.text.Lesson",
@@ -167,8 +153,7 @@
           "description": null,
           "lessonContent": null,
           "parentContentModule": "module1",
-          "parentCourse": "java",
-          "complete": false
+          "parentCourse": "java"
         }
       ],
       "questions": [
@@ -180,7 +165,6 @@
             "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
             "answer": "A"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module1",
           "parentCourse": "java"
         },
@@ -198,14 +182,11 @@
             ],
             "answer": "B"
           },
-          "answeredCorrectly": false,
           "parentContentModule": "module1",
           "parentCourse": "java"
         }
       ],
-      "parentCourse": "java",
-      "complete": false
+      "parentCourse": "java"
     }
-  ],
-  "complete": false
+  ]
 }

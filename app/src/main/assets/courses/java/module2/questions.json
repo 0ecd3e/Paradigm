@@ -7,7 +7,7 @@
     {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
       "questionText": "hfajlrhfn",
-      "questionName": "q2",
+      "questionName": "q4",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
         "acceptedAnswers": [
@@ -18,26 +18,24 @@
         ],
         "answer": "X"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
       "questionText": "f0y3w48uhrs",
-      "questionName": "q1",
+      "questionName": "q5",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
       "questionText": "uhfwhulgi45",
-      "questionName": "q2",
+      "questionName": "q6",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
         "acceptedAnswers": [
@@ -47,7 +45,6 @@
         ],
         "answer": "X"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     },
@@ -59,7 +56,6 @@
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     },
@@ -77,23 +73,20 @@
         ],
         "answer": "X"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     },
     {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
       "questionText": "sdlkjjf;",
-      "questionName": "q1",
+      "questionName": "q3",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
         "answer": "Z"
       },
-      "answeredCorrectly": false,
       "parentContentModule": null,
       "parentCourse": null
     }
   ],
-  "parentCourse": null,
-  "complete": false
+  "parentCourse": null
 }
