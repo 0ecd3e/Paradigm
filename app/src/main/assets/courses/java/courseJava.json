@@ -1,192 +1,174 @@
 {
   "type": "com.paradigm.paradigm.text.Course",
   "name": "java",
-  "description": null,
-  "modules": [
-    {
-      "type": "com.paradigm.paradigm.text.ContentModule",
-      "name": "module2",
-      "description": null,
-      "lessons": [
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson1",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module2",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson2",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module2",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson3",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module2",
-          "parentCourse": "java"
-        }
-      ],
-      "questions": [
-        {
-          "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "questionText": "hfiu34h",
-          "questionName": "q1",
-          "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
-            "answer": "C"
-          },
-          "parentContentModule": "module2",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "questionText": "fjlw3j4ht4",
-          "questionName": "q2",
-          "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
-            "acceptedAnswers": [
-              "D",
-              "byte",
-              "string",
-              "array"
-            ],
-            "answer": "D"
-          },
-          "parentContentModule": "module2",
-          "parentCourse": "java"
-        }
-      ],
-      "parentCourse": "java"
-    },
-    {
-      "type": "com.paradigm.paradigm.text.ContentModule",
-      "name": "module3",
-      "description": null,
-      "lessons": [
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson3",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module3",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson1",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module3",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson2",
-          "description": null,
-          "lessonContent": null,
-          "parentContentModule": "module3",
-          "parentCourse": "java"
-        }
-      ],
-      "questions": [
-        {
-          "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "questionText": "fjaljt34",
-          "questionName": "q1",
-          "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
-            "answer": "E"
-          },
-          "parentContentModule": "module3",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "questionText": "flw34tnw4",
-          "questionName": "q2",
-          "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
-            "acceptedAnswers": [
-              "F",
-              "foo",
-              "bar"
-            ],
-            "answer": "F"
-          },
-          "parentContentModule": "module3",
-          "parentCourse": "java"
-        }
-      ],
-      "parentCourse": "java"
-    },
-    {
-      "type": "com.paradigm.paradigm.text.ContentModule",
+  "modules": {
+    "module1": {
+      "parentCourse": "java",
       "name": "module1",
-      "description": null,
-      "lessons": [
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson1",
-          "description": null,
-          "lessonContent": null,
+      "lessons": {
+        "lesson1": {
+          "parentCourse": "java",
           "parentContentModule": "module1",
-          "parentCourse": "java"
+          "name": "lesson1"
         },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson2",
-          "description": null,
-          "lessonContent": null,
+        "lesson2": {
+          "parentCourse": "java",
           "parentContentModule": "module1",
-          "parentCourse": "java"
+          "name": "lesson2"
         },
-        {
-          "type": "com.paradigm.paradigm.text.Lesson",
-          "name": "lesson3",
-          "description": null,
-          "lessonContent": null,
+        "lesson3": {
+          "parentCourse": "java",
           "parentContentModule": "module1",
-          "parentCourse": "java"
+          "name": "lesson3"
         }
-      ],
-      "questions": [
-        {
-          "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-          "questionText": "fhiwj34",
-          "questionName": "q1",
-          "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
-            "answer": "A"
-          },
+      },
+      "questions": {
+        "q1": {
+          "type": "multipleChoiceQuestion",
+          "parentCourse": "java",
           "parentContentModule": "module1",
-          "parentCourse": "java"
-        },
-        {
-          "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-          "questionText": "hfalsjht3",
-          "questionName": "q2",
+          "name": "q1",
+          "text": "fhiwj34",
           "answer": {
-            "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+            "bestAnswer": "A"
+          }
+        },
+        "q2": {
+          "type": "fillInBlankQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module1",
+          "name": "q2",
+          "text": "hfalsjht3",
+          "answer": {
+            "bestAnswer": "B",
             "acceptedAnswers": [
-              "B",
-              "public",
-              "private",
-              "void"
-            ],
-            "answer": "B"
-          },
-          "parentContentModule": "module1",
-          "parentCourse": "java"
+              {
+                "acceptedAnswer1": "B"
+              },
+              {
+                "acceptedAnswer2": "public"
+              },
+              {
+                "acceptedAnswer3": "private"
+              },
+              {
+                "acceptedAnswer4": "void"
+              }
+            ]
+          }
         }
-      ],
-      "parentCourse": "java"
+      }
+    },
+    "module3": {
+      "parentCourse": "java",
+      "name": "module3",
+      "lessons": {
+        "lesson1": {
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "name": "lesson1"
+        },
+        "lesson2": {
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "name": "lesson2"
+        },
+        "lesson3": {
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "name": "lesson3"
+        }
+      },
+      "questions": {
+        "q1": {
+          "type": "multipleChoiceQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "name": "q1",
+          "text": "fjaljt34",
+          "answer": {
+            "bestAnswer": "E"
+          }
+        },
+        "q2": {
+          "type": "fillInBlankQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "name": "q2",
+          "text": "flw34tnw4",
+          "answer": {
+            "bestAnswer": "F",
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "F"
+              },
+              {
+                "acceptedAnswer2": "foo"
+              },
+              {
+                "acceptedAnswer3": "bar"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "module2": {
+      "parentCourse": "java",
+      "name": "module2",
+      "lessons": {
+        "lesson1": {
+          "parentCourse": "java",
+          "parentContentModule": "module2",
+          "name": "lesson1"
+        },
+        "lesson2": {
+          "parentCourse": "java",
+          "parentContentModule": "module2",
+          "name": "lesson2"
+        },
+        "lesson3": {
+          "parentCourse": "java",
+          "parentContentModule": "module2",
+          "name": "lesson3"
+        }
+      },
+      "questions": {
+        "q1": {
+          "type": "multipleChoiceQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module2",
+          "name": "q1",
+          "text": "hfiu34h",
+          "answer": {
+            "bestAnswer": "C"
+          }
+        },
+        "q2": {
+          "type": "fillInBlankQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module2",
+          "name": "q2",
+          "text": "fjlw3j4ht4",
+          "answer": {
+            "bestAnswer": "D",
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "D"
+              },
+              {
+                "acceptedAnswer2": "byte"
+              },
+              {
+                "acceptedAnswer3": "string"
+              },
+              {
+                "acceptedAnswer4": "array"
+              }
+            ]
+          }
+        }
+      }
     }
-  ]
+  }
 }

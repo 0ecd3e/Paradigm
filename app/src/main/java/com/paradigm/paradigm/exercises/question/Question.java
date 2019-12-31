@@ -19,6 +19,7 @@ import java.io.Serializable;
 })
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public abstract class Question implements Serializable {
+    protected String questionType;
     protected String questionText;
     protected String questionName;
     protected Answer answer;
@@ -75,7 +76,9 @@ public abstract class Question implements Serializable {
         this.questionName = name;
     }
 
-    public abstract String getQuestionType();
+    public String getQuestionType() {
+        return questionType;
+    }
 
     public Answer getAnswer() {
         return answer;

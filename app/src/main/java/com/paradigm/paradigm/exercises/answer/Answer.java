@@ -13,6 +13,7 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = FillInBlankAnswer.class),
 })
 public abstract class Answer implements Serializable {
+    protected String answerType;
     protected String bestAnswer;
 
     public Answer() {
@@ -31,5 +32,7 @@ public abstract class Answer implements Serializable {
         bestAnswer = answer;
     }
 
-    public abstract String getAnswerType();
+    public String getAnswerType() {
+        return answerType;
+    }
 }

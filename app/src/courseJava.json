@@ -40,6 +40,7 @@
           "name" : "q2",
           "text" : "hfalsjht3",
           "answer" : {
+            "bestAnswer": "B",
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "B"
             }, {
@@ -91,6 +92,7 @@
           "name" : "q2",
           "text" : "flw34tnw4",
           "answer" : {
+            "bestAnswer": "F",
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "F"
             }, {
@@ -140,6 +142,7 @@
           "name" : "q2",
           "text" : "fjlw3j4ht4",
           "answer" : {
+            "bestAnswer": "D",
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "D"
             }, {

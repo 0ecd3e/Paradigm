@@ -1,7 +1,6 @@
 package com.paradigm.paradigm.text.io;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
@@ -29,13 +28,12 @@ public class CourseDeserializer extends StdDeserializer<Course> {
 
     @Override
     public Course deserialize(JsonParser p, DeserializationContext ctxt)
-            throws IOException, JsonProcessingException {
+            throws IOException {
 
         TreeNode treeNode = p.readValueAsTree();
         String courseName = treeNode.get("name").toString();
         courseName = courseName.replace("\"", "");
         Course course = new Course(courseName);
-//        System.out.println("!Deserializer " + course);
 
         Iterator<String> moduleNames = treeNode.get("modules").fieldNames();
         while (moduleNames.hasNext()) {
@@ -46,8 +44,6 @@ public class CourseDeserializer extends StdDeserializer<Course> {
             while (lessonNames.hasNext()) {
                 String lessonName = lessonNames.next();
                 Lesson lesson = new Lesson(lessonName);
-                lesson.setParentContentModule(moduleName);
-                lesson.setParentCourse(courseName);
                 contentModule.addLesson(lesson);
             }
 
@@ -65,31 +61,37 @@ public class CourseDeserializer extends StdDeserializer<Course> {
                 Question question = null;
                 Answer answer = null;
 
+                String bestAnswer = currentQuestion.get("answer").get("bestAnswer").toString();
+                bestAnswer = bestAnswer.replace("\"", "");
                 if (questionType.equals("multipleChoiceQuestion")) {
-                    String mca = currentQuestion.get("answer").get("bestAnswer").toString();
-                    answer = new MultipleChoiceAnswer(mca);
+                    answer = new MultipleChoiceAnswer(bestAnswer);
                     question = new MultipleChoiceQuestion(questionName, questionText, answer);
                 } else if (questionType.equals("fillInBlankQuestion")) {
-                    Iterator<String> acceptableAnswers = currentQuestion.get("answer").get("acceptedAnswers").fieldNames();
-                    System.out.println("!!!");
-                    while (acceptableAnswers.hasNext()) {
-                        answer = new FillInBlankAnswer();
-                        String next = acceptableAnswers.next();
+                    System.out.println("FIBQ_DESERIALIZER");
+                    answer = new FillInBlankAnswer(bestAnswer);
+                    TreeNode acceptableAnswersArray = currentQuestion.get("answer").get("acceptedAnswers");
+
+                    int index = 0;
+                    while (index < acceptableAnswersArray.size()) {
+                        String next = acceptableAnswersArray.get(index).get("acceptedAnswer" + (index + 1)).toString();
+                        next = next.replace("\"", "");
                         System.out.println(next);
                         ((FillInBlankAnswer) answer).addAlternativeAnswer(next);
+                        index++;
                     }
+
+                    System.out.println("END OF WHILE LOOP DESERIALIZER");
+                    System.out.println(answer);
                     question = new FillInBlankQuestion(questionName, questionText, answer);
                 }
 
-                question.setParentContentModule(moduleName);
-                question.setParentCourse(courseName);
                 contentModule.addQuestion(question);
             }
 
-            contentModule.setParentCourse(courseName);
             course.addModule(contentModule);
         }
 
+        course.setParents();
         return course;
     }
 }

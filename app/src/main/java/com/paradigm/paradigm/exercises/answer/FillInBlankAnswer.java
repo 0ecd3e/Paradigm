@@ -8,21 +8,21 @@ public class FillInBlankAnswer extends Answer {
 
     public FillInBlankAnswer() {
         super();
+        acceptedAnswers = new ArrayList<>();
+        answerType = "fillInBlankAnswer";
     }
 
     public FillInBlankAnswer(String answer) {
         super(answer);
         acceptedAnswers = new ArrayList<>();
-        acceptedAnswers.add(answer);
-    }
-
-    @Override
-    public String getAnswerType() {
-        return "fillInBlankAnswer";
+        addAlternativeAnswer(answer);
+        answerType = "fillInBlankAnswer";
     }
 
     public void addAlternativeAnswer(String answer) {
-        acceptedAnswers.add(answer);
+        if (!containsAnswer(answer)) {
+            acceptedAnswers.add(answer);
+        }
     }
 
     public void removeAlternativeAnswer(String answer) {
@@ -31,5 +31,23 @@ public class FillInBlankAnswer extends Answer {
 
     public List<String> getAcceptedAnswers() {
         return acceptedAnswers;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("ANSWERS_START");
+        for (String answer : acceptedAnswers) {
+            System.out.println(answer);
+        }
+        System.out.println("ANSWERS_END");
+        return "FIBA END";
+    }
+
+    private boolean containsAnswer(String answer) {
+        for (String acceptedAnswer : acceptedAnswers) {
+            if (acceptedAnswer.equals(answer))
+                return true;
+        }
+        return false;
     }
 }

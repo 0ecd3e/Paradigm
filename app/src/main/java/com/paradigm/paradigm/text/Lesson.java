@@ -61,4 +61,12 @@ public class Lesson extends Content {
     public String lessonContentPath() {
         return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
     }
+
+    @Override
+    public String toString() {
+        System.out.println("N " + name);
+        System.out.println("PCM " + parentContentModule);
+        System.out.println("PC " + parentCourse);
+        return "LESSON";
+    }
 }

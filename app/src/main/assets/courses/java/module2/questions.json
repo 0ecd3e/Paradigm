@@ -1,70 +1,33 @@
 {
   "type": "com.paradigm.paradigm.text.ContentModule",
+  "@id": 1,
   "name": "module2",
   "description": null,
-  "lessons": [],
-  "questions": [
-    {
-      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-      "questionText": "hfajlrhfn",
-      "questionName": "q4",
-      "answer": {
-        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
-        "acceptedAnswers": [
-          "X",
-          "byvdfs xfte",
-          "stvafddfring",
-          "aradfvray"
-        ],
-        "answer": "X"
-      },
-      "parentContentModule": null,
-      "parentCourse": null
-    },
-    {
+  "lessons": {},
+  "questions": {
+    "q1": {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
-      "questionText": "f0y3w48uhrs",
-      "questionName": "q5",
-      "answer": {
-        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
-        "answer": "Z"
-      },
-      "parentContentModule": null,
-      "parentCourse": null
-    },
-    {
-      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
-      "questionText": "uhfwhulgi45",
-      "questionName": "q6",
-      "answer": {
-        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
-        "acceptedAnswers": [
-          "X",
-          "fvfsoo",
-          "bsfdar"
-        ],
-        "answer": "X"
-      },
-      "parentContentModule": null,
-      "parentCourse": null
-    },
-    {
-      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "@id": 2,
+      "questionType": "multipleChoiceQuestion",
       "questionText": "testq1",
       "questionName": "q1",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answerType": "multipleChoiceAnswer",
         "answer": "Z"
       },
       "parentContentModule": null,
       "parentCourse": null
     },
-    {
+    "q2": {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "@id": 3,
+      "questionType": "fillInBlankQuestion",
       "questionText": "testq2",
       "questionName": "q2",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "answerType": "fillInBlankAnswer",
         "acceptedAnswers": [
           "X",
           "pubadfdaflic",
@@ -76,17 +39,73 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    {
+    "q3": {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "@id": 4,
+      "questionType": "multipleChoiceQuestion",
       "questionText": "sdlkjjf;",
       "questionName": "q3",
       "answer": {
         "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answerType": "multipleChoiceAnswer",
         "answer": "Z"
       },
       "parentContentModule": null,
       "parentCourse": null
+    },
+    "q4": {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "@id": 5,
+      "questionType": "fillInBlankQuestion",
+      "questionText": "hfajlrhfn",
+      "questionName": "q4",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "answerType": "fillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "byvdfs xfte",
+          "stvafddfring",
+          "aradfvray"
+        ],
+        "answer": "X"
+      },
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    "q5": {
+      "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
+      "@id": 6,
+      "questionType": "multipleChoiceQuestion",
+      "questionText": "f0y3w48uhrs",
+      "questionName": "q5",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer",
+        "answerType": "multipleChoiceAnswer",
+        "answer": "Z"
+      },
+      "parentContentModule": null,
+      "parentCourse": null
+    },
+    "q6": {
+      "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
+      "@id": 7,
+      "questionType": "fillInBlankQuestion",
+      "questionText": "uhfwhulgi45",
+      "questionName": "q6",
+      "answer": {
+        "type": "com.paradigm.paradigm.exercises.answer.FillInBlankAnswer",
+        "answerType": "fillInBlankAnswer",
+        "acceptedAnswers": [
+          "X",
+          "fvfsoo",
+          "bsfdar"
+        ],
+        "answer": "X"
+      },
+      "parentContentModule": null,
+      "parentCourse": null
     }
-  ],
+  },
   "parentCourse": null
 }

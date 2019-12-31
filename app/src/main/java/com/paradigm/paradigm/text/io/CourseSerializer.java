@@ -48,7 +48,7 @@ public class CourseSerializer extends StdSerializer<Course> {
                 gen.writeStringField("parentContentModule", contentModuleName);
                 gen.writeStringField("name", lessonEntry.getValue().getName());
                 gen.writeEndObject(); //4
-            };
+            }
             gen.writeEndObject(); //3
 
             gen.writeObjectFieldStart("questions"); //3
@@ -70,6 +70,7 @@ public class CourseSerializer extends StdSerializer<Course> {
                     gen.writeStringField("bestAnswer", answer.getAnswer());
                 } else {
                     FillInBlankAnswer fillInBlankAnswer = (FillInBlankAnswer) answer;
+                    gen.writeStringField("bestAnswer", answer.getAnswer());
                     gen.writeArrayFieldStart("acceptedAnswers"); //6
                     int answerIndex = 1;
                     for (String acceptedAnswer : fillInBlankAnswer.getAcceptedAnswers()) {
@@ -84,7 +85,7 @@ public class CourseSerializer extends StdSerializer<Course> {
                 gen.writeEndObject(); //5
 
                 gen.writeEndObject(); //4
-            };
+            }
             gen.writeEndObject(); //3
 
             gen.writeEndObject(); //2

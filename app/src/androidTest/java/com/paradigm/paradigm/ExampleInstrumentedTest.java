@@ -9,17 +9,16 @@ import androidx.test.runner.AndroidJUnit4;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.profile.UserProgress;
-import com.paradigm.paradigm.text.io.ContentLoader;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
+import com.paradigm.paradigm.text.io.ContentLoader;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,11 +55,10 @@ public class ExampleInstrumentedTest {
         ContentLoader contentLoader = new ContentLoader();
         contentLoader.loadDescription(java, assetManager);
 
-        for (ContentModule module : java.getModules()) {
+        for (ContentModule module : java.getModules().values()) {
             contentLoader.loadDescription(module, assetManager);
             contentLoader.loadQuestions(module, assetManager);
-            ArrayList<Lesson> lessons = (ArrayList<Lesson>) module.getLessons();
-            for (Lesson lesson : lessons) {
+            for (Lesson lesson : module.getLessons().values()) {
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
             }
@@ -69,14 +67,8 @@ public class ExampleInstrumentedTest {
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
 
-        ArrayList<ContentModule> contents = (ArrayList<ContentModule>) java.getModules();
-
-        ContentModule theModule = contents.get(5);
-
-        ArrayList<Question> questions = (ArrayList<Question>) theModule.getQuestions();
-
-        Question question = questions.get(5);
-
+        ContentModule theModule = java.getModules().get("module2");
+        Question question = theModule.getQuestions().get("q3");
         userProgress.markQuestionCorrect(question);
     }
 }
