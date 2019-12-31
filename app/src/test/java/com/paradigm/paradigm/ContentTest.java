@@ -1,7 +1,6 @@
 package com.paradigm.paradigm;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.paradigm.paradigm.exercises.answer.Answer;
 import com.paradigm.paradigm.exercises.answer.FillInBlankAnswer;
 import com.paradigm.paradigm.exercises.answer.MultipleChoiceAnswer;
@@ -11,7 +10,6 @@ import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
-import com.paradigm.paradigm.text.io.CourseSerializer;
 
 import org.junit.Test;
 
@@ -86,9 +84,6 @@ public class ContentTest {
         java.setParents();
 
         ObjectMapper objectMapper = new ObjectMapper();
-        SimpleModule simpleModule = new SimpleModule();
-        simpleModule.addSerializer(new CourseSerializer());
-        objectMapper.registerModule(simpleModule);
 
         try {
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), java);
@@ -149,9 +144,6 @@ public class ContentTest {
 
         try {
             test = objectMapper.readValue(new File("src/courseJava.json"), Course.class);
-//            TypeFactory typeFactory = objectMapper.getTypeFactory();
-//            MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, ContentModule.class);
-//            test = objectMapper.readValue(new File("src/courseJava.json"), mapType);
         } catch (IOException e) {
             e.printStackTrace();
             fail();

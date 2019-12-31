@@ -28,6 +28,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module1",
           "name" : "q1",
+          "text" : "fhiwj34",
           "answer" : {
             "bestAnswer" : "A"
           }
@@ -37,6 +38,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module1",
           "name" : "q2",
+          "text" : "hfalsjht3",
           "answer" : {
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "B"
@@ -77,6 +79,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module3",
           "name" : "q1",
+          "text" : "fjaljt34",
           "answer" : {
             "bestAnswer" : "E"
           }
@@ -86,6 +89,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module3",
           "name" : "q2",
+          "text" : "flw34tnw4",
           "answer" : {
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "F"
@@ -124,6 +128,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module2",
           "name" : "q1",
+          "text" : "hfiu34h",
           "answer" : {
             "bestAnswer" : "C"
           }
@@ -133,6 +138,7 @@
           "parentCourse" : "java",
           "parentContentModule" : "module2",
           "name" : "q2",
+          "text" : "fjlw3j4ht4",
           "answer" : {
             "acceptedAnswers" : [ {
               "acceptedAnswer1" : "D"

@@ -22,7 +22,6 @@ public abstract class Question implements Serializable {
     protected String questionText;
     protected String questionName;
     protected Answer answer;
-    //    protected boolean answeredCorrectly;
     protected String parentContentModule;
     protected String parentCourse;
 
@@ -34,7 +33,6 @@ public abstract class Question implements Serializable {
         this.questionName = questionName;
         this.questionText = questionText;
         this.answer = answer;
-//        answeredCorrectly = false;
     }
 
     public String getParentContentModule() {
@@ -93,5 +91,15 @@ public abstract class Question implements Serializable {
         } else {
             userProgress.markQuestionIncorrect(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("PC " + parentCourse);
+        System.out.println("PCM " + parentContentModule);
+        System.out.println("QN " + questionName);
+        System.out.println("QT " + questionText);
+        System.out.println("A " + answer);
+        return "Question toString()";
     }
 }

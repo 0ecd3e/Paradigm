@@ -3,7 +3,9 @@ package com.paradigm.paradigm.text;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.paradigm.paradigm.text.io.CourseDeserializer;
 import com.paradigm.paradigm.text.io.CourseSerializer;
 
 import java.util.Collection;
@@ -12,6 +14,7 @@ import java.util.Map;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
 @JsonSerialize(using = CourseSerializer.class)
+@JsonDeserialize(using= CourseDeserializer.class)
 public class Course extends Content {
 
     @JsonProperty("modules")
@@ -53,6 +56,14 @@ public class Course extends Content {
         for (ContentModule module : modules.values()) {
             module.setParents();
         }
+    }
+
+    @Override
+    public String toString() {
+        System.out.println(name);
+        System.out.println(description);
+        System.out.println(modules);
+        return "Course";
     }
 
 }

@@ -62,6 +62,7 @@ public class CourseSerializer extends StdSerializer<Course> {
                 gen.writeStringField("parentCourse", courseName);
                 gen.writeStringField("parentContentModule", contentModuleName);
                 gen.writeStringField("name", question.getQuestionName());
+                gen.writeStringField("text", question.getQuestionText());
 
                 gen.writeObjectFieldStart("answer"); //5
                 Answer answer = question.getAnswer();
