@@ -6,6 +6,8 @@ import com.fasterxml.jackson.core.type.WritableTypeId;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import com.paradigm.paradigm.exercises.answer.Answer;
+import com.paradigm.paradigm.exercises.answer.FillInBlankAnswer;
 import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
@@ -28,41 +30,65 @@ public class CourseSerializer extends StdSerializer<Course> {
 
     @Override
     public void serialize(Course value, JsonGenerator gen, SerializerProvider provider) throws IOException {
-//        gen.writeStartObject();
         String courseName = value.getName();
         gen.writeStringField("name", courseName);
 
-        gen.writeObjectFieldStart("modules");
+        gen.writeObjectFieldStart("modules"); //1
         for (Map.Entry<String, ContentModule> moduleEntry : value.getModules().entrySet()) {
             String contentModuleName = moduleEntry.getValue().getName();
-            gen.writeObjectFieldStart(moduleEntry.getKey());
-            gen.writeStringField("name", contentModuleName);
+            gen.writeObjectFieldStart(moduleEntry.getKey()); //2
             gen.writeStringField("parentCourse", courseName);
+            gen.writeStringField("name", contentModuleName);
 
-            gen.writeObjectFieldStart("lessons");
+            gen.writeObjectFieldStart("lessons"); //3
             Set<Map.Entry<String, Lesson>> lessonEntrySet = moduleEntry.getValue().getLessons().entrySet();
             for (Map.Entry<String, Lesson> lessonEntry: lessonEntrySet) {
-                gen.writeObjectFieldStart(lessonEntry.getKey());
-                gen.writeStringField("name", lessonEntry.getValue().getName());
-                gen.writeStringField("parentContentModule", contentModuleName);
+                gen.writeObjectFieldStart(lessonEntry.getKey()); //4
                 gen.writeStringField("parentCourse", courseName);
-                gen.writeEndObject();
+                gen.writeStringField("parentContentModule", contentModuleName);
+                gen.writeStringField("name", lessonEntry.getValue().getName());
+                gen.writeEndObject(); //4
             };
-            gen.writeEndObject();
+            gen.writeEndObject(); //3
 
-            gen.writeObjectFieldStart("questions");
+            gen.writeObjectFieldStart("questions"); //3
             Set<Map.Entry<String, Question>> questionEntrySet = moduleEntry.getValue().getQuestions().entrySet();
             for (Map.Entry<String, Question> questionEntry: questionEntrySet) {
-                gen.writeObjectFieldStart(questionEntry.getKey());
-                gen.writeStringField("name", questionEntry.getValue().getQuestionName());
-                gen.writeStringField("parentContentModule", contentModuleName);
+                Question question = questionEntry.getValue();
+                String questionType = question.getQuestionType();
+
+                gen.writeObjectFieldStart(questionEntry.getKey()); //4
+                gen.writeStringField("type", questionType);
                 gen.writeStringField("parentCourse", courseName);
-                gen.writeEndObject();
+                gen.writeStringField("parentContentModule", contentModuleName);
+                gen.writeStringField("name", question.getQuestionName());
+
+                gen.writeObjectFieldStart("answer"); //5
+                Answer answer = question.getAnswer();
+                if (answer.getAnswerType().equals("multipleChoiceAnswer")) {
+                    gen.writeStringField("bestAnswer", answer.getAnswer());
+                } else {
+                    FillInBlankAnswer fillInBlankAnswer = (FillInBlankAnswer) answer;
+                    gen.writeArrayFieldStart("acceptedAnswers"); //6
+                    int answerIndex = 1;
+                    for (String acceptedAnswer : fillInBlankAnswer.getAcceptedAnswers()) {
+                        gen.writeStartObject(); //7
+                        gen.writeStringField("acceptedAnswer" + answerIndex, acceptedAnswer);
+                        answerIndex++;
+                        gen.writeEndObject(); //7
+                    }
+                    gen.writeEndArray(); //6
+                }
+
+                gen.writeEndObject(); //5
+
+                gen.writeEndObject(); //4
             };
-            gen.writeEndObject();
-            gen.writeEndObject();
+            gen.writeEndObject(); //3
+
+            gen.writeEndObject(); //2
         }
-//        gen.writeEndObject();
+        gen.writeEndObject(); //1
     }
 
     @Override

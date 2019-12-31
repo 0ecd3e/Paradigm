@@ -77,6 +77,8 @@ public abstract class Question implements Serializable {
         this.questionName = name;
     }
 
+    public abstract String getQuestionType();
+
     public Answer getAnswer() {
         return answer;
     }
@@ -85,20 +87,10 @@ public abstract class Question implements Serializable {
         this.answer = answer;
     }
 
-//    public boolean isAnsweredCorrectly() {
-//        return answeredCorrectly;
-//    }
-
-//    public void setAnsweredCorrectly(boolean status) {
-//        answeredCorrectly = status;
-//    }
-
     public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
         if (input.equals(answer.getAnswer())) {
-//            setAnsweredCorrectly(true);
             userProgress.markQuestionCorrect(this);
         } else {
-//            setAnsweredCorrectly(false);
             userProgress.markQuestionIncorrect(this);
         }
     }

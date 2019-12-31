@@ -16,6 +16,11 @@ public class FillInBlankQuestion extends Question {
     }
 
     @Override
+    public String getQuestionType() {
+        return "fillInBlankQuestion";
+    }
+
+    @Override
     public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
         List<String> answerList = ((FillInBlankAnswer) answer).getAcceptedAnswers();
         boolean answerMatched = false;

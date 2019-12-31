@@ -10,5 +10,10 @@ public class MultipleChoiceQuestion extends Question {
     public MultipleChoiceQuestion(String questionName, String questionText, Answer answer) {
         super(questionName, questionText, answer);
     }
+
+    @Override
+    public String getQuestionType() {
+        return "multipleChoiceQuestion";
+    }
 }
 

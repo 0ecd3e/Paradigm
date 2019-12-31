@@ -8,4 +8,9 @@ public class MultipleChoiceAnswer extends Answer {
     public MultipleChoiceAnswer(String answer) {
         super(answer);
     }
+
+    @Override
+    public String getAnswerType() {
+        return "multipleChoiceAnswer";
+    }
 }

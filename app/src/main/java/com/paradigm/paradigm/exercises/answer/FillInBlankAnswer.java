@@ -16,6 +16,11 @@ public class FillInBlankAnswer extends Answer {
         acceptedAnswers.add(answer);
     }
 
+    @Override
+    public String getAnswerType() {
+        return "fillInBlankAnswer";
+    }
+
     public void addAlternativeAnswer(String answer) {
         acceptedAnswers.add(answer);
     }

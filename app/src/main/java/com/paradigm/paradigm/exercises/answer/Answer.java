@@ -30,4 +30,6 @@ public abstract class Answer implements Serializable {
     public void setAnswer(String answer) {
         bestAnswer = answer;
     }
+
+    public abstract String getAnswerType();
 }
