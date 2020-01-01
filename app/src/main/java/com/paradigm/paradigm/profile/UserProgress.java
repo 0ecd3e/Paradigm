@@ -7,10 +7,11 @@ import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserProgress {
+public class UserProgress implements Serializable {
 
     private Map<String, CourseProgress> courses;
 
@@ -70,6 +71,45 @@ public class UserProgress {
         CourseProgress currentProgress = courses.get(parentCourse);
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
         return currentModuleProgress.getQuestionProgress(questionName);
+    }
+
+    public void markLessonComplete(Lesson lesson) {
+        String parentCourse = lesson.getParentCourse();
+        String parentModule = lesson.getParentContentModule();
+        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
+        CourseProgress currentProgress = courses.get(parentCourse);
+        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
+        currentModuleProgress.setLessonProgress(lessonName, true);
+    }
+
+    public void markLessonIncomplete(Lesson lesson) {
+        String parentCourse = lesson.getParentCourse();
+        String parentModule = lesson.getParentContentModule();
+        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
+        CourseProgress currentProgress = courses.get(parentCourse);
+        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
+        currentModuleProgress.setLessonProgress(lessonName, false);
+    }
+
+    public boolean isLessonComplete(Lesson lesson) {
+        String parentCourse = lesson.getParentCourse();
+        String parentModule = lesson.getParentContentModule();
+        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
+        CourseProgress currentProgress = courses.get(parentCourse);
+        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
+        return currentModuleProgress.getLessonProgress(lessonName);
+    }
+
+    public boolean isModuleComplete(ContentModule contentModule) {
+        String parentCourse = contentModule.getParentCourse();
+        CourseProgress currentProgress = courses.get(parentCourse);
+        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(contentModule.getName());
+        return currentModuleProgress.isComplete();
+    }
+
+    public boolean isCourseComplete(Course course) {
+        CourseProgress currentProgress = courses.get(course.getName());
+        return currentProgress.isComplete();
     }
 
 }
