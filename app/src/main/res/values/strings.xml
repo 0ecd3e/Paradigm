@@ -20,4 +20,6 @@
     <string name="Reset_Settings">Reset Settings</string>
     <string name="Erase_Data">Erase Data</string>
     <string name="Progress">Progress</string>
+    <string name="Continue">Continue</string>
+    <string name="Expand_All">Expand All</string>
 </resources>
