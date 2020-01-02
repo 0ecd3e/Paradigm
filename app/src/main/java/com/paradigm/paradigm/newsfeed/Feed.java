@@ -41,44 +41,33 @@ public class Feed {
     }
 
     public void printList() {
-//        for (int i=0; i<list.size(); i++){
-//            list.elementAt(i).print();
-//        }
         for (Article article : list) {
             article.print();
         }
     }
 
-    //TODO: likely a problem with the loop, not getting the next article properly
+    public String getDescContents(String description) {
+        String contents = description.substring(description.indexOf("<p>"), description.indexOf("</p>"));
+        contents = contents.replace("<p>", "");
+        return contents;
+    }
+
+    public String getDescImage(String description) {
+        String imageURL = description.substring(description.indexOf("<img src="), description.indexOf("' alt="));
+        imageURL = imageURL.replace("<img src='", "");
+        return imageURL;
+    }
+
+    public String getImageDescription(String description) {
+        String imageDesc = description.substring(description.indexOf("title="), description.indexOf("' height="));
+        imageDesc = imageDesc.replace("title='", "");
+        return imageDesc;
+    }
+
     public void setFeed(final String address) {
         //Establishes connection to RSS and retrieves article info.
         try {
             URL newsUrl = new URL(address);
-//            BufferedReader in = new BufferedReader(new InputStreamReader(newsUrl.openStream()));
-//            String line;
-//
-//            Article temp = new Article();
-//
-//            while ((line = in.readLine()) != null) {
-//                if (line.contains("<title>")) {
-//                    temp.setTitle(getTitle(line));
-//                }
-//                if (line.contains("<pubDate>")) {
-//                    temp.setTime(getTimeStamp(line));
-//                }
-//                if (line.contains("<link>")) {
-//                    temp.setUrl(getLink(line));
-//                }
-//                list.add(temp);
-//            }
-//            in.close();
-
-//            BufferedReader in = new BufferedReader(new InputStreamReader(newsUrl.openStream()));
-//            String line;
-//            while ((line = in.readLine()) != null) {
-//                System.out.println(line);
-//            }
-//            in.close();
 
             SyndFeedInput syndFeedInput = new SyndFeedInput();
             SyndFeed syndFeed = syndFeedInput.build(new XmlReader(newsUrl));
@@ -86,14 +75,22 @@ public class Feed {
             List entries = syndFeed.getEntries();
 
             for (Object entry : entries) {
-                System.out.println("ENTRY START");
+                Article article = new Article();
                 SyndEntry syndEntry = (SyndEntry) entry;
-                System.out.println(syndEntry.getTitle());
-                System.out.println(syndEntry.getLink());
-                System.out.println(syndEntry.getAuthor());
-                System.out.println(syndEntry.getPublishedDate());
-                System.out.println(syndEntry.getDescription().getValue());
-                System.out.println("ENTRY END");
+
+                article.setTitle(syndEntry.getTitle());
+                article.setUrl(syndEntry.getLink());
+                article.setAuthor(syndEntry.getAuthor());
+                article.setDate(syndEntry.getPublishedDate().toString());
+                String description = syndEntry.getDescription().getValue();
+                String descContents = getDescContents(description);
+                String image = getDescImage(description);
+                String imageDesc = getImageDescription(description);
+                article.setDescription(descContents);
+                article.setImageURL(image);
+                article.setImageDescription(imageDesc);
+
+                list.add(article);
             }
         } catch (IOException e) {
             e.printStackTrace();

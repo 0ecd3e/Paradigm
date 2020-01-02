@@ -12,6 +12,6 @@ public class NewsFeedTest {
         String url = "https://rss.cbc.ca/lineup/technology.xml";
         Feed f = new Feed();
         f.setFeed(url);
-//        f.printList();
+        f.printList();
     }
 }
