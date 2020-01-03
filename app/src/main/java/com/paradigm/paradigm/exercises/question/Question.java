@@ -1,7 +1,9 @@
 package com.paradigm.paradigm.exercises.question;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.paradigm.paradigm.exercises.answer.Answer;
 import com.paradigm.paradigm.profile.UserProgress;
 
@@ -15,11 +17,12 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = MultipleChoiceQuestion.class),
         @JsonSubTypes.Type(value = FillInBlankQuestion.class),
 })
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public abstract class Question implements Serializable {
+    protected String questionType;
     protected String questionText;
     protected String questionName;
     protected Answer answer;
-    //    protected boolean answeredCorrectly;
     protected String parentContentModule;
     protected String parentCourse;
 
@@ -31,7 +34,6 @@ public abstract class Question implements Serializable {
         this.questionName = questionName;
         this.questionText = questionText;
         this.answer = answer;
-//        answeredCorrectly = false;
     }
 
     public String getParentContentModule() {
@@ -74,6 +76,10 @@ public abstract class Question implements Serializable {
         this.questionName = name;
     }
 
+    public String getQuestionType() {
+        return questionType;
+    }
+
     public Answer getAnswer() {
         return answer;
     }
@@ -82,21 +88,21 @@ public abstract class Question implements Serializable {
         this.answer = answer;
     }
 
-//    public boolean isAnsweredCorrectly() {
-//        return answeredCorrectly;
-//    }
-
-//    public void setAnsweredCorrectly(boolean status) {
-//        answeredCorrectly = status;
-//    }
-
     public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
         if (input.equals(answer.getAnswer())) {
-//            setAnsweredCorrectly(true);
             userProgress.markQuestionCorrect(this);
         } else {
-//            setAnsweredCorrectly(false);
             userProgress.markQuestionIncorrect(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("PC " + parentCourse);
+        System.out.println("PCM " + parentContentModule);
+        System.out.println("QN " + questionName);
+        System.out.println("QT " + questionText);
+        System.out.println("A " + answer);
+        return "Question toString()";
     }
 }

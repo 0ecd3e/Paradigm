@@ -1,8 +1,16 @@
 package com.paradigm.paradigm.text;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Lesson extends Content {
+    @JsonProperty("lessonContent")
     private String lessonContent;
+    @JsonProperty("parentContentModule")
     private String parentContentModule;
+    @JsonProperty("parentCourse")
     private String parentCourse;
 
     public Lesson() {
@@ -52,5 +60,13 @@ public class Lesson extends Content {
 
     public String lessonContentPath() {
         return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("N " + name);
+        System.out.println("PCM " + parentContentModule);
+        System.out.println("PC " + parentCourse);
+        return "LESSON";
     }
 }

@@ -1,6 +1,8 @@
 package com.paradigm.paradigm.profile.progressEntries;
 
-public abstract class ProgressEntry {
+import java.io.Serializable;
+
+public abstract class ProgressEntry implements Serializable {
     protected String componentName;
     protected boolean isComplete;
 

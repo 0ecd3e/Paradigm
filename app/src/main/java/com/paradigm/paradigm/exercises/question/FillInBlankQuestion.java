@@ -9,10 +9,12 @@ import java.util.List;
 public class FillInBlankQuestion extends Question {
     public FillInBlankQuestion() {
         super();
+        questionType = "fillInBlankQuestion";
     }
 
     public FillInBlankQuestion(String questionName, String questionText, Answer answer) {
         super(questionName, questionText, answer);
+        questionType = "fillInBlankQuestion";
     }
 
     @Override
@@ -21,14 +23,12 @@ public class FillInBlankQuestion extends Question {
         boolean answerMatched = false;
         for (String possibleAnswer : answerList) {
             if (input.equals(possibleAnswer)) {
-//                setAnsweredCorrectly(true);
                 userProgress.markQuestionCorrect(this);
                 answerMatched = true;
             }
         }
 
         if (!answerMatched) {
-//            setAnsweredCorrectly(false);
             userProgress.markQuestionIncorrect(this);
         }
     }

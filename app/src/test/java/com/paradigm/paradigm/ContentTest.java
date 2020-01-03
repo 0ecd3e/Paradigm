@@ -16,6 +16,8 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 
+import static org.junit.Assert.fail;
+
 public class ContentTest {
     @Test
     public void testSave() {
@@ -82,6 +84,7 @@ public class ContentTest {
         java.setParents();
 
         ObjectMapper objectMapper = new ObjectMapper();
+
         try {
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), java);
         } catch (IOException e) {
@@ -143,6 +146,7 @@ public class ContentTest {
             test = objectMapper.readValue(new File("src/courseJava.json"), Course.class);
         } catch (IOException e) {
             e.printStackTrace();
+            fail();
         }
     }
 
