@@ -3,8 +3,8 @@ package com.paradigm.paradigm;
 import android.content.Context;
 import android.content.res.AssetManager;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.runner.AndroidJUnit4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.exercises.question.Question;

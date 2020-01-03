@@ -1,23 +1,19 @@
 package com.paradigm.paradigm.ui.lesson;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.ui.lessonContent.LessonContentFragment;
 
 public class LessonFragment extends Fragment {
 
@@ -41,7 +37,7 @@ public class LessonFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.toContent);
+        Button button = view.findViewById(R.id.toContent);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

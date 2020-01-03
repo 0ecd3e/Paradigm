@@ -22,6 +22,7 @@ public class MCQTest {
         module.addQuestion(mcq);
         Course course = new Course("java");
         course.addModule(module);
+        course.setParents();
 
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(course);
