@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- A CardView that contains a TextView -->
+
     <Button
         android:id="@+id/button12"
         android:layout_width="348dp"
