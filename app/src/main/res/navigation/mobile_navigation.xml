@@ -19,6 +19,12 @@
         <action
             android:id="@+id/action_nav_home_to_nav_news"
             app:destination="@id/nav_news" />
+        <action
+            android:id="@+id/action_nav_home_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_homeScreenFragment2"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
 
     <fragment
@@ -74,5 +80,10 @@
         android:name="com.paradigm.paradigm.ui.lessonContent.LessonContentFragment"
         android:label="lesson_content_fragment"
         tools:layout="@layout/lesson_content_fragment" />
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.paradigm.paradigm.HomeScreenFragment"
+        android:label="fragment_homescreen_list"
+        tools:layout="@layout/fragment_homescreen_list" />
 
 </navigation>

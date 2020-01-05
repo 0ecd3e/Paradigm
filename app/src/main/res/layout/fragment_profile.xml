@@ -52,7 +52,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="7dp"
         android:text="Username"
-        android:textSize="20"
+        android:textSize="20pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -63,7 +63,7 @@
         android:layout_marginStart="75dp"
         android:layout_marginTop="21dp"
         android:text="Class"
-        android:textSize="25"
+        android:textSize="25pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -74,7 +74,7 @@
         android:layout_marginStart="75dp"
         android:layout_marginTop="21dp"
         android:text="Class"
-        android:textSize="25"
+        android:textSize="25pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -88,7 +88,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Progress : "
-        android:textSize="25"
+        android:textSize="25pt"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
