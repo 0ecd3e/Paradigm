@@ -1,58 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false">
 
     <!-- A CardView that contains a TextView -->
 
-    <Button
-        android:id="@+id/text_gallery"
-        android:layout_width="348dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="44dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar7" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="348dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="44dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_gallery" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="348dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="44dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="348dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="44dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button15" />
+    <ImageButton
+        android:id="@+id/newsFeedBackArrow"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:tint="@color/textBlack"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/toolbar4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar7"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -61,20 +35,43 @@
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
         android:text="@string/menu_news"
+        android:textColor="@color/textBlack"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar7"
-        app:layout_constraintHorizontal_bias="0.414"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintStart_toStartOf="@+id/newsFeedBackArrow"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar5"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/Return"
+        android:tint="@color/textBlack"
+        app:layout_constraintBottom_toBottomOf="@+id/newsFeedBackArrow"
+        app:layout_constraintEnd_toEndOf="@+id/newsFeedBackArrow"
+        app:layout_constraintStart_toStartOf="@+id/newsFeedBackArrow"
+        app:layout_constraintTop_toTopOf="@+id/newsFeedBackArrow"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ScrollView
+        android:id="@+id/newsScrollView"
+        android:layout_width="409dp"
+        android:layout_height="673dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar7">
+
+        <LinearLayout
+            android:id="@+id/newsVerticalLayout"
+            style="borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
