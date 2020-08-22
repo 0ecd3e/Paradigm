@@ -43,7 +43,7 @@ public class LessonFragment extends Fragment {
             public void onClick(View view) {
                 //Navigation.findNavController(view).navigate(R.id.lessonContentFragment);
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                navController.navigate(R.id.action_lessonFragment_to_lessonContentFragment);
+                //navController.navigate(R.id.action_lessonFragment_to_lessonContentFragment);
 
             }
         });
