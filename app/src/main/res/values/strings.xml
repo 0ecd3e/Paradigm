@@ -24,4 +24,5 @@
     <string name="Continue">Continue</string>
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
+    <string name="answer_prompt">Enter your answer here.</string>
 </resources>
