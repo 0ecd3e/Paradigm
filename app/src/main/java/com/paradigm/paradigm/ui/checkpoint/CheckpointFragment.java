@@ -23,7 +23,7 @@ public class CheckpointFragment extends Fragment {
         checkpointViewModel =
                 ViewModelProviders.of(this).get(CheckpointViewModel.class);
         View root = inflater.inflate(R.layout.fragment_checkpoint, container, false);
-        final TextView textView = root.findViewById(0);
+        final TextView textView = root.findViewById(R.id.module_name);
         checkpointViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

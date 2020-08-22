@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/module_image"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="20dp"
-        app:civ_border_color="#008577"
-
-        app:civ_border_width="4dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/module_name"
-        tools:src="?android:attr/galleryItemBackground" />
+        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/module_name"
@@ -37,7 +37,7 @@
         android:id="@+id/continueProgressButton"
         android:layout_width="105dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/text_view_border"
         android:fontFamily="@font/roboto"
         android:text="@string/Continue"
@@ -46,18 +46,19 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="367dp"
-        android:layout_height="303dp"
+        android:id="@+id/cardView"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/text_view_border"
         app:cardBackgroundColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/continueProgressButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/module_image"
-        app:layout_constraintVertical_bias="0.498" >
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -67,6 +68,7 @@
                 android:id="@+id/sectionImage"
                 android:layout_width="93dp"
                 android:layout_height="91dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="@+id/sectionBox"
                 app:layout_constraintStart_toStartOf="@+id/sectionBox"
                 app:layout_constraintTop_toTopOf="@+id/sectionBox"
@@ -75,11 +77,11 @@
 
             <TextView
                 android:id="@+id/sectionBox"
-                android:layout_width="367dp"
+                android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:background="@drawable/text_view_border"
                 android:clickable="true"
-                android:focusable="auto"
+                android:focusable="true"
                 android:focusableInTouchMode="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

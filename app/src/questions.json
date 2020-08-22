@@ -1,8 +1,8 @@
 {
-  "type" : "com.paradigm.paradigm.text.ContentModule",
+  "type": "com.paradigm.paradigm.text.ContentModule",
   "@id": 1,
-  "name" : "module2",
-  "description" : null,
+  "name": "module2",
+  "description": null,
   "lessons": {},
   "questions": {
     "q1": {
