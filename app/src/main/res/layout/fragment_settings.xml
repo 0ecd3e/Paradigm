@@ -2,126 +2,108 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsPage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar4"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="48dp"
         android:layout_height="39dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="54dp"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="@+id/darkModeTextView"
         app:layout_constraintTop_toBottomOf="@+id/switch2" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="48dp"
         android:layout_height="39dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Dark_Mode"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Visual_Settings"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Reset_Settings"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/News_Feed"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/newsFeedTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="160dp"
-        android:text="@string/action_settings"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
+        android:id="@+id/newsFeedTextView"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/News_Feed"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Erase_Data"
+    <TextView
+        android:id="@+id/darkModeTextView"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Dark_Mode"
+        android:textAlignment="textStart"
+        android:textColor="@color/textBlack"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" /><![CDATA[
+        app:layout_constraintTop_toBottomOf="@+id/newsFeedTextView" />
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/visualSettingsButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/white"
+        android:fontFamily="@font/roboto"
+        android:shadowColor="@android:color/white"
+        android:singleLine="false"
+        android:text="@string/Visual_Settings"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/darkModeTextView" />
 
+    <Button
+        android:id="@+id/resetSettingsButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/white"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Reset_Settings"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visualSettingsButton" />
 
-
-    ]]>
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+    <Button
+        android:id="@+id/button12"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/white"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Erase_Data"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetSettingsButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
