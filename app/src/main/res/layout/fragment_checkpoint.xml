@@ -5,123 +5,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="141dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="134dp"
-        android:text="Topic 1"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/module_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        app:civ_border_color="#008577"
+
+        app:civ_border_width="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="141dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="134dp"
-        android:text="Topic 1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:layout_constraintTop_toBottomOf="@+id/module_name"
+        tools:src="?android:attr/galleryItemBackground" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/module_name"
         android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/menu_checkpoint"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/default_module_name"
+        android:textAlignment="center"
+        android:textColor="@color/textBlack"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar5"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
-    <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="47dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="120dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="11dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="7dp"
+        android:id="@+id/continueProgressButton"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/text_view_border"
+        android:fontFamily="@font/roboto"
         android:text="@string/Continue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="141dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="135dp"
-        android:text="Topic 1"
+        android:textAlignment="center"
+        android:textColor="@color/textBlack"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="164dp"
-        android:text="@string/Expand_All"
-        android:textSize="10pt"
+    <androidx.cardview.widget.CardView
+        android:layout_width="367dp"
+        android:layout_height="303dp"
+        android:background="@drawable/text_view_border"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/continueProgressButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintTop_toBottomOf="@+id/module_image"
+        app:layout_constraintVertical_bias="0.498" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/sectionImage"
+                android:layout_width="93dp"
+                android:layout_height="91dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sectionBox"
+                app:layout_constraintStart_toStartOf="@+id/sectionBox"
+                app:layout_constraintTop_toTopOf="@+id/sectionBox"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_menu_slideshow" />
+
+            <TextView
+                android:id="@+id/sectionBox"
+                android:layout_width="367dp"
+                android:layout_height="92dp"
+                android:background="@drawable/text_view_border"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sectionNameBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="85dp"
+                android:text="@string/default_section_name"
+                android:textAlignment="center"
+                android:textColor="@color/textBlack"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/sectionProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="148dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="96dp"
+                android:background="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sectionNameBox" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

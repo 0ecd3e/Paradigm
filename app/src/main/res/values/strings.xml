@@ -24,5 +24,15 @@
     <string name="Continue">Continue</string>
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
+
+
     <string name="answer_prompt">Enter your answer here.</string>
+    <string name="default_module_name">Default Module Name</string>
+    <string name="default_section_name">Default Section Name</string>
+
+    <string name="quiz_score">Quiz Score</string>
+
+    <string name="article_title">Article Title</string>
+    <string name="author">author</string>
+    <string name="publication_date">Publication Date</string>
 </resources>
