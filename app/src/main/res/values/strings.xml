@@ -25,4 +25,18 @@
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
     <string name="answer_prompt">Enter your answer here.</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="interface_header">Interface</string>
+    <string name="general_header">General</string>
+
+    <!-- Interface Preferences -->
+    <string name="newsfeed_toggle">News Feed</string>
+    <string name="darkmode_toggle">Dark Mode</string>
+
+    <!-- General Preferences -->
+    <string name="reset_dialog">Reset settings</string>
+    <string name="eraseData_dialog">Erase user data</string>
+    <string name="textview">TextView</string>
 </resources>

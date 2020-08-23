@@ -3,6 +3,7 @@ package com.paradigm.paradigm;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,9 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+         */
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_news, R.id.nav_checkpoint,
-                R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
+                R.id.nav_explore, R.id.nav_profile, R.id.settingsFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
@@ -67,19 +68,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toCheckpoint(View view) {
+        Toast.makeText(MainActivity.this, "toCheckpoint", Toast.LENGTH_LONG).show();
         Navigation.findNavController(view).navigate(R.id.nav_checkpoint);
     }
 
     public void toExplore(View view) {
+        Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_LONG).show();
         Navigation.findNavController(view).navigate(R.id.nav_explore);
     }
 
     public void toNews(View view) {
+        Toast.makeText(MainActivity.this, "toNews", Toast.LENGTH_LONG).show();
         Navigation.findNavController(view).navigate(R.id.nav_news);
     }
 
     public void toLesson(View view) {
+        Toast.makeText(MainActivity.this, "toLesson", Toast.LENGTH_LONG).show();
         //Navigation.findNavController(view).navigate(R.id.lessonFragment);
     }
-
 }
