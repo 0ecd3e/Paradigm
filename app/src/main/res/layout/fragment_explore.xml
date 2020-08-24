@@ -79,7 +79,7 @@
                 android:layout_height="73dp"
                 android:layout_marginEnd="14dp"
                 android:paddingStart="4dp"
-                android:paddingEnd=""
+                android:paddingEnd="0dp"
                 android:text="@string/default_description"
                 app:layout_constraintBottom_toBottomOf="@+id/module_background"
                 app:layout_constraintEnd_toEndOf="parent"
