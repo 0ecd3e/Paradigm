@@ -2,17 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/fill_in_question_pg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/multiple_choice_question_pg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/fillInBlankQuestionBox"
+            android:id="@+id/fill_in_question_box"
             android:layout_width="348dp"
             android:layout_height="402dp"
             android:layout_marginTop="84dp"
@@ -28,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/sectionQuizScoreBox"
+            android:id="@+id/section_quiz_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
@@ -38,10 +40,10 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fillInBlankAnswerBox" />
+            app:layout_constraintTop_toBottomOf="@+id/fill_in_answer_box" />
 
         <EditText
-            android:id="@+id/fillInBlankAnswerBox"
+            android:id="@+id/fill_in_answer_box"
             android:layout_width="260dp"
             android:layout_height="45dp"
             android:layout_marginTop="36dp"
@@ -51,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fillInBlankQuestionBox" />
+            app:layout_constraintTop_toBottomOf="@+id/fill_in_question_box" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,60 +8,36 @@
     android:background="@android:color/white">
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/dark_mode_switch"
         android:layout_width="48dp"
         android:layout_height="39dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toEndOf="@+id/darkModeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dark_mode_button"
+        app:layout_constraintEnd_toEndOf="@+id/dark_mode_button"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/dark_mode_button" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/news_feed_switch"
         android:layout_width="48dp"
         android:layout_height="39dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/newsFeedTextView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/newsFeedTextView"
-        android:layout_width="168dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/News_Feed"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/textBlack"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/darkModeTextView"
-        android:layout_width="168dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="56dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/Dark_Mode"
-        android:textAlignment="textStart"
-        android:textColor="@color/textBlack"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newsFeedTextView" />
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/news_feed_button"
+        app:layout_constraintEnd_toEndOf="@+id/news_feed_button"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/visualSettingsButton"
+        android:id="@+id/visual_setting_button"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="168dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="56dp"
-        android:background="@android:color/white"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
         android:fontFamily="@font/roboto"
+        android:paddingStart="20dp"
         android:shadowColor="@android:color/white"
         android:singleLine="false"
         android:text="@string/Visual_Settings"
@@ -69,41 +45,80 @@
         android:textAllCaps="false"
         android:textColor="@color/textBlack"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/darkModeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode_button" />
 
     <Button
-        android:id="@+id/resetSettingsButton"
+        android:id="@+id/reset_setting_button"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="168dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="56dp"
-        android:background="@android:color/white"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
         android:fontFamily="@font/roboto"
+        android:paddingStart="20dp"
         android:text="@string/Reset_Settings"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/textBlack"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visualSettingsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/visual_setting_button" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/erase_data_button"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="168dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="56dp"
-        android:background="@android:color/white"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
         android:fontFamily="@font/roboto"
+        android:paddingStart="20dp"
         android:text="@string/Erase_Data"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/textBlack"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetSettingsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/reset_setting_button" />
+
+    <Button
+        android:id="@+id/news_feed_button"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
+        android:fontFamily="@font/roboto"
+        android:paddingStart="20dp"
+        android:text="@string/News_Feed"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dark_mode_button"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
+        android:fontFamily="@font/roboto"
+        android:paddingStart="20dp"
+        android:text="@string/Dark_Mode"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news_feed_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,8 @@
     <string name="answer_prompt">Enter your answer here.</string>
     <string name="default_module_name">Default Module Name</string>
     <string name="default_section_name">Default Section Name</string>
+    <string name="default_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. </string>
 
     <string name="quiz_score">Quiz Score</string>
 

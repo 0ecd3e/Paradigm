@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/multiple_choice_question_pg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/multipleChoiceQuestionBox"
+        android:id="@+id/multiple_choice_question_box"
         android:layout_width="330dp"
         android:layout_height="306dp"
         android:layout_marginTop="30dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/option_1"
         android:layout_width="330dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
@@ -37,10 +37,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multipleChoiceQuestionBox" />
+        app:layout_constraintTop_toBottomOf="@+id/multiple_choice_question_box" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/option_2"
         android:layout_width="330dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
@@ -48,14 +48,14 @@
         android:background="@android:color/white"
         android:text="Option B"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/option_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/option_1" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/option_3"
         android:layout_width="330dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
@@ -64,10 +64,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/option_2" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/option_4"
         android:layout_width="330dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
@@ -76,10 +76,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toBottomOf="@+id/option_3" />
 
     <TextView
-        android:id="@+id/sectionQuizScoreBox"
+        android:id="@+id/section_quiz_score"
         android:layout_width="107dp"
         android:layout_height="34dp"
         android:layout_marginTop="40dp"
@@ -90,6 +90,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/option_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

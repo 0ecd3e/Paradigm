@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/module_image"
         android:layout_width="128dp"
         android:layout_height="127dp"
         android:layout_marginTop="28dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/continueProgressButton"
+        android:id="@+id/continue_module_progress"
         android:layout_width="105dp"
         android:layout_height="50dp"
         android:layout_marginBottom="32dp"
@@ -47,10 +47,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/section_scroll_feed" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/section_scroll_feed"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -58,25 +58,25 @@
         app:cardBackgroundColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/module_image">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/sectionImage"
+                android:id="@+id/section_image"
                 android:layout_width="93dp"
                 android:layout_height="91dp"
                 android:contentDescription="@string/todo"
-                app:layout_constraintBottom_toBottomOf="@+id/sectionBox"
-                app:layout_constraintStart_toStartOf="@+id/sectionBox"
-                app:layout_constraintTop_toTopOf="@+id/sectionBox"
+                app:layout_constraintBottom_toBottomOf="@+id/section_box"
+                app:layout_constraintStart_toStartOf="@+id/section_box"
+                app:layout_constraintTop_toTopOf="@+id/section_box"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_menu_slideshow" />
 
             <TextView
-                android:id="@+id/sectionBox"
+                android:id="@+id/section_box"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:background="@drawable/text_view_border"
@@ -88,11 +88,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/sectionNameBox"
+                android:id="@+id/section_name_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="85dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="80dp"
                 android:text="@string/default_section_name"
                 android:textAlignment="center"
                 android:textColor="@color/textBlack"
@@ -101,7 +101,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ProgressBar
-                android:id="@+id/sectionProgressBar"
+                android:id="@+id/section_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="148dp"
                 android:layout_height="15dp"
@@ -109,7 +109,7 @@
                 android:layout_marginEnd="96dp"
                 android:background="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sectionNameBox" />
+                app:layout_constraintTop_toBottomOf="@+id/section_name_box" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
