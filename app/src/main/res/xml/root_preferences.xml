@@ -6,15 +6,17 @@
         app:title="@string/interface_header">
 
         <SwitchPreferenceCompat
-            android:id="@+id/switch1"
+            android:id="@+id/newsFeedSwitch"
+            android:defaultValue="false"
             app:iconSpaceReserved="false"
-            app:key="sync"
+            app:key="newsFeedSwitch"
             app:title="@string/News_Feed" />
 
         <SwitchPreferenceCompat
-            android:id="@+id/switch2"
+            android:id="@+id/darkModeSwitch"
+            android:defaultValue="false"
             app:iconSpaceReserved="false"
-            app:key="attachment"
+            app:key="darkModeSwitch"
             app:title="@string/Dark_Mode" />
 
     </PreferenceCategory>
@@ -26,7 +28,7 @@
             android:onClick="toNews"
             app:iconSpaceReserved="false"
             app:key="resetSettings"
-            app:summary="Reset user settings"
+            app:summary="Reset these settings"
             app:title="@string/reset_dialog" />
         <Preference
             android:onClick="toExplore"

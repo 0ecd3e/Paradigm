@@ -1,5 +1,6 @@
 package com.paradigm.paradigm;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String pref1 = String.valueOf(sharedPref.getBoolean("newsFeedSwitch", true));
+        String pref2 = String.valueOf(sharedPref.getBoolean("darkModeSwitch", true));
+        Toast.makeText(this, "News " + pref1, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Dark " + pref2, Toast.LENGTH_SHORT).show();
     }
 
     @Override
