@@ -22,6 +22,7 @@ public class ContentTest {
     @Test
     public void testSave() {
         Course java = new Course("java");
+        java.setDescription(java.descriptionPath());
         ContentModule mod1 = new ContentModule("module1");
         ContentModule mod2 = new ContentModule("module2");
         ContentModule mod3 = new ContentModule("module3");

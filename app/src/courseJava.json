@@ -41,15 +41,20 @@
           "text" : "hfalsjht3",
           "answer" : {
             "bestAnswer": "B",
-            "acceptedAnswers" : [ {
-              "acceptedAnswer1" : "B"
-            }, {
-              "acceptedAnswer2" : "public"
-            }, {
-              "acceptedAnswer3" : "private"
-            }, {
-              "acceptedAnswer4" : "void"
-            } ]
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "B"
+              },
+              {
+                "acceptedAnswer2": "public"
+              },
+              {
+                "acceptedAnswer3": "private"
+              },
+              {
+                "acceptedAnswer4": "void"
+              }
+            ]
           }
         }
       }
@@ -93,13 +98,17 @@
           "text" : "flw34tnw4",
           "answer" : {
             "bestAnswer": "F",
-            "acceptedAnswers" : [ {
-              "acceptedAnswer1" : "F"
-            }, {
-              "acceptedAnswer2" : "foo"
-            }, {
-              "acceptedAnswer3" : "bar"
-            } ]
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "F"
+              },
+              {
+                "acceptedAnswer2": "foo"
+              },
+              {
+                "acceptedAnswer3": "bar"
+              }
+            ]
           }
         }
       }
@@ -143,15 +152,20 @@
           "text" : "fjlw3j4ht4",
           "answer" : {
             "bestAnswer": "D",
-            "acceptedAnswers" : [ {
-              "acceptedAnswer1" : "D"
-            }, {
-              "acceptedAnswer2" : "byte"
-            }, {
-              "acceptedAnswer3" : "string"
-            }, {
-              "acceptedAnswer4" : "array"
-            } ]
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "D"
+              },
+              {
+                "acceptedAnswer2": "byte"
+              },
+              {
+                "acceptedAnswer3": "string"
+              },
+              {
+                "acceptedAnswer4": "array"
+              }
+            ]
           }
         }
       }

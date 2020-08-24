@@ -4,19 +4,11 @@ import java.io.Serializable;
 
 public class UserProfile implements Serializable {
     private String username;
-    private boolean useDarkMode;
-    private boolean newsFeedEnabled;
     private UserProgress userProgress;
 
     public UserProfile(String username) {
         this.username = username;
-        resetSettings();
         userProgress = new UserProgress();
-    }
-
-    public void resetSettings() {
-        useDarkMode = false;
-        newsFeedEnabled = true;
     }
 
     public void clearUserData() {

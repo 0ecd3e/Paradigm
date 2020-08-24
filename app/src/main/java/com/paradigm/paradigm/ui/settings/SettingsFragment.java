@@ -62,6 +62,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public void deleteUserData() {
+
         Toast.makeText(getActivity(), "User data deleted", Toast.LENGTH_SHORT).show();
     }
 

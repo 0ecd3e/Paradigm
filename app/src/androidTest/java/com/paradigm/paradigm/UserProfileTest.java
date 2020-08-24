@@ -97,6 +97,8 @@ public class UserProfileTest {
             e.printStackTrace();
         }
 
+        userProfile.clearUserData();
+
     }
 
 }

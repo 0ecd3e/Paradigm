@@ -1,14 +1,17 @@
 package com.paradigm.paradigm;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -17,9 +20,17 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.navigation.NavigationView;
+import com.paradigm.paradigm.profile.CreateUserDialog;
+import com.paradigm.paradigm.profile.UserProfile;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class MainActivity extends AppCompatActivity
+        implements CreateUserDialog.NoticeDialogListener {
     private AppBarConfiguration mAppBarConfiguration;
+    private UserProfile userProfile = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +70,21 @@ public class MainActivity extends AppCompatActivity {
         String pref2 = String.valueOf(sharedPref.getBoolean("darkModeSwitch", true));
         Toast.makeText(this, "News " + pref1, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Dark " + pref2, Toast.LENGTH_SHORT).show();
+
+        try {
+            FileInputStream fis = this.openFileInput("userProfile.ser");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
+            userProfile = (UserProfile) objectInputStream.readObject();
+            objectInputStream.close();
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
+            // Error occurred when opening raw file for reading.
+            // Create an instance of the dialog fragment and show it
+            DialogFragment dialog = new CreateUserDialog();
+            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+            dialog.setCancelable(false);
+            //dialog.setCanceledOnTouchOutside(false);
+        }
     }
 
     @Override
@@ -93,5 +119,17 @@ public class MainActivity extends AppCompatActivity {
     public void toLesson(View view) {
         Toast.makeText(MainActivity.this, "toLesson", Toast.LENGTH_LONG).show();
         //Navigation.findNavController(view).navigate(R.id.lessonFragment);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        String username = "defaultUsername";
+        Dialog theDialog = (Dialog) dialog;
+        EditText text = theDialog.findViewById(R.id.usernameEntry);
+        userProfile = new UserProfile(username);
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
     }
 }
