@@ -1,38 +1,30 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
-        app:iconSpaceReserved="false"
-        app:title="@string/interface_header">
+    <PreferenceCategory app:title="@string/interface_header">
 
         <SwitchPreferenceCompat
             android:id="@+id/newsFeedSwitch"
             android:defaultValue="false"
-            app:iconSpaceReserved="false"
             app:key="newsFeedSwitch"
             app:title="@string/News_Feed" />
 
         <SwitchPreferenceCompat
             android:id="@+id/darkModeSwitch"
             android:defaultValue="false"
-            app:iconSpaceReserved="false"
             app:key="darkModeSwitch"
             app:title="@string/Dark_Mode" />
 
     </PreferenceCategory>
-    <PreferenceCategory
-        app:iconSpaceReserved="false"
-        app:title="@string/general_header">
+    <PreferenceCategory app:title="@string/general_header">
 
         <Preference
             android:onClick="toNews"
-            app:iconSpaceReserved="false"
             app:key="resetSettings"
             app:summary="Reset these settings"
             app:title="@string/reset_dialog" />
         <Preference
             android:onClick="toExplore"
-            app:iconSpaceReserved="false"
             app:key="eraseUserData"
             app:summary="Delete your user data and progress"
             app:title="@string/eraseData_dialog" />
