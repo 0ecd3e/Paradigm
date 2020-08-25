@@ -11,7 +11,11 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreferenceCompat;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
+
+import java.io.File;
+import java.io.IOException;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 
@@ -62,8 +66,20 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public void deleteUserData() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        assert mainActivity != null;
+        mainActivity.setUserProfile(null);
 
-        Toast.makeText(getActivity(), "User data deleted", Toast.LENGTH_SHORT).show();
+        File file = new File(mainActivity.getFilesDir(), "userProfile.ser");
+        if (file.delete()) {
+            Toast.makeText(getActivity(), "User data deleted", Toast.LENGTH_SHORT).show();
+        } else {
+            try {
+                throw new IOException("Data not deleted.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void resetUserSettings() {

@@ -55,4 +55,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="hint">hint</string>
+    <string name="welcome">Welcome!</string>
+    <string name="pick_a_username">Pick a username...</string>
 </resources>

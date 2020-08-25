@@ -11,10 +11,6 @@ public class UserProfile implements Serializable {
         userProgress = new UserProgress();
     }
 
-    public void clearUserData() {
-        userProgress = new UserProgress();
-    }
-
     public UserProgress getUserProgress() {
         return userProgress;
     }

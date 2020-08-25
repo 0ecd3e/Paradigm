@@ -1,11 +1,10 @@
 package com.paradigm.paradigm;
 
-import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +19,14 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.navigation.NavigationView;
-import com.paradigm.paradigm.profile.CreateUserDialog;
 import com.paradigm.paradigm.profile.UserProfile;
+import com.paradigm.paradigm.ui.profile.CreateUserDialog;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class MainActivity extends AppCompatActivity
         implements CreateUserDialog.NoticeDialogListener {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_news, R.id.nav_checkpoint,
+                R.id.nav_home, R.id.nav_news,
                 R.id.nav_explore, R.id.nav_profile, R.id.settingsFragment)
                 .setDrawerLayout(drawer)
                 .build();
@@ -101,11 +102,6 @@ public class MainActivity extends AppCompatActivity
                 || super.onSupportNavigateUp();
     }
 
-    public void toCheckpoint(View view) {
-        Toast.makeText(MainActivity.this, "toCheckpoint", Toast.LENGTH_LONG).show();
-        Navigation.findNavController(view).navigate(R.id.nav_checkpoint);
-    }
-
     public void toExplore(View view) {
         Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_LONG).show();
         Navigation.findNavController(view).navigate(R.id.nav_explore);
@@ -122,14 +118,32 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        String username = "defaultUsername";
-        Dialog theDialog = (Dialog) dialog;
-        EditText text = theDialog.findViewById(R.id.usernameEntry);
-        userProfile = new UserProfile(username);
+    public void onDialogPositiveClick(String s) {
+        String userName = "defaultUsername";
+        if (s == null) {
+            userProfile = new UserProfile(userName);
+        } else {
+            userProfile = new UserProfile(s);
+        }
+
+        try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
+            objectOutputStream.writeObject(userProfile);
+            objectOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 }
