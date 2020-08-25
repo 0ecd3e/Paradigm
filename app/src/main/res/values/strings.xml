@@ -24,6 +24,8 @@
     <string name="Continue">Continue</string>
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
+
+
     <string name="answer_prompt">Enter your answer here.</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
@@ -57,4 +59,17 @@
     <string name="hint">hint</string>
     <string name="welcome">Welcome!</string>
     <string name="pick_a_username">Pick a username...</string>
+    <string name="default_module_name">Default Module Name</string>
+    <string name="default_section_name">Default Section Name</string>
+    <string name="default_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. </string>
+
+    <string name="quiz_score">Quiz Score</string>
+
+    <string name="article_title">Article Title</string>
+    <string name="author">author</string>
+    <string name="publication_date">Publication Date</string>
+    <string name="newsTitleText">News</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
 </resources>
