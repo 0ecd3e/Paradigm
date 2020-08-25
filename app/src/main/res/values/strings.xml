@@ -70,6 +70,5 @@
     <string name="author">author</string>
     <string name="publication_date">Publication Date</string>
     <string name="newsTitleText">News</string>
-    <string name="textview">TextView</string>
     <string name="todo">TODO</string>
 </resources>

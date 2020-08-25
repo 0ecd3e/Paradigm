@@ -8,10 +8,6 @@
         android:name="com.paradigm.paradigm.ui.home.HomeFragment"
         android:label="Home" />
     <fragment
-        android:id="@+id/nav_checkpoint"
-        android:name="com.paradigm.paradigm.ui.checkpoint.CheckpointFragment"
-        android:label="CheckpointFragment" />
-    <fragment
         android:id="@+id/nav_explore"
         android:name="com.paradigm.paradigm.ui.explore.ExploreFragment"
         android:label="ExploreFragment" />
