@@ -2,101 +2,94 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/multiple_choice_question_pg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar9"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="Dummy Text"
-        android:textSize="30sp"
+        android:id="@+id/multiple_choice_question_box"
+        android:layout_width="330dp"
+        android:layout_height="306dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/text_view_border"
+        android:fontFamily="@font/roboto"
+        android:paddingStart="8dp"
+        android:text="Dummy Question.   "
+        android:textColor="@color/textBlack"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar9"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar5"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="268dp"
-        android:layout_height="152dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="21dp"
-        android:text="Dummy Question.   "
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar9" />
-
     <Button
-        android:id="@+id/button2"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/option_1"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:fontFamily="@font/roboto"
         android:text="Option A"
+        android:textAlignment="center"
+        android:textColor="@color/textBlack"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/multiple_choice_question_box" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="36dp"
+        android:id="@+id/option_2"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="27dp"
+        android:background="@android:color/white"
         android:text="Option B"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/option_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/option_1" />
 
     <Button
-        android:id="@+id/button9"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="36dp"
+        android:id="@+id/option_3"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
         android:text="Option C"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/option_2" />
 
     <Button
-        android:id="@+id/button11"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="36dp"
+        android:id="@+id/option_4"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
         android:text="Option D"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toBottomOf="@+id/option_3" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/section_quiz_score"
         android:layout_width="107dp"
         android:layout_height="34dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="36dp"
-        android:text="Score : 0/5"
-        android:textSize="20"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto"
+        android:scrollbarThumbHorizontal="@color/textBlack"
+        android:text="@string/quiz_score"
+        android:textColor="@color/textBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/option_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

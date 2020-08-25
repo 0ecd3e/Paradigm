@@ -1,89 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
+    app:startDestination="@id/nav_home">
     <fragment
         android:id="@+id/nav_home"
         android:name="com.paradigm.paradigm.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_nav_home_to_nav_checkpoint"
-            app:destination="@id/nav_checkpoint" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_explore"
-            app:destination="@id/nav_explore" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_news"
-            app:destination="@id/nav_news" />
-        <action
-            android:id="@+id/action_nav_home_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
-        <action
-            android:id="@+id/action_nav_home_to_homeScreenFragment2"
-            app:destination="@id/homeScreenFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_news"
-        android:name="com.paradigm.paradigm.ui.news.NewsFragment"
-        android:label="@string/menu_news"
-        tools:layout="@layout/fragment_news" />
-
-    <fragment
-        android:id="@+id/nav_checkpoint"
-        android:name="com.paradigm.paradigm.ui.checkpoint.CheckpointFragment"
-        android:label="@string/menu_checkpoint"
-        tools:layout="@layout/fragment_checkpoint" >
-        <action
-            android:id="@+id/action_nav_checkpoint_to_lessonFragment"
-            app:destination="@id/lessonFragment" />
-    </fragment>
-
+        android:label="Home" />
     <fragment
         android:id="@+id/nav_explore"
         android:name="com.paradigm.paradigm.ui.explore.ExploreFragment"
-        android:label="@string/menu_explore"
-        tools:layout="@layout/fragment_explore" >
-        <action
-            android:id="@+id/action_nav_explore_to_lessonFragment"
-            app:destination="@id/lessonFragment" />
-    </fragment>
-
+        android:label="ExploreFragment" />
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.paradigm.paradigm.ui.news.NewsFragment"
+        android:label="NewsFragment" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.paradigm.paradigm.ui.profile.ProfileFragment"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_profile" />
-
+        android:label="ProfileFragment" />
     <fragment
-        android:id="@+id/nav_settings"
+        android:id="@+id/settingsFragment"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
-        android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
-
-    <fragment
-        android:id="@+id/lessonFragment"
-        android:name="com.paradigm.paradigm.ui.lesson.LessonFragment"
-        android:label="lesson_fragment"
-        tools:layout="@layout/lesson_fragment" >
-        <action
-            android:id="@+id/action_lessonFragment_to_lessonContentFragment"
-            app:destination="@id/lessonContentFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/lessonContentFragment"
-        android:name="com.paradigm.paradigm.ui.lessonContent.LessonContentFragment"
-        android:label="lesson_content_fragment"
-        tools:layout="@layout/lesson_content_fragment" />
-    <fragment
-        android:id="@+id/homeScreenFragment"
-        android:name="com.paradigm.paradigm.HomeScreenFragment"
-        android:label="fragment_homescreen_list"
-        tools:layout="@layout/fragment_homescreen_list" />
-
+        android:label="SettingsFragment" />
 </navigation>

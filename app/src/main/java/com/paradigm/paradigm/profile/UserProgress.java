@@ -51,6 +51,7 @@ public class UserProgress implements Serializable {
         String parentModule = question.getParentContentModule();
         String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
         CourseProgress currentProgress = courses.get(parentCourse);
+        assert currentProgress != null;
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
         currentModuleProgress.setQuestionProgress(questionName, true);
     }
@@ -60,6 +61,7 @@ public class UserProgress implements Serializable {
         String parentModule = question.getParentContentModule();
         String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
         CourseProgress currentProgress = courses.get(parentCourse);
+        assert currentProgress != null;
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
         currentModuleProgress.setQuestionProgress(questionName, false);
     }
@@ -69,6 +71,7 @@ public class UserProgress implements Serializable {
         String parentModule = question.getParentContentModule();
         String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
         CourseProgress currentProgress = courses.get(parentCourse);
+        assert currentProgress != null;
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
         return currentModuleProgress.getQuestionProgress(questionName);
     }
@@ -96,6 +99,7 @@ public class UserProgress implements Serializable {
         String parentModule = lesson.getParentContentModule();
         String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
         CourseProgress currentProgress = courses.get(parentCourse);
+        assert currentProgress != null;
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
         return currentModuleProgress.getLessonProgress(lessonName);
     }
@@ -103,12 +107,14 @@ public class UserProgress implements Serializable {
     public boolean isModuleComplete(ContentModule contentModule) {
         String parentCourse = contentModule.getParentCourse();
         CourseProgress currentProgress = courses.get(parentCourse);
+        assert currentProgress != null;
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(contentModule.getName());
         return currentModuleProgress.isComplete();
     }
 
     public boolean isCourseComplete(Course course) {
         CourseProgress currentProgress = courses.get(course.getName());
+        assert currentProgress != null;
         return currentProgress.isComplete();
     }
 

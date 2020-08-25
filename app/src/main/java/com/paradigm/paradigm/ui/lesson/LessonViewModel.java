@@ -4,4 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 public class LessonViewModel extends ViewModel {
     // TODO: Implement the ViewModel
+    public LessonViewModel() {
+        super();
+    }
 }

@@ -1,35 +1,102 @@
 package com.paradigm.paradigm.ui.settings;
 
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreferenceCompat;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 
-public class SettingsFragment extends Fragment {
+import java.io.File;
+import java.io.IOException;
 
-    private SettingsViewModel settingsViewModel;
+public class SettingsFragment extends PreferenceFragmentCompat {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                ViewModelProviders.of(this).get(SettingsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_settings, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        settingsViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.root_preferences, rootKey);
+    }
+
+    DialogInterface.OnClickListener settingsResetListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                resetUserSettings();
             }
-        });
-        return root;
+        }
+    };
+    DialogInterface.OnClickListener dataDeleteListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                deleteUserData();
+            }
+        }
+    };
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        String key = preference.getKey();
+
+        switch (key) {
+            case "resetSettings":
+                AlertDialog.Builder resetSettingsBuilder = new AlertDialog.Builder(requireContext());
+                resetSettingsBuilder.setMessage("Reset your settings?")
+                        .setPositiveButton("Yes", settingsResetListener)
+                        .setNegativeButton("No", settingsResetListener)
+                        .show();
+                return true;
+            case "eraseUserData":
+                AlertDialog.Builder deleteDataBuilder = new AlertDialog.Builder(requireContext());
+                deleteDataBuilder.setMessage("Delete your progress?")
+                        .setPositiveButton("Yes", dataDeleteListener)
+                        .setNegativeButton("No", dataDeleteListener)
+                        .show();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public void deleteUserData() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        assert mainActivity != null;
+        mainActivity.setUserProfile(null);
+
+        File file = new File(mainActivity.getFilesDir(), "userProfile.ser");
+        if (file.delete()) {
+            Toast.makeText(getActivity(), "User data deleted", Toast.LENGTH_SHORT).show();
+        } else {
+            try {
+                throw new IOException("Data not deleted.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void resetUserSettings() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        sp.edit().clear().apply();
+        PreferenceManager.setDefaultValues(requireContext(), R.xml.root_preferences, true);
+
+        SwitchPreferenceCompat news = (SwitchPreferenceCompat) findPreference("newsFeedSwitch");
+        boolean state = sp.getBoolean("newsFeedSwitch", false);
+        assert news != null;
+        news.setChecked(state);
+
+        SwitchPreferenceCompat dark = (SwitchPreferenceCompat) findPreference("darkModeSwitch");
+        boolean state2 = sp.getBoolean("darkModeSwitch", false);
+        assert dark != null;
+        dark.setChecked(state2);
+
+        Toast.makeText(getActivity(), "Settings reset", Toast.LENGTH_SHORT).show();
     }
 }

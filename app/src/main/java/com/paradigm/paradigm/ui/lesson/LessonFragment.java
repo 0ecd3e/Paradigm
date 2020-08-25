@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -32,7 +32,7 @@ public class LessonFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(LessonViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(LessonViewModel.class);
         // TODO: Use the ViewModel
     }
 
@@ -43,7 +43,7 @@ public class LessonFragment extends Fragment {
             public void onClick(View view) {
                 //Navigation.findNavController(view).navigate(R.id.lessonContentFragment);
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                navController.navigate(R.id.action_lessonFragment_to_lessonContentFragment);
+                //navController.navigate(R.id.action_lessonFragment_to_lessonContentFragment);
 
             }
         });
