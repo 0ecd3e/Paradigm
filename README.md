@@ -1,4 +1,4 @@
-# Paradigm - Code from one student to another #
+# Paradigm - Learn Java #
 
 #### Useful links: ####
 
