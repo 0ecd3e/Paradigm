@@ -25,6 +25,10 @@
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
 
+    <!-- MCQ Strings -->
+    <string name="default_option">option x</string>
+
+
 
     <string name="answer_prompt">Enter your answer here.</string>
     <string name="title_activity_settings">SettingsActivity</string>

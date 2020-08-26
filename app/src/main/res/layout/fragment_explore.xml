@@ -28,7 +28,12 @@
                 android:id="@+id/module_background"
                 android:layout_width="378dp"
                 android:layout_height="170dp"
-                android:background="@drawable/text_view_border"
+                android:background="@android:color/white"
+                android:elevation="4dp"
+                android:shadowColor="@color/textBlack"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -38,12 +43,13 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="8dp"
+                android:elevation="2dp"
                 app:civ_border_color="@color/textBlack"
                 app:civ_border_width="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/module_background"
                 app:layout_constraintStart_toStartOf="@+id/module_background"
                 app:layout_constraintTop_toTopOf="@+id/module_background"
-                tools:src="@drawable/ic_menu_camera" />
+                tools:src="@drawable/ic_menu_gallery" />
 
             <TextView
                 android:id="@+id/module_name"
@@ -51,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="48dp"
-                android:background="@android:color/white"
+                android:background="@android:color/transparent"
+                android:elevation="2dp"
                 android:fontFamily="@font/roboto"
                 android:paddingStart="4dp"
                 android:paddingEnd="0dp"
@@ -67,13 +74,15 @@
                 android:id="@+id/divider_bar"
                 android:layout_width="2dp"
                 android:layout_height="133dp"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
                 android:background="@android:color/black"
+                android:elevation="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/module_background"
                 app:layout_constraintStart_toEndOf="@+id/module_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:elevation="2dp"
                 android:id="@+id/description_textview"
                 android:layout_width="234dp"
                 android:layout_height="73dp"
