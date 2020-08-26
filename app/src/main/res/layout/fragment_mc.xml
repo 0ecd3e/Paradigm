@@ -16,13 +16,15 @@
         android:elevation="2dp"
         android:fontFamily="@font/roboto"
         android:paddingStart="8dp"
-        android:text="Dummy Question.   "
+        android:paddingEnd="0dp"
+        android:text="@string/dummy_question"
         android:textColor="@color/textBlack"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop" />
 
     <Button
         android:id="@+id/option_1"
@@ -55,6 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
+        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@+id/option_1" />
 
     <Button

@@ -21,7 +21,7 @@
             android:icon="@android:drawable/sym_def_app_icon"
             android:title="@string/menu_profile" />
         <item
-            android:id="@+id/settingsFragment"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_settings" />
     </group>

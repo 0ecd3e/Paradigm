@@ -10,17 +10,17 @@
     <fragment
         android:id="@+id/nav_explore"
         android:name="com.paradigm.paradigm.ui.explore.ExploreFragment"
-        android:label="ExploreFragment" />
+        android:label="Explore" />
     <fragment
         android:id="@+id/nav_news"
         android:name="com.paradigm.paradigm.ui.news.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="News" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.paradigm.paradigm.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="Profile" />
     <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/nav_settings"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="Settings" />
 </navigation>

@@ -75,4 +75,5 @@
     <string name="publication_date">Publication Date</string>
     <string name="newsTitleText">News</string>
     <string name="todo">TODO</string>
+    <string name="dummy_question">Dummy Question.</string>
 </resources>
