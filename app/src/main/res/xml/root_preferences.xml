@@ -5,7 +5,7 @@
 
         <SwitchPreferenceCompat
             android:id="@+id/newsFeedSwitch"
-            android:defaultValue="false"
+            android:defaultValue="true"
             app:key="newsFeedSwitch"
             app:title="@string/News_Feed" />
 

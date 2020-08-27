@@ -32,11 +32,25 @@ public class MainActivity extends AppCompatActivity
         implements CreateUserDialog.NoticeDialogListener {
     private AppBarConfiguration mAppBarConfiguration;
     private UserProfile userProfile = null;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String pref1 = String.valueOf(sharedPreferences.getBoolean("newsFeedSwitch", true));
+        String pref2 = String.valueOf(sharedPreferences.getBoolean("darkModeSwitch", true));
+
+        Toast.makeText(this, "News " + pref1 + "\nDark " + pref2, Toast.LENGTH_SHORT).show();
+
+        if (sharedPreferences.getBoolean("newsFeedSwitch", true)) {
+            setContentView(R.layout.activity_main);
+        } else {
+            setContentView(R.layout.activity_main_newsdisabled);
+        }
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*
@@ -49,28 +63,36 @@ public class MainActivity extends AppCompatActivity
             }
         });
          */
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_news,
-                R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
-                .setDrawerLayout(drawer)
-                .build();
+
+        DrawerLayout drawer;
+        NavigationView navigationView;
+
+        if (sharedPreferences.getBoolean("newsFeedSwitch", true)) {
+            drawer = findViewById(R.id.drawer_layout);
+            navigationView = findViewById(R.id.nav_view);
+            // Passing each menu ID as a set of Ids because each
+            // menu should be considered as top level destinations.
+            mAppBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.nav_home, R.id.nav_news,
+                    R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
+                    .setDrawerLayout(drawer)
+                    .build();
+        } else {
+            drawer = findViewById(R.id.drawer_layout_newsdisabled);
+            navigationView = findViewById(R.id.nav_view_newsdisabled);
+            // Passing each menu ID as a set of Ids because each
+            // menu should be considered as top level destinations.
+            mAppBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.nav_home, R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
+                    .setDrawerLayout(drawer)
+                    .build();
+        }
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
         //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String pref1 = String.valueOf(sharedPref.getBoolean("newsFeedSwitch", true));
-        String pref2 = String.valueOf(sharedPref.getBoolean("darkModeSwitch", true));
-        Toast.makeText(this, "News " + pref1, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Dark " + pref2, Toast.LENGTH_SHORT).show();
 
         initProfile();
     }
@@ -122,12 +144,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDialogPositiveClick(String s) {
-        String userName = String.valueOf(R.string.default_username);
-        if (s == null) {
-            userProfile = new UserProfile(userName);
+    public void onDialogPositiveClick(String username) {
+        if (username.equals("")) {
+            userProfile = new UserProfile("defaultUser");
         } else {
-            userProfile = new UserProfile(s);
+            userProfile = new UserProfile(username);
         }
 
         try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
@@ -137,10 +158,6 @@ public class MainActivity extends AppCompatActivity
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
     }
 
     public UserProfile getUserProfile() {

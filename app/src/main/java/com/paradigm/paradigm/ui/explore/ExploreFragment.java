@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.paradigm.paradigm.ContentFragment;
-import com.paradigm.paradigm.ExploreModuleRecyclerViewAdapter;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent;
 
@@ -35,8 +33,8 @@ public class ExploreFragment extends Fragment {
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static ContentFragment newInstance(int columnCount) {
-        ContentFragment fragment = new ContentFragment();
+    public static ExploreFragment newInstance(int columnCount) {
+        ExploreFragment fragment = new ExploreFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);

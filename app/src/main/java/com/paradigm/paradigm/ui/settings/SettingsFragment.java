@@ -22,6 +22,16 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey);
+
+        SwitchPreferenceCompat newsFeedSwitch = findPreference("newsFeedSwitch");
+        assert newsFeedSwitch != null;
+        newsFeedSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                requireActivity().recreate();
+                return true;
+            }
+        });
     }
 
     DialogInterface.OnClickListener settingsResetListener = new DialogInterface.OnClickListener() {

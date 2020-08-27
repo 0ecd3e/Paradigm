@@ -62,7 +62,5 @@ public class CreateUserDialog extends DialogFragment {
      * Each method passes the DialogFragment in case the host needs to query it. */
     public interface NoticeDialogListener {
         void onDialogPositiveClick(String s);
-
-        void onDialogNegativeClick(DialogFragment dialog);
     }
 }

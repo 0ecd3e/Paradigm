@@ -1,4 +1,4 @@
-package com.paradigm.paradigm;
+package com.paradigm.paradigm.ui.explore;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 
 import java.util.List;
