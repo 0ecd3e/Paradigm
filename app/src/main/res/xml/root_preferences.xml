@@ -28,6 +28,10 @@
             app:key="eraseUserData"
             app:summary="Delete your user data and progress"
             app:title="@string/eraseData_dialog" />
+        <Preference
+            app:key="about"
+            app:summary="Version 0.9.0beta\n\nMade by the Paradigm team"
+            app:title="About" />
 
     </PreferenceCategory>
 

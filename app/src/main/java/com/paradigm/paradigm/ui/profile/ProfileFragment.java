@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
+import com.paradigm.paradigm.profile.UserProfile;
 
 public class ProfileFragment extends Fragment {
 
@@ -22,7 +24,9 @@ public class ProfileFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
+
+        updateUsernameDisplay(root);
+
         profileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -30,5 +34,16 @@ public class ProfileFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    public void updateUsernameDisplay(View view) {
+        final TextView textView = view.findViewById(R.id.profileFragmentUsername);
+        MainActivity mainActivity = (MainActivity) requireActivity();
+        UserProfile userProfile = mainActivity.getUserProfile();
+        if (userProfile == null) {
+            mainActivity.initProfile();
+        } else {
+            textView.setText(userProfile.getUsername());
+        }
     }
 }

@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "News " + pref1, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Dark " + pref2, Toast.LENGTH_SHORT).show();
 
+        initProfile();
+    }
+
+    public void initProfile() {
         try {
             FileInputStream fis = this.openFileInput("userProfile.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fis);
@@ -82,8 +86,8 @@ public class MainActivity extends AppCompatActivity
             // Error occurred when opening raw file for reading.
             // Create an instance of the dialog fragment and show it
             DialogFragment dialog = new CreateUserDialog();
-            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
             dialog.setCancelable(false);
+            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
             //dialog.setCanceledOnTouchOutside(false);
         }
     }
@@ -119,7 +123,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onDialogPositiveClick(String s) {
-        String userName = "defaultUsername";
+        String userName = String.valueOf(R.string.default_username);
         if (s == null) {
             userProfile = new UserProfile(userName);
         } else {
@@ -145,5 +149,10 @@ public class MainActivity extends AppCompatActivity
 
     public void setUserProfile(UserProfile userProfile) {
         this.userProfile = userProfile;
+    }
+
+    public void editUsername(View view) {
+        DialogFragment dialog = new CreateUserDialog();
+        dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
     }
 }

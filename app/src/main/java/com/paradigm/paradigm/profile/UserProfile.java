@@ -18,4 +18,12 @@ public class UserProfile implements Serializable {
     public void setUserProgress(UserProgress userProgress) {
         this.userProgress = userProgress;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String s) {
+        username = s;
+    }
 }

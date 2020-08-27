@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/module_image"
+        android:id="@+id/cardExploreModuleImage"
         android:layout_width="128dp"
         android:layout_height="127dp"
         android:layout_marginTop="28dp"
@@ -14,12 +14,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/module_name"
+        app:layout_constraintTop_toBottomOf="@+id/cardExploreModuleName"
         app:srcCompat="@android:mipmap/sym_def_app_icon"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/module_name"
+        android:id="@+id/cardExploreModuleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -42,7 +42,7 @@
         app:cardBackgroundColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/module_image">
+        app:layout_constraintTop_toBottomOf="@+id/cardExploreModuleImage">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
