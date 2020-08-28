@@ -56,18 +56,17 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         updateUsernameDisplay(view);
-        View recycler = view.findViewById(R.id.profileModuleProgressList);
+        RecyclerView recycler = view.findViewById(R.id.profileModuleProgressList);
 
         // Set the adapter
-        if (recycler instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+        if (recycler != null) {
+            Context context = recycler.getContext();
             if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                recycler.setLayoutManager(new LinearLayoutManager(context));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ProfileModuleRecyclerViewAdapter(DummyContent.ITEMS));
+            recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(DummyContent.ITEMS));
         }
         return view;
     }
