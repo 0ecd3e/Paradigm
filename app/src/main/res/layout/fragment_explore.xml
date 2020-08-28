@@ -4,4 +4,5 @@
     android:id="@+id/exploreModuleList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
     tools:listitem="@layout/fragment_explore_module" />
