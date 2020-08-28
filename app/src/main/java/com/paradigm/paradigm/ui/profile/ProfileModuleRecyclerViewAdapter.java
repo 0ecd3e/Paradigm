@@ -37,7 +37,7 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id;
+        String title = mValues.get(position).id + "%";
         String desc = mValues.get(position).content + "Module Title";
         holder.mIdView.setText(desc);
         holder.mContentView.setText(title);

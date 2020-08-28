@@ -23,4 +23,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TopBarTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/design_default_color_surface</item>
+    </style>
+
 </resources>

@@ -61,7 +61,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/profileOverallProgressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -70,31 +70,35 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/profileOverallProgressPercent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/profileOverallProgressTitle" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/profileOverallProgressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
                 android:text="Overall Progress:"
                 android:textAlignment="viewStart"
-                android:textSize="18sp"
+                android:textColor="@color/textBlack"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/profileFragmentUsername" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="40dp"
+                android:id="@+id/profileOverallProgressPercent"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:text="50%"
+                android:text="100%"
                 android:textAlignment="viewEnd"
-                app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+                android:textColor="@color/textBlack"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/profileOverallProgressBar"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,6 +109,7 @@
         android:id="@+id/profileModuleProgressList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
