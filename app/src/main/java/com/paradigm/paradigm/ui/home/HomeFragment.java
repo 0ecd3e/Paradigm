@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +24,12 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        ImageView imageView = root.findViewById(R.id.latestModuleCardImage);
+        imageView.setImageResource(R.drawable.smptebars);
+        ProgressBar progressBar = root.findViewById(R.id.latestModuleProgressBar);
+        progressBar.setProgress(50);
+
         //final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

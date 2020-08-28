@@ -6,7 +6,26 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.paradigm.paradigm.ui.home.HomeFragment"
-        android:label="Home" />
+        android:label="Home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_explore"
+            app:destination="@id/nav_explore"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_news"
+            app:destination="@id/nav_news"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/nav_explore"
         android:name="com.paradigm.paradigm.ui.explore.ExploreFragment"

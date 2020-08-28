@@ -130,12 +130,17 @@ public class MainActivity extends AppCompatActivity
 
     public void toExplore(View view) {
         Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_LONG).show();
-        Navigation.findNavController(view).navigate(R.id.nav_explore);
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);
     }
 
     public void toNews(View view) {
         Toast.makeText(MainActivity.this, "toNews", Toast.LENGTH_LONG).show();
-        Navigation.findNavController(view).navigate(R.id.nav_news);
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_news);
+    }
+
+    public void toProfile(View view) {
+        Toast.makeText(MainActivity.this, "toProfile", Toast.LENGTH_LONG).show();
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_profile);
     }
 
     public void toLesson(View view) {
