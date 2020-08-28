@@ -3,92 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:clipChildren="false">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/news_page"
-        android:layout_width="407dp"
-        android:layout_height="735dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsFeedList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/fragment_news_element" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/article_interaction_box"
-                android:layout_width="408dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="112dp"
-                android:background="@android:color/white"
-                android:elevation="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:elevation="4dp"
-                android:id="@+id/imageView3"
-                android:layout_width="138dp"
-                android:layout_height="136dp"
-                android:layout_marginBottom="3dp"
-                app:layout_constraintBottom_toBottomOf="@+id/article_interaction_box"
-                app:layout_constraintStart_toStartOf="@+id/article_interaction_box"
-                android:contentDescription="@string/todo"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/article_title"
-                android:layout_width="266dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/roboto"
-                android:paddingStart="2dp"
-                android:text="@string/article_title"
-                android:textColor="@color/textBlack"
-                android:textSize="18sp"
-                android:translationZ="4dp"
-                app:layout_constraintBottom_toBottomOf="@+id/article_interaction_box"
-                app:layout_constraintEnd_toEndOf="@+id/article_interaction_box"
-                app:layout_constraintHorizontal_bias="0.985"
-                app:layout_constraintStart_toStartOf="@+id/article_interaction_box"
-                app:layout_constraintTop_toTopOf="@+id/article_interaction_box"
-                app:layout_constraintVertical_bias="0.008" />
-
-            <TextView
-                android:id="@+id/article_author_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="65dp"
-                android:layout_marginEnd="226dp"
-                android:background="@android:color/white"
-                android:elevation="4dp"
-                android:fontFamily="@font/roboto"
-                android:paddingStart="2dp"
-                android:text="@string/author"
-                android:textColor="@color/textBlack"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/article_title" />
-
-            <TextView
-                android:id="@+id/pub_date_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="92dp"
-                android:layout_marginEnd="164dp"
-                android:background="@android:color/white"
-                android:elevation="4dp"
-                android:paddingStart="2dp"
-                android:text="@string/publication_date"
-                android:textColor="@color/textBlack"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/article_title" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

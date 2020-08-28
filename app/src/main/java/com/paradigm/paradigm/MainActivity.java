@@ -172,4 +172,8 @@ public class MainActivity extends AppCompatActivity
         DialogFragment dialog = new CreateUserDialog();
         dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
     }
+
+    public void displayToast(View view) {
+        Toast.makeText(this, "DISPLAYTOAST", Toast.LENGTH_SHORT).show();
+    }
 }
