@@ -1,9 +1,9 @@
-package com.paradigm.paradigm.ui.news;
+package com.paradigm.paradigm.ui.profile;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,30 +19,29 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class NewsFragmentRecyclerViewAdapter extends RecyclerView.Adapter<NewsFragmentRecyclerViewAdapter.ViewHolder> {
+public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<ProfileModuleRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
 
-    public NewsFragmentRecyclerViewAdapter(List<DummyItem> items) {
+    public ProfileModuleRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_news_element, parent, false);
+                .inflate(R.layout.fragment_profile_progresselement, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id + "News Title";
-        holder.mIdView.setText(title);
-        String desc = mValues.get(position).content + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n" +
-                "        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus.";
-        holder.mContentView.setText(desc);
-        holder.imageView.setImageResource(R.drawable.smptebars);
+        String title = mValues.get(position).id;
+        String desc = mValues.get(position).content + "Module Title";
+        holder.mIdView.setText(desc);
+        holder.mContentView.setText(title);
+        holder.progressBar.setProgress(Integer.parseInt(mValues.get(position).id));
     }
 
     @Override
@@ -54,15 +53,15 @@ public class NewsFragmentRecyclerViewAdapter extends RecyclerView.Adapter<NewsFr
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
+        public final ProgressBar progressBar;
         public DummyItem mItem;
-        public ImageView imageView;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.newsArticleTitle);
-            mContentView = (TextView) view.findViewById(R.id.newsArticleText);
-            imageView = (ImageView) view.findViewById(R.id.newsArticleImage);
+            mIdView = (TextView) view.findViewById(R.id.profileProgressModuleTitle);
+            mContentView = (TextView) view.findViewById(R.id.profileProgressModulePercent);
+            progressBar = (ProgressBar) view.findViewById(R.id.profileProgressProgressBar);
         }
 
         @NonNull

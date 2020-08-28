@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent;
-import com.paradigm.paradigm.ui.explore.ExploreModuleRecyclerViewAdapter;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +64,7 @@ public class NewsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(DummyContent.ITEMS));
+            recyclerView.setAdapter(new NewsFragmentRecyclerViewAdapter(DummyContent.ITEMS));
         }
         return view;
     }
