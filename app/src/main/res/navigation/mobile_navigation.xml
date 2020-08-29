@@ -65,5 +65,22 @@
     <fragment
         android:id="@+id/lessonFragment"
         android:name="com.paradigm.paradigm.ui.lesson.LessonFragment"
-        android:label="LessonFragment" />
+        android:label="LessonFragment">
+        <action
+            android:id="@+id/action_lessonFragment_to_MCQFragment"
+            app:destination="@id/MCQFragment" />
+        <action
+            android:id="@+id/action_lessonFragment_to_FIBQuestionFragment"
+            app:destination="@id/FIBQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MCQFragment"
+        android:name="com.paradigm.paradigm.ui.question.MCQFragment"
+        android:label="m_c_q_fragment"
+        tools:layout="@layout/m_c_q_fragment" />
+    <fragment
+        android:id="@+id/FIBQuestionFragment"
+        android:name="com.paradigm.paradigm.ui.question.FIBQuestionFragment"
+        android:label="f_i_b_question_fragment"
+        tools:layout="@layout/f_i_b_question_fragment" />
 </navigation>

@@ -53,7 +53,8 @@ public class NewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        View root = inflater.inflate(R.layout.fragment_news, container, false);
+        View view = root.findViewById(R.id.newsFeedList);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -66,6 +67,6 @@ public class NewsFragment extends Fragment {
             }
             recyclerView.setAdapter(new NewsFragmentRecyclerViewAdapter(DummyContent.ITEMS));
         }
-        return view;
+        return root;
     }
 }

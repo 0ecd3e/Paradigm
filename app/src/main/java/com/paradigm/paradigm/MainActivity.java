@@ -159,6 +159,15 @@ public class MainActivity extends AppCompatActivity
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_moduleFragment);
     }
 
+    public void toMCQ(View view) {
+        Toast.makeText(MainActivity.this, "toMCQ", Toast.LENGTH_SHORT).show();
+        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_MCQFragment);
+    }
+
+    public void toFIBQ(View view) {
+        Toast.makeText(MainActivity.this, "toFIBQ", Toast.LENGTH_SHORT).show();
+        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+    }
 
     @Override
     public void onDialogPositiveClick(String username) {
