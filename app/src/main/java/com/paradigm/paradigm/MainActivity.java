@@ -1,11 +1,14 @@
 package com.paradigm.paradigm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,9 +41,18 @@ public class MainActivity extends AppCompatActivity
     private AppBarConfiguration mAppBarConfiguration;
     private UserProfile userProfile = null;
     private SharedPreferences sharedPreferences;
-    public static String feedURL = "https://rss.cbc.ca/lineup/technology.xml";
+    public String feedURL;
     private Course course;
-    private Feed newsFeed;
+    SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (key.equals("defaultFeedLocation")) {
+                String oldLocation = feedURL;
+                feedURL = sharedPreferences.getString("defaultFeedLocation", oldLocation);
+            }
+        }
+    };
+    private Feed newsFeed = new Feed();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +60,9 @@ public class MainActivity extends AppCompatActivity
 
         PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String pref1 = String.valueOf(sharedPreferences.getBoolean("newsFeedSwitch", true));
-        String pref2 = String.valueOf(sharedPreferences.getBoolean("darkModeSwitch", true));
-
-        Toast.makeText(this, "News " + pref1 + "\nDark " + pref2, Toast.LENGTH_SHORT).show();
+        String feedSource = sharedPreferences.getString("defaultFeedLocation", "https://rss.cbc.ca/lineup/technology.xml");
+        feedURL = feedSource;
+        sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
 
         if (sharedPreferences.getBoolean("newsFeedSwitch", true)) {
             setContentView(R.layout.activity_main);
@@ -241,5 +252,18 @@ public class MainActivity extends AppCompatActivity
 
     public Feed getNewsFeed() {
         return newsFeed;
+    }
+
+    public void visitNewsArticle(View v) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        TextView textView = v.findViewById(R.id.newsArticleUrl);
+        String url = textView.getText().toString();
+        i.setData(Uri.parse(url));
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startActivity(i);
+    }
+
+    public String getFeedURL() {
+        return feedURL;
     }
 }

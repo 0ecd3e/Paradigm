@@ -8,12 +8,13 @@
             android:defaultValue="true"
             app:key="newsFeedSwitch"
             app:title="@string/News_Feed" />
-
-        <SwitchPreferenceCompat
-            android:id="@+id/darkModeSwitch"
-            android:defaultValue="false"
-            app:key="darkModeSwitch"
-            app:title="@string/Dark_Mode" />
+        <EditTextPreference
+            android:defaultValue="https://rss.cbc.ca/lineup/technology.xml"
+            android:key="defaultFeedLocation"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Set the source of the news feed"
+            android:title="News Feed Source" />
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/general_header">

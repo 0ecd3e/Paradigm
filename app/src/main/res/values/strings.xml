@@ -34,7 +34,7 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
-    <string name="interface_header">Interface</string>
+    <string name="interface_header">News Feed</string>
     <string name="general_header">General</string>
 
     <!-- Interface Preferences -->

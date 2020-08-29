@@ -97,15 +97,10 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         sp.edit().clear().apply();
         PreferenceManager.setDefaultValues(requireContext(), R.xml.root_preferences, true);
 
-        SwitchPreferenceCompat news = (SwitchPreferenceCompat) findPreference("newsFeedSwitch");
+        SwitchPreferenceCompat news = findPreference("newsFeedSwitch");
         boolean state = sp.getBoolean("newsFeedSwitch", false);
         assert news != null;
         news.setChecked(state);
-
-        SwitchPreferenceCompat dark = (SwitchPreferenceCompat) findPreference("darkModeSwitch");
-        boolean state2 = sp.getBoolean("darkModeSwitch", false);
-        assert dark != null;
-        dark.setChecked(state2);
 
         Toast.makeText(getActivity(), "Settings reset", Toast.LENGTH_SHORT).show();
     }
