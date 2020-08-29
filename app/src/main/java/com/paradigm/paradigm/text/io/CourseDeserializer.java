@@ -67,7 +67,7 @@ public class CourseDeserializer extends StdDeserializer<Course> {
                     answer = new MultipleChoiceAnswer(bestAnswer);
                     question = new MultipleChoiceQuestion(questionName, questionText, answer);
                 } else if (questionType.equals("fillInBlankQuestion")) {
-                    System.out.println("FIBQ_DESERIALIZER");
+                    //System.out.println("FIBQ_DESERIALIZER");
                     answer = new FillInBlankAnswer(bestAnswer);
                     TreeNode acceptableAnswersArray = currentQuestion.get("answer").get("acceptedAnswers");
 
@@ -75,13 +75,13 @@ public class CourseDeserializer extends StdDeserializer<Course> {
                     while (index < acceptableAnswersArray.size()) {
                         String next = acceptableAnswersArray.get(index).get("acceptedAnswer" + (index + 1)).toString();
                         next = next.replace("\"", "");
-                        System.out.println(next);
+                        //System.out.println(next);
                         ((FillInBlankAnswer) answer).addAlternativeAnswer(next);
                         index++;
                     }
 
-                    System.out.println("END OF WHILE LOOP DESERIALIZER");
-                    System.out.println(answer);
+                    //System.out.println("END OF WHILE LOOP DESERIALIZER");
+                    //System.out.println(answer);
                     question = new FillInBlankQuestion(questionName, questionText, answer);
                 }
 

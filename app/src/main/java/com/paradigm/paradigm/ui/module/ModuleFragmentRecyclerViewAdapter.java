@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
+import com.paradigm.paradigm.text.Course;
+import com.paradigm.paradigm.text.Lesson;
 
 import java.util.List;
 
@@ -22,9 +24,15 @@ import java.util.List;
 public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<ModuleFragmentRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
+    private List<Lesson> lessons;
 
     public ModuleFragmentRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
+    }
+
+    public ModuleFragmentRecyclerViewAdapter(Course course, List<DummyItem> mValues) {
+
+        this.mValues = mValues;
     }
 
     @Override

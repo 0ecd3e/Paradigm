@@ -92,10 +92,12 @@ public class Feed {
 
                 list.add(article);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (FeedException e) {
+        } catch (IOException | FeedException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Article> getArticles() {
+        return list;
     }
 }

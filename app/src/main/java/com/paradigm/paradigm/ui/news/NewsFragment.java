@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +65,8 @@ public class NewsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new NewsFragmentRecyclerViewAdapter(DummyContent.ITEMS));
+            //DummyContent.ITEMS
+            recyclerView.setAdapter(new NewsFragmentRecyclerViewAdapter(((MainActivity) requireActivity()).getNewsFeed()));
         }
         return root;
     }
