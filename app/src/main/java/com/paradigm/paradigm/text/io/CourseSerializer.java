@@ -14,8 +14,7 @@ import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
 public class CourseSerializer extends StdSerializer<Course> {
 
@@ -34,34 +33,34 @@ public class CourseSerializer extends StdSerializer<Course> {
         gen.writeStringField("name", courseName);
 
         gen.writeObjectFieldStart("modules"); //1
-        for (Map.Entry<String, ContentModule> moduleEntry : value.getModules().entrySet()) {
-            String contentModuleName = moduleEntry.getValue().getName();
-            gen.writeObjectFieldStart(moduleEntry.getKey()); //2
+        for (ContentModule moduleEntry : value.getModules()) {
+            String contentModuleName = moduleEntry.getName();
+            gen.writeObjectFieldStart(contentModuleName); //2
             gen.writeStringField("parentCourse", courseName);
-            gen.writeStringField("name", contentModuleName);
+            //gen.writeStringField("name", contentModuleName);
 
             gen.writeObjectFieldStart("lessons"); //3
-            Set<Map.Entry<String, Lesson>> lessonEntrySet = moduleEntry.getValue().getLessons().entrySet();
-            for (Map.Entry<String, Lesson> lessonEntry: lessonEntrySet) {
-                gen.writeObjectFieldStart(lessonEntry.getKey()); //4
+            List<Lesson> lessonEntrySet = moduleEntry.getLessons();
+            for (Lesson lessonEntry : lessonEntrySet) {
+                gen.writeObjectFieldStart(lessonEntry.getName()); //4
                 gen.writeStringField("parentCourse", courseName);
                 gen.writeStringField("parentContentModule", contentModuleName);
-                gen.writeStringField("name", lessonEntry.getValue().getName());
+                //gen.writeStringField("name", lessonEntry.getValue().getName());
                 gen.writeEndObject(); //4
             }
             gen.writeEndObject(); //3
 
             gen.writeObjectFieldStart("questions"); //3
-            Set<Map.Entry<String, Question>> questionEntrySet = moduleEntry.getValue().getQuestions().entrySet();
-            for (Map.Entry<String, Question> questionEntry: questionEntrySet) {
-                Question question = questionEntry.getValue();
+            List<Question> questionEntrySet = moduleEntry.getQuestions();
+            for (Question questionEntry : questionEntrySet) {
+                Question question = questionEntry;
                 String questionType = question.getQuestionType();
 
-                gen.writeObjectFieldStart(questionEntry.getKey()); //4
+                gen.writeObjectFieldStart(questionEntry.getQuestionName()); //4
                 gen.writeStringField("type", questionType);
                 gen.writeStringField("parentCourse", courseName);
                 gen.writeStringField("parentContentModule", contentModuleName);
-                gen.writeStringField("name", question.getQuestionName());
+                //gen.writeStringField("name", question.getQuestionName());
                 gen.writeStringField("text", question.getQuestionText());
 
                 gen.writeObjectFieldStart("answer"); //5

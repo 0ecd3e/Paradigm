@@ -23,18 +23,18 @@ public class UserProgress implements Serializable {
         String courseName = course.getName();
         CourseProgress courseProgress = new CourseProgress(courseName);
 
-        for (ContentModule module : course.getModuleList()) {
+        for (ContentModule module : course.getModules()) {
             String moduleName = module.getName();
             String moduleElementName = courseName + ", " + moduleName;
             ModuleProgress moduleProgress = new ModuleProgress(moduleElementName);
 
-            for (Lesson lesson : module.provideLessonValues()) {
+            for (Lesson lesson : module.getLessons()) {
                 String lessonName = lesson.getName();
                 String lessonElementName = moduleElementName + ", " + lessonName;
                 moduleProgress.setLessonProgress(lessonElementName, false);
             }
 
-            for (Question question : module.provideQuestionValues()) {
+            for (Question question : module.getQuestions()) {
                 String questionName = question.getQuestionName();
                 String questionElementName = moduleElementName + ", " + questionName;
                 moduleProgress.setQuestionProgress(questionElementName, false);

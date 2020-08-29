@@ -4,22 +4,18 @@
   "modules": {
     "module1": {
       "parentCourse": "java",
-      "name": "module1",
       "lessons": {
         "lesson1": {
           "parentCourse": "java",
-          "parentContentModule": "module1",
-          "name": "lesson1"
+          "parentContentModule": "module1"
         },
         "lesson2": {
           "parentCourse": "java",
-          "parentContentModule": "module1",
-          "name": "lesson2"
+          "parentContentModule": "module1"
         },
         "lesson3": {
           "parentCourse": "java",
-          "parentContentModule": "module1",
-          "name": "lesson3"
+          "parentContentModule": "module1"
         }
       },
       "questions": {
@@ -27,7 +23,6 @@
           "type": "multipleChoiceQuestion",
           "parentCourse": "java",
           "parentContentModule": "module1",
-          "name": "q1",
           "text": "fhiwj34",
           "answer": {
             "bestAnswer": "A"
@@ -37,7 +32,6 @@
           "type": "fillInBlankQuestion",
           "parentCourse": "java",
           "parentContentModule": "module1",
-          "name": "q2",
           "text": "hfalsjht3",
           "answer": {
             "bestAnswer": "B",
@@ -59,78 +53,20 @@
         }
       }
     },
-    "module3": {
-      "parentCourse": "java",
-      "name": "module3",
-      "lessons": {
-        "lesson1": {
-          "parentCourse": "java",
-          "parentContentModule": "module3",
-          "name": "lesson1"
-        },
-        "lesson2": {
-          "parentCourse": "java",
-          "parentContentModule": "module3",
-          "name": "lesson2"
-        },
-        "lesson3": {
-          "parentCourse": "java",
-          "parentContentModule": "module3",
-          "name": "lesson3"
-        }
-      },
-      "questions": {
-        "q1": {
-          "type": "multipleChoiceQuestion",
-          "parentCourse": "java",
-          "parentContentModule": "module3",
-          "name": "q1",
-          "text": "fjaljt34",
-          "answer": {
-            "bestAnswer": "E"
-          }
-        },
-        "q2": {
-          "type": "fillInBlankQuestion",
-          "parentCourse": "java",
-          "parentContentModule": "module3",
-          "name": "q2",
-          "text": "flw34tnw4",
-          "answer": {
-            "bestAnswer": "F",
-            "acceptedAnswers": [
-              {
-                "acceptedAnswer1": "F"
-              },
-              {
-                "acceptedAnswer2": "foo"
-              },
-              {
-                "acceptedAnswer3": "bar"
-              }
-            ]
-          }
-        }
-      }
-    },
     "module2": {
       "parentCourse": "java",
-      "name": "module2",
       "lessons": {
         "lesson1": {
           "parentCourse": "java",
-          "parentContentModule": "module2",
-          "name": "lesson1"
+          "parentContentModule": "module2"
         },
         "lesson2": {
           "parentCourse": "java",
-          "parentContentModule": "module2",
-          "name": "lesson2"
+          "parentContentModule": "module2"
         },
         "lesson3": {
           "parentCourse": "java",
-          "parentContentModule": "module2",
-          "name": "lesson3"
+          "parentContentModule": "module2"
         }
       },
       "questions": {
@@ -138,7 +74,6 @@
           "type": "multipleChoiceQuestion",
           "parentCourse": "java",
           "parentContentModule": "module2",
-          "name": "q1",
           "text": "hfiu34h",
           "answer": {
             "bestAnswer": "C"
@@ -148,7 +83,6 @@
           "type": "fillInBlankQuestion",
           "parentCourse": "java",
           "parentContentModule": "module2",
-          "name": "q2",
           "text": "fjlw3j4ht4",
           "answer": {
             "bestAnswer": "D",
@@ -164,6 +98,54 @@
               },
               {
                 "acceptedAnswer4": "array"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "module3": {
+      "parentCourse": "java",
+      "lessons": {
+        "lesson1": {
+          "parentCourse": "java",
+          "parentContentModule": "module3"
+        },
+        "lesson2": {
+          "parentCourse": "java",
+          "parentContentModule": "module3"
+        },
+        "lesson3": {
+          "parentCourse": "java",
+          "parentContentModule": "module3"
+        }
+      },
+      "questions": {
+        "q1": {
+          "type": "multipleChoiceQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "text": "fjaljt34",
+          "answer": {
+            "bestAnswer": "E"
+          }
+        },
+        "q2": {
+          "type": "fillInBlankQuestion",
+          "parentCourse": "java",
+          "parentContentModule": "module3",
+          "text": "flw34tnw4",
+          "answer": {
+            "bestAnswer": "F",
+            "acceptedAnswers": [
+              {
+                "acceptedAnswer1": "F"
+              },
+              {
+                "acceptedAnswer2": "foo"
+              },
+              {
+                "acceptedAnswer3": "bar"
               }
             ]
           }

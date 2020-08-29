@@ -32,7 +32,7 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
     }
 
     public ExploreModuleRecyclerViewAdapter(Course course) {
-        modules = new ArrayList<>(course.getModuleList());
+        modules = new ArrayList<>(course.getModules());
     }
 
     @Override
@@ -77,9 +77,9 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.cardExploreModuleName);
-            mContentView = (TextView) view.findViewById(R.id.cardExploreModuleDesc);
-            imageView = (ImageView) view.findViewById(R.id.cardExploreModuleImage);
+            mIdView = view.findViewById(R.id.cardExploreModuleName);
+            mContentView = view.findViewById(R.id.cardExploreModuleDesc);
+            imageView = view.findViewById(R.id.cardExploreModuleImage);
         }
 /*
         @NonNull
