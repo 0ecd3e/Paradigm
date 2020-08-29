@@ -202,4 +202,14 @@ public class MainActivity extends AppCompatActivity
     public void displayToast(View view) {
         Toast.makeText(this, "DISPLAYTOAST", Toast.LENGTH_SHORT).show();
     }
+
+
+    public void fibToast(android.view.View view) {
+        Toast.makeText(this, "FIBTOAST", Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void mcqToast(android.view.View view) {
+        Toast.makeText(this, "MCQTOAST", Toast.LENGTH_SHORT).show();
+    }
 }
