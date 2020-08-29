@@ -4,7 +4,6 @@ import android.content.res.AssetManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.text.Content;
-import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Lesson;
 
 import java.io.BufferedReader;
@@ -46,21 +45,21 @@ public class ContentLoader {
         lesson.setLessonContent(content);
     }
 
-    public void loadQuestions(ContentModule module, AssetManager assetManager) {
-        String questionsPath = module.questionsPath();
-        ContentModule questionSource = new ContentModule();
+    public void loadQuestions(Lesson lesson, AssetManager assetManager) {
+        String questionsPath = lesson.questionsPath();
+        Lesson questionSource = new Lesson();
 
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             inputStream = assetManager.open(questionsPath);
-            questionSource = objectMapper.readValue(inputStream, ContentModule.class);
+            questionSource = objectMapper.readValue(inputStream, Lesson.class);
             inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        module.replaceQuestions(questionSource.getQuestions());
-        module.setParents();
+        lesson.replaceQuestions(questionSource.getQuestions());
+        lesson.setParents();
     }
 }

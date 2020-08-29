@@ -32,14 +32,13 @@ public class UserProgress implements Serializable {
                 String lessonName = lesson.getName();
                 String lessonElementName = moduleElementName + ", " + lessonName;
                 moduleProgress.setLessonProgress(lessonElementName, false);
-            }
 
-            for (Question question : module.getQuestions()) {
-                String questionName = question.getQuestionName();
-                String questionElementName = moduleElementName + ", " + questionName;
-                moduleProgress.setQuestionProgress(questionElementName, false);
+                for (Question question : lesson.getQuestions()) {
+                    String questionName = question.getQuestionName();
+                    String questionElementName = moduleElementName + ", " + questionName;
+                    moduleProgress.setQuestionProgress(questionElementName, false);
+                }
             }
-
             courseProgress.setModuleProgress(moduleName, moduleProgress);
         }
 

@@ -26,7 +26,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.navigation.NavigationView;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
+import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
+import com.paradigm.paradigm.text.Lesson;
+import com.paradigm.paradigm.text.io.ContentLoader;
 import com.paradigm.paradigm.ui.profile.CreateUserDialog;
 
 import java.io.FileInputStream;
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity
     private UserProfile userProfile = null;
     private SharedPreferences sharedPreferences;
     public String feedURL;
-    private Course course;
+    public static Course course;
     SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity
         }
     };
     private Feed newsFeed = new Feed();
+    private static ContentModule currentModule;
+    private static Lesson currentLesson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,15 +124,8 @@ public class MainActivity extends AppCompatActivity
         initContent();
     }
 
-    private void initContent() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        AssetManager assetManager = getAssets();
-        try {
-            InputStream inputStream = assetManager.open("courses/java/courseJava.json");
-            course = objectMapper.readValue(inputStream, Course.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static ContentModule getCurrentModule() {
+        return currentModule;
     }
 
     public void initProfile() {
@@ -162,43 +160,35 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void toExplore(View view) {
-        Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);
     }
 
     public void toNews(View view) {
-        Toast.makeText(MainActivity.this, "toNews", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_news);
     }
 
     public void toProfile(View view) {
-        Toast.makeText(MainActivity.this, "toProfile", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_profile);
     }
 
     public void toLesson(View view) {
-        Toast.makeText(MainActivity.this, "toLesson", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_moduleFragment_to_lessonFragment);
     }
 
     public void toModuleFromExplore(View view) {
-        Toast.makeText(MainActivity.this, "toModule", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_explore_to_moduleFragment);
     }
 
 
     public void toModuleFromHome(View view) {
-        Toast.makeText(MainActivity.this, "toModule", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_moduleFragment);
     }
 
     public void toMCQ(View view) {
-        Toast.makeText(MainActivity.this, "toMCQ", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_MCQFragment);
     }
 
     public void toFIBQ(View view) {
-        Toast.makeText(MainActivity.this, "toFIBQ", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
     }
 
@@ -265,5 +255,42 @@ public class MainActivity extends AppCompatActivity
 
     public String getFeedURL() {
         return feedURL;
+    }
+
+    public static void setCurrentModule(ContentModule cm) {
+        currentModule = cm;
+    }
+
+    public static Lesson getCurrentLesson() {
+        return currentLesson;
+    }
+
+    public static void setCurrentLesson(Lesson cl) {
+        currentLesson = cl;
+    }
+
+    private void initContent() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        AssetManager assetManager = getAssets();
+        try {
+            InputStream inputStream = assetManager.open("courses/java/courseJava.json");
+            course = objectMapper.readValue(inputStream, Course.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ContentLoader contentLoader = new ContentLoader();
+        contentLoader.loadDescription(course, assetManager);
+
+        for (ContentModule module : course.getModules()) {
+            contentLoader.loadDescription(module, assetManager);
+            for (Lesson lesson : module.getLessons()) {
+                contentLoader.loadDescription(lesson, assetManager);
+                contentLoader.loadLessonContent(lesson, assetManager);
+                contentLoader.loadQuestions(lesson, assetManager);
+            }
+        }
+
+        userProfile.getUserProgress().addCourse(course);
     }
 }

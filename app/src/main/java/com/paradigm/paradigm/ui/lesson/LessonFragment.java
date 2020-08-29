@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 
 public class LessonFragment extends Fragment {
@@ -24,7 +26,15 @@ public class LessonFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_lesson, container, false);
+        View root = inflater.inflate(R.layout.fragment_lesson, container, false);
+
+        TextView lessonTitle = root.findViewById(R.id.lessonTitle);
+        TextView lessonText = root.findViewById(R.id.lessonText);
+
+        lessonTitle.setText(MainActivity.getCurrentLesson().getName());
+        lessonText.setText(MainActivity.getCurrentLesson().getLessonContent());
+
+        return root;
     }
 
     @Override

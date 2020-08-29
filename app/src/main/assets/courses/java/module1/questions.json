@@ -3,9 +3,9 @@
   "@id": 1,
   "name": "module2",
   "description": null,
-  "lessons": {},
-  "questions": {
-    "q1": {
+  "lessons": [],
+  "questions": [
+    {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
       "@id": 2,
       "questionType": "multipleChoiceQuestion",
@@ -19,7 +19,7 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    "q2": {
+    {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
       "@id": 3,
       "questionType": "fillInBlankQuestion",
@@ -39,7 +39,7 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    "q3": {
+    {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
       "@id": 4,
       "questionType": "multipleChoiceQuestion",
@@ -53,7 +53,7 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    "q4": {
+    {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
       "@id": 5,
       "questionType": "fillInBlankQuestion",
@@ -73,7 +73,7 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    "q5": {
+    {
       "type": "com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion",
       "@id": 6,
       "questionType": "multipleChoiceQuestion",
@@ -87,7 +87,7 @@
       "parentContentModule": null,
       "parentCourse": null
     },
-    "q6": {
+    {
       "type": "com.paradigm.paradigm.exercises.question.FillInBlankQuestion",
       "@id": 7,
       "questionType": "fillInBlankQuestion",
@@ -106,6 +106,6 @@
       "parentContentModule": null,
       "parentCourse": null
     }
-  },
+  ],
   "parentCourse": null
 }

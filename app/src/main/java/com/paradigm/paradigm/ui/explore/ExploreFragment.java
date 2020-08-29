@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -56,6 +57,12 @@ public class ExploreFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_explore, container, false);
         View view = root.findViewById(R.id.exploreModuleList);
 
+        TextView courseTitle = root.findViewById(R.id.courseTitletext);
+        TextView courseDesc = root.findViewById(R.id.courseDescText);
+
+        courseTitle.setText(MainActivity.course.getName());
+        courseDesc.setText(MainActivity.course.getDescription());
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -65,7 +72,7 @@ public class ExploreFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(((MainActivity) requireActivity()).getCourse()));
+            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(MainActivity.course.getModules()));
         }
         return root;
     }

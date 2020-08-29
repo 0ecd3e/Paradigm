@@ -55,10 +55,10 @@ public class ExampleInstrumentedTest {
         ContentLoader contentLoader = new ContentLoader();
         contentLoader.loadDescription(java, assetManager);
 
-        for (ContentModule module : java.getModules().values()) {
+        for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
-            contentLoader.loadQuestions(module, assetManager);
-            for (Lesson lesson : module.getLessons().values()) {
+            for (Lesson lesson : module.getLessons()) {
+                contentLoader.loadQuestions(lesson, assetManager);
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
             }
@@ -67,8 +67,9 @@ public class ExampleInstrumentedTest {
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
 
-        ContentModule theModule = java.getModules().get("module2");
-        Question question = theModule.getQuestions().get("q3");
+        ContentModule theModule = java.getModules().get(2);
+        Lesson lesson = theModule.getLessons().get(1);
+        Question question = lesson.getQuestions().get(3);
         userProgress.markQuestionCorrect(question);
     }
 }

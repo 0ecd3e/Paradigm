@@ -37,16 +37,6 @@ public class ContentTest {
         Lesson l8 = new Lesson("lesson2");
         Lesson l9 = new Lesson("lesson3");
 
-        mod1.addLesson(l1);
-        mod1.addLesson(l2);
-        mod1.addLesson(l3);
-        mod2.addLesson(l4);
-        mod2.addLesson(l5);
-        mod2.addLesson(l6);
-        mod3.addLesson(l7);
-        mod3.addLesson(l8);
-        mod3.addLesson(l9);
-
         Answer a1 = new MultipleChoiceAnswer("A");
         FillInBlankAnswer a2 = new FillInBlankAnswer("B");
         Answer a3 = new MultipleChoiceAnswer("C");
@@ -72,12 +62,22 @@ public class ContentTest {
         Question q5 = new MultipleChoiceQuestion("q1", "fjaljt34", a5);
         Question q6 = new FillInBlankQuestion("q2", "flw34tnw4", a6);
 
-        mod1.addQuestion(q1);
-        mod1.addQuestion(q2);
-        mod2.addQuestion(q3);
-        mod2.addQuestion(q4);
-        mod3.addQuestion(q5);
-        mod3.addQuestion(q6);
+        l1.addQuestion(q1);
+        l1.addQuestion(q2);
+        l1.addQuestion(q3);
+        l2.addQuestion(q4);
+        l2.addQuestion(q5);
+        l2.addQuestion(q6);
+
+        mod1.addLesson(l1);
+        mod1.addLesson(l2);
+        mod1.addLesson(l3);
+        mod2.addLesson(l4);
+        mod2.addLesson(l5);
+        mod2.addLesson(l6);
+        mod3.addLesson(l7);
+        mod3.addLesson(l8);
+        mod3.addLesson(l9);
 
         java.addModule(mod1);
         java.addModule(mod2);
@@ -96,6 +96,8 @@ public class ContentTest {
     @Test
     public void createQuestionJson() {
         ContentModule testMod = new ContentModule("module2");
+
+        Lesson lesson = new Lesson("lesson5");
 
         Answer a1 = new MultipleChoiceAnswer("Z");
         FillInBlankAnswer a2 = new FillInBlankAnswer("X");
@@ -122,12 +124,12 @@ public class ContentTest {
         Question q5 = new MultipleChoiceQuestion("q5", "f0y3w48uhrs", a5);
         Question q6 = new FillInBlankQuestion("q6", "uhfwhulgi45", a6);
 
-        testMod.addQuestion(q1);
-        testMod.addQuestion(q2);
-        testMod.addQuestion(q3);
-        testMod.addQuestion(q4);
-        testMod.addQuestion(q5);
-        testMod.addQuestion(q6);
+        lesson.addQuestion(q1);
+        lesson.addQuestion(q2);
+        lesson.addQuestion(q3);
+        lesson.addQuestion(q4);
+        lesson.addQuestion(q5);
+        lesson.addQuestion(q6);
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {

@@ -5,6 +5,7 @@ import com.paradigm.paradigm.exercises.question.MultipleChoiceQuestion;
 import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
+import com.paradigm.paradigm.text.Lesson;
 
 import org.junit.Test;
 
@@ -19,7 +20,9 @@ public class MCQTest {
         MultipleChoiceQuestion mcq = new MultipleChoiceQuestion("q1", questionText, answer);
 
         ContentModule module = new ContentModule("module1");
-        module.addQuestion(mcq);
+        Lesson lesson = new Lesson("lesson2");
+        lesson.addQuestion(mcq);
+        module.addLesson(lesson);
         Course course = new Course("java");
         course.addModule(module);
         course.setParents();

@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent;
 
 /**
  * A fragment representing a list of Items.
@@ -56,6 +57,11 @@ public class ModuleFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_module, container, false);
         View view = root.findViewById(R.id.lessonList);
 
+        TextView moduleTitle = root.findViewById(R.id.moduleTitleText);
+        moduleTitle.setText(MainActivity.getCurrentModule().getName());
+        TextView moduleDesc = root.findViewById(R.id.moduleDescText);
+        moduleDesc.setText(MainActivity.getCurrentModule().getDescription());
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -65,7 +71,7 @@ public class ModuleFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(DummyContent.ITEMS));
+            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(MainActivity.getCurrentModule()));
         }
         return root;
     }

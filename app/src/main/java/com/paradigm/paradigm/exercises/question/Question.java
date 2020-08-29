@@ -25,6 +25,7 @@ public abstract class Question implements Serializable {
     protected Answer answer;
     protected String parentContentModule;
     protected String parentCourse;
+    protected String parentLesson;
 
     public Question() {
         super();
@@ -58,6 +59,14 @@ public abstract class Question implements Serializable {
 
     public void setParentCourse(String course) {
         this.parentCourse = course;
+    }
+
+    public String getParentLesson() {
+        return parentLesson;
+    }
+
+    public void setParentLesson(String lesson) {
+        this.parentLesson = lesson;
     }
 
     public String getQuestionText() {

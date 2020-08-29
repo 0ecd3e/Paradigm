@@ -6,14 +6,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.text.ContentModule;
-import com.paradigm.paradigm.text.Course;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,15 +25,15 @@ import java.util.List;
 public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<ExploreModuleRecyclerViewAdapter.ViewHolder> {
 
     //private final List<DummyItem> mValues;
-    private final List<ContentModule> modules;
+    private final List<ContentModule> modulesList;
 
-    public ExploreModuleRecyclerViewAdapter(List<DummyItem> items) {
-        //mValues = items;
-        modules = null;
-    }
+    //public ExploreModuleRecyclerViewAdapter(List<DummyItem> items) {
+    //mValues = items;
+    //modules = null;
+    //}
 
-    public ExploreModuleRecyclerViewAdapter(Course course) {
-        modules = new ArrayList<>(course.getModules());
+    public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules) {
+        modulesList = modules;
     }
 
     @Override
@@ -54,16 +55,24 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         holder.imageView.setImageResource(R.drawable.smptebars);
 
          */
-        holder.contentModule = modules.get(position);
+        ContentModule contentModule = modulesList.get(position);
+        holder.contentModule = contentModule;
         holder.imageView.setImageResource(R.drawable.smptebars);
-        holder.mIdView.setText(holder.contentModule.getName());
-        holder.mContentView.setText(holder.contentModule.getDescription());
+        holder.mIdView.setText(contentModule.getName());
+        holder.mContentView.setText(contentModule.getDescription());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.setCurrentModule(contentModule);
+                Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         //return mValues.size();
-        return modules.size();
+        return modulesList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,6 +82,7 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         //public DummyItem mItem;
         public ImageView imageView;
         public ContentModule contentModule;
+        public CardView cardView;
 
         public ViewHolder(View view) {
             super(view);
@@ -80,6 +90,7 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
             mIdView = view.findViewById(R.id.cardExploreModuleName);
             mContentView = view.findViewById(R.id.cardExploreModuleDesc);
             imageView = view.findViewById(R.id.cardExploreModuleImage);
+            cardView = view.findViewById(R.id.cardExploreModule);
         }
 /*
         @NonNull
