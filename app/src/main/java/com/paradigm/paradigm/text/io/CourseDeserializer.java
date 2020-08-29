@@ -44,7 +44,7 @@ public class CourseDeserializer extends StdDeserializer<Course> {
             while (lessonNames.hasNext()) {
                 String lessonName = lessonNames.next();
                 Lesson lesson = new Lesson(lessonName);
-                handleQuestions(treeNode, moduleName, lesson);
+                handleQuestions(treeNode, moduleName, lesson, lessonName);
                 contentModule.addLesson(lesson);
             }
 
@@ -55,11 +55,11 @@ public class CourseDeserializer extends StdDeserializer<Course> {
         return course;
     }
 
-    private void handleQuestions(TreeNode treeNode, String moduleName, Lesson lesson) {
-        Iterator<String> questionNames = treeNode.get("modules").get(moduleName).get("lessons").get("questions").fieldNames();
+    private void handleQuestions(TreeNode treeNode, String moduleName, Lesson lesson, String lessonName) {
+        Iterator<String> questionNames = treeNode.get("modules").get(moduleName).get("lessons").get(lessonName).get("questions").fieldNames();
         while (questionNames.hasNext()) {
             String questionName = questionNames.next();
-            TreeNode currentQuestion = treeNode.get("modules").get(moduleName).get("lessons").get("questions").get(questionName);
+            TreeNode currentQuestion = treeNode.get("modules").get(moduleName).get("lessons").get(lessonName).get("questions").get(questionName);
 
             String questionText = currentQuestion.get("text").toString();
             questionText = questionText.replace("\"", "");

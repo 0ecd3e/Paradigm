@@ -2,21 +2,23 @@ package com.paradigm.paradigm.profile;
 
 import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
+import com.paradigm.paradigm.profile.progressEntries.LessonProgress;
 import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
+import com.paradigm.paradigm.profile.progressEntries.QuestionProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserProgress implements Serializable {
 
-    private Map<String, CourseProgress> courses;
+    private List<CourseProgress> courses;
 
     public UserProgress() {
-        courses = new HashMap<>();
+        courses = new ArrayList<>();
     }
 
     public void addCourse(Course course) {
@@ -31,28 +33,37 @@ public class UserProgress implements Serializable {
             for (Lesson lesson : module.getLessons()) {
                 String lessonName = lesson.getName();
                 String lessonElementName = moduleElementName + ", " + lessonName;
-                moduleProgress.setLessonProgress(lessonElementName, false);
+                LessonProgress lessonProgress = new LessonProgress(lessonElementName);
 
                 for (Question question : lesson.getQuestions()) {
                     String questionName = question.getQuestionName();
                     String questionElementName = moduleElementName + ", " + questionName;
-                    moduleProgress.setQuestionProgress(questionElementName, false);
+                    QuestionProgress questionProgress = new QuestionProgress(questionElementName);
+                    lessonProgress.setQuestionProgress(questionProgress);
                 }
+                moduleProgress.setLessonProgress(lessonProgress);
             }
-            courseProgress.setModuleProgress(moduleName, moduleProgress);
+            courseProgress.setModuleProgress(moduleProgress);
         }
 
-        courses.put(courseName, courseProgress);
+        courses.add(courseProgress);
     }
 
     public void markQuestionCorrect(Question question) {
         String parentCourse = question.getParentCourse();
         String parentModule = question.getParentContentModule();
         String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        assert currentProgress != null;
+
+        CourseProgress currentProgress = new CourseProgress();
+        for (CourseProgress courseProgress : courses) {
+            if (courseProgress.getComponentName().equals(parentCourse)) {
+                currentProgress = courseProgress;
+            }
+        }
+
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        currentModuleProgress.setQuestionProgress(questionName, true);
+        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(parentLesson);
+        currentLessonProgress.setQuestionProgress(questionName, true);
     }
 
     public void markQuestionIncorrect(Question question) {
