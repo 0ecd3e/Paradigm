@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
@@ -129,24 +129,36 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void toExplore(View view) {
-        Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "toExplore", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);
     }
 
     public void toNews(View view) {
-        Toast.makeText(MainActivity.this, "toNews", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "toNews", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_news);
     }
 
     public void toProfile(View view) {
-        Toast.makeText(MainActivity.this, "toProfile", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "toProfile", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_profile);
     }
 
     public void toLesson(View view) {
-        Toast.makeText(MainActivity.this, "toLesson", Toast.LENGTH_LONG).show();
-        //Navigation.findNavController(view).navigate(R.id.lessonFragment);
+        Toast.makeText(MainActivity.this, "toLesson", Toast.LENGTH_SHORT).show();
+        Navigation.findNavController(view).navigate(R.id.action_moduleFragment_to_lessonFragment);
     }
+
+    public void toModuleFromExplore(View view) {
+        Toast.makeText(MainActivity.this, "toModule", Toast.LENGTH_SHORT).show();
+        Navigation.findNavController(view).navigate(R.id.action_nav_explore_to_moduleFragment);
+    }
+
+
+    public void toModuleFromHome(View view) {
+        Toast.makeText(MainActivity.this, "toModule", Toast.LENGTH_SHORT).show();
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_moduleFragment);
+    }
+
 
     @Override
     public void onDialogPositiveClick(String username) {

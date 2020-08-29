@@ -1,5 +1,4 @@
-package com.paradigm.paradigm.ui.lesson;
-
+package com.paradigm.paradigm.ui.question;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,31 +8,29 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.paradigm.paradigm.R;
 
-public class LessonFragment extends Fragment {
+public class FIBQuestionFragment extends Fragment {
 
-    private LessonViewModel mViewModel;
+    private FIBQuestionViewModel mViewModel;
 
-    public static LessonFragment newInstance() {
-        return new LessonFragment();
+    public static FIBQuestionFragment newInstance() {
+        return new FIBQuestionFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_lesson, container, false);
+        return inflater.inflate(R.layout.f_i_b_question_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LessonViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(FIBQuestionViewModel.class);
         // TODO: Use the ViewModel
     }
-
-    //find way to set question buttons green if answered correctly
 
 }
