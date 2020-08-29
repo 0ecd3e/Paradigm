@@ -53,7 +53,8 @@ public class ExploreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        View root = inflater.inflate(R.layout.fragment_explore, container, false);
+        View view = root.findViewById(R.id.exploreModuleList);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -66,6 +67,6 @@ public class ExploreFragment extends Fragment {
             }
             recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(DummyContent.ITEMS));
         }
-        return view;
+        return root;
     }
 }
