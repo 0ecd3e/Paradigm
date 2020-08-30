@@ -19,6 +19,7 @@ public class Lesson extends Content {
     @JsonProperty("questions")
     private List<Question> questions;
 
+
     public Lesson() {
         super();
     }
@@ -55,12 +56,14 @@ public class Lesson extends Content {
     @Override
     public String descriptionPath() {
         String descModuleName = parentContentModule.substring(0, 8);
-        //lessonName
-        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + DESC_FILE;
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + DESC_FILE;
     }
 
     public String questionsPath() {
-        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + Q_FILE;
+        String descModuleName = parentContentModule.substring(0, 8);
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + Q_FILE;
     }
 
     public String getLessonContent() {
@@ -88,7 +91,9 @@ public class Lesson extends Content {
     }
 
     public String lessonContentPath() {
-        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
+        String descModuleName = parentContentModule.substring(0, 8);
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + descLessonName + ".txt";
     }
 
     public void setParents() {

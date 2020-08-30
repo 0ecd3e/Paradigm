@@ -93,13 +93,9 @@ public class ContentTest {
         m2.addLesson(m2l1);
         m2.addLesson(m2l2);
 
-        m2.addLesson(m3l1);
-        m2.addLesson(m3l2);
-        m2.addLesson(m3l3);
-
-        m3.addLesson(m4l1);
-        m3.addLesson(m4l2);
-        m3.addLesson(m4l3);
+        m3.addLesson(m3l1);
+        m3.addLesson(m3l2);
+        m3.addLesson(m3l3);
 
         m4.addLesson(m4l1);
         m4.addLesson(m4l2);

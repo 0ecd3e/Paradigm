@@ -38,6 +38,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements CreateUserDialog.NoticeDialogListener {
@@ -112,9 +113,17 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+
+        int currentDest = Objects.requireNonNull(navController.getCurrentDestination()).getId();
+        if (currentDest == R.id.moduleFragment) {
+            navController.navigate(R.id.action_moduleFragment_to_nav_explore);
+            return true;
+        } else {
+            return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                    || super.onSupportNavigateUp();
+        }
     }
+
 
     public void toExplore(View view) {
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);

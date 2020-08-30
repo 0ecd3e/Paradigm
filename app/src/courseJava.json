@@ -114,38 +114,23 @@
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 2: OOP Basics",
           "questions": {}
-        },
-        "Lesson 1: Elements of Code": {
-          "parentCourse": "Java Basics",
-          "parentContentModule": "Module 2: OOP Basics",
-          "questions": {}
-        },
-        "Lesson 2: Code Organization": {
-          "parentCourse": "Java Basics",
-          "parentContentModule": "Module 2: OOP Basics",
-          "questions": {}
-        },
-        "Lesson 3: Style Guides": {
-          "parentCourse": "Java Basics",
-          "parentContentModule": "Module 2: OOP Basics",
-          "questions": {}
         }
       }
     },
     "Module 3: Basic Syntax": {
       "parentCourse": "Java Basics",
       "lessons": {
-        "Lesson 1: Access Modifiers": {
+        "Lesson 1: Elements of Code": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
           "questions": {}
         },
-        "Lesson 2: Data Types": {
+        "Lesson 2: Code Organization": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
           "questions": {}
         },
-        "Lesson 3: Arrays": {
+        "Lesson 3: Style Guides": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
           "questions": {}
