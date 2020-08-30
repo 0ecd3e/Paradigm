@@ -54,7 +54,7 @@ public class UserProgress implements Serializable {
         currentQuestionProgress.setComplete();
     }
 
-    private QuestionProgress getQuestionProgress(Question question) {
+    public QuestionProgress getQuestionProgress(Question question) {
         String parentCourse = question.getParentCourse();
         String parentModule = parentCourse + "," + question.getParentContentModule();
         String parentLesson = parentModule + "," + question.getParentLesson();

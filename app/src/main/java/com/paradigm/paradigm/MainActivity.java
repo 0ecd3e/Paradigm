@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +23,7 @@ import androidx.preference.PreferenceManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.navigation.NavigationView;
+import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
 import com.paradigm.paradigm.text.ContentModule;
@@ -58,6 +58,96 @@ public class MainActivity extends AppCompatActivity
     private Feed newsFeed = new Feed();
     private static ContentModule currentModule;
     private static Lesson currentLesson;
+    private static ContentModule checkpointModule;
+    private static Question currentQuestion;
+
+    HomeDataLoadedListener homeDataLoadedListener;
+
+    public static ContentModule getCheckpointModule() {
+        return checkpointModule;
+    }
+
+    public static ContentModule getCurrentModule() {
+        return currentModule;
+    }
+
+    public static void setCheckpointModule(ContentModule cm) {
+        checkpointModule = cm;
+    }
+
+    public static Question getCurrentQuestion() {
+        return currentQuestion;
+    }
+
+    public static void setCurrentQuestion(Question question) {
+        currentQuestion = question;
+    }
+
+    public void initProfile() {
+        try {
+            FileInputStream fis = this.openFileInput("userProfile.ser");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
+            userProfile = (UserProfile) objectInputStream.readObject();
+            objectInputStream.close();
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
+            // Error occurred when opening raw file for reading.
+            // Create an instance of the dialog fragment and show it
+            DialogFragment dialog = new CreateUserDialog();
+            dialog.setCancelable(false);
+            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+            //dialog.setCanceledOnTouchOutside(false);
+        }
+    }
+
+    /*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+     */
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+
+    public void toExplore(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);
+    }
+
+    public void toNews(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_news);
+    }
+
+    public void toProfile(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_profile);
+    }
+
+    public void toLesson(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_moduleFragment_to_lessonFragment);
+    }
+
+    public void toModuleFromExplore(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_explore_to_moduleFragment);
+    }
+
+
+    public void toModuleFromHome(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_moduleFragment);
+    }
+
+    public void toMCQ(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_MCQFragment);
+    }
+
+    public void toFIBQ(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +164,9 @@ public class MainActivity extends AppCompatActivity
         } else {
             setContentView(R.layout.activity_main_newsdisabled);
         }
+
+        initContent();
+        initProfile();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -119,95 +212,20 @@ public class MainActivity extends AppCompatActivity
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        initContent();
-        initProfile();
     }
 
-    public static ContentModule getCurrentModule() {
-        return currentModule;
+    public void listenerSet() {
+        homeDataLoadedListener.onHomePageLoaded();
     }
 
-    public void initProfile() {
-        try {
-            FileInputStream fis = this.openFileInput("userProfile.ser");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
-            userProfile = (UserProfile) objectInputStream.readObject();
-            objectInputStream.close();
-            fis.close();
-        } catch (IOException | ClassNotFoundException e) {
-            // Error occurred when opening raw file for reading.
-            // Create an instance of the dialog fragment and show it
-            DialogFragment dialog = new CreateUserDialog();
-            dialog.setCancelable(false);
-            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
-            //dialog.setCanceledOnTouchOutside(false);
-        }
+    public void setHomeDataLoadedListener(HomeDataLoadedListener hdll) {
+        homeDataLoadedListener = hdll;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
-
-    public void toExplore(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_explore);
-    }
-
-    public void toNews(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_news);
-    }
-
-    public void toProfile(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_profile);
-    }
-
-    public void toLesson(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_moduleFragment_to_lessonFragment);
-    }
-
-    public void toModuleFromExplore(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_nav_explore_to_moduleFragment);
-    }
-
-
-    public void toModuleFromHome(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_moduleFragment);
-    }
-
-    public void toMCQ(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_MCQFragment);
-    }
-
-    public void toFIBQ(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
-    }
-
-    @Override
-    public void onDialogPositiveClick(String username) {
-        if (username.equals("")) {
-            userProfile = new UserProfile("defaultUser");
-        } else {
-            userProfile = new UserProfile(username);
-        }
-
-        userProfile.getUserProgress().addCourse(course);
-
-        try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
-            objectOutputStream.writeObject(userProfile);
-            objectOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    protected void onPause() {
+        super.onPause();
+        saveProgress();
     }
 
     public UserProfile getUserProfile() {
@@ -243,6 +261,29 @@ public class MainActivity extends AppCompatActivity
 
     public Feed getNewsFeed() {
         return newsFeed;
+    }
+
+    public void saveProgress() {
+        try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
+            objectOutputStream.writeObject(userProfile);
+            objectOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onDialogPositiveClick(String username) {
+        if (username.equals("")) {
+            userProfile = new UserProfile("defaultUser");
+        } else {
+            userProfile = new UserProfile(username);
+        }
+
+        userProfile.getUserProgress().addCourse(course);
+
+        saveProgress();
     }
 
     public void visitNewsArticle(View v) {
@@ -294,5 +335,10 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
+        checkpointModule = course.getModules().get(0);
+    }
+
+    public interface HomeDataLoadedListener {
+        void onHomePageLoaded();
     }
 }

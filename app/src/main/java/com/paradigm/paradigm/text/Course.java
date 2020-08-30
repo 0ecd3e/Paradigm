@@ -55,6 +55,15 @@ public class Course extends Content {
         }
     }
 
+    public ContentModule findContentModule(String moduleName) {
+        for (ContentModule module : modules) {
+            if (module.getName().equals(moduleName)) {
+                return module;
+            }
+        }
+        return null;
+    }
+
     @NonNull
     @Override
     public String toString() {

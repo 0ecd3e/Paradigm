@@ -84,41 +84,54 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <RadioButton
                     android:id="@+id/MCQChoice1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="@string/default_description" />
+                    android:text="A" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="@string/default_description" />
+                    android:text="B" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="@string/default_description" />
+                    android:text="C" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice4"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="@string/default_description" />
+                    android:text="D" />
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -132,11 +145,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
+        android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        android:onClick="mcqToast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@+id/MCQContentCard">
 
         <androidx.constraintlayout.widget.ConstraintLayout

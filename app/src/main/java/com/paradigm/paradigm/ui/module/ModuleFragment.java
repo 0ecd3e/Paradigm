@@ -75,4 +75,5 @@ public class ModuleFragment extends Fragment {
         }
         return root;
     }
+
 }

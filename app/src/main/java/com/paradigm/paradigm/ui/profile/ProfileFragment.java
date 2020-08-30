@@ -59,24 +59,30 @@ public class ProfileFragment extends Fragment {
         updateUsernameDisplay(view);
         ProgressBar overallProgress = view.findViewById(R.id.profileOverallProgressBar);
         TextView overallProgressPercent = view.findViewById(R.id.profileOverallProgressPercent);
-        int overallCompleteness = ((MainActivity) requireActivity()).getUserProfile().getUserProgress().getCourseCompleteness(MainActivity.course);
-        overallProgress.setProgress(overallCompleteness);
-        String percentComplete = overallCompleteness + "%";
-        overallProgressPercent.setText(percentComplete);
+        UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
+        if (userProfile == null) {
+            ((MainActivity) requireActivity()).initProfile();
+        } else {
+            int overallCompleteness = userProfile.getUserProgress().getCourseCompleteness(MainActivity.course);
+            overallProgress.setProgress(overallCompleteness);
+            String percentComplete = overallCompleteness + "%";
+            overallProgressPercent.setText(percentComplete);
 
-        RecyclerView recycler = view.findViewById(R.id.profileModuleProgressList);
 
-        // Set the adapter
-        if (recycler != null) {
-            Context context = recycler.getContext();
-            if (mColumnCount <= 1) {
-                recycler.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+            RecyclerView recycler = view.findViewById(R.id.profileModuleProgressList);
+
+            // Set the adapter
+            if (recycler != null) {
+                Context context = recycler.getContext();
+                if (mColumnCount <= 1) {
+                    recycler.setLayoutManager(new LinearLayoutManager(context));
+                } else {
+                    recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                }
+                CourseProgress courseProgress = ((MainActivity) requireActivity())
+                        .getUserProfile().getUserProgress().findCourseProgress(MainActivity.course.getName());
+                recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(courseProgress));
             }
-            CourseProgress courseProgress = ((MainActivity) requireActivity())
-                    .getUserProfile().getUserProgress().findCourseProgress(MainActivity.course.getName());
-            recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(courseProgress));
         }
         return view;
     }
