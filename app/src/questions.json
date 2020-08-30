@@ -1,8 +1,0 @@
-{
-  "type": "com.paradigm.paradigm.text.ContentModule",
-  "@id": 1,
-  "name": "module2",
-  "description": null,
-  "lessons": [],
-  "parentCourse": null
-}

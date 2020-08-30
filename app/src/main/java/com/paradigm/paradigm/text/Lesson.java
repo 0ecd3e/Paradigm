@@ -54,6 +54,8 @@ public class Lesson extends Content {
 
     @Override
     public String descriptionPath() {
+        String descModuleName = parentContentModule.substring(0, 8);
+        //lessonName
         return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + DESC_FILE;
     }
 

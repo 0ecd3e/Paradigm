@@ -26,7 +26,8 @@ public class ContentModule extends Content {
 
     @Override
     public String descriptionPath() {
-        return DIR_ROOT + parentCourse + "/" + name + "/" + DESC_FILE;
+        String descname = name.substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descname + "/" + DESC_FILE;
     }
 
     public void clearParentCourse() {

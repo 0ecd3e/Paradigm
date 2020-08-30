@@ -37,7 +37,7 @@ public class UserProfileTest {
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            inputStream = assetManager.open("courses/java/courseJava.json");
+            inputStream = assetManager.open("courses/Java Basics/courseJava.json");
             java = objectMapper.readValue(inputStream, Course.class);
             inputStream.close();
         } catch (IOException e) {

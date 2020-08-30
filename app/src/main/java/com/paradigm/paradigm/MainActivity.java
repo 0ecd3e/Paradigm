@@ -166,7 +166,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         initContent();
-        initProfile();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -212,6 +211,7 @@ public class MainActivity extends AppCompatActivity
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        initProfile();
     }
 
     public void listenerSet() {
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
         ObjectMapper objectMapper = new ObjectMapper();
         AssetManager assetManager = getAssets();
         try {
-            InputStream inputStream = assetManager.open("courses/java/courseJava.json");
+            InputStream inputStream = assetManager.open("courses/Java Basics/courseJava.json");
             course = objectMapper.readValue(inputStream, Course.class);
             inputStream.close();
         } catch (IOException e) {
