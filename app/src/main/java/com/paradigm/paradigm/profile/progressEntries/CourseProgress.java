@@ -50,4 +50,17 @@ public class CourseProgress extends ProgressEntry {
         return null;
     }
 
+    public int completePercentage() {
+        int count = 0;
+
+        for (ModuleProgress moduleProgress : modules) {
+            if (moduleProgress.isComplete()) {
+                count++;
+            }
+        }
+
+        double total = (double) count / modules.size();
+        return (int) (total * 100);
+    }
+
 }

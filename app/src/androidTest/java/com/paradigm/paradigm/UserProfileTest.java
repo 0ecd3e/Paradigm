@@ -50,18 +50,19 @@ public class UserProfileTest {
         for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
             for (Lesson lesson : module.getLessons()) {
-                contentLoader.loadQuestions(lesson, assetManager);
+                //contentLoader.loadQuestions(lesson, assetManager);
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
+                lesson.setParents();
             }
         }
 
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
 
-        ContentModule theModule = java.getModules().get(2);
-        Lesson lesson = theModule.getLessons().get(1);
-        Question question = lesson.getQuestions().get(3);
+        ContentModule theModule = java.getModules().get(0);
+        Lesson lesson = theModule.getLessons().get(0);
+        Question question = lesson.getQuestions().get(0);
         userProgress.markQuestionCorrect(question);
 
         UserProfile userProfile = new UserProfile("testUser");

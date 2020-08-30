@@ -27,17 +27,17 @@ public class UserProgress implements Serializable {
 
         for (ContentModule module : course.getModules()) {
             String moduleName = module.getName();
-            String moduleElementName = courseName + ", " + moduleName;
+            String moduleElementName = courseName + "," + moduleName;
             ModuleProgress moduleProgress = new ModuleProgress(moduleElementName);
 
             for (Lesson lesson : module.getLessons()) {
                 String lessonName = lesson.getName();
-                String lessonElementName = moduleElementName + ", " + lessonName;
+                String lessonElementName = moduleElementName + "," + lessonName;
                 LessonProgress lessonProgress = new LessonProgress(lessonElementName);
 
                 for (Question question : lesson.getQuestions()) {
                     String questionName = question.getQuestionName();
-                    String questionElementName = moduleElementName + ", " + questionName;
+                    String questionElementName = lessonElementName + "," + questionName;
                     QuestionProgress questionProgress = new QuestionProgress(questionElementName);
                     lessonProgress.setQuestionProgress(questionProgress);
                 }
@@ -50,82 +50,66 @@ public class UserProgress implements Serializable {
     }
 
     public void markQuestionCorrect(Question question) {
-        String parentCourse = question.getParentCourse();
-        String parentModule = question.getParentContentModule();
-        String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
+        QuestionProgress currentQuestionProgress = getQuestionProgress(question);
+        currentQuestionProgress.setComplete();
+    }
 
+    private QuestionProgress getQuestionProgress(Question question) {
+        String parentCourse = question.getParentCourse();
+        String parentModule = parentCourse + "," + question.getParentContentModule();
+        String parentLesson = parentModule + "," + question.getParentLesson();
+        String questionName = parentLesson + "," + question.getQuestionName();
+
+        CourseProgress currentProgress = getCourseProgress(parentCourse);
+
+        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
+        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(parentLesson);
+        return currentLessonProgress.getQuestionProgress(questionName);
+    }
+
+    private CourseProgress getCourseProgress(String parentCourse) {
         CourseProgress currentProgress = new CourseProgress();
         for (CourseProgress courseProgress : courses) {
             if (courseProgress.getComponentName().equals(parentCourse)) {
                 currentProgress = courseProgress;
             }
         }
-
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(parentLesson);
-        currentLessonProgress.setQuestionProgress(questionName, true);
+        return currentProgress;
     }
 
     public void markQuestionIncorrect(Question question) {
-        String parentCourse = question.getParentCourse();
-        String parentModule = question.getParentContentModule();
-        String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        assert currentProgress != null;
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        currentModuleProgress.setQuestionProgress(questionName, false);
+        QuestionProgress currentQuestionProgress = getQuestionProgress(question);
+        currentQuestionProgress.clearProgress();
+
     }
 
     public boolean isAnsweredCorrectly(Question question) {
-        String parentCourse = question.getParentCourse();
-        String parentModule = question.getParentContentModule();
-        String questionName = parentCourse + ", " + parentModule + ", " + question.getQuestionName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        assert currentProgress != null;
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        return currentModuleProgress.getQuestionProgress(questionName);
-    }
-
-    public void markLessonComplete(Lesson lesson) {
-        String parentCourse = lesson.getParentCourse();
-        String parentModule = lesson.getParentContentModule();
-        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        currentModuleProgress.setLessonProgress(lessonName, true);
-    }
-
-    public void markLessonIncomplete(Lesson lesson) {
-        String parentCourse = lesson.getParentCourse();
-        String parentModule = lesson.getParentContentModule();
-        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        currentModuleProgress.setLessonProgress(lessonName, false);
+        QuestionProgress currentQuestionProgress = getQuestionProgress(question);
+        return currentQuestionProgress.isComplete();
     }
 
     public boolean isLessonComplete(Lesson lesson) {
         String parentCourse = lesson.getParentCourse();
         String parentModule = lesson.getParentContentModule();
-        String lessonName = parentCourse + ", " + parentModule + ", " + lesson.getName();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        assert currentProgress != null;
+        CourseProgress currentProgress = getCourseProgress(parentCourse);
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        return currentModuleProgress.getLessonProgress(lessonName);
+        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(lesson.getName());
+        return (currentLessonProgress.completePercentage() == 100);
     }
 
     public boolean isModuleComplete(ContentModule contentModule) {
         String parentCourse = contentModule.getParentCourse();
-        CourseProgress currentProgress = courses.get(parentCourse);
-        assert currentProgress != null;
-        ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(contentModule.getName());
-        return currentModuleProgress.isComplete();
+        CourseProgress courseProgress = getCourseProgress(parentCourse);
+        ModuleProgress currentModuleProgress = courseProgress.getModuleProgress(contentModule.getName());
+        return (currentModuleProgress.completePercentage() == 100);
     }
 
     public boolean isCourseComplete(Course course) {
-        CourseProgress currentProgress = courses.get(course.getName());
-        assert currentProgress != null;
-        return currentProgress.isComplete();
+        for (CourseProgress courseProgress : courses) {
+            if (courseProgress.getComponentName().equals(course.getName())) {
+                return (courseProgress.completePercentage() == 100);
+            }
+        }
+        return false;
     }
-
 }

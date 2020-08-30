@@ -48,6 +48,18 @@ public class LessonProgress extends ProgressEntry {
             }
         }
         return null;
+    }
 
+    public int completePercentage() {
+        int count = 0;
+
+        for (QuestionProgress questionProgress : questions) {
+            if (questionProgress.isComplete()) {
+                count++;
+            }
+        }
+
+        double total = (double) count / questions.size();
+        return (int) (total * 100);
     }
 }
