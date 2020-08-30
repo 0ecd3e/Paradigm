@@ -63,4 +63,7 @@ public class CourseProgress extends ProgressEntry {
         return (int) (total * 100);
     }
 
+    public List<ModuleProgress> getModules() {
+        return modules;
+    }
 }

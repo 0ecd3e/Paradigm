@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent;
 import com.paradigm.paradigm.profile.UserProfile;
+import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 
 public class ProfileFragment extends Fragment {
 
@@ -59,8 +59,10 @@ public class ProfileFragment extends Fragment {
         updateUsernameDisplay(view);
         ProgressBar overallProgress = view.findViewById(R.id.profileOverallProgressBar);
         TextView overallProgressPercent = view.findViewById(R.id.profileOverallProgressPercent);
-        overallProgress.setProgress(50);
-        overallProgressPercent.setText("50%");
+        int overallCompleteness = ((MainActivity) requireActivity()).getUserProfile().getUserProgress().getCourseCompleteness(MainActivity.course);
+        overallProgress.setProgress(overallCompleteness);
+        String percentComplete = overallCompleteness + "%";
+        overallProgressPercent.setText(percentComplete);
 
         RecyclerView recycler = view.findViewById(R.id.profileModuleProgressList);
 
@@ -72,7 +74,9 @@ public class ProfileFragment extends Fragment {
             } else {
                 recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(DummyContent.ITEMS));
+            CourseProgress courseProgress = ((MainActivity) requireActivity())
+                    .getUserProfile().getUserProgress().findCourseProgress(MainActivity.course.getName());
+            recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(courseProgress));
         }
         return view;
     }

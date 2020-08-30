@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
+import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
+import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 
 import java.util.List;
 
@@ -21,10 +23,18 @@ import java.util.List;
  */
 public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<ProfileModuleRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    //private final List<DummyItem> mValues;
+    private List<ModuleProgress> modules;
 
+    /*
     public ProfileModuleRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
+    }
+
+     */
+
+    public ProfileModuleRecyclerViewAdapter(CourseProgress courseProgress) {
+        modules = courseProgress.getModules();
     }
 
     @Override
@@ -36,17 +46,27 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        /*
         holder.mItem = mValues.get(position);
         String title = mValues.get(position).id + "%";
         String desc = mValues.get(position).content + "Module Title";
         holder.mIdView.setText(desc);
         holder.mContentView.setText(title);
         holder.progressBar.setProgress(Integer.parseInt(mValues.get(position).id));
+
+         */
+        ModuleProgress moduleProgress = modules.get(position);
+        String completeness = moduleProgress.completePercentage() + "%";
+        holder.mContentView.setText(completeness);
+        String name = moduleProgress.getComponentName();
+        String prettyName = name.replace("java,", "");
+        holder.mIdView.setText(prettyName);
+        holder.progressBar.setProgress(moduleProgress.completePercentage());
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return modules.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -54,7 +74,7 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         public final TextView mIdView;
         public final TextView mContentView;
         public final ProgressBar progressBar;
-        public DummyItem mItem;
+        //public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);

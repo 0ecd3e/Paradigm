@@ -77,6 +77,16 @@ public class UserProgress implements Serializable {
         return currentProgress;
     }
 
+    public CourseProgress findCourseProgress(String parentCourse) {
+        CourseProgress currentProgress = new CourseProgress();
+        for (CourseProgress courseProgress : courses) {
+            if (courseProgress.getComponentName().equals(parentCourse)) {
+                currentProgress = courseProgress;
+            }
+        }
+        return currentProgress;
+    }
+
     public void markQuestionIncorrect(Question question) {
         QuestionProgress currentQuestionProgress = getQuestionProgress(question);
         currentQuestionProgress.clearProgress();
@@ -97,19 +107,19 @@ public class UserProgress implements Serializable {
         return (currentLessonProgress.completePercentage() == 100);
     }
 
-    public boolean isModuleComplete(ContentModule contentModule) {
+    public int getModuleCompleteness(ContentModule contentModule) {
         String parentCourse = contentModule.getParentCourse();
         CourseProgress courseProgress = getCourseProgress(parentCourse);
         ModuleProgress currentModuleProgress = courseProgress.getModuleProgress(contentModule.getName());
-        return (currentModuleProgress.completePercentage() == 100);
+        return currentModuleProgress.completePercentage();
     }
 
-    public boolean isCourseComplete(Course course) {
+    public int getCourseCompleteness(Course course) {
         for (CourseProgress courseProgress : courses) {
             if (courseProgress.getComponentName().equals(course.getName())) {
-                return (courseProgress.completePercentage() == 100);
+                return courseProgress.completePercentage();
             }
         }
-        return false;
+        return 0;
     }
 }

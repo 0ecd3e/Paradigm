@@ -119,9 +119,8 @@ public class MainActivity extends AppCompatActivity
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        initProfile();
-
         initContent();
+        initProfile();
     }
 
     public static ContentModule getCurrentModule() {
@@ -200,6 +199,8 @@ public class MainActivity extends AppCompatActivity
             userProfile = new UserProfile(username);
         }
 
+        userProfile.getUserProgress().addCourse(course);
+
         try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
             objectOutputStream.writeObject(userProfile);
@@ -275,6 +276,7 @@ public class MainActivity extends AppCompatActivity
         try {
             InputStream inputStream = assetManager.open("courses/java/courseJava.json");
             course = objectMapper.readValue(inputStream, Course.class);
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -287,10 +289,10 @@ public class MainActivity extends AppCompatActivity
             for (Lesson lesson : module.getLessons()) {
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
-                contentLoader.loadQuestions(lesson, assetManager);
+                //contentLoader.loadQuestions(lesson, assetManager);
+                lesson.setParents();
             }
         }
 
-        userProfile.getUserProgress().addCourse(course);
     }
 }
