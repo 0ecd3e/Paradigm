@@ -72,7 +72,9 @@ public class ExploreFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(MainActivity.course.getModules(), (SaveProgressInterface) requireActivity()));
+            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(MainActivity.course.getModules(),
+                    (SaveProgressInterface) requireActivity(),
+                    this));
         }
         return root;
     }

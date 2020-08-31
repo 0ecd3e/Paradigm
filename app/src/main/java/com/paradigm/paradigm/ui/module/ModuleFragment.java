@@ -84,7 +84,7 @@ public class ModuleFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(userProgress.getCurrentModule()));
+            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(userProgress.getCurrentModule(), this));
         }
         return root;
     }

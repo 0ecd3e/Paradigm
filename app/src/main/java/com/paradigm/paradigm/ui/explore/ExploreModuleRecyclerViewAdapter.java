@@ -24,10 +24,14 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
     private final List<ContentModule> modulesList;
 
     final SaveProgressInterface listener;
+    ExploreFragment parentFragment;
 
-    public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules, SaveProgressInterface saveProgressInterface) {
+    public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules,
+                                            SaveProgressInterface saveProgressInterface,
+                                            ExploreFragment context) {
         modulesList = modules;
         listener = saveProgressInterface;
+        parentFragment = context;
     }
 
     @NonNull
@@ -40,21 +44,20 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        /*
-        holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id + "Default title";
-        holder.mIdView.setText(title);
-        String desc = mValues.get(position).content + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n" +
-                "        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus.";
-        holder.mContentView.setText(desc);
-        holder.imageView.setImageResource(R.drawable.smptebars);
-
-         */
         ContentModule contentModule = modulesList.get(position);
         holder.contentModule = contentModule;
-        holder.imageView.setImageResource(R.drawable.smptebars);
+
         holder.mIdView.setText(contentModule.getName());
         holder.mContentView.setText(contentModule.getDescription());
+
+        String imageName = contentModule.getName();
+        imageName = imageName.substring(0, 8);
+        imageName = imageName.replace(" ", "");
+        imageName = imageName.replace("M", "m");
+        int id = parentFragment.getResources().getIdentifier(imageName, "drawable", parentFragment.requireContext().getPackageName());
+        holder.imageView.setImageResource(id);
+
+
         holder.cardView.setOnClickListener(v -> {
             UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
             userProgress.setCurrentModule(contentModule);

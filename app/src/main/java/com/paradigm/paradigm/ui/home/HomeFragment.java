@@ -62,6 +62,15 @@ public class HomeFragment extends Fragment {
             TextView desc = root.findViewById(R.id.latestModuleDescription);
             desc.setText(contentModule.getDescription());
 
+            String imageName = contentModule.getName();
+            imageName = imageName.substring(0, 8);
+            imageName = imageName.replace(" ", "");
+            imageName = imageName.replace("M", "m");
+            int id = getResources().getIdentifier(imageName,
+                    "drawable", requireContext().getPackageName());
+            ImageView imageView = root.findViewById(R.id.latestModuleCardImage);
+            imageView.setImageResource(id);
+
             String courseName = MainActivity.course.getName();
             String moduleName = courseName + "," + contentModule.getName();
 
