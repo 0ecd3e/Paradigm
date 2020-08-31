@@ -209,6 +209,8 @@ public class MainActivity extends AppCompatActivity
             } else {
                 homeDataLoadedListener.onHomePageLoaded();
             }
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+            navController.navigate(R.id.action_nav_home_self);
         } catch (IOException | ClassNotFoundException e) {
             // Error occurred when opening raw file for reading.
             // Create an instance of the dialog fragment and show it
@@ -274,6 +276,14 @@ public class MainActivity extends AppCompatActivity
         userProfile.getUserProgress().setCheckpointModule(course.getModules().get(0));
 
         saveProgress();
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        int currentDest = Objects.requireNonNull(navController.getCurrentDestination()).getId();
+        if (currentDest == R.id.nav_profile) {
+            navController.navigate(R.id.action_nav_profile_self);
+        } else {
+            navController.navigate(R.id.action_nav_home_self);
+        }
     }
 
     public void visitNewsArticle(View v) {
@@ -320,6 +330,9 @@ public class MainActivity extends AppCompatActivity
         if (!s.equals("")) {
             userProfile.setUsername(s);
             saveProgress();
+
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+            navController.navigate(R.id.action_nav_profile_self);
         }
     }
 

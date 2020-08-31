@@ -32,6 +32,9 @@
             app:destination="@id/moduleFragment"
             app:popUpTo="@id/nav_explore"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/nav_explore"
@@ -49,7 +52,11 @@
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.paradigm.paradigm.ui.profile.ProfileFragment"
-        android:label="Profile" />
+        android:label="Profile">
+        <action
+            android:id="@+id/action_nav_profile_self"
+            app:destination="@id/nav_profile" />
+    </fragment>
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"

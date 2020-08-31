@@ -64,8 +64,12 @@ public class ProfileFragment extends Fragment {
         usernameEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment dialog = new ChangeUsernameDialog();
-                dialog.show(requireActivity().getSupportFragmentManager(), "UsernameChangeDialogFragment");
+                if (MainActivity.getUserProfile() == null) {
+                    ((MainActivity) requireActivity()).initProfile();
+                } else {
+                    DialogFragment dialog = new ChangeUsernameDialog();
+                    dialog.show(requireActivity().getSupportFragmentManager(), "UsernameChangeDialogFragment");
+                }
             }
         });
 
