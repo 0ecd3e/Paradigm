@@ -222,10 +222,12 @@ public class MainActivity extends AppCompatActivity
         MainActivity.userProfile = userProfile;
     }
 
+    /*
     public void editUsername(View view) {
         DialogFragment dialog = new ChangeUsernameDialog();
         dialog.show(getSupportFragmentManager(), "UsernameChangeDialogFragment");
     }
+    */
 
     public void displayToast(View view) {
         Toast.makeText(this, "DISPLAYTOAST", Toast.LENGTH_SHORT).show();
@@ -324,6 +326,5 @@ public class MainActivity extends AppCompatActivity
     public interface HomeDataLoadedListener {
         void onHomePageLoaded();
     }
-
 
 }

@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,6 +59,16 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         updateUsernameDisplay(view);
+
+        ImageButton usernameEdit = view.findViewById(R.id.editUsernameButton);
+        usernameEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment dialog = new ChangeUsernameDialog();
+                dialog.show(requireActivity().getSupportFragmentManager(), "UsernameChangeDialogFragment");
+            }
+        });
+
         ProgressBar overallProgress = view.findViewById(R.id.profileOverallProgressBar);
         TextView overallProgressPercent = view.findViewById(R.id.profileOverallProgressPercent);
         UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
@@ -92,7 +104,7 @@ public class ProfileFragment extends Fragment {
     public void updateUsernameDisplay(View view) {
         final TextView textView = view.findViewById(R.id.profileFragmentUsername);
         MainActivity mainActivity = (MainActivity) requireActivity();
-        UserProfile userProfile = mainActivity.getUserProfile();
+        UserProfile userProfile = MainActivity.getUserProfile();
         if (userProfile == null) {
             mainActivity.initProfile();
         } else {
