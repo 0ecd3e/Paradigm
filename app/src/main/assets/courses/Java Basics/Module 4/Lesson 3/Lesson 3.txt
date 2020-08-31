@@ -1,1 +1,23 @@
-this is the content of lesson 3, module 4.
+Arrays:
+\nAn array is a container that allows storage of multiple elements of the same data type whilst using only one variable for references. There are two ways to declare an array.
+\n                      <type> name[ ]; 	or 	<type> [ ] name;
+
+\nBoth methods are fine and depend on personal preferences or the style guide one follows. Declarations alone do not actually create the array itself, rather it creates a reference that can store the address of where the array will be in memory. To instantiate an array, there are two ways of doing so. One can specify the size of the array but not initialize its elements.
+\n                      arr = new int[size];
+
+\nOne can also specify the value of each element in the array without explicitly specifying its size.
+\n                      arr = new int[ ] { 0, 1, 2, 3 };
+
+\nThe aforementioned steps needed to create an array can all be done in one single statement.
+\nint[ ] arr = new int[ ]{ 0, 1, 2, 3};	or	int[ ] arr = new int[ size ];
+
+\nTo access individual elements within the array, we could use integers by themselves but the more efficient method is using the index. The index is simply an integer variable. Naming for indexes by convention are i, j, and k. Important to remember is that the first element of an array is always an index of 0 not 1 and that the last element of the array is always an index of size - 1.
+\n                      arr[ 0 ];		or	arr[ i ];
+
+\nThere are many ways to traverse through an array, but the more commonly used method is via a for loop shown below. The details of for loops will be discussed in later modules.
+
+\nfor(int i = 0; i < size; i++) {//Note that the first index is 0 and the last is size -1.
+\n      arr[ i ];       //Implementation details.
+\n}
+
+

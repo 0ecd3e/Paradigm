@@ -1,1 +1,14 @@
-This is the content of lesson 2, module 6.
+While loops:
+\nWhat if you wanted to execute a block of code through multiple iterations but do not know the exact number? While loops are here to help. While loops only require one condition, where as long as that condition is true, the code block inside will iterate over and over again until the condition becomes false. Below is an example of a while loop.
+
+\n                  while ( x != y) {
+\n                  	x++;
+\n                  }
+
+\nThere are other variations of the while loop, notably the do-while loop. It is very similar to the while loop, however, the difference between the two is that the do-while loop will execute the code block once regardless of whether or not the conditions start off as true or false whereas the while loop will check the conditions first and if false, will not iterate through the code block at all.
+
+\n                  do{
+\n                  	x++;
+\n                  }
+\n                  while( x != y)
+

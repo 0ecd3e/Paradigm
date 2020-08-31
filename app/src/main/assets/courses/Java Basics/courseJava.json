@@ -63,9 +63,9 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 1: Classes and Interfaces",
-              "text": "defaultQuestionText",
+              "text": "Which of the following class names properly follows convention?\n\na) milk\nb) Milk\nc) MILK\nd) miLK",
               "answer": {
-                "bestAnswer": "A"
+                "bestAnswer": "B"
               }
             },
             "Q2": {
@@ -73,21 +73,21 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 1: Classes and Interfaces",
-              "text": "defaultQuestionText2",
+              "text": "What is the name of a class in Java that has no actual implementation?",
               "answer": {
-                "bestAnswer": "B",
+                "bestAnswer": "interface",
                 "acceptedAnswers": [
                   {
-                    "acceptedAnswer1": "B"
+                    "acceptedAnswer1": "interface"
                   },
                   {
-                    "acceptedAnswer2": "1"
+                    "acceptedAnswer2": "interfaces"
                   },
                   {
-                    "acceptedAnswer3": "2"
+                    "acceptedAnswer3": "Interface"
                   },
                   {
-                    "acceptedAnswer4": "3"
+                    "acceptedAnswer4": "Interfaces"
                   }
                 ]
               }
@@ -97,9 +97,9 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 1: Classes and Interfaces",
-              "text": "defaultQuestionText3",
+              "text": "What are instances of classes called in Java?\n\na) object\nb) template\nc) boolean\nd) API",
               "answer": {
-                "bestAnswer": "C"
+                "bestAnswer": "A"
               }
             }
           }
@@ -113,9 +113,9 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 2: Methods",
-              "text": "defaultQuestionText",
+              "text": "Imagine that you are tasked with implementing features for a vending machine. Your job\nis to create methods to allow for the vending machine to take the customer’s orders and\ndispense the correct product. Using good practices, how many methods should you\nimplement based only on the premises mentioned?\n\na) 1\nb) 2\nc) 3\nd) 4",
               "answer": {
-                "bestAnswer": "A"
+                "bestAnswer": "B"
               }
             },
             "Q2": {
@@ -123,21 +123,12 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 2: Methods",
-              "text": "defaultQuestionText2",
+              "text": "You are designing a method called foo. It will return a double and will take in two integers \nas parameters. Fill in the blanks to create a proper method declaration statement for foo.\npublic\nfoo( \na, \nb){}",
               "answer": {
-                "bestAnswer": "B",
+                "bestAnswer": "double,int,int",
                 "acceptedAnswers": [
                   {
-                    "acceptedAnswer1": "B"
-                  },
-                  {
-                    "acceptedAnswer2": "1"
-                  },
-                  {
-                    "acceptedAnswer3": "2"
-                  },
-                  {
-                    "acceptedAnswer4": "3"
+                    "acceptedAnswer1": "double,int,int"
                   }
                 ]
               }
@@ -147,7 +138,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 2: Methods",
-              "text": "defaultQuestionText3",
+              "text": "You want to create a method that will convert all fields of an object into a string. What \nwould be the ideal name based on conventions?\n\na) method1\nb) ToString\nc) toString\nd) TOSTRING",
               "answer": {
                 "bestAnswer": "C"
               }
@@ -162,17 +153,103 @@
         "Lesson 1: Elements of Code": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 1: Elements of Code",
+              "text": "Which of the following are the two proper ways to comment in Java?\n\na)// or /**/\nb) && or /&&/\nc) || or |**|\nd) !! or !$$!",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 1: Elements of Code",
+              "text": "In Java, there are words that are case sensitive and have pre-determined meanings. \nThey include words such as int, double, etc., and there are a total of 51 of them. What is \nthe name of these words?\n",
+              "answer": {
+                "bestAnswer": "keywords",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "keywords"
+                  },
+                  {
+                    "acceptedAnswer2": "keyword"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 1: Elements of Code",
+              "text": "Which of the following method declarations have the proper placement for type names?\n\na) <type> modifier name()\nb) modifier name <type>()\nc) modifier <type> name()\nd) modifier name() <type>",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
+          }
         },
         "Lesson 2: Code Organization": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 2: Code Organization",
+              "text": "What statement allows you to use external packages in your program?\n\na) public\nb) import\nc) package\nd) final",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 2: Code Organization",
+              "text": "Do classes have code structures as well?",
+              "answer": {
+                "bestAnswer": "yes",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "yes"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 2: Code Organization",
+              "text": "In what order does the compiler read the code in?\n\na) top to bottom\nb) bottom to top\nc) right to left\nd) lef to top",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            }
+          }
         },
         "Lesson 3: Style Guides": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 3: Basic Syntax",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 3: Style Guides",
+              "text": "Which of the following does not describe what a style guide is?\n\na) removes ambiguities\nb) removes uncertainty\nc) general guidelines\nd) unnecessary",
+              "answer": {
+                "bestAnswer": "D"
+              }
+            }
+          }
         }
       }
     },
@@ -182,17 +259,128 @@
         "Lesson 1: Access Modifiers": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 4: Data Types and Structures",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 1: Access Modifiers",
+              "text": "Name the access modifier that is used if none is specified.\n\na) private\nb) protected\nc) default\nd) public",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 1: Access Modifiers",
+              "text": "Which modifier would you use if you do not want the data of a variable from ever being modified?\n",
+              "answer": {
+                "bestAnswer": "final",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "final"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 1: Access Modifiers",
+              "text": "Suppose that a class has a static variable named var1 and the program creates 10 \nobjects from that class. How many instances are there of var1 in total?\n\na) 1\nb) 2\nc) 5\nd) 10",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            }
+          }
         },
         "Lesson 2: Data Types": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 4: Data Types and Structures",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 2: Data Types",
+              "text": "What does it mean when a data type is signed?\n\na) the keyword has a sign in it\nb) it has a celebrity's signature in it\nc) it can represent negative and non-negative numbers\nd) it's part of sign language",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 2: Data Types",
+              "text": "What is the name of data types that can not be reduced into a lower level data type?\n",
+              "answer": {
+                "bestAnswer": "primitive",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "primitive"
+                  },
+                  {
+                    "acceptedAnswer2": "primitive data type"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 2: Data Types",
+              "text": "Which data type would you use if you wanted to use decimal numbers that is also more precise?\n\na) float\nb)double\nc) boolean\nd) int",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            }
+          }
         },
         "Lesson 3: Arrays": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 4: Data Types and Structures",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 3: Arrays",
+              "text": "Arrays can be accessed with a hardcoded number or a variable, what are these variable \nused to access arrays commonly referred to as?\n\na) accesser\nb) librarian\nc) index\nd) searcher",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 3: Arrays",
+              "text": "Complete the following declaration statement for an array of integers with size of 5.\narr = \n[ \n ];",
+              "answer": {
+                "bestAnswer": "int,new,size",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "int,new,size"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 4: Data Types and Structures",
+              "parentLesson": "Lesson 3: Arrays",
+              "text": "What is the more commonly used method of array traversal?\n\na) for loop\nb) while loop\nc) do while loop\nd) switches",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            }
+          }
         }
       }
     },
@@ -202,12 +390,84 @@
         "Lesson 1: If-statements": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 5: Decision Making",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 1: If-statements",
+              "text": "Which statement can be used after an if statement to execute code for a second condition?\n\na) else\nb) else if\nc) switch\nd) break",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 1: If-statements",
+              "text": "What will be the value of X at the end?\n\nint x = 2;\nif(x < 3){\n    x = x + 3;\n} else{\n    x = x + 1;\n}\n",
+              "answer": {
+                "bestAnswer": "5",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "5"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 1: If-statements",
+              "text": "Up to how many if statements can there be?\n\na) 1\nb) 2\nc) 3\nd)unlimited",
+              "answer": {
+                "bestAnswer": "D"
+              }
+            }
+          }
         },
         "Lesson 2: Switch-case": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 5: Decision Making",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 2: Switch-case",
+              "text": "Which statement is optional and deals with cases where the outcome matches none of the other cases?\n\na) default\nb) void\nc) break\nd)null",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 2: Switch-case",
+              "text": "What is the value of X after the program exits the switch?\n\nint x = 1;\nswitch(x){\n    case 1: x - 1;\n        break;\n    case 2: x + 1;\n        break;\n    default: break;\n}",
+              "answer": {
+                "bestAnswer": "0",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "0"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 5: Decision Making",
+              "parentLesson": "Lesson 2: Switch-case",
+              "text": "What statement must be included in each case to ensure the program exits the switch?\n\na) continue\nb) break\nc) go\nd) while",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            }
+          }
         }
       }
     },
@@ -217,12 +477,84 @@
         "Lesson 1: For and For-each Loops": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 6: Loops",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 1: For and For-each Loops",
+              "text": "Refer to the for loop below, how many times will the i++ statement run?\nfor(int i = 0; i < 10; i++)\n    System.out.println(i);\n}\n\na) 1\nb) 2\nc) 9\nd) 10",
+              "answer": {
+                "bestAnswer": "D"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 1: For and For-each Loops",
+              "text": "Fill in the following blanks so that it forms a proper for loop that starts at index 0 and \nstops until the index is equal to 10.\n\n _______________{}",
+              "answer": {
+                "bestAnswer": "for(int i = 0; i < 10; i++)",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "for(int i = 0; i < 10; i++)"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 1: For and For-each Loops",
+              "text": "What is the name of a type of for loop that does not need a condition to be specified?\n\na) do-for\nb) for-each\nc) for-every\nd) for-while",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            }
+          }
         },
         "Lesson 2: While Loops": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 6: Loops",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 2: While Loops",
+              "text": "Suppose that the conditions are false, how many iterations will a while loop execute \nbefore the program exits the loop?\n\na) 1\nb) 2\nc) 0\nd) infinite",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 2: While Loops",
+              "text": "Refer to the code below. What will be the value of A after the while loop?\nint a = 1;\nwhile(a < 10){\n    a= a * 2;\n}\n",
+              "answer": {
+                "bestAnswer": "8",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "8"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 6: Loops",
+              "parentLesson": "Lesson 2: While Loops",
+              "text": "Suppose that the conditions are false, how many iterations will a do-while loop execute\nbefore the program exits the loop?\n\na) 1\nb) 2\nc) 0\nd) infinite",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            }
+          }
         }
       }
     },
@@ -232,7 +564,43 @@
         "Lesson 1: Exceptions": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 7: Exceptions",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 7: Exceptions",
+              "parentLesson": "Lesson 1: Exceptions",
+              "text": "In Java and many other programming languages, what is commonly used to represent\nexceptions?\n\na) objects\nb) interfaces\nc) enum\nd) arrays",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 7: Exceptions",
+              "parentLesson": "Lesson 1: Exceptions",
+              "text": "What statement is used to define a code block that will be executed if an exception is\nthrown in the try block?\n",
+              "answer": {
+                "bestAnswer": "catch",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "catch"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 7: Exceptions",
+              "parentLesson": "Lesson 1: Exceptions",
+              "text": "What will happen to the program if an exception has been thrown?\n\na) nothing\nb) immediate termination\nc) restart\nd) pause",
+              "answer": {
+                "bestAnswer": "B"
+              }
+            }
+          }
         }
       }
     }

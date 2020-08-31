@@ -1,1 +1,21 @@
-this is the content of lesson 1, module 7.
+Exceptions:
+\nExceptions are problems that arise during execution in which it disrupts normal flow of the program. One can use objects to represent the exception. The object would consist of a name and the error message, like so:
+
+\n                  	class NoFileFoundException{
+\n                  		private String msg
+\n                  		public NoFileFoundException(String errMsg){
+\n                  			this.msg = errMsg;
+\n                  		}
+\n                  	}
+
+\nExceptions on their own, when thrown, will result in the termination of the program, as such, it is crucial to handle these exceptions so that the program terminates in a safe fashion. To do so, we would need to use the try-catch statement. If a piece of code has the potential to throw an exception, that code would be placed inside the try statement. The catch statement would specify the type of exception to catch once an exception has been thrown, the catch statement code block should display the exception message or properly terminate the program. There can be more than one catch statement, with one for each type of exception that the code will throw. Below is a demonstration of a try-catch block with its proper syntax.
+
+\n                      try{
+\n                      	//code block
+\n                      	File f = new file();
+\n                      } catch(Exception 1){
+\n                      	//Ways to handle exception 1
+\n                      } catch(Exception 2){
+\n                      	//Ways to handle exception 2
+\n                      }
+
