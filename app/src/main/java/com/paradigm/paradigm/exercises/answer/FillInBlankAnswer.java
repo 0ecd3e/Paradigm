@@ -1,10 +1,12 @@
 package com.paradigm.paradigm.exercises.answer;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FillInBlankAnswer extends Answer {
-    private List<String> acceptedAnswers;
+    private final List<String> acceptedAnswers;
 
     public FillInBlankAnswer() {
         super();
@@ -33,6 +35,7 @@ public class FillInBlankAnswer extends Answer {
         return acceptedAnswers;
     }
 
+    @NonNull
     @Override
     public String toString() {
         System.out.println("ANSWERS_START");

@@ -73,7 +73,7 @@ public class ProfileFragment extends Fragment {
 
         ProgressBar overallProgress = view.findViewById(R.id.profileOverallProgressBar);
         TextView overallProgressPercent = view.findViewById(R.id.profileOverallProgressPercent);
-        UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
+        UserProfile userProfile = MainActivity.getUserProfile();
         if (userProfile == null) {
             ((MainActivity) requireActivity()).initProfile();
         } else {
@@ -94,8 +94,8 @@ public class ProfileFragment extends Fragment {
                 } else {
                     recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
                 }
-                CourseProgress courseProgress = ((MainActivity) requireActivity())
-                        .getUserProfile().getUserProgress().findCourseProgress(MainActivity.course.getName());
+                CourseProgress courseProgress = MainActivity.getUserProfile()
+                        .getUserProgress().findCourseProgress(MainActivity.course.getName());
                 recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(courseProgress));
             }
         }

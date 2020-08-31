@@ -42,6 +42,7 @@ public class NewsFragmentRecyclerViewAdapter extends RecyclerView.Adapter<NewsFr
     }
 
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

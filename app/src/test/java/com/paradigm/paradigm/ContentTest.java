@@ -18,6 +18,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.fail;
 
+@SuppressWarnings("UnusedAssignment")
 public class ContentTest {
     @Test
     public void courseCreator() {

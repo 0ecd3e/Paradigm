@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,13 +35,14 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
     //modules = null;
     //}
 
-    SaveProgressInterface listener;
+    final SaveProgressInterface listener;
 
     public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules, SaveProgressInterface saveProgressInterface) {
         modulesList = modules;
         listener = saveProgressInterface;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -88,9 +90,9 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         public final TextView mIdView;
         public final TextView mContentView;
         //public DummyItem mItem;
-        public ImageView imageView;
+        public final ImageView imageView;
         public ContentModule contentModule;
-        public CardView cardView;
+        public final CardView cardView;
 
         public ViewHolder(View view) {
             super(view);

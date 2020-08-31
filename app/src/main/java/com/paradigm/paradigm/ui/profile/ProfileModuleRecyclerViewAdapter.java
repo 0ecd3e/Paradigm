@@ -37,6 +37,7 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         modules = courseProgress.getModules();
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

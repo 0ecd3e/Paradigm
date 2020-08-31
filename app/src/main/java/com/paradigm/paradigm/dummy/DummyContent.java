@@ -1,5 +1,7 @@
 package com.paradigm.paradigm.dummy;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +28,7 @@ public class DummyContent {
             this.details = details;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return content;
