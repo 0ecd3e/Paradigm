@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity
             // Error occurred when opening raw file for reading.
             // Create an instance of the dialog fragment and show it
             DialogFragment dialog = new CreateUserDialog();
-            dialog.setCancelable(false);
             dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
             //dialog.setCanceledOnTouchOutside(false);
         }
@@ -220,7 +219,7 @@ public class MainActivity extends AppCompatActivity
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        initProfile();
+        //initProfile();
     }
 
     public void listenerSet() {
@@ -273,6 +272,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void saveProgress() {
+        //UserProgress userProgress = userProfile.getUserProgress();
+        //userProgress.
+
         try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
             objectOutputStream.writeObject(userProfile);
