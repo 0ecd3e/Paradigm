@@ -303,4 +303,16 @@
     <string name="question_3">Question 3</string>
     <string name="date">date</string>
     <string name="url">url</string>
+    <string name="check_your_answer">Check your answer</string>
+    <string name="q2">Q2</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="edit_username">Edit username:</string>
+    <string name="you_have_not_correctly_answered_this_question_yet">You have not correctly answered this question yet.</string>
+    <string name="your_answer_here">Your answer here…</string>
+    <string name="course_title">Course Title</string>
+    <string name="module_title">Module Title</string>
+    <string name="module_introduction">Module</string>
 </resources>

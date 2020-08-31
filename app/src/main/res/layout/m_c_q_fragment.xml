@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="You have not correctly answered this question yet."
+                android:text="@string/you_have_not_correctly_answered_this_question_yet"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Question 2:"
+                android:text="@string/q2"
                 android:textColor="@color/textBlack"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -98,7 +98,8 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="A" />
+                    android:paddingEnd="0dp"
+                    android:text="@string/a" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice2"
@@ -109,7 +110,8 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="B" />
+                    android:paddingEnd="0dp"
+                    android:text="@string/b" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice3"
@@ -120,7 +122,8 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="C" />
+                    android:paddingEnd="0dp"
+                    android:text="@string/c" />
 
                 <RadioButton
                     android:id="@+id/MCQChoice4"
@@ -131,7 +134,8 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:paddingStart="2dp"
-                    android:text="D" />
+                    android:paddingEnd="0dp"
+                    android:text="@string/d" />
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -161,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Check your answer"
+                android:text="@string/check_your_answer"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

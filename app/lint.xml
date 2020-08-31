@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconDuplicates">
+        <ignore path="src/main/res/mipmap-hdpi/ic_launcher_foreground.png" />
+        <ignore path="src/main/res/mipmap-hdpi/logo.png" />
+        <ignore path="src/main/res/mipmap-mdpi/ic_launcher_foreground.png" />
+        <ignore path="src/main/res/mipmap-mdpi/logo.png" />
+        <ignore path="src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" />
+        <ignore path="src/main/res/mipmap-xhdpi/logo.png" />
+        <ignore path="src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" />
+        <ignore path="src/main/res/mipmap-xxhdpi/logo.png" />
+    </issue>
+</lint>

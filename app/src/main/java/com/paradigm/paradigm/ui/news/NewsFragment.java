@@ -1,5 +1,6 @@
 package com.paradigm.paradigm.ui.news;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -95,6 +96,7 @@ public class NewsFragment extends Fragment {
         Toast.makeText(requireContext(), "Check your feed URL in the settings.", Toast.LENGTH_SHORT).show();
     }
 
+    @SuppressLint("StaticFieldLeak")
     public class NewsFeedTask extends AsyncTask<String, Integer, Feed> {
         boolean isSuccessful = false;
 
