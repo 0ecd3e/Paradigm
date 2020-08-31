@@ -128,53 +128,6 @@ public class ContentTest {
         }
     }
 
-    /*
-    public void createQuestionJson() {
-        ContentModule testMod = new ContentModule("module2");
-
-        Lesson lesson = new Lesson("lesson5");
-
-        Answer a1 = new MultipleChoiceAnswer("Z");
-        FillInBlankAnswer a2 = new FillInBlankAnswer("X");
-        Answer a3 = new MultipleChoiceAnswer("Z");
-        FillInBlankAnswer a4 = new FillInBlankAnswer("X");
-        Answer a5 = new MultipleChoiceAnswer("Z");
-        FillInBlankAnswer a6 = new FillInBlankAnswer("X");
-
-        a2.addAlternativeAnswer("pubadfdaflic");
-        a2.addAlternativeAnswer("privafdvdfvate");
-        a2.addAlternativeAnswer("vovadfvsdfid");
-
-        a4.addAlternativeAnswer("byvdfs xfte");
-        a4.addAlternativeAnswer("stvafddfring");
-        a4.addAlternativeAnswer("aradfvray");
-
-        a6.addAlternativeAnswer("fvfsoo");
-        a6.addAlternativeAnswer("bsfdar");
-
-        Question q1 = new MultipleChoiceQuestion("q1", "testq1", a1);
-        Question q2 = new FillInBlankQuestion("q2", "testq2", a2);
-        Question q3 = new MultipleChoiceQuestion("q3", "sdlkjjf;", a3);
-        Question q4 = new FillInBlankQuestion("q4", "hfajlrhfn", a4);
-        Question q5 = new MultipleChoiceQuestion("q5", "f0y3w48uhrs", a5);
-        Question q6 = new FillInBlankQuestion("q6", "uhfwhulgi45", a6);
-
-        lesson.addQuestion(q1);
-        lesson.addQuestion(q2);
-        lesson.addQuestion(q3);
-        lesson.addQuestion(q4);
-        lesson.addQuestion(q5);
-        lesson.addQuestion(q6);
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/questions.json"), testMod);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-     */
-
     @Test
     public void testLoad() {
         Course test = new Course("testing");

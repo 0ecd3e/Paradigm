@@ -35,7 +35,6 @@ public class ProfileFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ProfileFragment newInstance(int columnCount) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();

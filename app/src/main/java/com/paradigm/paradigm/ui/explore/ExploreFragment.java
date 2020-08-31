@@ -34,7 +34,6 @@ public class ExploreFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ExploreFragment newInstance(int columnCount) {
         ExploreFragment fragment = new ExploreFragment();
         Bundle args = new Bundle();

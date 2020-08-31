@@ -42,7 +42,6 @@ public class NewsFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static NewsFragment newInstance(int columnCount) {
         NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
