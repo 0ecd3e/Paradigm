@@ -39,10 +39,11 @@ public class MCQFragment extends Fragment {
         root = inflater.inflate(R.layout.m_c_q_fragment, container, false);
         updateQuestionProgress(root);
 
+        UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
         TextView questionTitle = root.findViewById(R.id.MCQTitle);
-        questionTitle.setText(UserProgress.getCurrentQuestion().getQuestionName());
+        questionTitle.setText(userProgress.getCurrentQuestion().getQuestionName());
         TextView questionText = root.findViewById(R.id.MCQContent);
-        questionText.setText(UserProgress.getCurrentQuestion().getQuestionText());
+        questionText.setText(userProgress.getCurrentQuestion().getQuestionText());
 
         CardView cardView = root.findViewById(R.id.checkMCQAnswer);
         cardView.setOnClickListener(new View.OnClickListener() {
@@ -56,18 +57,18 @@ public class MCQFragment extends Fragment {
     }
 
     private void updateQuestionProgress(View root) {
-        UserProgress userProgress = ((MainActivity) requireActivity()).getUserProfile().getUserProgress();
-        QuestionProgress questionProgress = userProgress.getQuestionProgress(UserProgress.getCurrentQuestion());
+        UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
+        QuestionProgress questionProgress = userProgress.getQuestionProgress(userProgress.getCurrentQuestion());
         if (questionProgress.isComplete()) {
             TextView text = root.findViewById(R.id.MCQCompleteText);
-            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + UserProgress.getCurrentQuestion().getAnswer().getAnswer();
+            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + userProgress.getCurrentQuestion().getAnswer().getAnswer();
             text.setText(answerKey);
             CardView indicator = root.findViewById(R.id.MCQCompleteIndicator);
             indicator.setCardBackgroundColor(0xff00ff00);
         }
-        userProgress.isLessonComplete(UserProgress.getCurrentLesson());
+        userProgress.isLessonComplete(userProgress.getCurrentLesson());
         CourseProgress courseProgress = userProgress.findCourseProgress(course.getName());
-        String moduleName = course.getName() + "," + UserProgress.getCurrentModule().getName();
+        String moduleName = course.getName() + "," + userProgress.getCurrentModule().getName();
         ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
         moduleProgress.checkComplete();
         ((MainActivity) requireActivity()).saveProgress();
@@ -81,7 +82,7 @@ public class MCQFragment extends Fragment {
     }
 
     public void onRadioButtonClicked(View view) {
-        Question question = UserProgress.getCurrentQuestion();
+        Question question = MainActivity.getUserProfile().getUserProgress().getCurrentQuestion();
         RadioGroup radioGroup = (RadioGroup) view;
         RadioButton selection = radioGroup.findViewById(
                 radioGroup.getCheckedRadioButtonId());
@@ -93,7 +94,7 @@ public class MCQFragment extends Fragment {
 
     private void handleAnswer(Question question, String choice) {
         question.checkAnswer(choice, question.getAnswer(),
-                ((MainActivity) requireActivity()).getUserProfile().getUserProgress());
+                MainActivity.getUserProfile().getUserProgress());
         updateQuestionProgress(root);
     }
 

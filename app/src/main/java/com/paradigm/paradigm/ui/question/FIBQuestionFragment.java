@@ -38,16 +38,17 @@ public class FIBQuestionFragment extends Fragment {
 
         updateQuestionProgress(root);
 
+        UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
         TextView questionTitle = root.findViewById(R.id.fibQuestionTitle);
-        questionTitle.setText(UserProgress.getCurrentQuestion().getQuestionName());
+        questionTitle.setText(userProgress.getCurrentQuestion().getQuestionName());
         TextView questionText = root.findViewById(R.id.fibQuestionContent);
-        questionText.setText(UserProgress.getCurrentQuestion().getQuestionText());
+        questionText.setText(userProgress.getCurrentQuestion().getQuestionText());
 
         CardView cardView = root.findViewById(R.id.checkFIBAnswer);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Question question = UserProgress.getCurrentQuestion();
+                Question question = userProgress.getCurrentQuestion();
                 EditText answer = root.findViewById(R.id.fibQuestionEntry);
                 String parsedAnswer;
                 if (answer == null) {
@@ -64,22 +65,21 @@ public class FIBQuestionFragment extends Fragment {
     }
 
     private void updateQuestionProgress(View root) {
-        UserProgress userProgress = ((MainActivity) requireActivity()).getUserProfile().getUserProgress();
-        QuestionProgress questionProgress = userProgress.getQuestionProgress(UserProgress.getCurrentQuestion());
+        UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
+        QuestionProgress questionProgress = userProgress.getQuestionProgress(userProgress.getCurrentQuestion());
         if (questionProgress.isComplete()) {
             TextView text = root.findViewById(R.id.FIBQIndicatorText);
-            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + UserProgress.getCurrentQuestion().getAnswer().getAnswer();
+            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + userProgress.getCurrentQuestion().getAnswer().getAnswer();
             text.setText(answerKey);
             CardView indicator = root.findViewById(R.id.FIBQProgressIndicator);
             indicator.setCardBackgroundColor(0xff00ff00);
         }
-        MainActivity mainActivity = (MainActivity) requireActivity();
-        mainActivity.getUserProfile().getUserProgress().isLessonComplete(UserProgress.getCurrentLesson());
+        MainActivity.getUserProfile().getUserProgress().isLessonComplete(userProgress.getCurrentLesson());
         CourseProgress courseProgress = userProgress.findCourseProgress(course.getName());
-        String moduleName = course.getName() + "," + UserProgress.getCurrentModule().getName();
+        String moduleName = course.getName() + "," + userProgress.getCurrentModule().getName();
         ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
         moduleProgress.checkComplete();
-        mainActivity.saveProgress();
+        ((MainActivity) requireActivity()).saveProgress();
     }
 
     @Override

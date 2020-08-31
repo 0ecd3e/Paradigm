@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.navigation.NavigationView;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
-import com.paradigm.paradigm.profile.UserProgress;
+import com.paradigm.paradigm.profile.progressEntries.SaveProgressInterface;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
@@ -43,7 +43,8 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements CreateUserDialog.NoticeDialogListener,
-        ChangeUsernameDialog.UsernameChangeDialogListener {
+        ChangeUsernameDialog.UsernameChangeDialogListener,
+        SaveProgressInterface {
     private AppBarConfiguration mAppBarConfiguration;
     private static UserProfile userProfile = null;
     private SharedPreferences sharedPreferences;
@@ -62,20 +63,8 @@ public class MainActivity extends AppCompatActivity
 
     HomeDataLoadedListener homeDataLoadedListener;
 
-    public void initProfile() {
-        try {
-            FileInputStream fis = this.openFileInput("userProfile.ser");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
-            userProfile = (UserProfile) objectInputStream.readObject();
-            objectInputStream.close();
-            fis.close();
-        } catch (IOException | ClassNotFoundException e) {
-            // Error occurred when opening raw file for reading.
-            // Create an instance of the dialog fragment and show it
-            DialogFragment dialog = new CreateUserDialog();
-            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
-            //dialog.setCanceledOnTouchOutside(false);
-        }
+    public static UserProfile getUserProfile() {
+        return userProfile;
     }
 
     /*
@@ -208,14 +197,25 @@ public class MainActivity extends AppCompatActivity
         homeDataLoadedListener = hdll;
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        saveProgress();
-    }
-
-    public UserProfile getUserProfile() {
-        return userProfile;
+    public void initProfile() {
+        try {
+            FileInputStream fis = this.openFileInput("userProfile.ser");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
+            userProfile = (UserProfile) objectInputStream.readObject();
+            objectInputStream.close();
+            fis.close();
+            if (userProfile.getUserProgress().getCheckpointModule() == null) {
+                userProfile.getUserProgress().setCheckpointModule(course.getModules().get(0));
+            } else {
+                homeDataLoadedListener.onHomePageLoaded();
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Error occurred when opening raw file for reading.
+            // Create an instance of the dialog fragment and show it
+            DialogFragment dialog = new CreateUserDialog();
+            dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+            //dialog.setCanceledOnTouchOutside(false);
+        }
     }
 
     public void setUserProfile(UserProfile userProfile) {
@@ -249,6 +249,7 @@ public class MainActivity extends AppCompatActivity
         return newsFeed;
     }
 
+    @Override
     public void saveProgress() {
         try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
@@ -268,6 +269,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         userProfile.getUserProgress().addCourse(course);
+        userProfile.getUserProgress().setCheckpointModule(course.getModules().get(0));
 
         saveProgress();
     }
@@ -308,7 +310,7 @@ public class MainActivity extends AppCompatActivity
                 lesson.setParents();
             }
         }
-        UserProgress.setCheckpointModule(course.getModules().get(0));
+        //UserProgress.setCheckpointModule(course.getModules().get(0));
     }
 
     @Override
@@ -322,4 +324,6 @@ public class MainActivity extends AppCompatActivity
     public interface HomeDataLoadedListener {
         void onHomePageLoaded();
     }
+
+
 }

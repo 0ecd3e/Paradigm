@@ -10,9 +10,11 @@ import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.profile.UserProgress;
+import com.paradigm.paradigm.profile.progressEntries.SaveProgressInterface;
 import com.paradigm.paradigm.text.ContentModule;
 
 import java.util.List;
@@ -32,8 +34,11 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
     //modules = null;
     //}
 
-    public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules) {
+    SaveProgressInterface listener;
+
+    public ExploreModuleRecyclerViewAdapter(List<ContentModule> modules, SaveProgressInterface saveProgressInterface) {
         modulesList = modules;
+        listener = saveProgressInterface;
     }
 
     @Override
@@ -63,8 +68,10 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserProgress.setCurrentModule(contentModule);
-                UserProgress.setCheckpointModule(contentModule);
+                UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
+                userProgress.setCurrentModule(contentModule);
+                userProgress.setCheckpointModule(contentModule);
+                listener.saveProgress();
                 Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
             }
         });

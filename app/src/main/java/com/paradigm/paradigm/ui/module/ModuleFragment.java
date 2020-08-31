@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.profile.UserProgress;
 
@@ -69,10 +70,11 @@ public class ModuleFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_module, container, false);
         View view = root.findViewById(R.id.lessonList);
 
+        UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
         TextView moduleTitle = root.findViewById(R.id.moduleTitleText);
-        moduleTitle.setText(UserProgress.getCurrentModule().getName());
+        moduleTitle.setText(userProgress.getCurrentModule().getName());
         TextView moduleDesc = root.findViewById(R.id.moduleDescText);
-        moduleDesc.setText(UserProgress.getCurrentModule().getDescription());
+        moduleDesc.setText(userProgress.getCurrentModule().getDescription());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -83,7 +85,7 @@ public class ModuleFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(UserProgress.getCurrentModule()));
+            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(userProgress.getCurrentModule()));
         }
         return root;
     }

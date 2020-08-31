@@ -16,10 +16,10 @@ import java.util.List;
 public class UserProgress implements Serializable {
 
     private List<CourseProgress> courses;
-    private static ContentModule currentModule;
-    private static Lesson currentLesson;
-    private static ContentModule checkpointModule;
-    private static Question currentQuestion;
+    private ContentModule currentModule;
+    private Lesson currentLesson;
+    private ContentModule checkpointModule;
+    private Question currentQuestion;
 
     public UserProgress() {
         courses = new ArrayList<>();
@@ -131,35 +131,35 @@ public class UserProgress implements Serializable {
         return 0;
     }
 
-    public static ContentModule getCheckpointModule() {
+    public ContentModule getCheckpointModule() {
         return checkpointModule;
     }
 
-    public static void setCheckpointModule(ContentModule cm) {
+    public void setCheckpointModule(ContentModule cm) {
         checkpointModule = cm;
     }
 
-    public static ContentModule getCurrentModule() {
+    public ContentModule getCurrentModule() {
         return currentModule;
     }
 
-    public static void setCurrentModule(ContentModule cm) {
+    public void setCurrentModule(ContentModule cm) {
         currentModule = cm;
     }
 
-    public static Question getCurrentQuestion() {
+    public Question getCurrentQuestion() {
         return currentQuestion;
     }
 
-    public static void setCurrentQuestion(Question question) {
+    public void setCurrentQuestion(Question question) {
         currentQuestion = question;
     }
 
-    public static Lesson getCurrentLesson() {
+    public Lesson getCurrentLesson() {
         return currentLesson;
     }
 
-    public static void setCurrentLesson(Lesson cl) {
+    public void setCurrentLesson(Lesson cl) {
         currentLesson = cl;
     }
 }

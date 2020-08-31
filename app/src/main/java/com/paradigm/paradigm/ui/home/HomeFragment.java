@@ -64,19 +64,21 @@ public class HomeFragment extends Fragment {
     }
 
     public void updateCheckpoint() {
-        ContentModule contentModule = UserProgress.getCheckpointModule();
-        TextView title = root.findViewById(R.id.latestModuleTitle);
-        title.setText(contentModule.getName());
-        TextView desc = root.findViewById(R.id.latestModuleDescription);
-        desc.setText(contentModule.getDescription());
-
-        String courseName = MainActivity.course.getName();
-        String moduleName = courseName + "," + contentModule.getName();
-        UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
+        UserProfile userProfile = MainActivity.getUserProfile();
 
         if (userProfile == null) {
             ((MainActivity) requireActivity()).initProfile();
         } else {
+            UserProgress userProgress = userProfile.getUserProgress();
+            ContentModule contentModule = userProgress.getCheckpointModule();
+            TextView title = root.findViewById(R.id.latestModuleTitle);
+            title.setText(contentModule.getName());
+            TextView desc = root.findViewById(R.id.latestModuleDescription);
+            desc.setText(contentModule.getDescription());
+
+            String courseName = MainActivity.course.getName();
+            String moduleName = courseName + "," + contentModule.getName();
+
             CourseProgress courseProgress = userProfile.getUserProgress().findCourseProgress(courseName);
             ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
 
@@ -85,16 +87,16 @@ public class HomeFragment extends Fragment {
             TextView progressPercent = root.findViewById(R.id.latestModuleProgressPercent);
             String progresspercentage = moduleProgress.completePercentage() + "%";
             progressPercent.setText(progresspercentage);
-        }
 
-        root.findViewById(R.id.latestModuleCard).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ContentModule contentModule1 = ((MainActivity) requireActivity()).getCourse().findContentModule(contentModule.getName());
-                UserProgress.setCurrentModule(contentModule1);
-                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_moduleFragment);
-            }
-        });
+            root.findViewById(R.id.latestModuleCard).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ContentModule contentModule1 = ((MainActivity) requireActivity()).getCourse().findContentModule(contentModule.getName());
+                    userProgress.setCurrentModule(contentModule1);
+                    Navigation.findNavController(v).navigate(R.id.action_nav_home_to_moduleFragment);
+                }
+            });
+        }
     }
 
 }
