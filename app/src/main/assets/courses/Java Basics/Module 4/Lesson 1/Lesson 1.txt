@@ -1,1 +1,16 @@
-this is the content of lesson 1, module 4.
+Modifiers in Java can be separated into two categories, access modifiers and non-access modifiers. Access modifiers specifies the level of access different scopes of a program are allowed to have to objects, their fields, and methods. This provides encapsulation within the program, simply put, it allows programmers to use portions of code based on what the code sets out to do without worrying about their implementations. Non-access modifiers change the functionality of objects and methods that they are applied to. The following list includes some of the commonly seen modifiers.
+
+\n  Access Modifiers:
+\n          private: Only grants access to members within the same class.
+\n          default: Same accessibility as private. This is the access modifier used by default when none is specified.
+\n          protected: Provides access to members within the same class and members of the child class.
+\n          public: Grants access to anyone regardless of their scope.
+
+\n  Non-access Modifiers:
+\n          static: Makes variables, methods, and nested classes be part of a class rather than the object. This means that there is only one instance of them.
+\n          final: When used on variables, prevents the data in the variable from being modified. When used on methods, prevents child classes from overriding its implementation. When used on classes, prevents the class from being inherited.
+
+
+
+
+

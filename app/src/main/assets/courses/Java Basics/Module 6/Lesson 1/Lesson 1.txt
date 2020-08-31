@@ -1,1 +1,15 @@
-this is the content of lesson 1, module 6.
+For loops like other loops allow for a block of code to be repeatedly executed through many iterations as long as the boolean expression within the loop continues to be true. Where for loops differ however is that it is used when the desired number of iterations is known beforehand. A for loop consists of several components. The keyword itself, followed by three statements within the parenthesis and the code block itself. The first statement is only executed once before the code block’s execution, the second statement is the boolean expression that specifies the conditions necessary for the code block’s execution, and the third statement is executed once every time after the code block.
+
+\n                for (int i = 0; i < 10; i++) {
+\n                    System.out.println( i );<- A commonly seen for loop.
+\n                }
+
+\nFor loops are also used often as a method of traversal through arrays as mentioned in previous modules.
+
+\nFor-each loops:
+\nFor-each loop is for loops used exclusively for array traversals. Unlike the traditional for loop traversal, for-each loop does not require the programmer to know of the array size and provide it explicitly. Instead of utilizing an index integer variable, the for-each loop uses a variable that is of the same data type as the elements stored in the array. The syntax of a for-each loop are as follows:
+
+\n                  for( int x : arr ) {
+\n                    	x++;
+\n                  }
+

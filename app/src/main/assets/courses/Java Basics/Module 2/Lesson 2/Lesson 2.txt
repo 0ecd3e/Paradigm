@@ -1,1 +1,21 @@
-This is the content of lesson 2, module 2.
+Methods are subroutines consisting of a small block of code that manipulates or shows the current state of the object and can also accomplish a task. In order for the method to do its computations, it must be called upon and if need be, provided with the proper arguments needed in its computations. To declare a method, simply follow the example listed:
+
+\n
+\n          public int name(int a, int b){
+\n          //Write the statements
+\n            for computations here.//
+\n          }
+\nThe declaration starts off with the modifier, an indication of what has access to itself.
+
+\nNext, we have the type declaration, this specifies the data type that will be returned upon completion of the computation.
+
+\nFollowing that is the name, this can be anything but it is convention and important to name it after the purpose of the method. For example, if the method is used to calculate the sum of two numbers, then the name of the method should be getSum.
+
+\nFinally, inside the parenthesis are parameters, these are optional and the quantity of them are up to the programmer’s discretion. In essence, they provide the guideline for what arguments the method needs for its computation and what purpose they serve in the computation. If there are more than one parameter, the parameters are then separated by a comma followed by a space. Parameters have their own declaration as well with declaration of data types and name. Similar to what is said about method names, parameter names should accurately describe the parameter’s purpose. The name should start with a lowercase letter.
+
+\nIt is important to note that you should design methods so that they only do one task. For example, if you want to calculate the sum of two numbers then print the result to the screen, you should have one method for the calculation and one method for print rather than one method that accomplishes both. This will provide modularity in your program, an important aspect to software design.
+
+
+
+
+
