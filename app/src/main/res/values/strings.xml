@@ -61,7 +61,7 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="hint">hint</string>
     <string name="welcome">Welcome!</string>
-    <string name="pick_a_username">Pick a username...</string>
+    <string name="pick_a_username">Pick a username…</string>
     <string name="default_module_name">Default Module Name</string>
     <string name="default_section_name">Default Section Name</string>
     <string name="default_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. </string>
@@ -294,4 +294,11 @@
     <string name="see_your_overall_progress">See your overall progress</string>
     <string name="technology_news">Technology news</string>
     <string name="overall_progress">Overall Progress:</string>
+    <string name="lesson_title">Lesson Title</string>
+    <string name="complete_all_the_questions_to_complete_the_lesson">Complete all the questions to complete the lesson.</string>
+    <string name="lesson_1">Lesson 1</string>
+    <string name="for_review">For Review:</string>
+    <string name="question_1">Question 1</string>
+    <string name="question_2">Question 2</string>
+    <string name="question_3">Question 3</string>
 </resources>
