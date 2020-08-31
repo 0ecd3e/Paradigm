@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
@@ -26,7 +25,6 @@ import static com.paradigm.paradigm.MainActivity.course;
 
 public class MCQFragment extends Fragment {
 
-    private MCQViewModel mViewModel;
     View root;
 
     public static MCQFragment newInstance() {
@@ -72,13 +70,6 @@ public class MCQFragment extends Fragment {
         ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
         moduleProgress.checkComplete();
         ((MainActivity) requireActivity()).saveProgress();
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MCQViewModel.class);
-        // TODO: Use the ViewModel
     }
 
     public void onRadioButtonClicked(View view) {

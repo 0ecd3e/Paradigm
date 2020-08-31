@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
@@ -24,8 +23,6 @@ import com.paradigm.paradigm.profile.progressEntries.QuestionProgress;
 import static com.paradigm.paradigm.MainActivity.course;
 
 public class FIBQuestionFragment extends Fragment {
-
-    private FIBQuestionViewModel mViewModel;
 
     public static FIBQuestionFragment newInstance() {
         return new FIBQuestionFragment();
@@ -57,7 +54,7 @@ public class FIBQuestionFragment extends Fragment {
                     parsedAnswer = answer.getText().toString();
                 }
                 question.checkAnswer(parsedAnswer, question.getAnswer(),
-                        ((MainActivity) requireActivity()).getUserProfile().getUserProgress());
+                        MainActivity.getUserProfile().getUserProgress());
                 updateQuestionProgress(root);
             }
         });
@@ -81,12 +78,4 @@ public class FIBQuestionFragment extends Fragment {
         moduleProgress.checkComplete();
         ((MainActivity) requireActivity()).saveProgress();
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(FIBQuestionViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }

@@ -22,7 +22,6 @@ import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters

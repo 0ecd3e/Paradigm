@@ -45,8 +45,12 @@ public class LessonFragment extends Fragment {
         q1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(0));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(0));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -54,8 +58,12 @@ public class LessonFragment extends Fragment {
         q2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(1));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(1));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -63,8 +71,12 @@ public class LessonFragment extends Fragment {
         q3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(2));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(2));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
