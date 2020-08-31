@@ -36,7 +36,6 @@ public class ModuleFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ModuleFragment newInstance(int columnCount) {
         ModuleFragment fragment = new ModuleFragment();
         Bundle args = new Bundle();
@@ -85,7 +84,7 @@ public class ModuleFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(userProgress.getCurrentModule()));
+            recyclerView.setAdapter(new ModuleFragmentRecyclerViewAdapter(userProgress.getCurrentModule(), this));
         }
         return root;
     }

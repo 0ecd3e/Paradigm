@@ -70,6 +70,12 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                         .setNegativeButton("No", dataDeleteListener)
                         .show();
                 return true;
+            case "displayLicenseButton":
+                ((MainActivity) requireActivity()).displayLicenses();
+                return true;
+            case "about":
+                ((MainActivity) requireActivity()).displayApacheLicense();
+                return true;
             default:
                 return false;
         }

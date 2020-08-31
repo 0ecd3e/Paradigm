@@ -17,6 +17,7 @@ import com.paradigm.paradigm.text.Lesson;
 import java.io.IOException;
 import java.util.Iterator;
 
+@SuppressWarnings("SameParameterValue")
 public class CourseDeserializer extends StdDeserializer<Course> {
     public CourseDeserializer() {
         this(Course.class);
@@ -69,7 +70,7 @@ public class CourseDeserializer extends StdDeserializer<Course> {
             questionType = questionType.replace("\"", "");
 
             Question question = null;
-            Answer answer = null;
+            Answer answer;
 
             String bestAnswer = currentQuestion.get("answer").get("bestAnswer").toString();
             bestAnswer = bestAnswer.replace("\"", "");

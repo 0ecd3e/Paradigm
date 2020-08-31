@@ -1,5 +1,21 @@
 package com.paradigm.paradigm;
 
+/*
+  Copyright 2020 The Paradigm Team
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +38,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
@@ -47,7 +64,6 @@ public class MainActivity extends AppCompatActivity
         SaveProgressInterface {
     private AppBarConfiguration mAppBarConfiguration;
     private static UserProfile userProfile = null;
-    private SharedPreferences sharedPreferences;
     public String feedURL;
     public static Course course;
     SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
@@ -129,9 +145,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String feedSource = sharedPreferences.getString("defaultFeedLocation", "https://rss.cbc.ca/lineup/technology.xml");
-        feedURL = feedSource;
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        feedURL = sharedPreferences.getString("defaultFeedLocation", "https://rss.cbc.ca/lineup/technology.xml");
         sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
 
         if (sharedPreferences.getBoolean("newsFeedSwitch", true)) {
@@ -144,16 +159,6 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
-            }
-        });
-         */
 
         DrawerLayout drawer;
         NavigationView navigationView;
@@ -166,7 +171,7 @@ public class MainActivity extends AppCompatActivity
             mAppBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.nav_home, R.id.nav_news,
                     R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
-                    .setDrawerLayout(drawer)
+                    .setOpenableLayout(drawer)
                     .build();
             newsFeed = new Feed();
         } else {
@@ -176,7 +181,7 @@ public class MainActivity extends AppCompatActivity
             // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.nav_home, R.id.nav_explore, R.id.nav_profile, R.id.nav_settings)
-                    .setDrawerLayout(drawer)
+                    .setOpenableLayout(drawer)
                     .build();
         }
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
@@ -340,4 +345,12 @@ public class MainActivity extends AppCompatActivity
         void onHomePageLoaded();
     }
 
+    public void displayLicenses() {
+        startActivity(new Intent(this, OssLicensesMenuActivity.class));
+    }
+
+    public void displayApacheLicense() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController.navigate(R.id.action_nav_settings_to_blankFragment);
+    }
 }

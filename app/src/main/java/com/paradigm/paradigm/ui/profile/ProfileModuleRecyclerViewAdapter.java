@@ -10,20 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<ProfileModuleRecyclerViewAdapter.ViewHolder> {
 
-    //private final List<DummyItem> mValues;
     private List<ModuleProgress> modules;
 
     /*
@@ -37,6 +30,7 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         modules = courseProgress.getModules();
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -80,9 +74,9 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.profileProgressModuleTitle);
-            mContentView = (TextView) view.findViewById(R.id.profileProgressModulePercent);
-            progressBar = (ProgressBar) view.findViewById(R.id.profileProgressProgressBar);
+            mIdView = view.findViewById(R.id.profileProgressModuleTitle);
+            mContentView = view.findViewById(R.id.profileProgressModulePercent);
+            progressBar = view.findViewById(R.id.profileProgressProgressBar);
         }
 
         @NonNull

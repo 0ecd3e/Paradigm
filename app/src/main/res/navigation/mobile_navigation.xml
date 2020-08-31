@@ -12,24 +12,34 @@
         <action
             android:id="@+id/action_nav_home_to_nav_explore"
             app:destination="@id/nav_explore"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/nav_home" />
         <action
             android:id="@+id/action_nav_home_to_nav_profile"
             app:destination="@id/nav_profile"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/nav_home" />
         <action
             android:id="@+id/action_nav_home_to_nav_news"
             app:destination="@id/nav_news"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/nav_home" />
         <action
             android:id="@+id/action_nav_home_to_moduleFragment"
             app:destination="@id/moduleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/nav_explore"
             app:popUpToInclusive="true" />
         <action
@@ -43,6 +53,10 @@
         <action
             android:id="@+id/action_nav_explore_to_moduleFragment"
             app:destination="@id/moduleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/nav_explore" />
     </fragment>
     <fragment
@@ -60,7 +74,15 @@
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
-        android:label="Settings" />
+        android:label="Settings">
+        <action
+            android:id="@+id/action_nav_settings_to_blankFragment"
+            app:destination="@id/licenseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p" />
+    </fragment>
     <fragment
         android:id="@+id/moduleFragment"
         android:name="com.paradigm.paradigm.ui.module.ModuleFragment"
@@ -69,10 +91,18 @@
         <action
             android:id="@+id/action_moduleFragment_to_lessonFragment"
             app:destination="@id/lessonFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p"
             app:popUpTo="@id/moduleFragment" />
         <action
             android:id="@+id/action_moduleFragment_to_nav_explore"
-            app:destination="@id/nav_explore" />
+            app:destination="@id/nav_explore"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/fragment_fade_exit_p" />
     </fragment>
     <fragment
         android:id="@+id/lessonFragment"
@@ -80,10 +110,18 @@
         android:label="Lesson">
         <action
             android:id="@+id/action_lessonFragment_to_MCQFragment"
-            app:destination="@id/MCQFragment" />
+            app:destination="@id/MCQFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p" />
         <action
             android:id="@+id/action_lessonFragment_to_FIBQuestionFragment"
-            app:destination="@id/FIBQuestionFragment" />
+            app:destination="@id/FIBQuestionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fragment_fade_exit_p"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fragment_fade_exit_p" />
     </fragment>
     <fragment
         android:id="@+id/MCQFragment"
@@ -95,4 +133,9 @@
         android:name="com.paradigm.paradigm.ui.question.FIBQuestionFragment"
         android:label="Question"
         tools:layout="@layout/f_i_b_question_fragment" />
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="com.paradigm.paradigm.ui.settings.LicenseFragment"
+        android:label="Apache License 2.0"
+        tools:layout="@layout/fragment_license" />
 </navigation>

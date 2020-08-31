@@ -27,7 +27,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="Welcome back!"
+                android:text="@string/welcome_back"
                 android:textAlignment="center"
                 android:textColor="@color/textBlack"
                 android:textSize="24sp"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/roboto"
-                android:text="Here's where you left off:"
+                android:text="@string/here_s_where_you_left_off"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/latestModuleWelcomeText" />
@@ -62,6 +62,7 @@
         android:foreground="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@+id/latestModuleWelcomeCard">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,7 +78,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/roboto"
-                android:text='Your most recent module will show up here. Go to "Profile" and pick a username to get started!'
+                android:text="@string/your_most_recent_module_will_show_up_here_go_to_profile_and_pick_a_username_to_get_started"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/latestModuleCardImage"
@@ -90,7 +91,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/roboto"
-                android:text="Most Recent Module"
+                android:text="@string/most_recent_module"
                 android:textColor="@color/textBlack"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -105,6 +106,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -135,7 +137,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="Module Progress:"
+                android:text="@string/module_progress"
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -191,7 +193,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="Info"
+                android:text="@string/info"
                 android:textAlignment="viewStart"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -206,7 +208,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="Tap the module above to pick up where you left off, or check out the items below:"
+                android:text="@string/tap_the_module_above_to_pick_up_where_you_left_off_or_check_out_the_items_below"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -224,6 +226,7 @@
                 android:onClick="toExplore"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:focusable="true"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -236,7 +239,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Explore other modules"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/explore_other_modules"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -258,6 +262,7 @@
                 android:onClick="toProfile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:focusable="true"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -270,7 +275,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:text="See your overall progress"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/see_your_overall_progress"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -293,6 +299,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:focusable="true"
                 app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -305,7 +312,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Technology news"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/technology_news"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

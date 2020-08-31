@@ -20,18 +20,19 @@
     <PreferenceCategory app:title="@string/general_header">
 
         <Preference
-            android:onClick="toNews"
             app:key="resetSettings"
             app:summary="Reset these settings"
             app:title="@string/reset_dialog" />
         <Preference
-            android:onClick="toExplore"
             app:key="eraseUserData"
             app:summary="Delete your user data and progress"
             app:title="@string/eraseData_dialog" />
         <Preference
+            app:key="displayLicenseButton"
+            app:title="Open source notices" />
+        <Preference
             app:key="about"
-            app:summary="Version 0.9.0beta\n\nMade by the Paradigm team"
+            app:summary="Version 0.9.0beta\n\nMade by the Paradigm team.\n\nClick here for license information."
             app:title="About" />
 
     </PreferenceCategory>

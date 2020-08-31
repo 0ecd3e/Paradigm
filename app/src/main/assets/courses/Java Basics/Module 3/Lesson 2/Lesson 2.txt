@@ -1,1 +1,2 @@
-This is the content of lesson 2, module 3.
+In most programming languages, the compiler reads the code from top to bottom. This means that there has to be a specific order to things in a program for it to work properly. The first statement in a program should be a package statement, this will group the current file along with others inside the package. The next section should be import statements, this is where you import other libraries either locally or remotely. Following that should be the class definition, important to note that there is a structure even within class definitions. Inside the class, the first section should be the fields of the class, followed by the constructor and then the methods that the class will use.
+

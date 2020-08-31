@@ -34,7 +34,6 @@ public class ExploreFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ExploreFragment newInstance(int columnCount) {
         ExploreFragment fragment = new ExploreFragment();
         Bundle args = new Bundle();
@@ -73,7 +72,9 @@ public class ExploreFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(MainActivity.course.getModules(), (SaveProgressInterface) requireActivity()));
+            recyclerView.setAdapter(new ExploreModuleRecyclerViewAdapter(MainActivity.course.getModules(),
+                    (SaveProgressInterface) requireActivity(),
+                    this));
         }
         return root;
     }

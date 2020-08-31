@@ -11,37 +11,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.newsfeed.Article;
 import com.paradigm.paradigm.newsfeed.Feed;
 
 import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class NewsFragmentRecyclerViewAdapter extends RecyclerView.Adapter<NewsFragmentRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues = new ArrayList<>();
     private Feed theFeed;
-    private List<Article> newsFeed = new ArrayList<>();
-
-    public NewsFragmentRecyclerViewAdapter(List<DummyItem> items) {
-        //mValues = items;
-    }
+    private List<Article> newsFeed;
 
     public NewsFragmentRecyclerViewAdapter(Feed feed) {
-        //feed.setFeed(MainActivity.feedURL);
         newsFeed = feed.getArticles();
-        //theFeed = feed;
     }
 
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

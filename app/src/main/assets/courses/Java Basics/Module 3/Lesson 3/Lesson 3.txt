@@ -1,1 +1,1 @@
-this is the content of lesson 3, module 3.
+A style guide is a general set of guidelines that one should use when coding to remove ambiguities and uncertainties in programs. They provide guidelines from variable naming, to spacing and bracket usage. There are many style guides in use but the most popular one for Java is the Google style guide. https://google.github.io/styleguide/javaguide.html

@@ -1,5 +1,7 @@
 package com.paradigm.paradigm.text;
 
+import androidx.annotation.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -104,6 +106,7 @@ public class Lesson extends Content {
         }
     }
 
+    @NonNull
     @Override
     public String toString() {
         System.out.println("N " + name);

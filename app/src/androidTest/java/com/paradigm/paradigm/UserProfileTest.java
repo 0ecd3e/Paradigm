@@ -27,6 +27,7 @@ import java.io.ObjectOutputStream;
 
 import static org.junit.Assert.fail;
 
+@SuppressWarnings("UnusedAssignment")
 @RunWith(AndroidJUnit4.class)
 public class UserProfileTest {
     @Test
@@ -34,7 +35,7 @@ public class UserProfileTest {
         Course java = new Course("test");
         AssetManager assetManager = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getAssets();
 
-        InputStream inputStream = null;
+        InputStream inputStream;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             inputStream = assetManager.open("courses/Java Basics/courseJava.json");
