@@ -100,11 +100,15 @@ public class UserProgress implements Serializable {
 
     public boolean isLessonComplete(Lesson lesson) {
         String parentCourse = lesson.getParentCourse();
-        String parentModule = lesson.getParentContentModule();
+        String parentModule = parentCourse + "," + lesson.getParentContentModule();
+        String lessonName = parentModule + "," + lesson.getName();
         CourseProgress currentProgress = getCourseProgress(parentCourse);
         ModuleProgress currentModuleProgress = currentProgress.getModuleProgress(parentModule);
-        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(lesson.getName());
-        return (currentLessonProgress.completePercentage() == 100);
+        LessonProgress currentLessonProgress = currentModuleProgress.getLessonProgress(lessonName);
+        if (currentLessonProgress.completePercentage() == 100) {
+            currentLessonProgress.setComplete();
+        }
+        return currentLessonProgress.isComplete();
     }
 
     public int getModuleCompleteness(ContentModule contentModule) {

@@ -56,10 +56,11 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
 
          */
         ModuleProgress moduleProgress = modules.get(position);
+        moduleProgress.checkComplete();
         String completeness = moduleProgress.completePercentage() + "%";
         holder.mContentView.setText(completeness);
         String name = moduleProgress.getComponentName();
-        String prettyName = name.replace("java,", "");
+        String prettyName = name.replace("Java Basics,", "");
         holder.mIdView.setText(prettyName);
         holder.progressBar.setProgress(moduleProgress.completePercentage());
     }

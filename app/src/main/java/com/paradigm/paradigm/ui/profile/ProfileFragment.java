@@ -63,7 +63,8 @@ public class ProfileFragment extends Fragment {
         if (userProfile == null) {
             ((MainActivity) requireActivity()).initProfile();
         } else {
-            int overallCompleteness = userProfile.getUserProgress().getCourseCompleteness(MainActivity.course);
+            CourseProgress courseCompleteness = userProfile.getUserProgress().findCourseProgress(MainActivity.course.getName());
+            int overallCompleteness = courseCompleteness.completePercentage();
             overallProgress.setProgress(overallCompleteness);
             String percentComplete = overallCompleteness + "%";
             overallProgressPercent.setText(percentComplete);

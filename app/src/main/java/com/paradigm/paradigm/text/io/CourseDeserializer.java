@@ -63,6 +63,7 @@ public class CourseDeserializer extends StdDeserializer<Course> {
 
             String questionText = currentQuestion.get("text").toString();
             questionText = questionText.replace("\"", "");
+            questionText = questionText.replace("\\n", "\n");
 
             String questionType = currentQuestion.get("type").toString();
             questionType = questionType.replace("\"", "");

@@ -56,10 +56,12 @@ public class MCQFragment extends Fragment {
         QuestionProgress questionProgress = userProgress.getQuestionProgress(MainActivity.getCurrentQuestion());
         if (questionProgress.isComplete()) {
             TextView text = root.findViewById(R.id.MCQCompleteText);
-            text.setText("You have correctly answered this question before.");
+            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + MainActivity.getCurrentQuestion().getAnswer().getAnswer();
+            text.setText(answerKey);
             CardView indicator = root.findViewById(R.id.MCQCompleteIndicator);
             indicator.setCardBackgroundColor(0xff00ff00);
         }
+        userProgress.isLessonComplete(MainActivity.getCurrentLesson());
         ((MainActivity) requireActivity()).saveProgress();
     }
 
@@ -75,8 +77,10 @@ public class MCQFragment extends Fragment {
         RadioGroup radioGroup = (RadioGroup) view;
         RadioButton selection = (RadioButton) radioGroup.findViewById(
                 radioGroup.getCheckedRadioButtonId());
-        String selectedText = (String) selection.getText();
-        handleAnswer(question, selectedText.substring(0, 1));
+        if (selection != null) {
+            String selectedText = (String) selection.getText();
+            handleAnswer(question, selectedText.substring(0, 1));
+        }
     }
 
     private void handleAnswer(Question question, String choice) {

@@ -45,6 +45,7 @@ public class ContentLoader {
         lesson.setLessonContent(content);
     }
 
+    /*
     public void loadQuestions(Lesson lesson, AssetManager assetManager) {
         String questionsPath = lesson.questionsPath();
         Lesson questionSource = new Lesson();
@@ -62,4 +63,6 @@ public class ContentLoader {
         lesson.replaceQuestions(questionSource.getQuestions());
         lesson.setParents();
     }
+
+     */
 }

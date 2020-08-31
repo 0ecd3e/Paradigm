@@ -64,6 +64,7 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
             @Override
             public void onClick(View v) {
                 MainActivity.setCurrentModule(contentModule);
+                MainActivity.setCheckpointModule(contentModule);
                 Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
             }
         });

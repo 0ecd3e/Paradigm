@@ -14,9 +14,9 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 1: Introduction",
               "parentLesson": "Lesson 1: What is Java?",
-              "text": "defaultQuestionText",
+              "text": "When was the first development kit released for Java?\n\na) 1991\nb) 1992\nc) 1993\nd) 1994",
               "answer": {
-                "bestAnswer": "A"
+                "bestAnswer": "D"
               }
             },
             "Q2": {
@@ -24,21 +24,15 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 1: Introduction",
               "parentLesson": "Lesson 1: What is Java?",
-              "text": "defaultQuestionText2",
+              "text": "Name the type of programming language in which all components of a program must be in a class.",
               "answer": {
-                "bestAnswer": "B",
+                "bestAnswer": "Object oriented programming",
                 "acceptedAnswers": [
                   {
-                    "acceptedAnswer1": "B"
+                    "acceptedAnswer1": "Object oriented programming"
                   },
                   {
-                    "acceptedAnswer2": "1"
-                  },
-                  {
-                    "acceptedAnswer3": "2"
-                  },
-                  {
-                    "acceptedAnswer4": "3"
+                    "acceptedAnswer2": "OOP"
                   }
                 ]
               }
@@ -48,7 +42,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 1: Introduction",
               "parentLesson": "Lesson 1: What is Java?",
-              "text": "defaultQuestionText3",
+              "text": "Which of the following operating systems was Java not released on?\n\na) Windows 95\nb) MacOS\nc) Red Star OS\nd) Linux",
               "answer": {
                 "bestAnswer": "C"
               }

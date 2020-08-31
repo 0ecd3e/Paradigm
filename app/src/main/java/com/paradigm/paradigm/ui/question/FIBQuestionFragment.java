@@ -64,11 +64,14 @@ public class FIBQuestionFragment extends Fragment {
         QuestionProgress questionProgress = userProgress.getQuestionProgress(MainActivity.getCurrentQuestion());
         if (questionProgress.isComplete()) {
             TextView text = root.findViewById(R.id.FIBQIndicatorText);
-            text.setText("You have correctly answered this question before.");
+            String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + MainActivity.getCurrentQuestion().getAnswer().getAnswer();
+            text.setText(answerKey);
             CardView indicator = root.findViewById(R.id.FIBQProgressIndicator);
             indicator.setCardBackgroundColor(0xff00ff00);
         }
-        ((MainActivity) requireActivity()).saveProgress();
+        MainActivity mainActivity = (MainActivity) requireActivity();
+        mainActivity.getUserProfile().getUserProgress().isLessonComplete(MainActivity.getCurrentLesson());
+        mainActivity.saveProgress();
     }
 
     @Override

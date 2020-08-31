@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
+import com.paradigm.paradigm.profile.UserProfile;
 import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 import com.paradigm.paradigm.text.ContentModule;
@@ -23,6 +24,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     View root;
+    boolean loaded = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onHomePageLoaded() {
                 updateCheckpoint();
+                loaded = true;
             }
         });
 
@@ -37,6 +40,10 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        if (loaded) {
+            updateCheckpoint();
+        }
 
         ImageView imageView = root.findViewById(R.id.latestModuleCardImage);
         imageView.setImageResource(R.drawable.smptebars);
@@ -64,15 +71,20 @@ public class HomeFragment extends Fragment {
 
         String courseName = MainActivity.course.getName();
         String moduleName = courseName + "," + contentModule.getName();
-        CourseProgress courseProgress = ((MainActivity) requireActivity()).getUserProfile()
-                .getUserProgress().findCourseProgress(courseName);
-        ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
+        UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
 
-        ProgressBar progressBar = root.findViewById(R.id.latestModuleProgressBar);
-        progressBar.setProgress(moduleProgress.completePercentage());
-        TextView progressPercent = root.findViewById(R.id.latestModuleProgressPercent);
-        String progresspercentage = moduleProgress.completePercentage() + "%";
-        progressPercent.setText(progresspercentage);
+        if (userProfile == null) {
+            ((MainActivity) requireActivity()).initProfile();
+        } else {
+            CourseProgress courseProgress = userProfile.getUserProgress().findCourseProgress(courseName);
+            ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
+
+            ProgressBar progressBar = root.findViewById(R.id.latestModuleProgressBar);
+            progressBar.setProgress(moduleProgress.completePercentage());
+            TextView progressPercent = root.findViewById(R.id.latestModuleProgressPercent);
+            String progresspercentage = moduleProgress.completePercentage() + "%";
+            progressPercent.setText(progresspercentage);
+        }
 
         root.findViewById(R.id.latestModuleCard).setOnClickListener(new View.OnClickListener() {
             @Override

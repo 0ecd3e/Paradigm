@@ -78,4 +78,5 @@
     <string name="newsTitleText">News</string>
     <string name="todo">TODO</string>
     <string name="dummy_question">Dummy Question.</string>
+    <string name="zero_progress_percent">0%</string>
 </resources>
