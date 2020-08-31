@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.paradigm.paradigm.MainActivity;
@@ -23,7 +22,6 @@ import com.paradigm.paradigm.text.ContentModule;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     View root;
     boolean loaded = false;
 
@@ -38,8 +36,6 @@ public class HomeFragment extends Fragment {
         });
 
 
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
         root = inflater.inflate(R.layout.fragment_home, container, false);
 
         if (loaded) {
@@ -48,16 +44,6 @@ public class HomeFragment extends Fragment {
 
         ImageView imageView = root.findViewById(R.id.latestModuleCardImage);
         imageView.setImageResource(R.drawable.smptebars);
-
-        //final TextView textView = root.findViewById(R.id.text_home);
-        /*
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });
-        */
 
         ((MainActivity) requireActivity()).listenerSet();
         return root;

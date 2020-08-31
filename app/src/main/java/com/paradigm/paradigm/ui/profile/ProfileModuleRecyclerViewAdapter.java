@@ -80,9 +80,9 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.profileProgressModuleTitle);
-            mContentView = (TextView) view.findViewById(R.id.profileProgressModulePercent);
-            progressBar = (ProgressBar) view.findViewById(R.id.profileProgressProgressBar);
+            mIdView = view.findViewById(R.id.profileProgressModuleTitle);
+            mContentView = view.findViewById(R.id.profileProgressModulePercent);
+            progressBar = view.findViewById(R.id.profileProgressProgressBar);
         }
 
         @NonNull

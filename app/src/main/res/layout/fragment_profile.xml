@@ -80,7 +80,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="Overall Progress:"
+                android:text="@string/overall_progress"
                 android:textAlignment="viewStart"
                 android:textColor="@color/textBlack"
                 android:textSize="22sp"

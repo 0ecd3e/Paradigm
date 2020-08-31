@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.paradigm.paradigm.MainActivity;
@@ -22,8 +21,6 @@ import com.paradigm.paradigm.profile.UserProgress;
 import java.util.List;
 
 public class LessonFragment extends Fragment {
-
-    private LessonViewModel mViewModel;
 
     public static LessonFragment newInstance() {
         return new LessonFragment();
@@ -73,14 +70,4 @@ public class LessonFragment extends Fragment {
 
         return root;
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LessonViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
-    //find way to set question buttons green if answered correctly
-
 }
