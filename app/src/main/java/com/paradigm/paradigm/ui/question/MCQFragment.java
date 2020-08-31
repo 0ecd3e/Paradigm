@@ -61,8 +61,9 @@ public class MCQFragment extends Fragment {
             TextView text = root.findViewById(R.id.MCQCompleteText);
             String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + userProgress.getCurrentQuestion().getAnswer().getAnswer();
             text.setText(answerKey);
+            text.setTextColor(getResources().getColor(R.color.white));
             CardView indicator = root.findViewById(R.id.MCQCompleteIndicator);
-            indicator.setCardBackgroundColor(0xff00ff00);
+            indicator.setCardBackgroundColor(getResources().getColor(R.color.cardGreen));
         }
         userProgress.isLessonComplete(userProgress.getCurrentLesson());
         CourseProgress courseProgress = userProgress.findCourseProgress(course.getName());
