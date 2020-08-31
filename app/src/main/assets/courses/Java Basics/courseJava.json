@@ -334,7 +334,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 4: Data Types and Structures",
               "parentLesson": "Lesson 2: Data Types",
-              "text": "Which data type would you use if you wanted to use decimal numbers that is also more precise?\n\na) float\nb)double\nc) boolean\nd) int",
+              "text": "Which data type would you use if you wanted to use decimal numbers that is also more precise?\n\na) float\nb) double\nc) boolean\nd) int",
               "answer": {
                 "bestAnswer": "B"
               }
@@ -360,7 +360,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 4: Data Types and Structures",
               "parentLesson": "Lesson 3: Arrays",
-              "text": "Complete the following declaration statement for an array of integers with size of 5.\narr = \n[ \n ];",
+              "text": "Complete the following declaration statement for an array of integers with size of 5.\n ___ arr = ___ [ ____ ];",
               "answer": {
                 "bestAnswer": "int,new,size",
                 "acceptedAnswers": [
@@ -421,7 +421,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 5: Decision Making",
               "parentLesson": "Lesson 1: If-statements",
-              "text": "Up to how many if statements can there be?\n\na) 1\nb) 2\nc) 3\nd)unlimited",
+              "text": "Up to how many if statements can there be?\n\na) 1\nb) 2\nc) 3\nd) unlimited",
               "answer": {
                 "bestAnswer": "D"
               }
@@ -437,7 +437,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 5: Decision Making",
               "parentLesson": "Lesson 2: Switch-case",
-              "text": "Which statement is optional and deals with cases where the outcome matches none of the other cases?\n\na) default\nb) void\nc) break\nd)null",
+              "text": "Which statement is optional and deals with cases where the outcome matches none of the other cases?\n\na) default\nb) void\nc) break\nd) null",
               "answer": {
                 "bestAnswer": "A"
               }

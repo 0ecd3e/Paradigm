@@ -1,5 +1,4 @@
-Exceptions:
-\nExceptions are problems that arise during execution in which it disrupts normal flow of the program. One can use objects to represent the exception. The object would consist of a name and the error message, like so:
+Exceptions are problems that arise during execution in which it disrupts normal flow of the program. One can use objects to represent the exception. The object would consist of a name and the error message, like so:
 
 \n                  	class NoFileFoundException{
 \n                  		private String msg

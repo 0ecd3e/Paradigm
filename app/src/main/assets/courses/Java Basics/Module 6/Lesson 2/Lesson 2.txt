@@ -1,5 +1,4 @@
-While loops:
-\nWhat if you wanted to execute a block of code through multiple iterations but do not know the exact number? While loops are here to help. While loops only require one condition, where as long as that condition is true, the code block inside will iterate over and over again until the condition becomes false. Below is an example of a while loop.
+What if you wanted to execute a block of code through multiple iterations but do not know the exact number? While loops are here to help. While loops only require one condition, where as long as that condition is true, the code block inside will iterate over and over again until the condition becomes false. Below is an example of a while loop.
 
 \n                  while ( x != y) {
 \n                  	x++;

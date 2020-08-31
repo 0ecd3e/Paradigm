@@ -1,12 +1,12 @@
 Classes:
-\nIn Java, classes are the blueprints used to make an object. One way to think of it is that classes are the molds used in a factory, and objects are the instances of things created out of said molds. Classes typically have components such as fields, attributes of the object; constructor, code used to create and initialize an object; and methods, subroutines that manipulate or show the current state of the object. Class declarations are all of similar structure to the following example:
+\n      In Java, classes are the blueprints used to make an object. One way to think of it is that classes are the molds used in a factory, and objects are the instances of things created out of said molds. Classes typically have components such as fields, attributes of the object; constructor, code used to create and initialize an object; and methods, subroutines that manipulate or show the current state of the object. Class declarations are all of similar structure to the following example:
 \n
 \npublic class Pizza{
 \n    private int size;    <- Fields
 \n    private string flavor;
 \n    private double cost;
 \n
-\n    Pizza(int size, string flavor, double cost) {    <- Constructor
+\n    Pizza(int size, string flavor, double cost) {  <- Constructor
 \n          this.size = size;
 \n          this.flavor = flavor;
 \n          this.cost = cost;

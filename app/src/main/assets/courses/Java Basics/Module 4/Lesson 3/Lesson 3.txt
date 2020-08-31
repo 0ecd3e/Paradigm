@@ -1,5 +1,4 @@
-Arrays:
-\nAn array is a container that allows storage of multiple elements of the same data type whilst using only one variable for references. There are two ways to declare an array.
+An array is a container that allows storage of multiple elements of the same data type whilst using only one variable for references. There are two ways to declare an array.
 \n                      <type> name[ ]; 	or 	<type> [ ] name;
 
 \nBoth methods are fine and depend on personal preferences or the style guide one follows. Declarations alone do not actually create the array itself, rather it creates a reference that can store the address of where the array will be in memory. To instantiate an array, there are two ways of doing so. One can specify the size of the array but not initialize its elements.

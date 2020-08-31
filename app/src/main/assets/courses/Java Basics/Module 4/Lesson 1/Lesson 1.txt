@@ -1,5 +1,4 @@
-Modifiers:
-\nModifiers in Java can be separated into two categories, access modifiers and non-access modifiers. Access modifiers specifies the level of access different scopes of a program are allowed to have to objects, their fields, and methods. This provides encapsulation within the program, simply put, it allows programmers to use portions of code based on what the code sets out to do without worrying about their implementations. Non-access modifiers change the functionality of objects and methods that they are applied to. The following list includes some of the commonly seen modifiers.
+Modifiers in Java can be separated into two categories, access modifiers and non-access modifiers. Access modifiers specifies the level of access different scopes of a program are allowed to have to objects, their fields, and methods. This provides encapsulation within the program, simply put, it allows programmers to use portions of code based on what the code sets out to do without worrying about their implementations. Non-access modifiers change the functionality of objects and methods that they are applied to. The following list includes some of the commonly seen modifiers.
 
 \n  Access Modifiers:
 \n          private: Only grants access to members within the same class.

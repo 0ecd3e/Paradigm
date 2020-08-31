@@ -1,5 +1,4 @@
-If-else statements:
-\nThe if - else statements are used in code to allow for decision making and branching based on the conditions provided. If statements allow the program to execute a block of code if and only if the boolean expression within the statement evaluates to true. If the expression evaluates to false, the block of code within the if statement will be skipped completely and will resume execution at the line right after the end of the if statement. The proper syntax of if statements is as follows:
+The if - else statements are used in code to allow for decision making and branching based on the conditions provided. If statements allow the program to execute a block of code if and only if the boolean expression within the statement evaluates to true. If the expression evaluates to false, the block of code within the if statement will be skipped completely and will resume execution at the line right after the end of the if statement. The proper syntax of if statements is as follows:
 
 \n      if (x == y) {	       //“if”, followed by a boolean expression within the parenthesis
 \n            x = x + 1;	// the code block to be executed if expression is true.

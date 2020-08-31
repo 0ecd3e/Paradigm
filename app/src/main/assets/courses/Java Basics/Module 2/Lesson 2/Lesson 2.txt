@@ -1,9 +1,9 @@
-Methods:
-\nMethods are subroutines consisting of a small block of code that manipulates or shows the current state of the object and can also accomplish a task. In order for the method to do its computations, it must be called upon and if need be, provided with the proper arguments needed in its computations. To declare a method, simply follow the example listed:
+Methods are subroutines consisting of a small block of code that manipulates or shows the current state of the object and can also accomplish a task. In order for the method to do its computations, it must be called upon and if need be, provided with the proper arguments needed in its computations. To declare a method, simply follow the example listed:
 
 \n
 \n          public int name(int a, int b){
-\n          //Write the statements for computations here.//
+\n          //Write the statements
+\n            for computations here.//
 \n          }
 \nThe declaration starts off with the modifier, an indication of what has access to itself.
 

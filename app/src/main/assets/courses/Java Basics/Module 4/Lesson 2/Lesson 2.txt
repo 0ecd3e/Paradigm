@@ -1,5 +1,4 @@
-Primitive Types:
-\nJava, like other programming languages, supports a variety of primitive data types. Primitive refers to the fact that it can not be further reduced into a more low level data type and rather than created by the programmer, is built into the language itself. The following provides a list of more common data types used.
+Java, like other programming languages, supports a variety of primitive data types. Primitive refers to the fact that it can not be further reduced into a more low level data type and rather than created by the programmer, is built into the language itself. The following provides a list of more common data types used.
 
 \n      int: stores whole numbers only with size of 32 bit, is signed (can represent negative and non-negative numbers).
 \n      long: same purpose as int but with increased size of 64 bit.
