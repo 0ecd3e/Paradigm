@@ -272,9 +272,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void saveProgress() {
-        //UserProgress userProgress = userProfile.getUserProgress();
-        //userProgress.
-
         try (FileOutputStream fos = this.openFileOutput("userProfile.ser", Context.MODE_PRIVATE)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
             objectOutputStream.writeObject(userProfile);

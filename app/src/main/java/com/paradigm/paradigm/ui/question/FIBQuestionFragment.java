@@ -17,7 +17,11 @@ import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.profile.UserProgress;
+import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
+import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 import com.paradigm.paradigm.profile.progressEntries.QuestionProgress;
+
+import static com.paradigm.paradigm.MainActivity.course;
 
 public class FIBQuestionFragment extends Fragment {
 
@@ -71,6 +75,10 @@ public class FIBQuestionFragment extends Fragment {
         }
         MainActivity mainActivity = (MainActivity) requireActivity();
         mainActivity.getUserProfile().getUserProgress().isLessonComplete(MainActivity.getCurrentLesson());
+        CourseProgress courseProgress = userProgress.findCourseProgress(course.getName());
+        String moduleName = course.getName() + "," + MainActivity.getCurrentModule().getName();
+        ModuleProgress moduleProgress = courseProgress.getModuleProgress(moduleName);
+        moduleProgress.checkComplete();
         mainActivity.saveProgress();
     }
 
