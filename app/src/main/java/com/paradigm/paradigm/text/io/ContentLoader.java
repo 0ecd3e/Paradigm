@@ -2,7 +2,6 @@ package com.paradigm.paradigm.text.io;
 
 import android.content.res.AssetManager;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paradigm.paradigm.text.Content;
 import com.paradigm.paradigm.text.Lesson;
 
@@ -27,6 +26,7 @@ public class ContentLoader {
             }
 
             textContent = stringBuilder.toString();
+            textContent = textContent.replace("\\n", "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

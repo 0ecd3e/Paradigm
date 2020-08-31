@@ -1,1 +1,30 @@
-this is the content of lesson 1, module 2.
+Classes:
+\nIn Java, classes are the blueprints used to make an object. One way to think of it is that classes are the molds used in a factory, and objects are the instances of things created out of said molds. Classes typically have components such as fields, attributes of the object; constructor, code used to create and initialize an object; and methods, subroutines that manipulate or show the current state of the object. Class declarations are all of similar structure to the following example:
+\n
+\npublic class Pizza{
+\n    private int size;    <- Fields
+\n    private string flavor;
+\n    private double cost;
+\n
+\n    Pizza(int size, string flavor, double cost) {    <- Constructor
+\n          this.size = size;
+\n          this.flavor = flavor;
+\n          this.cost = cost;
+\n      }
+\n
+\n      public int getSize() {    <- Methods
+\n           return size;
+\n      }
+\n}
+\n
+\nNote that the name of the class must have its first letter capitalized as per convention and that components of the class should be declared in the following order: fields -> constructor -> methods.
+\n
+\n
+\nInterfaces:
+\nInterfaces in Java are classes consisting of only abstract methods (methods with no actual implementations) that are commonly used in inheritance. Interfaces follow the same declaration as classes but unlike classes, can not be instantiated.
+\n
+\nAn example of an interface:
+\n    public interface Food {
+\n        public double getCost();
+\n    }
+\n
