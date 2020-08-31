@@ -60,7 +60,11 @@
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
-        android:label="Settings" />
+        android:label="Settings">
+        <action
+            android:id="@+id/action_nav_settings_to_blankFragment"
+            app:destination="@id/licenseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/moduleFragment"
         android:name="com.paradigm.paradigm.ui.module.ModuleFragment"
@@ -95,4 +99,9 @@
         android:name="com.paradigm.paradigm.ui.question.FIBQuestionFragment"
         android:label="Question"
         tools:layout="@layout/f_i_b_question_fragment" />
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="com.paradigm.paradigm.ui.settings.LicenseFragment"
+        android:label="Apache License 2.0"
+        tools:layout="@layout/fragment_license" />
 </navigation>

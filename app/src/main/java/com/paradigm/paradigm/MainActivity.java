@@ -22,6 +22,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
@@ -340,4 +341,12 @@ public class MainActivity extends AppCompatActivity
         void onHomePageLoaded();
     }
 
+    public void displayLicenses() {
+        startActivity(new Intent(this, OssLicensesMenuActivity.class));
+    }
+
+    public void displayApacheLicense() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController.navigate(R.id.action_nav_settings_to_blankFragment);
+    }
 }
