@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto"
                 android:text="@string/you_have_not_correctly_answered_this_question_yet"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
                 android:text="@string/q2"
                 android:textColor="@color/textBlack"
                 android:textSize="22sp"
@@ -70,6 +72,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/roboto"
                 android:text="@string/default_description"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/MCQChoices"
@@ -97,6 +100,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
                     android:paddingStart="2dp"
                     android:paddingEnd="0dp"
                     android:text="@string/a" />
@@ -109,6 +113,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
                     android:paddingStart="2dp"
                     android:paddingEnd="0dp"
                     android:text="@string/b" />
@@ -121,6 +126,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
                     android:paddingStart="2dp"
                     android:paddingEnd="0dp"
                     android:text="@string/c" />
@@ -133,6 +139,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/roboto"
                     android:paddingStart="2dp"
                     android:paddingEnd="0dp"
                     android:text="@string/d" />
@@ -165,6 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto"
                 android:text="@string/check_your_answer"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
