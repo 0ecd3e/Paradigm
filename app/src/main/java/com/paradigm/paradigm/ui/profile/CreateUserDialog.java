@@ -2,7 +2,6 @@ package com.paradigm.paradigm.ui.profile;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,13 +44,10 @@ public class CreateUserDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_signin, null);
         builder.setView(view)
                 // Add action buttons
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // sign in the user ...
-                        EditText editText = view.findViewById(R.id.usernameEntry);
-                        listener.onDialogPositiveClick(editText.getText().toString());
-                    }
+                .setPositiveButton("OK", (dialog, id) -> {
+                    // sign in the user ...
+                    EditText editText = view.findViewById(R.id.usernameEntry);
+                    listener.onDialogPositiveClick(editText.getText().toString());
                 });
         return builder.create();
 

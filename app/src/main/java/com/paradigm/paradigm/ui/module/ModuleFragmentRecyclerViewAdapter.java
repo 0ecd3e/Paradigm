@@ -13,17 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Lesson;
 
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<ModuleFragmentRecyclerViewAdapter.ViewHolder> {
 
     //private final List<DummyItem> mValues;
@@ -63,12 +57,9 @@ public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<Modu
         holder.mIdView.setText(lesson.getName());
         holder.mContentView.setText(lesson.getDescription());
         holder.imageView.setImageResource(R.drawable.smptebars);
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.getUserProfile().getUserProgress().setCurrentLesson(lesson);
-                Navigation.findNavController(v).navigate(R.id.action_moduleFragment_to_lessonFragment);
-            }
+        holder.cardView.setOnClickListener(v -> {
+            MainActivity.getUserProfile().getUserProgress().setCurrentLesson(lesson);
+            Navigation.findNavController(v).navigate(R.id.action_moduleFragment_to_lessonFragment);
         });
     }
 

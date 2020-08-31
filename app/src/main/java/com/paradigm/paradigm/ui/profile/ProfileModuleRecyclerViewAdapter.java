@@ -10,20 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<ProfileModuleRecyclerViewAdapter.ViewHolder> {
 
-    //private final List<DummyItem> mValues;
     private List<ModuleProgress> modules;
 
     /*

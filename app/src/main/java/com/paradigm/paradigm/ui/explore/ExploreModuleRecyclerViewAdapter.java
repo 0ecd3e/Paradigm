@@ -13,27 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.profile.progressEntries.SaveProgressInterface;
 import com.paradigm.paradigm.text.ContentModule;
 
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<ExploreModuleRecyclerViewAdapter.ViewHolder> {
 
-    //private final List<DummyItem> mValues;
     private final List<ContentModule> modulesList;
-
-    //public ExploreModuleRecyclerViewAdapter(List<DummyItem> items) {
-    //mValues = items;
-    //modules = null;
-    //}
 
     final SaveProgressInterface listener;
 
@@ -67,15 +55,12 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
         holder.imageView.setImageResource(R.drawable.smptebars);
         holder.mIdView.setText(contentModule.getName());
         holder.mContentView.setText(contentModule.getDescription());
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
-                userProgress.setCurrentModule(contentModule);
-                userProgress.setCheckpointModule(contentModule);
-                listener.saveProgress();
-                Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
-            }
+        holder.cardView.setOnClickListener(v -> {
+            UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
+            userProgress.setCurrentModule(contentModule);
+            userProgress.setCheckpointModule(contentModule);
+            listener.saveProgress();
+            Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
         });
     }
 
