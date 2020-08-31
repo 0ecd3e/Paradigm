@@ -248,6 +248,31 @@
               "answer": {
                 "bestAnswer": "D"
               }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 3: Style Guides",
+              "text": "What type of file encoding is specified by the Google Java Style Guide?",
+              "answer": {
+                "bestAnswer": "UTF-8",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "utf-8"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 3: Basic Syntax",
+              "parentLesson": "Lesson 3: Style Guides",
+              "text": "How many spaces are used per block indentation in the Google Java Style Guide?\n\na) 1\nb) 2\nc) 0\nd) 4",
+              "answer": {
+                "bestAnswer": "B"
+              }
             }
           }
         }
