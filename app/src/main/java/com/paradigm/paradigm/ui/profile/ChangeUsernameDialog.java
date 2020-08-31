@@ -16,7 +16,7 @@ import com.paradigm.paradigm.R;
 
 public class ChangeUsernameDialog extends DialogFragment {
     // Use this instance of the interface to deliver action events
-    NoticeDialogListener listener;
+    UsernameChangeDialogListener listener;
 
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
     @Override
@@ -25,7 +25,7 @@ public class ChangeUsernameDialog extends DialogFragment {
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            listener = (NoticeDialogListener) context;
+            listener = (UsernameChangeDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(" must implement NoticeDialogListener");
@@ -49,8 +49,13 @@ public class ChangeUsernameDialog extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // sign in the user ...
-                        EditText editText = view.findViewById(R.id.usernameEntry);
-                        listener.onDialogPositiveClick(editText.getText().toString());
+                        EditText editText = view.findViewById(R.id.changeUsernameEntry);
+                        listener.onUsernameChangeDialogPositiveClick(editText.getText().toString());
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
                     }
                 });
         return builder.create();
@@ -60,7 +65,7 @@ public class ChangeUsernameDialog extends DialogFragment {
     /* The activity that creates an instance of this dialog fragment must
      * implement this interface in order to receive event callbacks.
      * Each method passes the DialogFragment in case the host needs to query it. */
-    public interface NoticeDialogListener {
-        void onDialogPositiveClick(String s);
+    public interface UsernameChangeDialogListener {
+        void onUsernameChangeDialogPositiveClick(String s);
     }
 }

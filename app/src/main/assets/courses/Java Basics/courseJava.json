@@ -107,7 +107,52 @@
         "Lesson 2: Methods": {
           "parentCourse": "Java Basics",
           "parentContentModule": "Module 2: OOP Basics",
-          "questions": {}
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText2",
+              "answer": {
+                "bestAnswer": "B",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "B"
+                  },
+                  {
+                    "acceptedAnswer2": "1"
+                  },
+                  {
+                    "acceptedAnswer3": "2"
+                  },
+                  {
+                    "acceptedAnswer4": "3"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText3",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
+          }
         }
       }
     },

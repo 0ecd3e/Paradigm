@@ -16,6 +16,7 @@ import androidx.navigation.Navigation;
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.profile.UserProfile;
+import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 import com.paradigm.paradigm.profile.progressEntries.ModuleProgress;
 import com.paradigm.paradigm.text.ContentModule;
@@ -63,7 +64,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void updateCheckpoint() {
-        ContentModule contentModule = MainActivity.getCheckpointModule();
+        ContentModule contentModule = UserProgress.getCheckpointModule();
         TextView title = root.findViewById(R.id.latestModuleTitle);
         title.setText(contentModule.getName());
         TextView desc = root.findViewById(R.id.latestModuleDescription);
@@ -90,7 +91,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ContentModule contentModule1 = ((MainActivity) requireActivity()).getCourse().findContentModule(contentModule.getName());
-                MainActivity.setCurrentModule(contentModule1);
+                UserProgress.setCurrentModule(contentModule1);
                 Navigation.findNavController(v).navigate(R.id.action_nav_home_to_moduleFragment);
             }
         });

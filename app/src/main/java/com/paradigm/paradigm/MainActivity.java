@@ -23,13 +23,14 @@ import androidx.preference.PreferenceManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.navigation.NavigationView;
-import com.paradigm.paradigm.exercises.question.Question;
 import com.paradigm.paradigm.newsfeed.Feed;
 import com.paradigm.paradigm.profile.UserProfile;
+import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
 import com.paradigm.paradigm.text.Lesson;
 import com.paradigm.paradigm.text.io.ContentLoader;
+import com.paradigm.paradigm.ui.profile.ChangeUsernameDialog;
 import com.paradigm.paradigm.ui.profile.CreateUserDialog;
 
 import java.io.FileInputStream;
@@ -41,9 +42,10 @@ import java.io.ObjectOutputStream;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
-        implements CreateUserDialog.NoticeDialogListener {
+        implements CreateUserDialog.NoticeDialogListener,
+        ChangeUsernameDialog.UsernameChangeDialogListener {
     private AppBarConfiguration mAppBarConfiguration;
-    private UserProfile userProfile = null;
+    private static UserProfile userProfile = null;
     private SharedPreferences sharedPreferences;
     public String feedURL;
     public static Course course;
@@ -57,32 +59,8 @@ public class MainActivity extends AppCompatActivity
         }
     };
     private Feed newsFeed = new Feed();
-    private static ContentModule currentModule;
-    private static Lesson currentLesson;
-    private static ContentModule checkpointModule;
-    private static Question currentQuestion;
 
     HomeDataLoadedListener homeDataLoadedListener;
-
-    public static ContentModule getCheckpointModule() {
-        return checkpointModule;
-    }
-
-    public static ContentModule getCurrentModule() {
-        return currentModule;
-    }
-
-    public static void setCheckpointModule(ContentModule cm) {
-        checkpointModule = cm;
-    }
-
-    public static Question getCurrentQuestion() {
-        return currentQuestion;
-    }
-
-    public static void setCurrentQuestion(Question question) {
-        currentQuestion = question;
-    }
 
     public void initProfile() {
         try {
@@ -241,12 +219,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
+        MainActivity.userProfile = userProfile;
     }
 
     public void editUsername(View view) {
-        DialogFragment dialog = new CreateUserDialog();
-        dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+        DialogFragment dialog = new ChangeUsernameDialog();
+        dialog.show(getSupportFragmentManager(), "UsernameChangeDialogFragment");
     }
 
     public void displayToast(View view) {
@@ -307,18 +285,6 @@ public class MainActivity extends AppCompatActivity
         return feedURL;
     }
 
-    public static void setCurrentModule(ContentModule cm) {
-        currentModule = cm;
-    }
-
-    public static Lesson getCurrentLesson() {
-        return currentLesson;
-    }
-
-    public static void setCurrentLesson(Lesson cl) {
-        currentLesson = cl;
-    }
-
     private void initContent() {
         ObjectMapper objectMapper = new ObjectMapper();
         AssetManager assetManager = getAssets();
@@ -342,8 +308,15 @@ public class MainActivity extends AppCompatActivity
                 lesson.setParents();
             }
         }
+        UserProgress.setCheckpointModule(course.getModules().get(0));
+    }
 
-        checkpointModule = course.getModules().get(0);
+    @Override
+    public void onUsernameChangeDialogPositiveClick(String s) {
+        if (!s.equals("")) {
+            userProfile.setUsername(s);
+            saveProgress();
+        }
     }
 
     public interface HomeDataLoadedListener {

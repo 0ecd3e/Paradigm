@@ -16,6 +16,10 @@ import java.util.List;
 public class UserProgress implements Serializable {
 
     private List<CourseProgress> courses;
+    private static ContentModule currentModule;
+    private static Lesson currentLesson;
+    private static ContentModule checkpointModule;
+    private static Question currentQuestion;
 
     public UserProgress() {
         courses = new ArrayList<>();
@@ -125,5 +129,37 @@ public class UserProgress implements Serializable {
             }
         }
         return 0;
+    }
+
+    public static ContentModule getCheckpointModule() {
+        return checkpointModule;
+    }
+
+    public static void setCheckpointModule(ContentModule cm) {
+        checkpointModule = cm;
+    }
+
+    public static ContentModule getCurrentModule() {
+        return currentModule;
+    }
+
+    public static void setCurrentModule(ContentModule cm) {
+        currentModule = cm;
+    }
+
+    public static Question getCurrentQuestion() {
+        return currentQuestion;
+    }
+
+    public static void setCurrentQuestion(Question question) {
+        currentQuestion = question;
+    }
+
+    public static Lesson getCurrentLesson() {
+        return currentLesson;
+    }
+
+    public static void setCurrentLesson(Lesson cl) {
+        currentLesson = cl;
     }
 }

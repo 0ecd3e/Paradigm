@@ -11,9 +11,9 @@ import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
+import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Lesson;
 
@@ -65,7 +65,7 @@ public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<Modu
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.setCurrentLesson(lesson);
+                UserProgress.setCurrentLesson(lesson);
                 Navigation.findNavController(v).navigate(R.id.action_moduleFragment_to_lessonFragment);
             }
         });

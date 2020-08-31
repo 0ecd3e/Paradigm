@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
 import com.paradigm.paradigm.exercises.question.Question;
+import com.paradigm.paradigm.profile.UserProgress;
 
 import java.util.List;
 
@@ -36,16 +36,16 @@ public class LessonFragment extends Fragment {
         TextView lessonTitle = root.findViewById(R.id.lessonTitle);
         TextView lessonText = root.findViewById(R.id.lessonText);
 
-        lessonTitle.setText(MainActivity.getCurrentLesson().getName());
-        lessonText.setText(MainActivity.getCurrentLesson().getLessonContent());
+        lessonTitle.setText(UserProgress.getCurrentLesson().getName());
+        lessonText.setText(UserProgress.getCurrentLesson().getLessonContent());
 
-        List<Question> questions = MainActivity.getCurrentLesson().getQuestions();
+        List<Question> questions = UserProgress.getCurrentLesson().getQuestions();
 
         CardView q1 = root.findViewById(R.id.lessonQ1Button);
         q1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.setCurrentQuestion(questions.get(0));
+                UserProgress.setCurrentQuestion(questions.get(0));
                 Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
             }
         });
@@ -54,7 +54,7 @@ public class LessonFragment extends Fragment {
         q2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.setCurrentQuestion(questions.get(1));
+                UserProgress.setCurrentQuestion(questions.get(1));
                 Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
             }
         });
@@ -63,7 +63,7 @@ public class LessonFragment extends Fragment {
         q3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.setCurrentQuestion(questions.get(2));
+                UserProgress.setCurrentQuestion(questions.get(2));
                 Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
             }
         });
