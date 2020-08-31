@@ -267,7 +267,7 @@
       same \"printed page\" as the copyright notice for easier
       identification within third-party archives.\n\n
 
-   Copyright [2020] [The Paradigm Team]\n\n
+   Copyright [yyyy] [name of copyright owner]\n\n
 
    Licensed under the Apache License, Version 2.0 (the \"License\");
    you may not use this file except in compliance with the License.
@@ -301,4 +301,6 @@
     <string name="question_1">Question 1</string>
     <string name="question_2">Question 2</string>
     <string name="question_3">Question 3</string>
+    <string name="date">date</string>
+    <string name="url">url</string>
 </resources>
