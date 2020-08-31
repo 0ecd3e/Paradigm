@@ -1,11 +1,10 @@
 package com.paradigm.paradigm.profile.progressEntries;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModuleProgress extends ProgressEntry {
-    private Map<String, LessonProgress> lessons;
-    private Map<String, QuestionProgress> questions;
+    private List<LessonProgress> lessons;
 
     public ModuleProgress() {
         super();
@@ -13,23 +12,13 @@ public class ModuleProgress extends ProgressEntry {
 
     public ModuleProgress(String componentName) {
         super(componentName, false);
-        lessons = new HashMap<>();
-        questions = new HashMap<>();
+        lessons = new ArrayList<>();
     }
 
-    @Override
-    public boolean isComplete() {
+    public boolean checkComplete() {
         boolean notComplete = false;
-        for (LessonProgress lessonProgress : lessons.values()) {
+        for (LessonProgress lessonProgress : lessons) {
             if (!lessonProgress.isComplete()) {
-                clearProgress();
-                notComplete = true;
-                break;
-            }
-        }
-
-        for (QuestionProgress questionProgress : questions.values()) {
-            if (!questionProgress.isComplete()) {
                 clearProgress();
                 notComplete = true;
                 break;
@@ -43,25 +32,35 @@ public class ModuleProgress extends ProgressEntry {
         return isComplete;
     }
 
-    public void setLessonProgress(String lessonName, boolean isComplete) {
-        LessonProgress lessonProgress = new LessonProgress(lessonName);
-        lessonProgress.isComplete = isComplete;
-        lessons.put(lessonName, lessonProgress);
+    public void setLessonProgress(LessonProgress lessonProgress) {
+        int index = lessons.indexOf(lessonProgress);
+        if (index == -1) {
+            lessons.add(lessonProgress);
+        } else {
+            lessons.set(index, lessonProgress);
+        }
     }
 
-    public void setQuestionProgress(String questionName, boolean isComplete) {
-        QuestionProgress questionProgress = new QuestionProgress(questionName);
-        questionProgress.isComplete = isComplete;
-        questions.put(questionName, questionProgress);
+
+    public LessonProgress getLessonProgress(String lessonName) {
+        for (LessonProgress lessonProgress : lessons) {
+            if (lessonProgress.componentName.equals(lessonName)) {
+                return lessonProgress;
+            }
+        }
+        return null;
     }
 
-    public boolean getQuestionProgress(String questionName) {
-        QuestionProgress questionProgress = questions.get(questionName);
-        return questionProgress.isComplete();
-    }
+    public int completePercentage() {
+        int count = 0;
 
-    public boolean getLessonProgress(String lessonName) {
-        LessonProgress lessonProgress = lessons.get(lessonName);
-        return lessonProgress.isComplete();
+        for (LessonProgress lessonProgress : lessons) {
+            if (lessonProgress.isComplete()) {
+                count++;
+            }
+        }
+
+        double total = (double) count / lessons.size();
+        return (int) (total * 100);
     }
 }

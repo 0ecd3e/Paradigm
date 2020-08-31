@@ -20,82 +20,119 @@ import static org.junit.Assert.fail;
 
 public class ContentTest {
     @Test
-    public void testSave() {
-        Course java = new Course("java");
-        java.setDescription(java.descriptionPath());
-        ContentModule mod1 = new ContentModule("module1");
-        ContentModule mod2 = new ContentModule("module2");
-        ContentModule mod3 = new ContentModule("module3");
+    public void courseCreator() {
+        Course courseJava = new Course("Java Basics");
+        courseJava.setDescription("defaultDescription");
 
-        Lesson l1 = new Lesson("lesson1");
-        Lesson l2 = new Lesson("lesson2");
-        Lesson l3 = new Lesson("lesson3");
-        Lesson l4 = new Lesson("lesson1");
-        Lesson l5 = new Lesson("lesson2");
-        Lesson l6 = new Lesson("lesson3");
-        Lesson l7 = new Lesson("lesson1");
-        Lesson l8 = new Lesson("lesson2");
-        Lesson l9 = new Lesson("lesson3");
+        ContentModule m1 = new ContentModule("Module 1: Introduction");
+        ContentModule m2 = new ContentModule("Module 2: OOP Basics");
+        ContentModule m3 = new ContentModule("Module 3: Basic Syntax");
+        ContentModule m4 = new ContentModule("Module 4: Data Types and Structures");
+        ContentModule m5 = new ContentModule("Module 5: Decision Making");
+        ContentModule m6 = new ContentModule("Module 6: Loops");
+        ContentModule m7 = new ContentModule("Module 7: Exceptions");
 
-        mod1.addLesson(l1);
-        mod1.addLesson(l2);
-        mod1.addLesson(l3);
-        mod2.addLesson(l4);
-        mod2.addLesson(l5);
-        mod2.addLesson(l6);
-        mod3.addLesson(l7);
-        mod3.addLesson(l8);
-        mod3.addLesson(l9);
+        Lesson m1l1 = new Lesson("Lesson 1: What is Java?");
 
-        Answer a1 = new MultipleChoiceAnswer("A");
-        FillInBlankAnswer a2 = new FillInBlankAnswer("B");
-        Answer a3 = new MultipleChoiceAnswer("C");
-        FillInBlankAnswer a4 = new FillInBlankAnswer("D");
-        Answer a5 = new MultipleChoiceAnswer("E");
-        FillInBlankAnswer a6 = new FillInBlankAnswer("F");
+        Lesson m2l1 = new Lesson("Lesson 1: Classes and Interfaces");
+        Lesson m2l2 = new Lesson("Lesson 2: Methods");
 
-        a2.addAlternativeAnswer("public");
-        a2.addAlternativeAnswer("private");
-        a2.addAlternativeAnswer("void");
+        Lesson m3l1 = new Lesson("Lesson 1: Elements of Code");
+        Lesson m3l2 = new Lesson("Lesson 2: Code Organization");
+        Lesson m3l3 = new Lesson("Lesson 3: Style Guides");
 
-        a4.addAlternativeAnswer("byte");
-        a4.addAlternativeAnswer("string");
-        a4.addAlternativeAnswer("array");
+        Lesson m4l1 = new Lesson("Lesson 1: Access Modifiers");
+        Lesson m4l2 = new Lesson("Lesson 2: Data Types");
+        Lesson m4l3 = new Lesson("Lesson 3: Arrays");
 
-        a6.addAlternativeAnswer("foo");
-        a6.addAlternativeAnswer("bar");
+        Lesson m5l1 = new Lesson("Lesson 1: If-statements");
+        Lesson m5l2 = new Lesson("Lesson 2: Switch-case");
 
-        Question q1 = new MultipleChoiceQuestion("q1", "fhiwj34", a1);
-        Question q2 = new FillInBlankQuestion("q2", "hfalsjht3", a2);
-        Question q3 = new MultipleChoiceQuestion("q1", "hfiu34h", a3);
-        Question q4 = new FillInBlankQuestion("q2", "fjlw3j4ht4", a4);
-        Question q5 = new MultipleChoiceQuestion("q1", "fjaljt34", a5);
-        Question q6 = new FillInBlankQuestion("q2", "flw34tnw4", a6);
+        Lesson m6l1 = new Lesson("Lesson 1: For and For-each Loops");
+        Lesson m6l2 = new Lesson("Lesson 2: While Loops");
 
-        mod1.addQuestion(q1);
-        mod1.addQuestion(q2);
-        mod2.addQuestion(q3);
-        mod2.addQuestion(q4);
-        mod3.addQuestion(q5);
-        mod3.addQuestion(q6);
+        Lesson m7l1 = new Lesson("Lesson 1: Exceptions");
 
-        java.addModule(mod1);
-        java.addModule(mod2);
-        java.addModule(mod3);
-        java.setParents();
+        //m1, l1
+        Answer m1l1q1a = new MultipleChoiceAnswer("A");
+        FillInBlankAnswer m1l1q2a = new FillInBlankAnswer("B");
+        Answer m1l1q3a = new MultipleChoiceAnswer("C");
 
+        m1l1q2a.addAlternativeAnswer("1");
+        m1l1q2a.addAlternativeAnswer("2");
+        m1l1q2a.addAlternativeAnswer("3");
+
+        Question m1l1q1 = new MultipleChoiceQuestion("Q1", "defaultQuestionText", m1l1q1a);
+        Question m1l1q2 = new FillInBlankQuestion("Q2", "defaultQuestionText2", m1l1q2a);
+        Question m1l1q3 = new MultipleChoiceQuestion("Q3", "defaultQuestionText3", m1l1q3a);
+
+        m1l1.addQuestion(m1l1q1);
+        m1l1.addQuestion(m1l1q2);
+        m1l1.addQuestion(m1l1q3);
+
+        //m2, l1
+        Answer m2l1q1a = new MultipleChoiceAnswer("A");
+        FillInBlankAnswer m2l1q2a = new FillInBlankAnswer("B");
+        Answer m2l1q3a = new MultipleChoiceAnswer("C");
+
+        m2l1q2a.addAlternativeAnswer("1");
+        m2l1q2a.addAlternativeAnswer("2");
+        m2l1q2a.addAlternativeAnswer("3");
+
+        Question m2l1q1 = new MultipleChoiceQuestion("Q1", "defaultQuestionText", m2l1q1a);
+        Question m2l1q2 = new FillInBlankQuestion("Q2", "defaultQuestionText2", m2l1q2a);
+        Question m2l1q3 = new MultipleChoiceQuestion("Q3", "defaultQuestionText3", m2l1q3a);
+
+        m2l1.addQuestion(m2l1q1);
+        m2l1.addQuestion(m2l1q2);
+        m2l1.addQuestion(m2l1q3);
+
+        // adding lessons
+        m1.addLesson(m1l1);
+
+        m2.addLesson(m2l1);
+        m2.addLesson(m2l2);
+
+        m3.addLesson(m3l1);
+        m3.addLesson(m3l2);
+        m3.addLesson(m3l3);
+
+        m4.addLesson(m4l1);
+        m4.addLesson(m4l2);
+        m4.addLesson(m4l3);
+
+        m5.addLesson(m5l1);
+        m5.addLesson(m5l2);
+
+        m6.addLesson(m6l1);
+        m6.addLesson(m6l2);
+
+        m7.addLesson(m7l1);
+
+        courseJava.addModule(m1);
+        courseJava.addModule(m2);
+        courseJava.addModule(m3);
+        courseJava.addModule(m4);
+        courseJava.addModule(m5);
+        courseJava.addModule(m6);
+        courseJava.addModule(m7);
+        courseJava.setParents();
+
+        // save to json file
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), java);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/courseJava.json"), courseJava);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @Test
+    /*
     public void createQuestionJson() {
         ContentModule testMod = new ContentModule("module2");
+
+        Lesson lesson = new Lesson("lesson5");
 
         Answer a1 = new MultipleChoiceAnswer("Z");
         FillInBlankAnswer a2 = new FillInBlankAnswer("X");
@@ -122,12 +159,12 @@ public class ContentTest {
         Question q5 = new MultipleChoiceQuestion("q5", "f0y3w48uhrs", a5);
         Question q6 = new FillInBlankQuestion("q6", "uhfwhulgi45", a6);
 
-        testMod.addQuestion(q1);
-        testMod.addQuestion(q2);
-        testMod.addQuestion(q3);
-        testMod.addQuestion(q4);
-        testMod.addQuestion(q5);
-        testMod.addQuestion(q6);
+        lesson.addQuestion(q1);
+        lesson.addQuestion(q2);
+        lesson.addQuestion(q3);
+        lesson.addQuestion(q4);
+        lesson.addQuestion(q5);
+        lesson.addQuestion(q6);
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {
@@ -136,6 +173,7 @@ public class ContentTest {
             e.printStackTrace();
         }
     }
+     */
 
     @Test
     public void testLoad() {

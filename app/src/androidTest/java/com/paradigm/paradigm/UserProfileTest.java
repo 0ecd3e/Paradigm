@@ -37,7 +37,7 @@ public class UserProfileTest {
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            inputStream = assetManager.open("courses/java/courseJava.json");
+            inputStream = assetManager.open("courses/Java Basics/courseJava.json");
             java = objectMapper.readValue(inputStream, Course.class);
             inputStream.close();
         } catch (IOException e) {
@@ -47,20 +47,22 @@ public class UserProfileTest {
         ContentLoader contentLoader = new ContentLoader();
         contentLoader.loadDescription(java, assetManager);
 
-        for (ContentModule module : java.getModules().values()) {
+        for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
-            contentLoader.loadQuestions(module, assetManager);
-            for (Lesson lesson : module.getLessons().values()) {
+            for (Lesson lesson : module.getLessons()) {
+                //contentLoader.loadQuestions(lesson, assetManager);
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
+                lesson.setParents();
             }
         }
 
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
 
-        ContentModule theModule = java.getModules().get("module2");
-        Question question = theModule.getQuestions().get("q3");
+        ContentModule theModule = java.getModules().get(0);
+        Lesson lesson = theModule.getLessons().get(0);
+        Question question = lesson.getQuestions().get(0);
         userProgress.markQuestionCorrect(question);
 
         UserProfile userProfile = new UserProfile("testUser");
@@ -96,8 +98,6 @@ public class UserProfileTest {
             // Error occurred when opening raw file for reading.
             e.printStackTrace();
         }
-
-        userProfile.clearUserData();
 
     }
 

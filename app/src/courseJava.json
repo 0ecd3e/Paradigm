@@ -1,172 +1,199 @@
 {
-  "type" : "com.paradigm.paradigm.text.Course",
-  "name" : "java",
-  "modules" : {
-    "module1" : {
-      "parentCourse" : "java",
-      "name" : "module1",
-      "lessons" : {
-        "lesson1" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module1",
-          "name" : "lesson1"
-        },
-        "lesson2" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module1",
-          "name" : "lesson2"
-        },
-        "lesson3" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module1",
-          "name" : "lesson3"
-        }
-      },
-      "questions" : {
-        "q1" : {
-          "type" : "multipleChoiceQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module1",
-          "name" : "q1",
-          "text" : "fhiwj34",
-          "answer" : {
-            "bestAnswer" : "A"
-          }
-        },
-        "q2" : {
-          "type" : "fillInBlankQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module1",
-          "name" : "q2",
-          "text" : "hfalsjht3",
-          "answer" : {
-            "bestAnswer": "B",
-            "acceptedAnswers": [
-              {
-                "acceptedAnswer1": "B"
-              },
-              {
-                "acceptedAnswer2": "public"
-              },
-              {
-                "acceptedAnswer3": "private"
-              },
-              {
-                "acceptedAnswer4": "void"
+  "type": "com.paradigm.paradigm.text.Course",
+  "name": "Java Basics",
+  "modules": {
+    "Module 1: Introduction": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: What is Java?": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 1: Introduction",
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "defaultQuestionText",
+              "answer": {
+                "bestAnswer": "A"
               }
-            ]
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "defaultQuestionText2",
+              "answer": {
+                "bestAnswer": "B",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "B"
+                  },
+                  {
+                    "acceptedAnswer2": "1"
+                  },
+                  {
+                    "acceptedAnswer3": "2"
+                  },
+                  {
+                    "acceptedAnswer4": "3"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "defaultQuestionText3",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
           }
         }
       }
     },
-    "module3" : {
-      "parentCourse" : "java",
-      "name" : "module3",
-      "lessons" : {
-        "lesson1" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module3",
-          "name" : "lesson1"
-        },
-        "lesson2" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module3",
-          "name" : "lesson2"
-        },
-        "lesson3" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module3",
-          "name" : "lesson3"
-        }
-      },
-      "questions" : {
-        "q1" : {
-          "type" : "multipleChoiceQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module3",
-          "name" : "q1",
-          "text" : "fjaljt34",
-          "answer" : {
-            "bestAnswer" : "E"
-          }
-        },
-        "q2" : {
-          "type" : "fillInBlankQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module3",
-          "name" : "q2",
-          "text" : "flw34tnw4",
-          "answer" : {
-            "bestAnswer": "F",
-            "acceptedAnswers": [
-              {
-                "acceptedAnswer1": "F"
-              },
-              {
-                "acceptedAnswer2": "foo"
-              },
-              {
-                "acceptedAnswer3": "bar"
+    "Module 2: OOP Basics": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Classes and Interfaces": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 2: OOP Basics",
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText",
+              "answer": {
+                "bestAnswer": "A"
               }
-            ]
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText2",
+              "answer": {
+                "bestAnswer": "B",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "B"
+                  },
+                  {
+                    "acceptedAnswer2": "1"
+                  },
+                  {
+                    "acceptedAnswer3": "2"
+                  },
+                  {
+                    "acceptedAnswer4": "3"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText3",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
           }
+        },
+        "Lesson 2: Methods": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 2: OOP Basics",
+          "questions": {}
         }
       }
     },
-    "module2" : {
-      "parentCourse" : "java",
-      "name" : "module2",
-      "lessons" : {
-        "lesson1" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module2",
-          "name" : "lesson1"
+    "Module 3: Basic Syntax": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Elements of Code": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
         },
-        "lesson2" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module2",
-          "name" : "lesson2"
+        "Lesson 2: Code Organization": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
         },
-        "lesson3" : {
-          "parentCourse" : "java",
-          "parentContentModule" : "module2",
-          "name" : "lesson3"
+        "Lesson 3: Style Guides": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
         }
-      },
-      "questions" : {
-        "q1" : {
-          "type" : "multipleChoiceQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module2",
-          "name" : "q1",
-          "text" : "hfiu34h",
-          "answer" : {
-            "bestAnswer" : "C"
-          }
+      }
+    },
+    "Module 4: Data Types and Structures": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Access Modifiers": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
         },
-        "q2" : {
-          "type" : "fillInBlankQuestion",
-          "parentCourse" : "java",
-          "parentContentModule" : "module2",
-          "name" : "q2",
-          "text" : "fjlw3j4ht4",
-          "answer" : {
-            "bestAnswer": "D",
-            "acceptedAnswers": [
-              {
-                "acceptedAnswer1": "D"
-              },
-              {
-                "acceptedAnswer2": "byte"
-              },
-              {
-                "acceptedAnswer3": "string"
-              },
-              {
-                "acceptedAnswer4": "array"
-              }
-            ]
-          }
+        "Lesson 2: Data Types": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
+        },
+        "Lesson 3: Arrays": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
+        }
+      }
+    },
+    "Module 5: Decision Making": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: If-statements": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 5: Decision Making",
+          "questions": {}
+        },
+        "Lesson 2: Switch-case": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 5: Decision Making",
+          "questions": {}
+        }
+      }
+    },
+    "Module 6: Loops": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: For and For-each Loops": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 6: Loops",
+          "questions": {}
+        },
+        "Lesson 2: While Loops": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 6: Loops",
+          "questions": {}
+        }
+      }
+    },
+    "Module 7: Exceptions": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Exceptions": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 7: Exceptions",
+          "questions": {}
         }
       }
     }

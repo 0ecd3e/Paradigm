@@ -64,7 +64,7 @@ public class Feed {
         return imageDesc;
     }
 
-    public void setFeed(final String address) {
+    public void setFeed(final String address) throws IOException, FeedException {
         //Establishes connection to RSS and retrieves article info.
         try {
             URL newsUrl = new URL(address);
@@ -92,10 +92,12 @@ public class Feed {
 
                 list.add(article);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (FeedException e) {
-            e.printStackTrace();
+        } catch (IOException | FeedException e) {
+            throw e;
         }
+    }
+
+    public List<Article> getArticles() {
+        return list;
     }
 }

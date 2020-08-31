@@ -13,7 +13,7 @@
     <string name="menu_explore">Explore</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_settings">Settings</string>
-    <string name="username">username</string>
+    <string name="default_username">defaultUser</string>
 
     <string name="News_Feed">News Feed</string>
     <string name="Dark_Mode">Dark Mode</string>
@@ -25,12 +25,16 @@
     <string name="Expand_All">Expand All</string>
     <string name="Return">Return</string>
 
+    <!-- MCQ Strings -->
+    <string name="default_option">option x</string>
+
+
 
     <string name="answer_prompt">Enter your answer here.</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
-    <string name="interface_header">Interface</string>
+    <string name="interface_header">News Feed</string>
     <string name="general_header">General</string>
 
     <!-- Interface Preferences -->
@@ -61,8 +65,10 @@
     <string name="pick_a_username">Pick a username...</string>
     <string name="default_module_name">Default Module Name</string>
     <string name="default_section_name">Default Section Name</string>
-    <string name="default_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. </string>
+    <string name="default_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. </string>
+    <string name="default_content_long">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus.
+    </string>
 
     <string name="quiz_score">Quiz Score</string>
 
@@ -71,4 +77,6 @@
     <string name="publication_date">Publication Date</string>
     <string name="newsTitleText">News</string>
     <string name="todo">TODO</string>
+    <string name="dummy_question">Dummy Question.</string>
+    <string name="zero_progress_percent">0%</string>
 </resources>

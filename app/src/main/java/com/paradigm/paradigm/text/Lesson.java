@@ -3,8 +3,12 @@ package com.paradigm.paradigm.text;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.paradigm.paradigm.exercises.question.Question;
 
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
 public class Lesson extends Content {
     @JsonProperty("lessonContent")
     private String lessonContent;
@@ -12,6 +16,9 @@ public class Lesson extends Content {
     private String parentContentModule;
     @JsonProperty("parentCourse")
     private String parentCourse;
+    @JsonProperty("questions")
+    private List<Question> questions;
+
 
     public Lesson() {
         super();
@@ -19,6 +26,7 @@ public class Lesson extends Content {
 
     public Lesson(String name) {
         super(name);
+        questions = new ArrayList<>();
     }
 
     public String getParentContentModule() {
@@ -47,11 +55,35 @@ public class Lesson extends Content {
 
     @Override
     public String descriptionPath() {
-        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + DESC_FILE;
+        String descModuleName = parentContentModule.substring(0, 8);
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + DESC_FILE;
+    }
+
+    public String questionsPath() {
+        String descModuleName = parentContentModule.substring(0, 8);
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + Q_FILE;
     }
 
     public String getLessonContent() {
         return lessonContent;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void addQuestion(Question question) {
+        questions.add(question);
+    }
+
+    public void removeQuestion(Question question) {
+        questions.remove(question);
+    }
+
+    public void replaceQuestions(List<Question> questions) {
+        this.questions = questions;
     }
 
     public void setLessonContent(String content) {
@@ -59,7 +91,17 @@ public class Lesson extends Content {
     }
 
     public String lessonContentPath() {
-        return DIR_ROOT + parentCourse + "/" + parentContentModule + "/" + name + "/" + name + ".txt";
+        String descModuleName = parentContentModule.substring(0, 8);
+        String descLessonName = getName().substring(0, 8);
+        return DIR_ROOT + parentCourse + "/" + descModuleName + "/" + descLessonName + "/" + descLessonName + ".txt";
+    }
+
+    public void setParents() {
+        for (Question question : questions) {
+            question.setParentLesson(name);
+            question.setParentContentModule(getParentContentModule());
+            question.setParentCourse(getParentCourse());
+        }
     }
 
     @Override

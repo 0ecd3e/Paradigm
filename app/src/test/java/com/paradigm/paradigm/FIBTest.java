@@ -5,6 +5,7 @@ import com.paradigm.paradigm.exercises.question.FillInBlankQuestion;
 import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Course;
+import com.paradigm.paradigm.text.Lesson;
 
 import org.junit.Test;
 
@@ -21,7 +22,9 @@ public class FIBTest {
         FillInBlankQuestion fibq = new FillInBlankQuestion("q1", questionText, answer);
 
         ContentModule module = new ContentModule("module1");
-        module.addQuestion(fibq);
+        Lesson lesson = new Lesson("lesson1");
+        lesson.addQuestion(fibq);
+        module.addLesson(lesson);
         Course course = new Course("java");
         course.addModule(module);
         course.setParents();

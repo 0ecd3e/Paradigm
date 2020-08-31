@@ -45,7 +45,7 @@ public class ExampleInstrumentedTest {
         InputStream inputStream = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            inputStream = assetManager.open("courses/java/courseJava.json");
+            inputStream = assetManager.open("courses/Java Basics/courseJava.json");
             java = objectMapper.readValue(inputStream, Course.class);
             inputStream.close();
         } catch (IOException e) {
@@ -55,10 +55,10 @@ public class ExampleInstrumentedTest {
         ContentLoader contentLoader = new ContentLoader();
         contentLoader.loadDescription(java, assetManager);
 
-        for (ContentModule module : java.getModules().values()) {
+        for (ContentModule module : java.getModules()) {
             contentLoader.loadDescription(module, assetManager);
-            contentLoader.loadQuestions(module, assetManager);
-            for (Lesson lesson : module.getLessons().values()) {
+            for (Lesson lesson : module.getLessons()) {
+                //contentLoader.loadQuestions(lesson, assetManager);
                 contentLoader.loadDescription(lesson, assetManager);
                 contentLoader.loadLessonContent(lesson, assetManager);
             }
@@ -67,8 +67,9 @@ public class ExampleInstrumentedTest {
         UserProgress userProgress = new UserProgress();
         userProgress.addCourse(java);
 
-        ContentModule theModule = java.getModules().get("module2");
-        Question question = theModule.getQuestions().get("q3");
+        ContentModule theModule = java.getModules().get(0);
+        Lesson lesson = theModule.getLessons().get(1);
+        Question question = lesson.getQuestions().get(1);
         userProgress.markQuestionCorrect(question);
     }
 }

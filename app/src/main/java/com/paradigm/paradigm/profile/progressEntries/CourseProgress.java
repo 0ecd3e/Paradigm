@@ -1,10 +1,10 @@
 package com.paradigm.paradigm.profile.progressEntries;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CourseProgress extends ProgressEntry {
-    private Map<String, ModuleProgress> modules;
+    private List<ModuleProgress> modules;
 
     public CourseProgress() {
         super();
@@ -12,13 +12,12 @@ public class CourseProgress extends ProgressEntry {
 
     public CourseProgress(String name) {
         super(name, false);
-        modules = new HashMap<>();
+        modules = new ArrayList<>();
     }
 
-    @Override
-    public boolean isComplete() {
+    public boolean checkComplete() {
         boolean notComplete = false;
-        for (ModuleProgress moduleProgress : modules.values()) {
+        for (ModuleProgress moduleProgress : modules) {
             if (!moduleProgress.isComplete()) {
                 clearProgress();
                 notComplete = true;
@@ -33,12 +32,38 @@ public class CourseProgress extends ProgressEntry {
         return isComplete;
     }
 
-    public void setModuleProgress(String moduleName, ModuleProgress moduleProgress) {
-        modules.put(moduleName, moduleProgress);
+    public void setModuleProgress(ModuleProgress moduleProgress) {
+        int index = modules.indexOf(moduleProgress);
+        if (index == -1) {
+            modules.add(moduleProgress);
+        } else {
+            modules.set(index, moduleProgress);
+        }
     }
 
     public ModuleProgress getModuleProgress(String moduleName) {
-        return modules.get(moduleName);
+        for (ModuleProgress moduleProgress : modules) {
+            if (moduleProgress.componentName.equals(moduleName)) {
+                return moduleProgress;
+            }
+        }
+        return null;
     }
 
+    public int completePercentage() {
+        int count = 0;
+
+        for (ModuleProgress moduleProgress : modules) {
+            if (moduleProgress.isComplete()) {
+                count++;
+            }
+        }
+
+        double total = (double) count / modules.size();
+        return (int) (total * 100);
+    }
+
+    public List<ModuleProgress> getModules() {
+        return modules;
+    }
 }

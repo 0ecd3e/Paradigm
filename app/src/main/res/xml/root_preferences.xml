@@ -5,15 +5,16 @@
 
         <SwitchPreferenceCompat
             android:id="@+id/newsFeedSwitch"
-            android:defaultValue="false"
+            android:defaultValue="true"
             app:key="newsFeedSwitch"
             app:title="@string/News_Feed" />
-
-        <SwitchPreferenceCompat
-            android:id="@+id/darkModeSwitch"
-            android:defaultValue="false"
-            app:key="darkModeSwitch"
-            app:title="@string/Dark_Mode" />
+        <EditTextPreference
+            android:defaultValue="https://rss.cbc.ca/lineup/technology.xml"
+            android:key="defaultFeedLocation"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Set the source of the news feed"
+            android:title="News Feed Source" />
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/general_header">
@@ -28,6 +29,10 @@
             app:key="eraseUserData"
             app:summary="Delete your user data and progress"
             app:title="@string/eraseData_dialog" />
+        <Preference
+            app:key="about"
+            app:summary="Version 0.9.0beta\n\nMade by the Paradigm team"
+            app:title="About" />
 
     </PreferenceCategory>
 

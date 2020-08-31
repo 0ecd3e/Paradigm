@@ -1,0 +1,240 @@
+{
+  "type": "com.paradigm.paradigm.text.Course",
+  "name": "Java Basics",
+  "modules": {
+    "Module 1: Introduction": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: What is Java?": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 1: Introduction",
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "When was the first development kit released for Java?\n\na) 1991\nb) 1992\nc) 1993\nd) 1994",
+              "answer": {
+                "bestAnswer": "D"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "Name the type of programming language in which all components of a program must be in a class.",
+              "answer": {
+                "bestAnswer": "Object oriented programming",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "Object oriented programming"
+                  },
+                  {
+                    "acceptedAnswer2": "OOP"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 1: Introduction",
+              "parentLesson": "Lesson 1: What is Java?",
+              "text": "Which of the following operating systems was Java not released on?\n\na) Windows 95\nb) MacOS\nc) Red Star OS\nd) Linux",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Module 2: OOP Basics": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Classes and Interfaces": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 2: OOP Basics",
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText2",
+              "answer": {
+                "bestAnswer": "B",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "B"
+                  },
+                  {
+                    "acceptedAnswer2": "1"
+                  },
+                  {
+                    "acceptedAnswer3": "2"
+                  },
+                  {
+                    "acceptedAnswer4": "3"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 1: Classes and Interfaces",
+              "text": "defaultQuestionText3",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
+          }
+        },
+        "Lesson 2: Methods": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 2: OOP Basics",
+          "questions": {
+            "Q1": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText",
+              "answer": {
+                "bestAnswer": "A"
+              }
+            },
+            "Q2": {
+              "type": "fillInBlankQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText2",
+              "answer": {
+                "bestAnswer": "B",
+                "acceptedAnswers": [
+                  {
+                    "acceptedAnswer1": "B"
+                  },
+                  {
+                    "acceptedAnswer2": "1"
+                  },
+                  {
+                    "acceptedAnswer3": "2"
+                  },
+                  {
+                    "acceptedAnswer4": "3"
+                  }
+                ]
+              }
+            },
+            "Q3": {
+              "type": "multipleChoiceQuestion",
+              "parentCourse": "Java Basics",
+              "parentContentModule": "Module 2: OOP Basics",
+              "parentLesson": "Lesson 2: Methods",
+              "text": "defaultQuestionText3",
+              "answer": {
+                "bestAnswer": "C"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Module 3: Basic Syntax": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Elements of Code": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
+        },
+        "Lesson 2: Code Organization": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
+        },
+        "Lesson 3: Style Guides": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 3: Basic Syntax",
+          "questions": {}
+        }
+      }
+    },
+    "Module 4: Data Types and Structures": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Access Modifiers": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
+        },
+        "Lesson 2: Data Types": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
+        },
+        "Lesson 3: Arrays": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 4: Data Types and Structures",
+          "questions": {}
+        }
+      }
+    },
+    "Module 5: Decision Making": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: If-statements": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 5: Decision Making",
+          "questions": {}
+        },
+        "Lesson 2: Switch-case": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 5: Decision Making",
+          "questions": {}
+        }
+      }
+    },
+    "Module 6: Loops": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: For and For-each Loops": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 6: Loops",
+          "questions": {}
+        },
+        "Lesson 2: While Loops": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 6: Loops",
+          "questions": {}
+        }
+      }
+    },
+    "Module 7: Exceptions": {
+      "parentCourse": "Java Basics",
+      "lessons": {
+        "Lesson 1: Exceptions": {
+          "parentCourse": "Java Basics",
+          "parentContentModule": "Module 7: Exceptions",
+          "questions": {}
+        }
+      }
+    }
+  }
+}

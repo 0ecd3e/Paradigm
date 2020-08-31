@@ -1,0 +1,9 @@
+Java as a programming language was created by Patrick Naughton and his team as a way of addressing the limitations and frustrations of C++ and C, two very popular languages at the time. Java was announced in 1995 and its first development kit was released in 1996 made available for the Solaris, Windows 95, Mac OS classic and Linux. The team’s objectives during development was:
+\n
+\n1. Simple, object-oriented, and familiar.
+\n2. Robust and secure.
+\n3. Architecture-neutral and portable.
+\n4. Must execute with high performance.
+\n5. Must be interpreted, threaded, and dynamic.
+\n
+\nSince then, Java has become ubiquitous in modern electronics, from mobile devices to supercomputers. Fundamentally, Java is an object oriented programming language. This course will delve deeper into the concept of object oriented programming in later modules, but for now, it simply means that all components of a Java program must belong in an object.

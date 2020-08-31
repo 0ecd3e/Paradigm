@@ -1,26 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
+    android:label="Home"
     app:startDestination="@id/nav_home">
     <fragment
         android:id="@+id/nav_home"
         android:name="com.paradigm.paradigm.ui.home.HomeFragment"
-        android:label="Home" />
+        android:label="Home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_explore"
+            app:destination="@id/nav_explore"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_news"
+            app:destination="@id/nav_news"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_moduleFragment"
+            app:destination="@id/moduleFragment"
+            app:popUpTo="@id/nav_explore"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/nav_explore"
         android:name="com.paradigm.paradigm.ui.explore.ExploreFragment"
-        android:label="ExploreFragment" />
+        android:label="Explore">
+        <action
+            android:id="@+id/action_nav_explore_to_moduleFragment"
+            app:destination="@id/moduleFragment"
+            app:popUpTo="@id/nav_explore" />
+    </fragment>
     <fragment
         android:id="@+id/nav_news"
         android:name="com.paradigm.paradigm.ui.news.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="News" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.paradigm.paradigm.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="Profile">
+        <action
+            android:id="@+id/action_nav_profile_self"
+            app:destination="@id/nav_profile" />
+    </fragment>
     <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/nav_settings"
         android:name="com.paradigm.paradigm.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/moduleFragment"
+        android:name="com.paradigm.paradigm.ui.module.ModuleFragment"
+        android:label="Module"
+        tools:layout="@layout/fragment_module">
+        <action
+            android:id="@+id/action_moduleFragment_to_lessonFragment"
+            app:destination="@id/lessonFragment"
+            app:popUpTo="@id/moduleFragment" />
+        <action
+            android:id="@+id/action_moduleFragment_to_nav_explore"
+            app:destination="@id/nav_explore" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFragment"
+        android:name="com.paradigm.paradigm.ui.lesson.LessonFragment"
+        android:label="Lesson">
+        <action
+            android:id="@+id/action_lessonFragment_to_MCQFragment"
+            app:destination="@id/MCQFragment" />
+        <action
+            android:id="@+id/action_lessonFragment_to_FIBQuestionFragment"
+            app:destination="@id/FIBQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MCQFragment"
+        android:name="com.paradigm.paradigm.ui.question.MCQFragment"
+        android:label="Question"
+        tools:layout="@layout/m_c_q_fragment" />
+    <fragment
+        android:id="@+id/FIBQuestionFragment"
+        android:name="com.paradigm.paradigm.ui.question.FIBQuestionFragment"
+        android:label="Question"
+        tools:layout="@layout/f_i_b_question_fragment" />
 </navigation>
