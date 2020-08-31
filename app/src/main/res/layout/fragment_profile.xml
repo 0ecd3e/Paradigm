@@ -31,7 +31,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="2dp"
                 android:contentDescription="@string/todo"
-                android:onClick="editUsername"
                 android:tint="@color/textBlack"
                 app:layout_constraintBottom_toBottomOf="@+id/profileFragmentUsername"
                 app:layout_constraintStart_toEndOf="@+id/profileFragmentUsername"
