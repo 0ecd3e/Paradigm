@@ -1,1 +1,1 @@
-java course, module 6.
+Introduction to the type of loops commonly used in Java

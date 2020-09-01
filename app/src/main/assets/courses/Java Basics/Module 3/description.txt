@@ -1,1 +1,1 @@
-java course, module 3.
+Basic syntax and other related topics.

@@ -1,1 +1,1 @@
-java course, module 2.
+Introduction to object oriented programming and its related features.

@@ -1,1 +1,1 @@
-java course, module 2, lesson 1.
+Basics of classes in Java and an introduction of interfaces.
