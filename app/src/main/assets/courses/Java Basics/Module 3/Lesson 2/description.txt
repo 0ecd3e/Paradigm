@@ -1,1 +1,1 @@
-java course, module 3, lesson 2.
+The proper structure to any program you write.

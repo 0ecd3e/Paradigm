@@ -44,25 +44,4 @@ public class ContentLoader {
         String content = loadFromAssets(contentPath, assetManager);
         lesson.setLessonContent(content);
     }
-
-    /*
-    public void loadQuestions(Lesson lesson, AssetManager assetManager) {
-        String questionsPath = lesson.questionsPath();
-        Lesson questionSource = new Lesson();
-
-        InputStream inputStream = null;
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            inputStream = assetManager.open(questionsPath);
-            questionSource = objectMapper.readValue(inputStream, Lesson.class);
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        lesson.replaceQuestions(questionSource.getQuestions());
-        lesson.setParents();
-    }
-
-     */
 }

@@ -1,1 +1,1 @@
-java course, module 3, lesson 1.
+Some of the more commonly seen and crucial aspects of all programming languages

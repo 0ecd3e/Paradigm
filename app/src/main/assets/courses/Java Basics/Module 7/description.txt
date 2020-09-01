@@ -1,1 +1,1 @@
-java course, module 7.
+Introduction to exceptions in general and implementations around them in Java

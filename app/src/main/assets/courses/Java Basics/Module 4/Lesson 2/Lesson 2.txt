@@ -1,10 +1,23 @@
 Java, like other programming languages, supports a variety of primitive data types. Primitive refers to the fact that it can not be further reduced into a more low level data type and rather than created by the programmer, is built into the language itself. The following provides a list of more common data types used.
 
-\n      int: stores whole numbers only with size of 32 bit, is signed (can represent negative and non-negative numbers).
-\n      long: same purpose as int but with increased size of 64 bit.
-\n      float: stores decimal numbers with size of 32 bit with up to 7 digits of precision.
-\n      double: same purpose as float with with increased size of 64 bit and improved precision of 16 digits.
-\n      boolean: can only store one of two possible values. True or false.
-\n      char: stores a single character using different representation standards such as ASCII or unicode.
+\n
+\n      int:  stores whole numbers only with
+\n            size of 32 bit, is signed (can
+\n            represent negative and
+\n            non-negative numbers).
+\n      long:same purpose as int but with
+\n            increased size of 64 bit.
+\n      float: stores decimal numbers with
+\n             size of 32 bit with up to 7
+\n             digits of precision.
+\n      double: same purpose as float with
+\n              increased size of 64 bit and
+\n              improved precision of 16 digits.
+\n      boolean: can only store one of two
+\n              possible values. True or false.
+\n      char:  stores a single character using
+\n             different representation
+\n             standards such as ASCII or
+\n             unicode.
 
 

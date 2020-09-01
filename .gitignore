@@ -1,15 +1,8 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-/.idea/jarRepositories.xml
+Markdown Reference (as of 11 Feb. 2019)
+===================
+Originally from tchapi with additions from MinhasKamal 
+
+(https://github.com/tchapi/markdown-cheatsheet, https://gist.github.com/MinhasKamal/7fdebb7c424d23149140)
+
+More at https://guid
+/.idea/

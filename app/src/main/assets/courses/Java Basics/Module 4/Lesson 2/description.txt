@@ -1,1 +1,1 @@
-java course, module 4, lesson 2.
+Commonly used data types in Java.
