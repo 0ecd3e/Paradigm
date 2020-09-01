@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -85,8 +86,10 @@ public class MCQFragment extends Fragment {
     }
 
     private void handleAnswer(Question question, String choice) {
-        question.checkAnswer(choice, question.getAnswer(),
-                MainActivity.getUserProfile().getUserProgress());
+        if (!question.checkAnswer(choice, question.getAnswer(),
+                MainActivity.getUserProfile().getUserProgress())) {
+            Toast.makeText(requireContext(), "Try another answer.", Toast.LENGTH_SHORT).show();
+        }
         updateQuestionProgress(root);
     }
 

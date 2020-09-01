@@ -18,7 +18,7 @@ public class FillInBlankQuestion extends Question {
     }
 
     @Override
-    public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
+    public boolean checkAnswer(String input, Answer answer, UserProgress userProgress) {
         List<String> answerList = ((FillInBlankAnswer) answer).getAcceptedAnswers();
         boolean answerMatched = false;
         for (String possibleAnswer : answerList) {
@@ -31,5 +31,6 @@ public class FillInBlankQuestion extends Question {
         if (!answerMatched) {
             userProgress.markQuestionIncorrect(this);
         }
+        return answerMatched;
     }
 }

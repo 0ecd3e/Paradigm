@@ -99,11 +99,13 @@ public abstract class Question implements Serializable {
         this.answer = answer;
     }
 
-    public void checkAnswer(String input, Answer answer, UserProgress userProgress) {
+    public boolean checkAnswer(String input, Answer answer, UserProgress userProgress) {
         if (input.equals(answer.getAnswer())) {
             userProgress.markQuestionCorrect(this);
+            return true;
         } else {
             userProgress.markQuestionIncorrect(this);
+            return false;
         }
     }
 

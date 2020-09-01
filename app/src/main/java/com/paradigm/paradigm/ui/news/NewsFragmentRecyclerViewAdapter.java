@@ -38,23 +38,19 @@ public class NewsFragmentRecyclerViewAdapter extends RecyclerView.Adapter<NewsFr
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        /*
-        holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id + "News Title";
-        holder.mIdView.setText(title);
-        String desc = mValues.get(position).content + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n" +
-                "        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus.";
-        holder.mContentView.setText(desc);
-
-         */
-
         Article article = newsFeed.get(position);
         holder.article = article;
-        //Bitmap feedImage = loadImageFromURL(holder.article.getImageURL());
-        //holder.imageView.setImageBitmap(feedImage);
         holder.mIdView.setText(article.getTitle());
         holder.mContentView.setText(article.getDescription());
-        holder.date.setText(article.getDate());
+
+        String date = article.getDate();
+        String year = date;
+        String time = date;
+        year = year.substring(24);
+        date = date.substring(4, 9);
+        time = time.substring(11, 16);
+        String cleanedDate = time + " " + date + ", " + year;
+        holder.date.setText(cleanedDate);
         holder.author.setText(article.getAuthor());
         holder.url.setText(article.getUrl());
     }
