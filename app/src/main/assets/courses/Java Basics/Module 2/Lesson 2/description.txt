@@ -1,1 +1,1 @@
-java course, module 2, lesson 2.
+In-depth look at methods, from its syntax to proper practices.

@@ -1,28 +1,39 @@
 Comments:
 \n      Comments are crucial in any programming language to ensure ease of access. Suppose that I give you a piece of code, you might be able to know what its purpose is, but how much time would you have wasted? Or, if I gave you a more sophisticated piece of code, would you have understood at all what the purpose of that code was? This is where comments come in, by commenting above classes, and methods, you not only make it easier on yourself in the future, you will also make it easier on anyone else that will use your code.
 
+\n
 \nTo comment in Java, use the following:
 \n              //comments		or 		/*comments*/
 
+\n
 \nKeywords:
-\n  If you have started programming in Java, you might have noticed that certain words are highlighted in specific colors, such as int highlighted magenta when you are using an IDE such as Intellij, but why? In Java, there are reserved words referred to as keywords, which have pre-determined meanings in the language. There are a total of 51 keywords and they range from data types to loops and other essential features of Java. Enter syntax highlighting, a feature of many programming languages as well as Java that displays certains words in distinct colors. The color scheme used depends on the IDE or text editor in use. For example magenta for keywords, orange for modifiers and returns types, etc. They make the programs more readable and allow programmers to navigate through large programs quicker. It is important to note the many rules surrounding keywords.
+\n      If you have started programming in Java, you might have noticed that certain words are highlighted in specific colors, such as int highlighted magenta when you are using an IDE such as Intellij, but why? In Java, there are reserved words referred to as keywords, which have pre-determined meanings in the language. There are a total of 51 keywords and they range from data types to loops and other essential features of Java. Enter syntax highlighting, a feature of many programming languages as well as Java that displays certains words in distinct colors. The color scheme used depends on the IDE or text editor in use. For example magenta for keywords, orange for modifiers and returns types, etc. They make the programs more readable and allow programmers to navigate through large programs quicker. It is important to note the many rules surrounding keywords.
 
+\n
 \nKeywords can never be used as variable names, it will result in compilation errors.
-\n              int int;	<- Invalid use and will not compile.
-\n              int Int		<- This is technically valid and will
-\n                             compile because Int is not a
-\n                             keyword,  but this is just bad
-\n                             naming.
+\n
+\n int int;   //Invalid use, will not compile.
+\n int Int;	  //Technically valid, will
+\n              compile because Int isn't a
+\n              keyword,  but this is bad
+\n              naming.
 
+\n
 \nKeywords are case sensitive as well, meaning that you must type them out according to their original letter cases in order for the compiler to recognize that it is a keyword.
-\n      Double x; Boolean y;	<- Improper letter cases of keywords, will not compile.
+\n
+\n  Double x; Boolean y;  //Improper.
+\n                                           letter cases.
 
+\n
 \nTypenames:
 \n  There are many types in Java that we have seen so far, such as int, and double. We will delve into their functions in later modules but will focus on how they should be used in a statement. In method declaration statements, the type, in this case referred to as the return type, must be written after the modifiers but before the method name.
+\n
+\n  modifier <type> name(){}
+\n  //correct type placement
 
-\n  modifier <type> name(){}  <- correct placement of type in a method declaration
-
+\n
 \nIn variable declaration, the type must be the first word of the statement before the variable name and variable assignment.
-\n      <type> variable = 0;	<- Correct placement of type in variable declaration.
+\n      <type> variable = 0;
+\n      //correct type placement
 
 

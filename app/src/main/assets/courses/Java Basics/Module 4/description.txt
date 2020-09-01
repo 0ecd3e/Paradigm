@@ -1,1 +1,1 @@
-java course, module 4.
+Introduction to ways you can restrict access to data and the types used to represent data in Java.

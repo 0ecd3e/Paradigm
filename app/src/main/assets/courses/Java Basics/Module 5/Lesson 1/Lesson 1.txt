@@ -1,13 +1,19 @@
 The if - else statements are used in code to allow for decision making and branching based on the conditions provided. If statements allow the program to execute a block of code if and only if the boolean expression within the statement evaluates to true. If the expression evaluates to false, the block of code within the if statement will be skipped completely and will resume execution at the line right after the end of the if statement. The proper syntax of if statements is as follows:
 
-\n      if (x == y) {	       //“if”, followed by a boolean expression within the parenthesis
-\n            x = x + 1;	// the code block to be executed if expression is true.
-\n}
+\n
+\n      if (x == y) {
+\n            x = x + 1   /*the code block to be
+\n                          executed if expression
+\n                          is true.*/
+\n      }
 
+\n
 \nHowever, else statements are completely optional and not every if statement requires a consequent else statement. The inclusion of else statements is up to the programmer’s discretion.
 
+\n
 \nIt is also possible to have more than one if statement before an else statement.
 
+\n
 \n      if (x == y){
 \n          x = x+ y;
 \n      } if (x < 3){
@@ -16,7 +22,10 @@ The if - else statements are used in code to allow for decision making and branc
 \n          y = y + 1;
 \n      }
 
+\n
 \nIn this example, if the expression of both if statements are true, then the code in both will be executed in the order shown.
 
+\n
 \nSuppose that you only want the code in one if statement to execute at a time, this can be done with else if statements. Else  if statements serve the same purpose as if statements, however, it is used after the initial if statement to test another condition. There can be as many else-if statements after the initial if statement as the programmer wants, the quantity is up to the programmer’s discretion. The proper format of the else if statement is as follows:
+\n
 \n                      else if ( x > y) { }

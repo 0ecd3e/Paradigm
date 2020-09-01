@@ -1,1 +1,1 @@
-java course, module 5, lesson 2.
+Overview of switches in Java.

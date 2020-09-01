@@ -1,1 +1,1 @@
-java course, module 7, lesson 1.
+Explanation of what exceptions are, how they are represented and how they are handled in Java.

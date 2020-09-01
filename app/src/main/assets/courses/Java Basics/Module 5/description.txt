@@ -1,1 +1,1 @@
-java course, module 5.
+Commonly used methods of rudimentary decision branches in Java.

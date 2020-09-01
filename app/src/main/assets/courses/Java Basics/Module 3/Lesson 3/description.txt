@@ -1,1 +1,1 @@
-java course, module 3, lesson 3.
+Brief introduction to what style guides are.

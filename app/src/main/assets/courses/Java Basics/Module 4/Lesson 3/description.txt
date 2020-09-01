@@ -1,1 +1,1 @@
-java course, module 4, lesson 3.
+Beginner's introduction to arrays.
