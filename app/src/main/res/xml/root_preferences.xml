@@ -32,7 +32,7 @@
             app:title="Open source notices" />
         <Preference
             app:key="about"
-            app:summary="Version 0.9.0beta\n\nMade by the Paradigm team.\n\nClick here for license information."
+            app:summary="Version 0.9.2beta\n\nMade by the Paradigm team.\n\nClick here for license information."
             app:title="About" />
 
     </PreferenceCategory>
