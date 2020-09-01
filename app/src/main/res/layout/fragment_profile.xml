@@ -26,35 +26,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
                 android:contentDescription="@string/todo"
                 android:tint="@color/textBlack"
-                app:layout_constraintBottom_toBottomOf="@+id/profileFragmentUsername"
                 app:layout_constraintStart_toEndOf="@+id/profileFragmentUsername"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
                 app:srcCompat="@android:drawable/ic_menu_edit" />
 
             <TextView
                 android:id="@+id/profileFragmentUsername"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/default_username"
+                android:textAlignment="center"
                 android:textColor="@color/textBlack"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardExploreModuleImage" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/cardExploreModuleImage"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/applogo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <ProgressBar
                 android:id="@+id/profileOverallProgressBar"
@@ -97,6 +89,18 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/profileOverallProgressBar"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/applogo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
