@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
@@ -24,8 +23,6 @@ import com.paradigm.paradigm.profile.progressEntries.QuestionProgress;
 import static com.paradigm.paradigm.MainActivity.course;
 
 public class FIBQuestionFragment extends Fragment {
-
-    private FIBQuestionViewModel mViewModel;
 
     public static FIBQuestionFragment newInstance() {
         return new FIBQuestionFragment();
@@ -57,7 +54,7 @@ public class FIBQuestionFragment extends Fragment {
                     parsedAnswer = answer.getText().toString();
                 }
                 question.checkAnswer(parsedAnswer, question.getAnswer(),
-                        ((MainActivity) requireActivity()).getUserProfile().getUserProgress());
+                        MainActivity.getUserProfile().getUserProgress());
                 updateQuestionProgress(root);
             }
         });
@@ -71,8 +68,9 @@ public class FIBQuestionFragment extends Fragment {
             TextView text = root.findViewById(R.id.FIBQIndicatorText);
             String answerKey = "You have correctly answered this question before.\n" + "Correct answer: " + userProgress.getCurrentQuestion().getAnswer().getAnswer();
             text.setText(answerKey);
+            text.setTextColor(getResources().getColor(R.color.white));
             CardView indicator = root.findViewById(R.id.FIBQProgressIndicator);
-            indicator.setCardBackgroundColor(0xff00ff00);
+            indicator.setCardBackgroundColor(getResources().getColor(R.color.cardGreen));
         }
         MainActivity.getUserProfile().getUserProgress().isLessonComplete(userProgress.getCurrentLesson());
         CourseProgress courseProgress = userProgress.findCourseProgress(course.getName());
@@ -81,12 +79,4 @@ public class FIBQuestionFragment extends Fragment {
         moduleProgress.checkComplete();
         ((MainActivity) requireActivity()).saveProgress();
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(FIBQuestionViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }

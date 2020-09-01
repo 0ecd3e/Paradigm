@@ -13,30 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
-import com.paradigm.paradigm.dummy.DummyContent.DummyItem;
 import com.paradigm.paradigm.text.ContentModule;
 import com.paradigm.paradigm.text.Lesson;
 
 import java.util.List;
 
-
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<ModuleFragmentRecyclerViewAdapter.ViewHolder> {
 
-    //private final List<DummyItem> mValues;
     private List<Lesson> lessonList;
+    ModuleFragment parentFragment;
 
-    //public ModuleFragmentRecyclerViewAdapter(List<Lesson> items) {
-    //mValues = items;
-    //}
-
-    public ModuleFragmentRecyclerViewAdapter(ContentModule module) {
+    public ModuleFragmentRecyclerViewAdapter(ContentModule module, ModuleFragment context) {
         lessonList = module.getLessons();
+        parentFragment = context;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -46,28 +38,21 @@ public class ModuleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<Modu
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        /*
-        holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id + "Lesson Title";
-        holder.mIdView.setText(title);
-        String desc = mValues.get(position).content + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n" +
-                "        Nullam nisi velit, venenatis eget finibus sit amet, hendrerit commodo risus.";
-        holder.mContentView.setText(desc);
-        holder.imageView.setImageResource(R.drawable.smptebars);
-
-         */
-
         Lesson lesson = lessonList.get(position);
         holder.lesson = lesson;
         holder.mIdView.setText(lesson.getName());
         holder.mContentView.setText(lesson.getDescription());
-        holder.imageView.setImageResource(R.drawable.smptebars);
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.getUserProfile().getUserProgress().setCurrentLesson(lesson);
-                Navigation.findNavController(v).navigate(R.id.action_moduleFragment_to_lessonFragment);
-            }
+
+        String imageName = lesson.getParentContentModule();
+        imageName = imageName.substring(0, 8);
+        imageName = imageName.replace(" ", "");
+        imageName = imageName.replace("M", "m");
+        int id = parentFragment.getResources().getIdentifier(imageName, "drawable", parentFragment.requireContext().getPackageName());
+        holder.imageView.setImageResource(id);
+
+        holder.cardView.setOnClickListener(v -> {
+            MainActivity.getUserProfile().getUserProgress().setCurrentLesson(lesson);
+            Navigation.findNavController(v).navigate(R.id.action_moduleFragment_to_lessonFragment);
         });
     }
 

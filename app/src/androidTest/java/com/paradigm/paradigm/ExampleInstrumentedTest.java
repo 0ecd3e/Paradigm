@@ -42,7 +42,7 @@ public class ExampleInstrumentedTest {
         Course java = new Course("test");
         AssetManager assetManager = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getAssets();
 
-        InputStream inputStream = null;
+        InputStream inputStream;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             inputStream = assetManager.open("courses/Java Basics/courseJava.json");

@@ -63,8 +63,7 @@ public class CourseSerializer extends StdSerializer<Course> {
         gen.writeObjectFieldStart("questions"); //3
         List<Question> questionEntrySet = lesson.getQuestions();
         for (Question questionEntry : questionEntrySet) {
-            Question question = questionEntry;
-            String questionType = question.getQuestionType();
+            String questionType = questionEntry.getQuestionType();
 
             gen.writeObjectFieldStart(questionEntry.getQuestionName()); //4
             gen.writeStringField("type", questionType);
@@ -72,10 +71,10 @@ public class CourseSerializer extends StdSerializer<Course> {
             gen.writeStringField("parentContentModule", contentModuleName);
             gen.writeStringField("parentLesson", lesson.getName());
             //gen.writeStringField("name", question.getQuestionName());
-            gen.writeStringField("text", question.getQuestionText());
+            gen.writeStringField("text", questionEntry.getQuestionText());
 
             gen.writeObjectFieldStart("answer"); //5
-            Answer answer = question.getAnswer();
+            Answer answer = questionEntry.getAnswer();
             if (answer.getAnswerType().equals("multipleChoiceAnswer")) {
                 gen.writeStringField("bestAnswer", answer.getAnswer());
             } else {

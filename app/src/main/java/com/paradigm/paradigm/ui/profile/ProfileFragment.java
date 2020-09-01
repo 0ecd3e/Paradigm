@@ -22,7 +22,6 @@ import com.paradigm.paradigm.profile.progressEntries.CourseProgress;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -36,7 +35,6 @@ public class ProfileFragment extends Fragment {
     }
 
     // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ProfileFragment newInstance(int columnCount) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
@@ -75,7 +73,7 @@ public class ProfileFragment extends Fragment {
 
         ProgressBar overallProgress = view.findViewById(R.id.profileOverallProgressBar);
         TextView overallProgressPercent = view.findViewById(R.id.profileOverallProgressPercent);
-        UserProfile userProfile = ((MainActivity) requireActivity()).getUserProfile();
+        UserProfile userProfile = MainActivity.getUserProfile();
         if (userProfile == null) {
             ((MainActivity) requireActivity()).initProfile();
         } else {
@@ -96,8 +94,8 @@ public class ProfileFragment extends Fragment {
                 } else {
                     recycler.setLayoutManager(new GridLayoutManager(context, mColumnCount));
                 }
-                CourseProgress courseProgress = ((MainActivity) requireActivity())
-                        .getUserProfile().getUserProgress().findCourseProgress(MainActivity.course.getName());
+                CourseProgress courseProgress = MainActivity.getUserProfile()
+                        .getUserProgress().findCourseProgress(MainActivity.course.getName());
                 recycler.setAdapter(new ProfileModuleRecyclerViewAdapter(courseProgress));
             }
         }

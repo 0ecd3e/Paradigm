@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("CanBeFinal")
 public class Feed {
 
     private ArrayList<Article> list = new ArrayList<>();
@@ -66,34 +67,29 @@ public class Feed {
 
     public void setFeed(final String address) throws IOException, FeedException {
         //Establishes connection to RSS and retrieves article info.
-        try {
-            URL newsUrl = new URL(address);
+        URL newsUrl = new URL(address);
 
-            SyndFeedInput syndFeedInput = new SyndFeedInput();
-            SyndFeed syndFeed = syndFeedInput.build(new XmlReader(newsUrl));
+        SyndFeedInput syndFeedInput = new SyndFeedInput();
+        SyndFeed syndFeed = syndFeedInput.build(new XmlReader(newsUrl));
 
-            List entries = syndFeed.getEntries();
+        List<SyndEntry> entries = syndFeed.getEntries();
 
-            for (Object entry : entries) {
-                Article article = new Article();
-                SyndEntry syndEntry = (SyndEntry) entry;
+        for (SyndEntry entry : entries) {
+            Article article = new Article();
 
-                article.setTitle(syndEntry.getTitle());
-                article.setUrl(syndEntry.getLink());
-                article.setAuthor(syndEntry.getAuthor());
-                article.setDate(syndEntry.getPublishedDate().toString());
-                String description = syndEntry.getDescription().getValue();
-                String descContents = getDescContents(description);
-                String image = getDescImage(description);
-                String imageDesc = getImageDescription(description);
-                article.setDescription(descContents);
-                article.setImageURL(image);
-                article.setImageDescription(imageDesc);
+            article.setTitle(((SyndEntry) entry).getTitle());
+            article.setUrl(((SyndEntry) entry).getLink());
+            article.setAuthor(((SyndEntry) entry).getAuthor());
+            article.setDate(((SyndEntry) entry).getPublishedDate().toString());
+            String description = ((SyndEntry) entry).getDescription().getValue();
+            String descContents = getDescContents(description);
+            String image = getDescImage(description);
+            String imageDesc = getImageDescription(description);
+            article.setDescription(descContents);
+            article.setImageURL(image);
+            article.setImageDescription(imageDesc);
 
-                list.add(article);
-            }
-        } catch (IOException | FeedException e) {
-            throw e;
+            list.add(article);
         }
     }
 

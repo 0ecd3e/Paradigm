@@ -1,5 +1,7 @@
 package com.paradigm.paradigm.exercises.question;
 
+import androidx.annotation.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -105,6 +107,7 @@ public abstract class Question implements Serializable {
         }
     }
 
+    @NonNull
     @Override
     public String toString() {
         System.out.println("PC " + parentCourse);

@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.paradigm.paradigm.MainActivity;
@@ -22,8 +21,6 @@ import com.paradigm.paradigm.profile.UserProgress;
 import java.util.List;
 
 public class LessonFragment extends Fragment {
-
-    private LessonViewModel mViewModel;
 
     public static LessonFragment newInstance() {
         return new LessonFragment();
@@ -48,8 +45,12 @@ public class LessonFragment extends Fragment {
         q1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(0));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(0));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -57,8 +58,12 @@ public class LessonFragment extends Fragment {
         q2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(1));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(1));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_FIBQuestionFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -66,21 +71,15 @@ public class LessonFragment extends Fragment {
         q3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProgress.setCurrentQuestion(questions.get(2));
-                Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                try {
+                    userProgress.setCurrentQuestion(questions.get(2));
+                    Navigation.findNavController(v).navigate(R.id.action_lessonFragment_to_MCQFragment);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         return root;
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LessonViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
-    //find way to set question buttons green if answered correctly
-
 }
