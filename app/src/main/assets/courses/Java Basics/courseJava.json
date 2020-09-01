@@ -116,7 +116,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 2: Methods",
-              "text": "Imagine that you are tasked with implementing features for a vending machine. Your job\nis to create methods to allow for the vending machine to take the customer’s orders and\ndispense the correct product. Using good practices, how many methods should you\nimplement based only on the premises mentioned?\n\na) 1\nb) 2\nc) 3\nd) 4",
+              "text": "Imagine that you are tasked with implementing features for a vending machine. Your job is to create methods to allow for the vending machine to take the customer’s orders and dispense the correct product. Using good practices, how many methods should you implement based only on the premises mentioned?\n\na) 1\nb) 2\nc) 3\nd) 4",
               "answer": {
                 "bestAnswer": "B"
               }
