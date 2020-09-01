@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.paradigm.paradigm.MainActivity;
 import com.paradigm.paradigm.R;
+import com.paradigm.paradigm.profile.UserProfile;
 import com.paradigm.paradigm.profile.UserProgress;
 import com.paradigm.paradigm.profile.progressEntries.SaveProgressInterface;
 import com.paradigm.paradigm.text.ContentModule;
@@ -59,11 +60,17 @@ public class ExploreModuleRecyclerViewAdapter extends RecyclerView.Adapter<Explo
 
 
         holder.cardView.setOnClickListener(v -> {
-            UserProgress userProgress = MainActivity.getUserProfile().getUserProgress();
-            userProgress.setCurrentModule(contentModule);
-            userProgress.setCheckpointModule(contentModule);
-            listener.saveProgress();
-            Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
+            UserProfile userProfile = MainActivity.getUserProfile();
+
+            if (userProfile == null) {
+                ((MainActivity) parentFragment.requireActivity()).initProfile();
+            } else {
+                UserProgress userProgress = userProfile.getUserProgress();
+                userProgress.setCurrentModule(contentModule);
+                userProgress.setCheckpointModule(contentModule);
+                listener.saveProgress();
+                Navigation.findNavController(v).navigate(R.id.action_nav_explore_to_moduleFragment);
+            }
         });
     }
 

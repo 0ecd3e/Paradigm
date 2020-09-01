@@ -40,15 +40,6 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        /*
-        holder.mItem = mValues.get(position);
-        String title = mValues.get(position).id + "%";
-        String desc = mValues.get(position).content + "Module Title";
-        holder.mIdView.setText(desc);
-        holder.mContentView.setText(title);
-        holder.progressBar.setProgress(Integer.parseInt(mValues.get(position).id));
-
-         */
         ModuleProgress moduleProgress = modules.get(position);
         moduleProgress.checkComplete();
         String completeness = moduleProgress.completePercentage() + "%";
@@ -69,7 +60,6 @@ public class ProfileModuleRecyclerViewAdapter extends RecyclerView.Adapter<Profi
         public final TextView mIdView;
         public final TextView mContentView;
         public final ProgressBar progressBar;
-        //public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);

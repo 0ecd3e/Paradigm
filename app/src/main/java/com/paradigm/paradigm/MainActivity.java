@@ -286,6 +286,8 @@ public class MainActivity extends AppCompatActivity
         int currentDest = Objects.requireNonNull(navController.getCurrentDestination()).getId();
         if (currentDest == R.id.nav_profile) {
             navController.navigate(R.id.action_nav_profile_self);
+        } else if (currentDest == R.id.nav_explore) {
+            navController.navigate(R.id.action_nav_explore_self);
         } else {
             navController.navigate(R.id.action_nav_home_self);
         }
