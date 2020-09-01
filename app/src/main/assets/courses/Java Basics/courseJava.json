@@ -33,6 +33,9 @@
                   },
                   {
                     "acceptedAnswer2": "OOP"
+                  },
+                  {
+                    "acceptedAnswer3": "Object Oriented Programming"
                   }
                 ]
               }
@@ -123,12 +126,15 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 2: OOP Basics",
               "parentLesson": "Lesson 2: Methods",
-              "text": "You are designing a method called foo. It will return a double and will take in two integers \nas parameters. Fill in the blanks to create a proper method declaration statement for foo.\npublic\nfoo( \na, \nb){}",
+              "text": "You are designing a method called foo. It will return a double and will take in two integers \nas parameters. Fill in the blanks to create a proper method declaration statement for foo.\npublic ______ foo(___ a, ___ b) {}",
               "answer": {
-                "bestAnswer": "double,int,int",
+                "bestAnswer": "double, int, int",
                 "acceptedAnswers": [
                   {
                     "acceptedAnswer1": "double,int,int"
+                  },
+                  {
+                    "acceptedAnswer2": "double, int, int"
                   }
                 ]
               }
@@ -169,7 +175,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 3: Basic Syntax",
               "parentLesson": "Lesson 1: Elements of Code",
-              "text": "In Java, there are words that are case sensitive and have pre-determined meanings. \nThey include words such as int, double, etc., and there are a total of 51 of them. What is \nthe name of these words?\n",
+              "text": "In Java, there are words that are case sensitive and have pre-determined meanings. They include words such as int, double, etc., and there are a total of 51 of them. What is the name of these words?",
               "answer": {
                 "bestAnswer": "keywords",
                 "acceptedAnswers": [
@@ -219,6 +225,9 @@
                 "acceptedAnswers": [
                   {
                     "acceptedAnswer1": "yes"
+                  },
+                  {
+                    "acceptedAnswer2": "Yes"
                   }
                 ]
               }
@@ -341,7 +350,7 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 4: Data Types and Structures",
               "parentLesson": "Lesson 2: Data Types",
-              "text": "What is the name of data types that can not be reduced into a lower level data type?\n",
+              "text": "What is the name of the data type that cannot be reduced into a lower level data type?\n",
               "answer": {
                 "bestAnswer": "primitive",
                 "acceptedAnswers": [
@@ -350,6 +359,9 @@
                   },
                   {
                     "acceptedAnswer2": "primitive data type"
+                  },
+                  {
+                    "acceptedAnswer3": "primitives"
                   }
                 ]
               }
@@ -385,12 +397,12 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 4: Data Types and Structures",
               "parentLesson": "Lesson 3: Arrays",
-              "text": "Complete the following declaration statement for an array of integers with size of 5.\n ___ arr = ___ [ ____ ];",
+              "text": "Complete the following declaration statement for an empty array of integers with size 5.\n\n ___[] arr = ___ int[_];",
               "answer": {
-                "bestAnswer": "int,new,size",
+                "bestAnswer": "int, new, 5",
                 "acceptedAnswers": [
                   {
-                    "acceptedAnswer1": "int,new,size"
+                    "acceptedAnswer1": "int,new,5"
                   }
                 ]
               }
@@ -518,12 +530,18 @@
               "parentCourse": "Java Basics",
               "parentContentModule": "Module 6: Loops",
               "parentLesson": "Lesson 1: For and For-each Loops",
-              "text": "Fill in the following blanks so that it forms a proper for loop that starts at index 0 and \nstops until the index is equal to 10.\n\n _______________{}",
+              "text": "Fill in the following blanks so that it forms a proper for loop that starts at index 0 and \nstops before the index is equal to 10.\n\n _______________ {}",
               "answer": {
                 "bestAnswer": "for(int i = 0; i < 10; i++)",
                 "acceptedAnswers": [
                   {
                     "acceptedAnswer1": "for(int i = 0; i < 10; i++)"
+                  },
+                  {
+                    "acceptedAnswer2": "for (int i = 0; i < 10; i++)"
+                  },
+                  {
+                    "acceptedAnswer3": "for(int i=0; i<10; i++)"
                   }
                 ]
               }
